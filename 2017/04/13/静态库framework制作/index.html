@@ -1,15 +1,93 @@
+<!doctype html>
 
 
-<!DOCTYPE html>
-<html lang="zh-Hans">
-<head prefix="og: http://ogp.me/ns#">
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
-    <meta name="description" content="离文明世界有多远?">
-    <title>About framework(静态库) | Born free</title>
 
-    <!-- Open Graph -->
-    <meta name="description" content="简单描述xcode开发工具给开发者提供了制作framework权限.framework(静态库)将你工程中的实现文件代码封装起来了只展示.h文件，从而使得你的代码易于分享和复用.">
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="“Hi,iOS!Hi,captain”" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="简单描述xcode开发工具给开发者提供了制作framework权限.framework(静态库)将你工程中的实现文件代码封装起来了只展示.h文件，从而使得你的代码易于分享和复用.">
 <meta name="keywords">
 <meta property="og:type" content="article">
 <meta property="og:title" content="About framework(静态库)">
@@ -33,233 +111,551 @@
 <meta name="twitter:description" content="简单描述xcode开发工具给开发者提供了制作framework权限.framework(静态库)将你工程中的实现文件代码封装起来了只展示.h文件，从而使得你的代码易于分享和复用.">
 <meta name="twitter:image" content="http://oodrfzkav.bkt.clouddn.com/%E5%88%9B%E5%BB%BA%E5%B7%A5%E7%A8%8B.png">
 
-    <script type="application/ld+json">
-{
-  "@context": "http://schema.org",
-  "@type": "Person",
-  "email": "mailto:undefined",
-  "image": "/images/avatar.png",
-  "name": "自由",
-  "url": "http://yoursite.com"
-}
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
 </script>
-    <script>
-    var algoliaEnabled = false;
-    
-</script>
 
-    
 
-    
-    
-        <link href="//fonts.useso.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
-    
-    
-    
-        <!-- stylesheets list from config.yml -->
-        
-        <link rel="stylesheet" href="/css/aloha.css">
-        
-        <link rel="stylesheet" href="//cdn.bootcss.com/semantic-ui/2.2.4/semantic.min.css">
-        
-        <link rel="stylesheet" href="//cdn.bootcss.com/magnific-popup.js/1.1.0/magnific-popup.min.css">
-        
-    
 
+  <link rel="canonical" href="http://yoursite.com/2017/04/13/静态库framework制作/"/>
+
+
+
+
+
+  <title> About framework(静态库) | Born free </title>
 </head>
-<body id="body" style="margin-bottom: 0;" class="pushable">
 
-    <div class="ui top fixed menu">
-        <a class="item" id="menu-icon"><i class="sidebar icon"></i></a>
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Born free</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
     </div>
+      
+        <p class="site-subtitle">好的文章,就是原来不懂得;看了之后有一种原来是这样的感觉?</p>
+      
+  </div>
 
-    <div id="menu-sidebar" class="ui left vertical sidebar menu">
-
-    <div id="sidebar-top">
-        <div class="content">
-            <h3>Born free</h3>
-        </div>
-    </div>
-    <div class="ui container sidebar-card">
-    <div class="ui people shape content">
-        <div class="active side">
-            <div class="ui card">
-                <div class="image">
-                    <img class="ui medium bordered image" src="/images/avatar.jpg">
-                </div>
-                <div class="content">
-                    <a class="header">自由</a>
-                    
-                </div>
-                <div class="extra content">
-                    <div class="ui list">
-                        
-                        
-                    </div>
-
-                </div>
-                <div class="extra content">
-                    <div class="ui list">
-                        
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
 </div>
 
-    
-    
+<nav class="site-nav">
+  
 
-    
-
-    
-    <a href="/index.html" class="item" >
-        <i class="home icon"></i>
-        HOME
-    </a>
-
-    
-
-    
-</div>
-
-    <div class="pusher body-content">
-        <div id="content" class="ui main container">
-            <!--<div class="ui one column grid">-->
-                <!--<div class="column">-->
-                    <!--<div class="ui main container">-->
-                        <div id="post-静态库framework制作" class="ui main container article-type-post">
-
-    
-
-    <div class="ui divided grid">
-
-        <div class="two column row" id="article-content">
-
-            <div class="thirteen wide computer thirteen wide tablet sixteen wide mobile column">
-                
-
-<h1 class="ui header">
-    
-    About framework(静态库)
-</h1>
-
-
-
-                <div class="article-inner">
-
-                    <div class="article-entry" itemprop="articleBody">
-                        
-                        <h3 id="&#x7B80;&#x5355;&#x63CF;&#x8FF0;"><a href="#&#x7B80;&#x5355;&#x63CF;&#x8FF0;" class="headerlink" title="&#x7B80;&#x5355;&#x63CF;&#x8FF0;"></a>&#x7B80;&#x5355;&#x63CF;&#x8FF0;</h3><p>xcode&#x5F00;&#x53D1;&#x5DE5;&#x5177;&#x7ED9;&#x5F00;&#x53D1;&#x8005;&#x63D0;&#x4F9B;&#x4E86;&#x5236;&#x4F5C;framework&#x6743;&#x9650;.framework(&#x9759;&#x6001;&#x5E93;)&#x5C06;&#x4F60;&#x5DE5;&#x7A0B;&#x4E2D;&#x7684;&#x5B9E;&#x73B0;&#x6587;&#x4EF6;&#x4EE3;&#x7801;&#x5C01;&#x88C5;&#x8D77;&#x6765;&#x4E86;&#x53EA;&#x5C55;&#x793A;.h&#x6587;&#x4EF6;&#xFF0C;&#x4ECE;&#x800C;&#x4F7F;&#x5F97;&#x4F60;&#x7684;&#x4EE3;&#x7801;&#x6613;&#x4E8E;&#x5206;&#x4EAB;&#x548C;&#x590D;&#x7528;.<a id="more"></a>  </p>
-<h3 id="&#x4EC0;&#x4E48;&#x662F;framework"><a href="#&#x4EC0;&#x4E48;&#x662F;framework" class="headerlink" title="&#x4EC0;&#x4E48;&#x662F;framework?"></a>&#x4EC0;&#x4E48;&#x662F;framework?</h3><p>framwork&#x662F;&#x8D44;&#x6E90;&#x7684;&#x96C6;&#x5408;&#xFF0C;&#x5C06;.a&#x5E93;&#x548C;&#x5934;&#x6587;&#x4EF6;&#x5305;&#x542B;&#x5230;&#x4E00;&#x4E2A;&#x7ED3;&#x6784;&#x4E2D;&#xFF0C;&#x8BA9;xcode&#x53EF;&#x4EE5;&#x65B9;&#x4FBF;&#x7684;&#x7EB3;&#x5165;&#x5230;&#x9879;&#x76EE;&#x4E2D;. </p>
-<h3 id="&#x5236;&#x4F5C;framework"><a href="#&#x5236;&#x4F5C;framework" class="headerlink" title="&#x5236;&#x4F5C;framework"></a>&#x5236;&#x4F5C;framework</h3><p><strong>1 - &#x521B;&#x5EFA;&#x5DE5;&#x7A0B;,&#x9009;&#x62E9;Cocoa Touch Framework</strong><br><a class="magnific-img" href="http://oodrfzkav.bkt.clouddn.com/%E5%88%9B%E5%BB%BA%E5%B7%A5%E7%A8%8B.png"><img src="http://oodrfzkav.bkt.clouddn.com/%E5%88%9B%E5%BB%BA%E5%B7%A5%E7%A8%8B.png" alt="image" class="ui centered image"></a><br><strong>2 - &#x8D77;&#x4E2A;&#x60F3;&#x8981;&#x5BF9;&#x5916;&#x5C55;&#x793A;&#x7684;framework&#x5DE5;&#x7A0B;&#x540D;&#x79F0; ps:&#x6211;&#x7684;&#x662F;Test</strong><br><a class="magnific-img" href="http://oodrfzkav.bkt.clouddn.com/%E5%91%BD%E5%90%8D.png"><img src="http://oodrfzkav.bkt.clouddn.com/%E5%91%BD%E5%90%8D.png" alt="image" class="ui centered image"></a><br><strong>3 - &#x914D;&#x7F6E;&#x8BE5;framework&#x6700;&#x4F4E;&#x652F;&#x6301;iOS&#x7CFB;&#x7EDF;</strong><br><a class="magnific-img" href="http://oodrfzkav.bkt.clouddn.com/%E6%9C%80%E4%BD%8E%E6%94%AF%E6%8C%81iOS%E7%B3%BB%E7%BB%9F.png"><img src="http://oodrfzkav.bkt.clouddn.com/%E6%9C%80%E4%BD%8E%E6%94%AF%E6%8C%81iOS%E7%B3%BB%E7%BB%9F.png" alt="image" class="ui centered image"></a><br><strong>4 - &#x4FEE;&#x6539;framework&#x4E3A;&#x9759;&#x6001;&#x5E93;,&#x5728;Build Setting&#x4E2D;&#x641C;&#x7D22;:Mach-O Type &#x9009;&#x62E9;&#x5982;&#x56FE;&#x6240;&#x793A;</strong><br><a class="magnific-img" href="http://oodrfzkav.bkt.clouddn.com/%E6%94%B9%E6%88%90%E9%9D%99%E6%80%81%E5%BA%93.png"><img src="http://oodrfzkav.bkt.clouddn.com/%E6%94%B9%E6%88%90%E9%9D%99%E6%80%81%E5%BA%93.png" alt="image" class="ui centered image"></a><br><strong>5 - &#x9009;&#x62E9;&#x7F16;&#x8BD1;&#x7684;&#x73AF;&#x5883;:Release&#x8868;&#x793A;&#x53D1;&#x5E03;&#x73AF;&#x5883;</strong> </p>
-<p><a class="magnific-img" href="http://oodrfzkav.bkt.clouddn.com/Edit%20Scheme.png"><img src="http://oodrfzkav.bkt.clouddn.com/Edit%20Scheme.png" alt="image" class="ui centered image"></a> </p>
-<p><a class="magnific-img" href="http://oodrfzkav.bkt.clouddn.com/%E5%8F%91%E5%B8%83%E7%8E%AF%E5%A2%83.png"><img src="http://oodrfzkav.bkt.clouddn.com/%E5%8F%91%E5%B8%83%E7%8E%AF%E5%A2%83.png" alt="image" class="ui centered image"></a><br><strong>6 - &#x9009;&#x62E9;&#x7F16;&#x8BD1;&#x652F;&#x6301;&#x7684;&#x6846;&#x67B6; Realease&#x8868;&#x793A;&#x53D1;&#x5E03;&#x72B6;&#x6001;,Debug&#x8868;&#x793A;&#x6D4B;&#x8BD5;&#x72B6;&#x6001;,&#x8BBE;&#x7F6E;&#x4E3A;NO&#x5219;&#x8868;&#x793A;&#x9664;&#x4E86;&#x652F;&#x6301;&#x5F53;&#x524D;&#x7684;&#x7F16;&#x8BD1;&#x578B;&#x53F7;,&#x8FD8;&#x652F;&#x6301;&#x5176;&#x4ED6;&#x578B;&#x53F7;;&#x6BD4;&#x5982;&#x5F53;&#x524D;&#x7F16;&#x8BD1;&#x7684;&#x662F;iPhone5s,&#x90A3;&#x4E48;&#x7F16;&#x8BD1;&#x4E4B;&#x540E;&#x4E5F;&#x4F1A;&#x652F;&#x6301;6s&#x7B49;&#x6240;&#x6709;&#x578B;&#x53F7;;</strong><br><a class="magnific-img" href="http://oodrfzkav.bkt.clouddn.com/%E7%BC%96%E8%AF%91%E6%89%80%E6%9C%89cpu.png"><img src="http://oodrfzkav.bkt.clouddn.com/%E7%BC%96%E8%AF%91%E6%89%80%E6%9C%89cpu.png" alt="image" class="ui centered image"></a><br><strong>7 - &#x9009;&#x62E9;&#x7F16;&#x8BD1;&#x7684;&#x662F;&#x771F;&#x673A;&#x8FD8;&#x662F;&#x6A21;&#x62DF;&#x5668;,&#x7F16;&#x8BD1;&#x7684;&#x72B6;&#x6001;&#x662F;&#x771F;&#x673A;&#x90A3;&#x4E48;&#x5728;&#x6A21;&#x62DF;&#x5668;&#x4E0A;&#x9762;&#x8DD1;&#x5C31;&#x56DE;&#x62A5;&#x9519;,&#x53CD;&#x4E4B;&#x4EA6;&#x7136;;</strong><br><a class="magnific-img" href="http://oodrfzkav.bkt.clouddn.com/%E7%9C%9F%E6%9C%BA%E8%BF%98%E6%98%AF%E6%A8%A1%E6%8B%9F%E5%99%A8.png"><img src="http://oodrfzkav.bkt.clouddn.com/%E7%9C%9F%E6%9C%BA%E8%BF%98%E6%98%AF%E6%A8%A1%E6%8B%9F%E5%99%A8.png" alt="image" class="ui centered image"></a><br><strong>8 - &#x9009;&#x62E9;&#x5C55;&#x793A;&#x5BF9;&#x5916;&#x7684;.h&#x5934;&#x6587;&#x4EF6;:&#x628A;&#x8981;&#x5C55;&#x793A;&#x7684;&#x5934;&#x6587;&#x4EF6;&#x4ECE;Project&#x62D6;&#x5230;Public&#x4E2D;</strong><br><a class="magnific-img" href="http://oodrfzkav.bkt.clouddn.com/%E6%98%BE%E7%A4%BA%E7%9A%84%E5%A4%B4%E6%96%87%E4%BB%B6.png"><img src="http://oodrfzkav.bkt.clouddn.com/%E6%98%BE%E7%A4%BA%E7%9A%84%E5%A4%B4%E6%96%87%E4%BB%B6.png" alt="image" class="ui centered image"></a><br><strong>9 - command+B&#x4E4B;&#x540E;&#x627E;&#x5230;&#x7F16;&#x8BD1;&#x540E;&#x7684;&#x9759;&#x6001;&#x5E93;</strong><br><a class="magnific-img" href="http://oodrfzkav.bkt.clouddn.com/show%20in%20finder.png"><img src="http://oodrfzkav.bkt.clouddn.com/show%20in%20finder.png" alt="image" class="ui centered image"></a> </p>
-<p><a class="magnific-img" href="http://oodrfzkav.bkt.clouddn.com/framework.png"><img src="http://oodrfzkav.bkt.clouddn.com/framework.png" alt="image" class="ui centered image"></a> </p>
-<h3 id="&#x6700;&#x540E;&#x5C31;&#x53EF;&#x4EE5;&#x628A;&#x521B;&#x5EFA;&#x7684;framework&#x62D6;&#x8FDB;&#x5230;&#x81EA;&#x5DF1;&#x7684;&#x5DE5;&#x7A0B;&#x4F7F;&#x7528;&#x4E86;"><a href="#&#x6700;&#x540E;&#x5C31;&#x53EF;&#x4EE5;&#x628A;&#x521B;&#x5EFA;&#x7684;framework&#x62D6;&#x8FDB;&#x5230;&#x81EA;&#x5DF1;&#x7684;&#x5DE5;&#x7A0B;&#x4F7F;&#x7528;&#x4E86;" class="headerlink" title="&#x6700;&#x540E;&#x5C31;&#x53EF;&#x4EE5;&#x628A;&#x521B;&#x5EFA;&#x7684;framework&#x62D6;&#x8FDB;&#x5230;&#x81EA;&#x5DF1;&#x7684;&#x5DE5;&#x7A0B;&#x4F7F;&#x7528;&#x4E86;;"></a>&#x6700;&#x540E;&#x5C31;&#x53EF;&#x4EE5;&#x628A;&#x521B;&#x5EFA;&#x7684;framework&#x62D6;&#x8FDB;&#x5230;&#x81EA;&#x5DF1;&#x7684;&#x5DE5;&#x7A0B;&#x4F7F;&#x7528;&#x4E86;;</h3>
-                        
-                    </div>
-
-                    
-                    
-                    
-
-                    <div class="description post-description">
-    <span class="post-description-item">
-        <time datetime="2017-04-13T06:57:03.000Z" itemprop="datePublished">2017-04-13</time>
-
-    </span>
-    <span class="post-description-item">
+  
+    <ul id="menu" class="menu">
+      
         
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/04/13/静态库framework制作/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="自由">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/images/avatar.png">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="Born free">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="Born free" src="">
     </span>
-</div>
+  </span>
 
-                </div>
-                
-                <div id="pagination" class="nav-web ui text container pagination">
+    
+      <header class="post-header">
 
-    <div class="ui stackable two column divided grid container">
-        <div class="row">
-            <div class="column nav-left">
-                
-
-                <a href="/2017/03/02/Apple 开发者账号区别/" class="ui tiny button">
-
-                    <i class="angle left icon"></i>
-                    
-                    iOS开发的一些基本知识
-                    
-
-                </a>
-
-                
-            </div>
-            <div class="column nav-right">
-                
-
-                <a class="ui tiny button disabled">Next<i class="angle right icon"></i></a>
-
-                
-            </div>
-        </div>
-    </div>
-
-</div>
-                
-            </div>
-
+        
+        
+          <h1 class="post-title" itemprop="name headline">
             
-            <div class="three wide computer three wide tablet column">
+            
+              
+                About framework(静态库)
+              
+            
+          </h1>
+        
 
-                <div class="ui sticky article-toc" id="article-toc">
-                    <!-- toc -->
-                    <ol class="ui ordered list"><li><a href="#简单描述"><span>简单描述</span></a></li><li><a href="#什么是framework"><span>什么是framework?</span></a></li><li><a href="#制作framework"><span>制作framework</span></a></li><li><a href="#最后就可以把创建的framework拖进到自己的工程使用了"><span>最后就可以把创建的framework拖进到自己的工程使用了;</span></a></li></ol>
-                </div>
-
-            </div>
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-13T14:57:03+08:00">
+                2017-04-13
+              </time>
             
 
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
         </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h3 id="简单描述"><a href="#简单描述" class="headerlink" title="简单描述"></a>简单描述</h3><p>xcode开发工具给开发者提供了制作framework权限.framework(静态库)将你工程中的实现文件代码封装起来了只展示.h文件，从而使得你的代码易于分享和复用.<a id="more"></a>  </p>
+<h3 id="什么是framework"><a href="#什么是framework" class="headerlink" title="什么是framework?"></a>什么是framework?</h3><p>framwork是资源的集合，将.a库和头文件包含到一个结构中，让xcode可以方便的纳入到项目中. </p>
+<h3 id="制作framework"><a href="#制作framework" class="headerlink" title="制作framework"></a>制作framework</h3><p><strong>1 - 创建工程,选择Cocoa Touch Framework</strong><br><img src="http://oodrfzkav.bkt.clouddn.com/%E5%88%9B%E5%BB%BA%E5%B7%A5%E7%A8%8B.png" alt="image"><br><strong>2 - 起个想要对外展示的framework工程名称 ps:我的是Test</strong><br><img src="http://oodrfzkav.bkt.clouddn.com/%E5%91%BD%E5%90%8D.png" alt="image"><br><strong>3 - 配置该framework最低支持iOS系统</strong><br><img src="http://oodrfzkav.bkt.clouddn.com/%E6%9C%80%E4%BD%8E%E6%94%AF%E6%8C%81iOS%E7%B3%BB%E7%BB%9F.png" alt="image"><br><strong>4 - 修改framework为静态库,在Build Setting中搜索:Mach-O Type 选择如图所示</strong><br><img src="http://oodrfzkav.bkt.clouddn.com/%E6%94%B9%E6%88%90%E9%9D%99%E6%80%81%E5%BA%93.png" alt="image"><br><strong>5 - 选择编译的环境:Release表示发布环境</strong> </p>
+<p><img src="http://oodrfzkav.bkt.clouddn.com/Edit%20Scheme.png" alt="image"> </p>
+<p><img src="http://oodrfzkav.bkt.clouddn.com/%E5%8F%91%E5%B8%83%E7%8E%AF%E5%A2%83.png" alt="image"><br><strong>6 - 选择编译支持的框架 Realease表示发布状态,Debug表示测试状态,设置为NO则表示除了支持当前的编译型号,还支持其他型号;比如当前编译的是iPhone5s,那么编译之后也会支持6s等所有型号;</strong><br><img src="http://oodrfzkav.bkt.clouddn.com/%E7%BC%96%E8%AF%91%E6%89%80%E6%9C%89cpu.png" alt="image"><br><strong>7 - 选择编译的是真机还是模拟器,编译的状态是真机那么在模拟器上面跑就回报错,反之亦然;</strong><br><img src="http://oodrfzkav.bkt.clouddn.com/%E7%9C%9F%E6%9C%BA%E8%BF%98%E6%98%AF%E6%A8%A1%E6%8B%9F%E5%99%A8.png" alt="image"><br><strong>8 - 选择展示对外的.h头文件:把要展示的头文件从Project拖到Public中</strong><br><img src="http://oodrfzkav.bkt.clouddn.com/%E6%98%BE%E7%A4%BA%E7%9A%84%E5%A4%B4%E6%96%87%E4%BB%B6.png" alt="image"><br><strong>9 - command+B之后找到编译后的静态库</strong><br><img src="http://oodrfzkav.bkt.clouddn.com/show%20in%20finder.png" alt="image"> </p>
+<p><img src="http://oodrfzkav.bkt.clouddn.com/framework.png" alt="image"> </p>
+<h3 id="最后就可以把创建的framework拖进到自己的工程使用了"><a href="#最后就可以把创建的framework拖进到自己的工程使用了" class="headerlink" title="最后就可以把创建的framework拖进到自己的工程使用了;"></a>最后就可以把创建的framework拖进到自己的工程使用了;</h3>
+      
     </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/03/02/Apple 开发者账号区别/" rel="prev" title="iOS开发的一些基本知识">
+                iOS开发的一些基本知识 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+          
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.png"
+               alt="自由" />
+          <p class="site-author-name" itemprop="name">自由</p>
+           
+              <p class="site-description motion-element" itemprop="description">离文明世界有多远?</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+        
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#简单描述"><span class="nav-number">1.</span> <span class="nav-text">简单描述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#什么是framework"><span class="nav-number">2.</span> <span class="nav-text">什么是framework?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#制作framework"><span class="nav-number">3.</span> <span class="nav-text">制作framework</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#最后就可以把创建的framework拖进到自己的工程使用了"><span class="nav-number">4.</span> <span class="nav-text">最后就可以把创建的framework拖进到自己的工程使用了;</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">自由</span>
 </div>
 
 
-                    <!--</div>-->
-                <!--</div>-->
-            <!--</div>-->
-        </div>
-        <div class="ui vertical footer segment">
-    <div class="ui center aligned container">
-        <div class="ui inverted section divider"></div>
-        &copy; 2017 <a href="/">自由</a>,
-        Powered by <a href="https://github.com/henryhuang/hexo-theme-aloha" target="_blank">Aloha</a> and <a
-                href="http://hexo.io/" target="_blank">Hexo</a>.
-    </div>
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
 </div>
 
-    </div>
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+    
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
 
 
 
 
-<!-- scripts list from theme config.yml -->
-
-<script src="//cdn.bootcss.com/jquery/3.1.0/jquery.min.js"></script>
-
-<script src="//cdn.bootcss.com/semantic-ui/2.2.4/semantic.min.js"></script>
-
-<script src="//cdn.bootcss.com/algoliasearch/3.18.1/algoliasearch.min.js"></script>
-
-<script src="//cdn.bootcss.com/algoliasearch-helper-js/2.13.0/algoliasearch.helper.min.js"></script>
-
-<script src="/js/semantic-ui-algolia.js"></script>
-
-<script src="/js/aloha-events.js"></script>
 
 
+
+
+
+  
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.0"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
 
 </body>
 </html>
