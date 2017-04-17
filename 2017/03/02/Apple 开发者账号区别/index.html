@@ -1,93 +1,15 @@
-<!doctype html>
 
 
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head prefix="og: http://ogp.me/ns#">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+    <meta name="description" content="离文明世界有多远?">
+    <title>iOS开发的一些基本知识 | Born free</title>
 
-  
-
-
-<html class="theme-next pisces use-motion" lang="zh-Hans">
-<head>
-  <meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
-
-
-
-<meta http-equiv="Cache-Control" content="no-transform" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
-
-
-
-
-  
-  
-  
-  
-
-  
-    
-    
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-    
-    
-    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
-  
-
-
-
-
-
-
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
-
-<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
-
-
-  <meta name="keywords" content="“Hi,iOS!Hi,captain”" />
-
-
-
-
-
-
-
-
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
-
-
-
-
-
-
-<meta name="description" content="iOS开发的基本工具:Mac电脑,iOS系统的设备.   一 开发者账号个人开发者账号(Individual)1.每年99美刀;">
+    <!-- Open Graph -->
+    <meta name="description" content="iOS开发的基本工具:Mac电脑,iOS系统的设备.   一 开发者账号个人开发者账号(Individual)1.每年99美刀;">
 <meta name="keywords">
 <meta property="og:type" content="article">
 <meta property="og:title" content="iOS开发的一些基本知识">
@@ -99,223 +21,127 @@
 <meta name="twitter:title" content="iOS开发的一些基本知识">
 <meta name="twitter:description" content="iOS开发的基本工具:Mac电脑,iOS系统的设备.   一 开发者账号个人开发者账号(Individual)1.每年99美刀;">
 
-
-
-<script type="text/javascript" id="hexo.configurations">
-  var NexT = window.NexT || {};
-  var CONFIG = {
-    root: '/',
-    scheme: 'Pisces',
-    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
-    fancybox: true,
-    motion: true,
-    duoshuo: {
-      userId: '0',
-      author: '博主'
-    },
-    algolia: {
-      applicationID: '',
-      apiKey: '',
-      indexName: '',
-      hits: {"per_page":10},
-      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
-    }
-  };
+    <script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Person",
+  "email": "mailto:undefined",
+  "image": "/images/avatar.png",
+  "name": "自由",
+  "url": "http://yoursite.com"
+}
+</script>
+    <script>
+    var algoliaEnabled = false;
+    
 </script>
 
+    
 
+    
+    
+        <link href="//fonts.useso.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+    
+    
+    
+        <!-- stylesheets list from config.yml -->
+        
+        <link rel="stylesheet" href="/css/aloha.css">
+        
+        <link rel="stylesheet" href="//cdn.bootcss.com/semantic-ui/2.2.4/semantic.min.css">
+        
+        <link rel="stylesheet" href="//cdn.bootcss.com/magnific-popup.js/1.1.0/magnific-popup.min.css">
+        
+    
 
-  <link rel="canonical" href="http://yoursite.com/2017/03/02/Apple 开发者账号区别/"/>
-
-
-
-
-
-  <title> iOS开发的一些基本知识 | Born free </title>
 </head>
+<body id="body" style="margin-bottom: 0;" class="pushable">
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-    
-  
-
-  <div class="container one-collumn sidebar-position-left page-post-detail ">
-    <div class="headband"></div>
-
-    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-wrapper">
-  <div class="site-meta ">
-    
-
-    <div class="custom-logo-site-title">
-      <a href="/"  class="brand" rel="start">
-        <span class="logo-line-before"><i></i></span>
-        <span class="site-title">Born free</span>
-        <span class="logo-line-after"><i></i></span>
-      </a>
+    <div class="ui top fixed menu">
+        <a class="item" id="menu-icon"><i class="sidebar icon"></i></a>
     </div>
-      
-        <p class="site-subtitle">好的文章,就是原来不懂得;看了之后有一种原来是这样的感觉?</p>
-      
-  </div>
 
-  <div class="site-nav-toggle">
-    <button>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-    </button>
-  </div>
+    <div id="menu-sidebar" class="ui left vertical sidebar menu">
+
+    <div id="sidebar-top">
+        <div class="content">
+            <h3>Born free</h3>
+        </div>
+    </div>
+    <div class="ui container sidebar-card">
+    <div class="ui people shape content">
+        <div class="active side">
+            <div class="ui card">
+                <div class="image">
+                    <img class="ui medium bordered image" src="/images/avatar.jpg">
+                </div>
+                <div class="content">
+                    <a class="header">自由</a>
+                    
+                </div>
+                <div class="extra content">
+                    <div class="ui list">
+                        
+                        
+                    </div>
+
+                </div>
+                <div class="extra content">
+                    <div class="ui list">
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
 </div>
 
-<nav class="site-nav">
-  
-
-  
-    <ul id="menu" class="menu">
-      
-        
-        <li class="menu-item menu-item-home">
-          <a href="/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
-            
-            首页
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-archives">
-          <a href="/archives" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
-            
-            归档
-          </a>
-        </li>
-      
-
-      
-    </ul>
-  
-
-  
-</nav>
-
-
-
- </div>
-    </header>
-
-    <main id="main" class="main">
-      <div class="main-inner">
-        <div class="content-wrap">
-          <div id="content" class="content">
-            
-
-  <div id="posts" class="posts-expand">
+    
     
 
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/02/Apple 开发者账号区别/">
-
-  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
-    <meta itemprop="name" content="自由">
-    <meta itemprop="description" content="">
-    <meta itemprop="image" content="/images/avatar.png">
-  </span>
-
-  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="Born free">
-    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
-      <img style="display:none;" itemprop="url image" alt="Born free" src="">
-    </span>
-  </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                iOS开发的一些基本知识
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-02T18:32:27+08:00">
-                2017-03-02
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
     
 
+    
+    <a href="/index.html" class="item" >
+        <i class="home icon"></i>
+        首页
+    </a>
 
-    <div class="post-body" itemprop="articleBody">
+    
 
-      
-      
+    
+</div>
 
-      
-        <p>iOS开发的基本工具:Mac电脑,iOS系统的设备.  </p>
+    <div class="pusher body-content">
+        <div id="content" class="ui main container">
+            <!--<div class="ui one column grid">-->
+                <!--<div class="column">-->
+                    <!--<div class="ui main container">-->
+                        <div id="post-Apple 开发者账号区别" class="ui main container article-type-post">
+
+    
+
+    <div class="ui divided grid">
+
+        <div class="two column row" id="article-content">
+
+            <div class="thirteen wide computer thirteen wide tablet sixteen wide mobile column">
+                
+
+<h1 class="ui header">
+    
+    iOS开发的一些基本知识
+</h1>
+
+
+
+                <div class="article-inner">
+
+                    <div class="article-entry" itemprop="articleBody">
+                        
+                        <p>iOS开发的基本工具:Mac电脑,iOS系统的设备.  </p>
 <h2 id="一-开发者账号"><a href="#一-开发者账号" class="headerlink" title="一 开发者账号"></a>一 开发者账号</h2><h3 id="个人开发者账号-Individual"><a href="#个人开发者账号-Individual" class="headerlink" title="个人开发者账号(Individual)"></a>个人开发者账号(Individual)</h3><p>1.每年99美刀;<a id="more"></a><br>2.只能有一个Apple ID账号;<br>3.不需要<a href="http://baike.baidu.com/item/%E9%82%93%E6%B0%8F%E7%BC%96%E7%A0%81" target="_blank" rel="external">邓白氏编码</a>(DUNS Number);<br>4.添加的设备uuid 上限是100台&lt;包含iPhone,iPad,iPod等设备&gt;,已经添加的设备就算移除也计算在内,但是可以在每年续费的时候进行清除旧设备;<br>5.可以发布APP应用到App Store;<br>6.个人开发者账号经过申请可以调整为公司开发者账号;<br>7.在App Store 上展示的销售者是个人开发者名称,不可修改;  </p>
 <h3 id="公司开发者账号-Company-Organization"><a href="#公司开发者账号-Company-Organization" class="headerlink" title="公司开发者账号(Company/Organization)"></a>公司开发者账号(Company/Organization)</h3><p>1.和个人开发者账号一样每年也是99美刀;<br>2.申请下来后,可以添加多个Apple id账号,可以区分多个权限;<br>3.需要<a href="http://baike.baidu.com/item/%E9%82%93%E6%B0%8F%E7%BC%96%E7%A0%81" target="_blank" rel="external">邓白氏编码</a>(DUNS Number);<br>4.添加的设备和个人开发者账号一样;<br>5.可以发布App应用到App Store;<br>6.可以自定义展示在App Store 销售者名称;<br>备注: Admin Legal权限:超级管理员,可以管理开发者和管理AppStore中的应用;<br>Admin权限:管理员,可以管理开发者,添加测试机子和管理团队证书;<br>Member权限:普通开发者,只能下载证书和使用证书;<br>No Access权限:没有相应的权限; </p>
 <h3 id="企业开发者账号-Enterprise"><a href="#企业开发者账号-Enterprise" class="headerlink" title="企业开发者账号(Enterprise)"></a>企业开发者账号(Enterprise)</h3><p>1.每年299美刀;<br>2.只能有一个Apple ID账号;<br>3.需要<a href="http://baike.baidu.com/item/%E9%82%93%E6%B0%8F%E7%BC%96%E7%A0%81" target="_blank" rel="external">邓白氏编码</a>(DUNS Number);<br>4.添加的设备uuid 无上限;<br>5.不能发布App应用到App Store;  </p>
@@ -327,328 +153,102 @@
 <hr>
 <p>小结:1,如果新添加了设备的uuid，需要重新编译描述文件并下载安装;2,新添加的内购产品不需要重新下载证书或者编译描述文件; </p>
 <h4 id="Blog"><a href="#Blog" class="headerlink" title="Blog"></a>Blog</h4>
-      
-    </div>
+                        
+                    </div>
 
-    <div>
-      
+                    
+                    
+                    
+
+                    <div class="description post-description">
+    <span class="post-description-item">
+        <time datetime="2017-03-02T10:32:27.000Z" itemprop="datePublished">2017-03-02</time>
+
+    </span>
+    <span class="post-description-item">
         
+    </span>
+</div>
 
-      
-    </div>
+                </div>
+                
+                <div id="pagination" class="nav-web ui text container pagination">
 
-    <div>
-      
-        
+    <div class="ui stackable two column divided grid container">
+        <div class="row">
+            <div class="column nav-left">
+                
 
-      
-    </div>
+                <a class="ui tiny button disabled"><i class="angle left icon"></i>前一篇</a>
 
-
-    <footer class="post-footer">
-      
-
-      
-        
-      
-
-      
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-            
-              <a href="/2017/04/13/静态库framework制作/" rel="next" title="About framework(静态库)">
-                <i class="fa fa-chevron-left"></i> About framework(静态库)
-              </a>
-            
-          </div>
-
-          <span class="post-nav-divider"></span>
-
-          <div class="post-nav-prev post-nav-item">
-            
-          </div>
-        </div>
-      
-
-      
-      
-    </footer>
-  </article>
-
-
-
-    <div class="post-spread">
-      
-    </div>
-  </div>
-
-          
-          </div>
-          
-
-
-          
-  <div class="comments" id="comments">
-    
-  </div>
-
-
-        </div>
-        
-          
-  
-  <div class="sidebar-toggle">
-    <div class="sidebar-toggle-line-wrap">
-      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
-    </div>
-  </div>
-
-  <aside id="sidebar" class="sidebar">
-    <div class="sidebar-inner">
-
-      
-
-      
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview">
-            站点概览
-          </li>
-        </ul>
-      
-
-      <section class="site-overview sidebar-panel">
-        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-          <img class="site-author-image" itemprop="image"
-               src="/images/avatar.png"
-               alt="自由" />
-          <p class="site-author-name" itemprop="name">自由</p>
-           
-              <p class="site-description motion-element" itemprop="description">离文明世界有多远?</p>
-          
-        </div>
-        <nav class="site-state motion-element">
-        
-          
-            <div class="site-state-item site-state-posts">
-              <a href="/archives">
-                <span class="site-state-item-count">2</span>
-                <span class="site-state-item-name">日志</span>
-              </a>
+                
             </div>
-          
+            <div class="column nav-right">
+                
 
-          
-
-          
-
-        </nav>
-
-        
-
-        <div class="links-of-author motion-element">
-          
+                <a href="/2017/04/13/静态库framework制作/" class="ui tiny button">
+                    
+                    About framework(静态库)
+                    
+                    <i class="angle right icon"></i></a>
+                
+            </div>
         </div>
+    </div>
 
-        
-        
-
-        
-        
-
-        
-
-
-      </section>
-
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
+</div>
+                
+            </div>
 
             
-              
+            <div class="three wide computer three wide tablet column">
+
+                <div class="ui sticky article-toc" id="article-toc">
+                    <!-- toc -->
+                    <ol class="ui ordered list"><li><a href="#一-开发者账号"><span>一 开发者账号</span></a><ol><li><a href="#个人开发者账号-Individual"><span>个人开发者账号(Individual)</span></a></li><li><a href="#公司开发者账号-Company-Organization"><span>公司开发者账号(Company/Organization)</span></a></li><li><a href="#企业开发者账号-Enterprise"><span>企业开发者账号(Enterprise)</span></a></li></ol></li><li><a href="#二-证书-Certificates-和描述文件-Provisoning-Profiles"><span>二 证书(Certificates)和描述文件(Provisoning Profiles)</span></a><ol><li><a href="#1-CertificateSigningRequest-certSigningRequest-CSR-文件"><span>1.CertificateSigningRequest.certSigningRequest(CSR)文件</span></a></li><li><a href="#2-证书"><span>2.证书</span></a></li><li><a href="#3-描述文件"><span>3.描述文件</span></a></li></ol></li><li><a href="#三-App应用的安装测试"><span>三 App应用的安装测试</span></a></li><li><a href="#四-内购"><span>四 内购</span></a><ol><li><a href="#Blog"><span>Blog</span></a></li></ol></li></ol></li></ol>
+                </div>
+
+            </div>
             
 
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#一-开发者账号"><span class="nav-number">1.</span> <span class="nav-text">一 开发者账号</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#个人开发者账号-Individual"><span class="nav-number">1.1.</span> <span class="nav-text">个人开发者账号(Individual)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#公司开发者账号-Company-Organization"><span class="nav-number">1.2.</span> <span class="nav-text">公司开发者账号(Company/Organization)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#企业开发者账号-Enterprise"><span class="nav-number">1.3.</span> <span class="nav-text">企业开发者账号(Enterprise)</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二-证书-Certificates-和描述文件-Provisoning-Profiles"><span class="nav-number">2.</span> <span class="nav-text">二 证书(Certificates)和描述文件(Provisoning Profiles)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-CertificateSigningRequest-certSigningRequest-CSR-文件"><span class="nav-number">2.1.</span> <span class="nav-text">1.CertificateSigningRequest.certSigningRequest(CSR)文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-证书"><span class="nav-number">2.2.</span> <span class="nav-text">2.证书</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-描述文件"><span class="nav-number">2.3.</span> <span class="nav-text">3.描述文件</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三-App应用的安装测试"><span class="nav-number">3.</span> <span class="nav-text">三 App应用的安装测试</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#四-内购"><span class="nav-number">4.</span> <span class="nav-text">四 内购</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Blog"><span class="nav-number">4.0.1.</span> <span class="nav-text">Blog</span></a></li></ol></li></ol></li></ol></div>
-            
+        </div>
+    </div>
+</div>
 
-          </div>
-        </section>
-      <!--/noindex-->
-      
 
-      
+                    <!--</div>-->
+                <!--</div>-->
+            <!--</div>-->
+        </div>
+        <div class="ui vertical footer segment">
+    <div class="ui center aligned container">
+        <div class="ui inverted section divider"></div>
+        &copy; 2017 <a href="/">自由</a>,
+        Powered by <a href="https://github.com/henryhuang/hexo-theme-aloha" target="_blank">Aloha</a> and <a
+                href="http://hexo.io/" target="_blank">Hexo</a>.
+    </div>
+</div>
 
     </div>
-  </aside>
 
 
-        
-      </div>
-    </main>
 
-    <footer id="footer" class="footer">
-      <div class="footer-inner">
-        <div class="copyright" >
-  
-  &copy; 
-  <span itemprop="copyrightYear">2017</span>
-  <span class="with-love">
-    <i class="fa fa-heart"></i>
-  </span>
-  <span class="author" itemprop="copyrightHolder">自由</span>
-</div>
 
+<!-- scripts list from theme config.yml -->
 
-<div class="powered-by">
-  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
-</div>
+<script src="//cdn.bootcss.com/jquery/3.1.0/jquery.min.js"></script>
 
-<div class="theme-info">
-  主题 -
-  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
-    NexT.Pisces
-  </a>
-</div>
+<script src="//cdn.bootcss.com/semantic-ui/2.2.4/semantic.min.js"></script>
 
+<script src="//cdn.bootcss.com/algoliasearch/3.18.1/algoliasearch.min.js"></script>
 
-        
+<script src="//cdn.bootcss.com/algoliasearch-helper-js/2.13.0/algoliasearch.helper.min.js"></script>
 
-        
-      </div>
-    </footer>
+<script src="/js/semantic-ui-algolia.js"></script>
 
-    
-      <div class="back-to-top">
-        <i class="fa fa-arrow-up"></i>
-        
-      </div>
-    
-    
-  </div>
+<script src="/js/aloha-events.js"></script>
 
-  
 
-<script type="text/javascript">
-  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
-    window.Promise = null;
-  }
-</script>
-
-
-
-
-
-
-
-
-
-  
-
-
-
-
-  
-  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
-
-  
-  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
-
-  
-  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
-
-  
-  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
-
-  
-  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
-
-  
-  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
-
-  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
-
-
-
-  
-  
-
-
-  <script type="text/javascript" src="/js/src/affix.js?v=5.1.0"></script>
-
-  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.0"></script>
-
-
-
-  
-  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
-<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
-
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
-
-
-
-  
-
-
-
-  
-
-
-
-
-	
-
-
-
-
-
-  
-
-
-
-
-
-  
-
-
-
-
-
-  
-
-
-
-  
-  
-
-  
-
-  
-
-  
-
-  
-
-
-  
 
 </body>
 </html>
