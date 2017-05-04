@@ -96,7 +96,7 @@
 <meta property="og:description" content="什么是内购?内购是苹果开发应用过程中的一种支付方式,内购获得的利润需要和苹果公司按比例3:7分(APP拥有者得7成,苹果公司得3成)">
 <meta property="og:image" content="http://oodrfzkav.bkt.clouddn.com/%E5%86%85%E8%B4%AD%E9%A1%B9%E7%9B%AE%E5%88%86%E7%B1%BB.png">
 <meta property="og:image" content="http://oodrfzkav.bkt.clouddn.com/IPA/PNG%E7%A8%8E%E5%8A%A1,%E9%93%B6%E8%A1%8C%E5%8D%8F%E8%AE%AE.png">
-<meta property="og:updated_time" content="2017-04-26T03:51:44.000Z">
+<meta property="og:updated_time" content="2017-05-04T02:59:30.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="内购(IAP)">
 <meta name="twitter:description" content="什么是内购?内购是苹果开发应用过程中的一种支付方式,内购获得的利润需要和苹果公司按比例3:7分(APP拥有者得7成,苹果公司得3成)">
@@ -373,8 +373,8 @@
 <h3 id="测试内购的前提条件"><a href="#测试内购的前提条件" class="headerlink" title="测试内购的前提条件"></a>测试内购的前提条件</h3><h4 id="一-成为开发者"><a href="#一-成为开发者" class="headerlink" title="一,成为开发者"></a>一,成为开发者</h4><p>如果你还没有个人开发者账号或者是公司开发者账号,那么请先去注册成为一个iOS的开发者(每年都是99美元); </p>
 <h4 id="二-填写协议-税务和银行业务信息"><a href="#二-填写协议-税务和银行业务信息" class="headerlink" title="二,填写协议,税务和银行业务信息"></a>二,填写协议,税务和银行业务信息</h4><p>这部分信息,主要是填写的开户银行和税务等信息,说白了就是苹果给你打钱的时候你收钱的账号;<br>状态需要这样: Contracts In Effect 生效的合同;<br><img src="http://oodrfzkav.bkt.clouddn.com/IPA/PNG%E7%A8%8E%E5%8A%A1,%E9%93%B6%E8%A1%8C%E5%8D%8F%E8%AE%AE.png" alt="image"> </p>
 <h4 id="三-在开发者中心创建APP应用和内购产品信息-制作证书和描述文件"><a href="#三-在开发者中心创建APP应用和内购产品信息-制作证书和描述文件" class="headerlink" title="三,在开发者中心创建APP应用和内购产品信息,制作证书和描述文件"></a>三,在开发者中心创建APP应用和内购产品信息,制作证书和描述文件</h4><p>登录开发者中心,创建应用和创建内购产品;制作测试证书和描述文件;</p>
-<h4 id="四-创建沙箱测试账号-在工程中进行测试"><a href="#四-创建沙箱测试账号-在工程中进行测试" class="headerlink" title="四,创建沙箱测试账号,在工程中进行测试"></a>四,创建沙箱测试账号,在工程中进行测试</h4><p>由于支付涉及到金钱,所以需要创建专门的沙箱测试账号来测试购买;<br>当然测试的时候需要xcode工程在真机上进行测试; </p>
-<h3 id="测试购买-代码部分"><a href="#测试购买-代码部分" class="headerlink" title="测试购买(代码部分)"></a>测试购买(代码部分)</h3><h4 id="github地址链接"><a href="#github地址链接" class="headerlink" title="github地址链接"></a><a href="https://github.com/zhuyunsun/ZYAppStorePay" target="_blank" rel="external">github地址链接</a></h4><h4 id="工程测试要求"><a href="#工程测试要求" class="headerlink" title="工程测试要求"></a>工程测试要求</h4><p>1,需要把Bundle Identifier 替换成对应APP的Bundle Identifier;<br>2,要下载对应证书和描述文件,需要真机进行测试;<br>3,测试之前需要把iPhone当前登录的Apple ID注销掉;</p>
+<h4 id="四-创建沙箱测试账号-在工程中进行测试"><a href="#四-创建沙箱测试账号-在工程中进行测试" class="headerlink" title="四,创建沙箱测试账号,在工程中进行测试"></a>四,创建沙箱测试账号,在工程中进行测试</h4><p>由于支付涉及到金钱,所以需要创建专门的沙箱测试账号来测试购买;<br>当然测试的时候需要xcode工程在真机上进行测试或者把ipa包安装到真机上; </p>
+<h3 id="测试购买-代码部分"><a href="#测试购买-代码部分" class="headerlink" title="测试购买(代码部分)"></a>测试购买(代码部分)</h3><h4 id="github地址链接"><a href="#github地址链接" class="headerlink" title="github地址链接"></a><a href="https://github.com/zhuyunsun/ZYAppStorePay" target="_blank" rel="external">github地址链接</a></h4><h4 id="工程测试要求"><a href="#工程测试要求" class="headerlink" title="工程测试要求"></a>工程测试要求</h4><p>1,需要把Bundle Identifier 替换成对应APP的Bundle Identifier;<br>2,要下载对应证书和描述文件,需要真机进行测试;<br>3,测试之前需要把iPhone当前登录的Apple ID注销掉;&lt;不要在设置中登录沙箱账号,沙箱账号是不允许登录的,需要在app中进行内购时,再输入沙箱账号&gt;</p>
 
       
     </div>
@@ -509,7 +509,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">9</span>
+                <span class="site-state-item-count">10</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
