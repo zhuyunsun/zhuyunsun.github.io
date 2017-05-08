@@ -71,7 +71,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="xcode,iOS开发,ipa," />
+  <meta name="keywords" content="xcode,iOS技巧,代码块," />
 
 
 
@@ -87,24 +87,22 @@
 
 
 
-<meta name="description" content="如果我们要导出在不同场合使用的ipa包,那么应该如何正确的导出呢?">
-<meta name="keywords" content="xcode,iOS开发,ipa">
+<meta name="description" content="一 简单描述 敲代码的时候,我们会经常用到重复类属性或者方法,如UITaleView中必须实现的2个代理方法,而每次都进行敲的话,浪费很多不必要的时间;如果我们能把它们封装成一个代码块,在需要的时候,直接拖进来使用,能省掉不少时间;Xcode开发工具是强大的,他不紧提供了一些常用的代码块(有时间可以自己看看Xcode自带的代码块),还允许我们自定义代码块.">
+<meta name="keywords" content="xcode,iOS技巧,代码块">
 <meta property="og:type" content="article">
-<meta property="og:title" content="从xcode工程中导出各种ipa包">
-<meta property="og:url" content="http://yoursite.com/2017/05/04/正确导出上架ipa包/index.html">
+<meta property="og:title" content="Xcode中自定义代码块的使用">
+<meta property="og:url" content="http://yoursite.com/2017/05/08/xcode中代码块使用/index.html">
 <meta property="og:site_name" content="烟飞烟灭">
-<meta property="og:description" content="如果我们要导出在不同场合使用的ipa包,那么应该如何正确的导出呢?">
-<meta property="og:image" content="http://oodrfzkav.bkt.clouddn.com/ipa/png/%E8%AF%81%E4%B9%A6%E9%85%8D%E7%BD%AE.png">
-<meta property="og:image" content="http://oodrfzkav.bkt.clouddn.com/ipa/png/archive.png">
-<meta property="og:image" content="http://oodrfzkav.bkt.clouddn.com/ipa/pngexport.png">
-<meta property="og:image" content="http://oodrfzkav.bkt.clouddn.com/ipa/png/%E9%80%89%E6%8B%A9%E5%AF%BC%E5%87%BA%E7%9A%84%E5%8C%85.png">
-<meta property="og:image" content="http://oodrfzkav.bkt.clouddn.com/ipa/pngteam.png">
-<meta property="og:image" content="http://oodrfzkav.bkt.clouddn.com/ipa/png/%E4%BF%9D%E5%AD%98%E4%BD%8D%E7%BD%AE.png">
-<meta property="og:updated_time" content="2017-05-05T04:25:32.000Z">
+<meta property="og:description" content="一 简单描述 敲代码的时候,我们会经常用到重复类属性或者方法,如UITaleView中必须实现的2个代理方法,而每次都进行敲的话,浪费很多不必要的时间;如果我们能把它们封装成一个代码块,在需要的时候,直接拖进来使用,能省掉不少时间;Xcode开发工具是强大的,他不紧提供了一些常用的代码块(有时间可以自己看看Xcode自带的代码块),还允许我们自定义代码块.">
+<meta property="og:image" content="http://oodrfzkav.bkt.clouddn.com/daimakuai/png/%E4%BB%A3%E7%A0%81%E5%9D%97%E4%BD%8D%E7%BD%AE.png">
+<meta property="og:image" content="http://oodrfzkav.bkt.clouddn.com/daimakuai/png/%E4%BB%A3%E7%A0%81%E5%9D%97%E6%8F%8F%E8%BF%B0.png">
+<meta property="og:image" content="http://oodrfzkav.bkt.clouddn.com/daimakuai/png/%E4%BB%A3%E7%A0%81%E5%9D%97%E4%BD%BF%E7%94%A8.png">
+<meta property="og:image" content="http://oodrfzkav.bkt.clouddn.com/daimakuai/png/%E4%BD%BF%E7%94%A8%E6%95%88%E6%9E%9C.png">
+<meta property="og:updated_time" content="2017-05-08T08:38:50.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="从xcode工程中导出各种ipa包">
-<meta name="twitter:description" content="如果我们要导出在不同场合使用的ipa包,那么应该如何正确的导出呢?">
-<meta name="twitter:image" content="http://oodrfzkav.bkt.clouddn.com/ipa/png/%E8%AF%81%E4%B9%A6%E9%85%8D%E7%BD%AE.png">
+<meta name="twitter:title" content="Xcode中自定义代码块的使用">
+<meta name="twitter:description" content="一 简单描述 敲代码的时候,我们会经常用到重复类属性或者方法,如UITaleView中必须实现的2个代理方法,而每次都进行敲的话,浪费很多不必要的时间;如果我们能把它们封装成一个代码块,在需要的时候,直接拖进来使用,能省掉不少时间;Xcode开发工具是强大的,他不紧提供了一些常用的代码块(有时间可以自己看看Xcode自带的代码块),还允许我们自定义代码块.">
+<meta name="twitter:image" content="http://oodrfzkav.bkt.clouddn.com/daimakuai/png/%E4%BB%A3%E7%A0%81%E5%9D%97%E4%BD%8D%E7%BD%AE.png">
 
 
 
@@ -132,13 +130,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/05/04/正确导出上架ipa包/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/05/08/xcode中代码块使用/"/>
 
 
 
 
 
-  <title> 从xcode工程中导出各种ipa包 | 烟飞烟灭 </title>
+  <title> Xcode中自定义代码块的使用 | 烟飞烟灭 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -277,7 +275,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/05/04/正确导出上架ipa包/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/05/08/xcode中代码块使用/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="自由">
@@ -298,7 +296,7 @@
             
             
               
-                从xcode工程中导出各种ipa包
+                Xcode中自定义代码块的使用
               
             
           </h1>
@@ -313,8 +311,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-05-04T10:13:03+08:00">
-                2017-05-04 10:13
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-05-08T12:25:51+08:00">
+                2017-05-08 12:25
               </time>
             
 
@@ -371,15 +369,34 @@
       
 
       
-        <p><strong>如果我们要导出在不同场合使用的ipa包,那么应该如何正确的导出呢?</strong>  <a id="more"></a></p>
-<h2 id="第一-进行Display-Name-Bundle-Identifier-Version-Build和证书配置"><a href="#第一-进行Display-Name-Bundle-Identifier-Version-Build和证书配置" class="headerlink" title="第一,进行Display Name,Bundle Identifier,Version,Build和证书配置"></a>第一,进行Display Name,Bundle Identifier,Version,Build和证书配置</h2><p><img src="http://oodrfzkav.bkt.clouddn.com/ipa/png/%E8%AF%81%E4%B9%A6%E9%85%8D%E7%BD%AE.png" alt="image"></p>
-<h2 id="第二-Archieve-存档"><a href="#第二-Archieve-存档" class="headerlink" title="第二,Archieve(存档)"></a>第二,Archieve(存档)</h2><p><strong>在该过程中,如果有错误或者警告:请解决它,然后再次进行Archive</strong>  </p>
-<p><img src="http://oodrfzkav.bkt.clouddn.com/ipa/png/archive.png" alt="image">  </p>
-<h2 id="第三-选择export-导出"><a href="#第三-选择export-导出" class="headerlink" title="第三,选择export(导出)"></a>第三,选择export(导出)</h2><p><img src="http://oodrfzkav.bkt.clouddn.com/ipa/pngexport.png" alt="image">  </p>
-<h2 id="第四-选择需要导出的ipa包"><a href="#第四-选择需要导出的ipa包" class="headerlink" title="第四,选择需要导出的ipa包"></a>第四,选择需要导出的ipa包</h2><p><img src="http://oodrfzkav.bkt.clouddn.com/ipa/png/%E9%80%89%E6%8B%A9%E5%AF%BC%E5%87%BA%E7%9A%84%E5%8C%85.png" alt="image"> </p>
-<h2 id="第五-选择开发者账号并生成需要证书"><a href="#第五-选择开发者账号并生成需要证书" class="headerlink" title="第五,选择开发者账号并生成需要证书"></a>第五,选择开发者账号并生成需要证书</h2><p><img src="http://oodrfzkav.bkt.clouddn.com/ipa/pngteam.png" alt="image"></p>
-<h2 id="第六-选择保存ipa包的位置"><a href="#第六-选择保存ipa包的位置" class="headerlink" title="第六,选择保存ipa包的位置"></a>第六,选择保存ipa包的位置</h2><p><img src="http://oodrfzkav.bkt.clouddn.com/ipa/png/%E4%BF%9D%E5%AD%98%E4%BD%8D%E7%BD%AE.png" alt="image"> </p>
-<h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h2><p><strong>到此,就已经是导出ipa包的全部流程了,请自行选择需要导出的ipa包.</strong></p>
+        <h3 id="一-简单描述"><a href="#一-简单描述" class="headerlink" title="一 简单描述"></a>一 简单描述</h3><blockquote>
+<p><strong>敲代码的时候,我们会经常用到重复类属性或者方法,如UITaleView中必须实现的2个代理方法,而每次都进行敲的话,浪费很多不必要的时间;<br>如果我们能把它们封装成一个代码块,在需要的时候,直接拖进来使用,能省掉不少时间;<br>Xcode开发工具是强大的,他不紧提供了一些常用的代码块(有时间可以自己看看Xcode自带的代码块),还允许我们自定义代码块.</strong>  </p>
+</blockquote>
+<a id="more"></a>
+<h3 id="二-代码块在Xcode工程的位置"><a href="#二-代码块在Xcode工程的位置" class="headerlink" title="二 代码块在Xcode工程的位置"></a>二 代码块在Xcode工程的位置</h3><p><img src="http://oodrfzkav.bkt.clouddn.com/daimakuai/png/%E4%BB%A3%E7%A0%81%E5%9D%97%E4%BD%8D%E7%BD%AE.png" alt="image"></p>
+<h3 id="三-创建属于自己的代码块和使用"><a href="#三-创建属于自己的代码块和使用" class="headerlink" title="三 创建属于自己的代码块和使用"></a>三 创建属于自己的代码块和使用</h3><h4 id="选中创建好的代码块-如下就是一个创建属性常用方法-点击鼠标左键-把它拖进上面图中代码块所在的位置"><a href="#选中创建好的代码块-如下就是一个创建属性常用方法-点击鼠标左键-把它拖进上面图中代码块所在的位置" class="headerlink" title="选中创建好的代码块(如下就是一个创建属性常用方法),点击鼠标左键,把它拖进上面图中代码块所在的位置;"></a>选中创建好的代码块(如下就是一个创建属性常用方法),点击鼠标左键,把它拖进上面图中代码块所在的位置;</h4><blockquote>
+<p><code>@property (nonatomic, strong) &lt;#type#&gt; * &lt;#name#&gt;;</code> </p>
+</blockquote>
+<h4 id="这时候会代码块的描述的信息-当然你可以在后续中对它再次进行修改"><a href="#这时候会代码块的描述的信息-当然你可以在后续中对它再次进行修改" class="headerlink" title="这时候会代码块的描述的信息,当然你可以在后续中对它再次进行修改:"></a>这时候会代码块的描述的信息,当然你可以在后续中对它再次进行修改:</h4><p><img src="http://oodrfzkav.bkt.clouddn.com/daimakuai/png/%E4%BB%A3%E7%A0%81%E5%9D%97%E6%8F%8F%E8%BF%B0.png" alt="image">  </p>
+<h5 id="图片中可以编辑的信息"><a href="#图片中可以编辑的信息" class="headerlink" title="图片中可以编辑的信息:"></a>图片中可以编辑的信息:</h5><blockquote>
+<ul>
+<li>Title:<br>代码块的标题,方便查找;  </li>
+<li>Summary:<br>代码块功能的描述,比如说它是快速创建一个属性的代码块;  </li>
+<li>Platform:<br>可以使用代码块的平台,All,iOS,macOS,tvOS,watchOS四个;  </li>
+<li>Completion Shortcut:<br>使用代码块的快捷方式,比如你输入的是@p,那么当你输入@p的时候,它会主动帮你补全这一段代码块;  </li>
+<li>Completion Scopes:<br>代码块可以在哪些文件中使用;  </li>
+<li>最后的是代码块的预览效果.  </li>
+</ul>
+</blockquote>
+<h4 id="代码块的使用"><a href="#代码块的使用" class="headerlink" title="代码块的使用"></a>代码块的使用</h4><p>1,可以直接选中代码块,然后把它拖到需要使用的地方;<br>2,利用上面:Completion Shortcut进行使用;  </p>
+<p><img src="http://oodrfzkav.bkt.clouddn.com/daimakuai/png/%E4%BB%A3%E7%A0%81%E5%9D%97%E4%BD%BF%E7%94%A8.png" alt="image"></p>
+<h4 id="代码块的删除"><a href="#代码块的删除" class="headerlink" title="代码块的删除"></a>代码块的删除</h4><p>直接选中想删除的代码块,按键盘上的delete键进行删除;  </p>
+<h3 id="四-代码块的在不同电脑的复用"><a href="#四-代码块的在不同电脑的复用" class="headerlink" title="四 代码块的在不同电脑的复用"></a>四 代码块的在不同电脑的复用</h3><p>代码块保存的路径:</p>
+<blockquote>
+<p>~/Library/Developer/Xcode/UserData/CodeSnippets  </p>
+</blockquote>
+<p>你可以进行备份,或者复制到不同的电脑中使用.  </p>
+<h3 id="补充"><a href="#补充" class="headerlink" title="补充"></a>补充</h3><p>在上面中使用&lt;#type#&gt;修饰在工程中使用的效果如下:<br><img src="http://oodrfzkav.bkt.clouddn.com/daimakuai/png/%E4%BD%BF%E7%94%A8%E6%95%88%E6%9E%9C.png" alt="image"></p>
 
       
     </div>
@@ -411,9 +428,9 @@
           
             <a href="/tags/xcode/" rel="tag"># xcode</a>
           
-            <a href="/tags/iOS开发/" rel="tag"># iOS开发</a>
+            <a href="/tags/iOS技巧/" rel="tag"># iOS技巧</a>
           
-            <a href="/tags/ipa/" rel="tag"># ipa</a>
+            <a href="/tags/代码块/" rel="tag"># 代码块</a>
           
         </div>
       
@@ -426,18 +443,14 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/05/08/xcode中代码块使用/" rel="next" title="Xcode中自定义代码块的使用">
-                <i class="fa fa-chevron-left"></i> Xcode中自定义代码块的使用
-              </a>
-            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/05/02/WKWebView调起支付宝支付/" rel="prev" title="WKWebView调起支付宝支付">
-                WKWebView调起支付宝支付 <i class="fa fa-chevron-right"></i>
+              <a href="/2017/05/04/正确导出上架ipa包/" rel="prev" title="从xcode工程中导出各种ipa包">
+                从xcode工程中导出各种ipa包 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -569,7 +582,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#第一-进行Display-Name-Bundle-Identifier-Version-Build和证书配置"><span class="nav-number">1.</span> <span class="nav-text">第一,进行Display Name,Bundle Identifier,Version,Build和证书配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第二-Archieve-存档"><span class="nav-number">2.</span> <span class="nav-text">第二,Archieve(存档)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第三-选择export-导出"><span class="nav-number">3.</span> <span class="nav-text">第三,选择export(导出)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第四-选择需要导出的ipa包"><span class="nav-number">4.</span> <span class="nav-text">第四,选择需要导出的ipa包</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第五-选择开发者账号并生成需要证书"><span class="nav-number">5.</span> <span class="nav-text">第五,选择开发者账号并生成需要证书</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第六-选择保存ipa包的位置"><span class="nav-number">6.</span> <span class="nav-text">第六,选择保存ipa包的位置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#小结"><span class="nav-number">7.</span> <span class="nav-text">小结</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#一-简单描述"><span class="nav-number">1.</span> <span class="nav-text">一 简单描述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二-代码块在Xcode工程的位置"><span class="nav-number">2.</span> <span class="nav-text">二 代码块在Xcode工程的位置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#三-创建属于自己的代码块和使用"><span class="nav-number">3.</span> <span class="nav-text">三 创建属于自己的代码块和使用</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#选中创建好的代码块-如下就是一个创建属性常用方法-点击鼠标左键-把它拖进上面图中代码块所在的位置"><span class="nav-number">3.1.</span> <span class="nav-text">选中创建好的代码块(如下就是一个创建属性常用方法),点击鼠标左键,把它拖进上面图中代码块所在的位置;</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#这时候会代码块的描述的信息-当然你可以在后续中对它再次进行修改"><span class="nav-number">3.2.</span> <span class="nav-text">这时候会代码块的描述的信息,当然你可以在后续中对它再次进行修改:</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#图片中可以编辑的信息"><span class="nav-number">3.2.1.</span> <span class="nav-text">图片中可以编辑的信息:</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#代码块的使用"><span class="nav-number">3.3.</span> <span class="nav-text">代码块的使用</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#代码块的删除"><span class="nav-number">3.4.</span> <span class="nav-text">代码块的删除</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#四-代码块的在不同电脑的复用"><span class="nav-number">4.</span> <span class="nav-text">四 代码块的在不同电脑的复用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#补充"><span class="nav-number">5.</span> <span class="nav-text">补充</span></a></li></ol></div>
             
 
           </div>
