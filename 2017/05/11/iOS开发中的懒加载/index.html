@@ -71,7 +71,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="图片存储," />
+  <meta name="keywords" content="iOS开发,懒加载," />
 
 
 
@@ -87,24 +87,17 @@
 
 
 
-<meta name="description" content="简单描述在书写博客的时候,我用到的是MacDown软件,MacDown的语法是MarkDown;而有时候为了博客能更加直观明了,会常常插入图片,这时候用到图片就需要存储在云服务器上;当然如果,你书写的博客MacDown文件要是保存在本地自己使用的话,也可以直接用本地的图片;但这次我们说的是如何把需要的图片放到云存储上供我们使用;">
-<meta name="keywords" content="图片存储">
+<meta name="description" content="什么是懒加载懒加载,指的是在使用到的时候才进行加载资源,而如果没有使用,则不进行加载;懒加载用到的是属性中的getter方法.">
+<meta name="keywords" content="iOS开发,懒加载">
 <meta property="og:type" content="article">
-<meta property="og:title" content="七牛云图片的存储使用">
-<meta property="og:url" content="http://yoursite.com/2017/04/19/七牛云图片存储链接/index.html">
+<meta property="og:title" content="iOS开发中的懒加载">
+<meta property="og:url" content="http://yoursite.com/2017/05/11/iOS开发中的懒加载/index.html">
 <meta property="og:site_name" content="烟飞烟灭">
-<meta property="og:description" content="简单描述在书写博客的时候,我用到的是MacDown软件,MacDown的语法是MarkDown;而有时候为了博客能更加直观明了,会常常插入图片,这时候用到图片就需要存储在云服务器上;当然如果,你书写的博客MacDown文件要是保存在本地自己使用的话,也可以直接用本地的图片;但这次我们说的是如何把需要的图片放到云存储上供我们使用;">
-<meta property="og:image" content="http://oodrfzkav.bkt.clouddn.com/qiniuyun/png%E9%80%89%E6%8B%A9%E5%AF%B9%E8%B1%A1%E5%AD%98%E5%82%A8.png">
-<meta property="og:image" content="http://oodrfzkav.bkt.clouddn.com/qiniuyun/png%E6%96%B0%E5%BB%BA%E5%AD%98%E5%82%A8%E7%A9%BA%E9%97%B4.png">
-<meta property="og:image" content="http://oodrfzkav.bkt.clouddn.com/qiniuyun/png%E9%85%8D%E7%BD%AE%E5%AD%98%E5%82%A8%E7%A9%BA%E9%97%B4%E4%BF%A1%E6%81%AF.png">
-<meta property="og:image" content="http://oodrfzkav.bkt.clouddn.com/qiniuyun/png%E4%B8%8A%E4%BC%A0%E6%96%87%E4%BB%B6.png">
-<meta property="og:image" content="http://oodrfzkav.bkt.clouddn.com/qiniuyun/png%E4%B8%8A%E4%BC%A0%E5%9B%BE%E7%89%87.png">
-<meta property="og:image" content="http://oodrfzkav.bkt.clouddn.com/qiniuyun/png%E5%A4%8D%E5%88%B6%E9%93%BE%E6%8E%A5%E4%BD%BF%E7%94%A8.png">
-<meta property="og:updated_time" content="2017-04-19T07:05:41.000Z">
+<meta property="og:description" content="什么是懒加载懒加载,指的是在使用到的时候才进行加载资源,而如果没有使用,则不进行加载;懒加载用到的是属性中的getter方法.">
+<meta property="og:updated_time" content="2017-05-11T10:17:56.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="七牛云图片的存储使用">
-<meta name="twitter:description" content="简单描述在书写博客的时候,我用到的是MacDown软件,MacDown的语法是MarkDown;而有时候为了博客能更加直观明了,会常常插入图片,这时候用到图片就需要存储在云服务器上;当然如果,你书写的博客MacDown文件要是保存在本地自己使用的话,也可以直接用本地的图片;但这次我们说的是如何把需要的图片放到云存储上供我们使用;">
-<meta name="twitter:image" content="http://oodrfzkav.bkt.clouddn.com/qiniuyun/png%E9%80%89%E6%8B%A9%E5%AF%B9%E8%B1%A1%E5%AD%98%E5%82%A8.png">
+<meta name="twitter:title" content="iOS开发中的懒加载">
+<meta name="twitter:description" content="什么是懒加载懒加载,指的是在使用到的时候才进行加载资源,而如果没有使用,则不进行加载;懒加载用到的是属性中的getter方法.">
 
 
 
@@ -132,13 +125,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/04/19/七牛云图片存储链接/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/05/11/iOS开发中的懒加载/"/>
 
 
 
 
 
-  <title> 七牛云图片的存储使用 | 烟飞烟灭 </title>
+  <title> iOS开发中的懒加载 | 烟飞烟灭 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -277,7 +270,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/04/19/七牛云图片存储链接/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/05/11/iOS开发中的懒加载/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="自由">
@@ -298,7 +291,7 @@
             
             
               
-                七牛云图片的存储使用
+                iOS开发中的懒加载
               
             
           </h1>
@@ -313,8 +306,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-19T09:48:37+08:00">
-                2017-04-19 09:48
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-05-11T12:21:51+08:00">
+                2017-05-11 12:21
               </time>
             
 
@@ -336,8 +329,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/markdown/" itemprop="url" rel="index">
-                    <span itemprop="name">markdown</span>
+                  <a href="/categories/iOS开发/" itemprop="url" rel="index">
+                    <span itemprop="name">iOS开发</span>
                   </a>
                 </span>
 
@@ -371,16 +364,30 @@
       
 
       
-        <h2 id="简单描述"><a href="#简单描述" class="headerlink" title="简单描述"></a>简单描述</h2><p>在书写博客的时候,我用到的是<a href="http://www.pc6.com/mac/137960.html" target="_blank" rel="external">MacDown软件</a>,MacDown的语法是<a href="http://www.appinn.com/markdown/" target="_blank" rel="external">MarkDown</a>;而有时候为了博客能更加直观明了,会常常插入图片,这时候用到图片就需要存储在云服务器上;<br>当然如果,你书写的博客MacDown文件要是保存在本地自己使用的话,也可以直接用本地的图片;但这次我们说的是如何把需要的图片放到云存储上供我们使用;<a id="more"></a></p>
-<h2 id="选择云存储"><a href="#选择云存储" class="headerlink" title="选择云存储"></a>选择云存储</h2><p>刚开始时候,接触的是CloudApp这个国外云存储,后来发现很不好用,特别是上传图片的时候上传的很慢,后来就舍弃了.<br>在查找新的云存储的时候,看到同事用到的七牛云存储很不错,所以也就用上了,发现的确很好用,<em>最主要还是免费的功能已经能满足我的需求;</em><br><strong>下面就简单的介绍下七牛云的简单用法:</strong></p>
-<h2 id="七牛云存储"><a href="#七牛云存储" class="headerlink" title="七牛云存储"></a>七牛云存储</h2><p>使用之前先去<strong><a href="https://www.qiniu.com/?utm_campaign=baiduSEM&amp;utm_source=baiduSEM&amp;utm_medium=baiduSEM&amp;utm_content=baiduSEM" target="_blank" rel="external">注册七牛云</a></strong>;</p>
-<h3 id="使用七牛云"><a href="#使用七牛云" class="headerlink" title="使用七牛云"></a>使用七牛云</h3><h4 id="1-登录成功后-选择对象存储"><a href="#1-登录成功后-选择对象存储" class="headerlink" title="1,登录成功后,选择对象存储,"></a>1,登录成功后,选择对象存储,</h4><p><img src="http://oodrfzkav.bkt.clouddn.com/qiniuyun/png%E9%80%89%E6%8B%A9%E5%AF%B9%E8%B1%A1%E5%AD%98%E5%82%A8.png" alt="image">  </p>
-<h4 id="2-如果还没有存储空间的-先新建存储空间"><a href="#2-如果还没有存储空间的-先新建存储空间" class="headerlink" title="2,如果还没有存储空间的,先新建存储空间,"></a>2,如果还没有存储空间的,先新建存储空间,</h4><p><img src="http://oodrfzkav.bkt.clouddn.com/qiniuyun/png%E6%96%B0%E5%BB%BA%E5%AD%98%E5%82%A8%E7%A9%BA%E9%97%B4.png" alt="image">  </p>
-<h4 id="3-填写存储空间的一些基本信息"><a href="#3-填写存储空间的一些基本信息" class="headerlink" title="3,填写存储空间的一些基本信息,"></a>3,填写存储空间的一些基本信息,</h4><p>访问限制中:如果选择的是私有空间,那么上传图片之后链接是不外放的,当然,你也可以建好之后在修改为公共空间.<br><img src="http://oodrfzkav.bkt.clouddn.com/qiniuyun/png%E9%85%8D%E7%BD%AE%E5%AD%98%E5%82%A8%E7%A9%BA%E9%97%B4%E4%BF%A1%E6%81%AF.png" alt="image">  </p>
-<h4 id="4-创建完成之后-在内容管理中点击上传文件"><a href="#4-创建完成之后-在内容管理中点击上传文件" class="headerlink" title="4,创建完成之后,在内容管理中点击上传文件,"></a>4,创建完成之后,在内容管理中点击上传文件,</h4><p><img src="http://oodrfzkav.bkt.clouddn.com/qiniuyun/png%E4%B8%8A%E4%BC%A0%E6%96%87%E4%BB%B6.png" alt="image"> </p>
-<h4 id="5-上传图片-有上角的设置路径前缀能帮你对图片进行更好的管理"><a href="#5-上传图片-有上角的设置路径前缀能帮你对图片进行更好的管理" class="headerlink" title="5,上传图片,有上角的设置路径前缀能帮你对图片进行更好的管理,"></a>5,上传图片,有上角的设置路径前缀能帮你对图片进行更好的管理,</h4><p><img src="http://oodrfzkav.bkt.clouddn.com/qiniuyun/png%E4%B8%8A%E4%BC%A0%E5%9B%BE%E7%89%87.png" alt="image"></p>
-<h4 id="6-复制外链-使用"><a href="#6-复制外链-使用" class="headerlink" title="6,复制外链,使用"></a>6,复制外链,使用</h4><p><img src="http://oodrfzkav.bkt.clouddn.com/qiniuyun/png%E5%A4%8D%E5%88%B6%E9%93%BE%E6%8E%A5%E4%BD%BF%E7%94%A8.png" alt="image"></p>
-<h3 id="小结-从第1步到最后第6步-你已经有一个链接可以在任何有网络的地方加载你的图片了"><a href="#小结-从第1步到最后第6步-你已经有一个链接可以在任何有网络的地方加载你的图片了" class="headerlink" title="小结:从第1步到最后第6步,你已经有一个链接可以在任何有网络的地方加载你的图片了;"></a>小结:从第1步到最后第6步,你已经有一个链接可以在任何有网络的地方加载你的图片了;</h3>
+        <h3 id="什么是懒加载"><a href="#什么是懒加载" class="headerlink" title="什么是懒加载"></a>什么是懒加载</h3><p><strong>懒加载,指的是在使用到的时候才进行加载资源,而如果没有使用,则不进行加载;懒加载用到的是属性中的getter方法.</strong><br><a id="more"></a></p>
+<h3 id="懒加载好处"><a href="#懒加载好处" class="headerlink" title="懒加载好处"></a>懒加载好处</h3><blockquote>
+<p><strong>不需要把所有的代码写到viewDidLoad中,<br>当需要的时候才进行加载,节省资源,</strong>  </p>
+</blockquote>
+<h3 id="简单使用"><a href="#简单使用" class="headerlink" title="简单使用"></a>简单使用</h3><blockquote>
+<p><code>@property (nonatomic, strong) UIButton * myButton;</code>  </p>
+<pre><code>-(UIButton *)myButton{ 
+  if (_myButton == nil) {
+    _myButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    _myButton.frame = CGRectMake(0, 0, 200, 100);
+    _myButton.center = self.view.center;
+   [_myButton setTitle:@&quot;懒加载button&quot; forState:UIControlStateNormal];
+}
+return _myButton;
+}
+
+
+-(void)viewDidLoad {
+   [super viewDidLoad];
+   [self.view addSubview:_myButton];
+}  
+</code></pre></blockquote>
+<h3 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h3><p><strong>在属性的getter方法中:<br>1,要先判断当前属性是否为nil,nil的时候再进行创建;<br>2,要写成<_+属性名称>而不是<self.+属性名称>,因为self.的形式就是调用属性的getter方法,会造成循环引用.</self.+属性名称></_+属性名称></strong></p>
+
       
     </div>
 
@@ -409,7 +416,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/图片存储/" rel="tag"># 图片存储</a>
+            <a href="/tags/iOS开发/" rel="tag"># iOS开发</a>
+          
+            <a href="/tags/懒加载/" rel="tag"># 懒加载</a>
           
         </div>
       
@@ -422,18 +431,14 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/04/20/内购(IPA)/" rel="next" title="内购(IAP)">
-                <i class="fa fa-chevron-left"></i> 内购(IAP)
-              </a>
-            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/04/13/静态库framework制作/" rel="prev" title="About framework(静态库)">
-                About framework(静态库) <i class="fa fa-chevron-right"></i>
+              <a href="/2017/05/08/xcode中代码块使用/" rel="prev" title="Xcode中自定义代码块的使用">
+                Xcode中自定义代码块的使用 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -565,7 +570,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#简单描述"><span class="nav-number">1.</span> <span class="nav-text">简单描述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#选择云存储"><span class="nav-number">2.</span> <span class="nav-text">选择云存储</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#七牛云存储"><span class="nav-number">3.</span> <span class="nav-text">七牛云存储</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#使用七牛云"><span class="nav-number">3.1.</span> <span class="nav-text">使用七牛云</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-登录成功后-选择对象存储"><span class="nav-number">3.1.1.</span> <span class="nav-text">1,登录成功后,选择对象存储,</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-如果还没有存储空间的-先新建存储空间"><span class="nav-number">3.1.2.</span> <span class="nav-text">2,如果还没有存储空间的,先新建存储空间,</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-填写存储空间的一些基本信息"><span class="nav-number">3.1.3.</span> <span class="nav-text">3,填写存储空间的一些基本信息,</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-创建完成之后-在内容管理中点击上传文件"><span class="nav-number">3.1.4.</span> <span class="nav-text">4,创建完成之后,在内容管理中点击上传文件,</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-上传图片-有上角的设置路径前缀能帮你对图片进行更好的管理"><span class="nav-number">3.1.5.</span> <span class="nav-text">5,上传图片,有上角的设置路径前缀能帮你对图片进行更好的管理,</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#6-复制外链-使用"><span class="nav-number">3.1.6.</span> <span class="nav-text">6,复制外链,使用</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#小结-从第1步到最后第6步-你已经有一个链接可以在任何有网络的地方加载你的图片了"><span class="nav-number">3.2.</span> <span class="nav-text">小结:从第1步到最后第6步,你已经有一个链接可以在任何有网络的地方加载你的图片了;</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#什么是懒加载"><span class="nav-number">1.</span> <span class="nav-text">什么是懒加载</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#懒加载好处"><span class="nav-number">2.</span> <span class="nav-text">懒加载好处</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#简单使用"><span class="nav-number">3.</span> <span class="nav-text">简单使用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#注意"><span class="nav-number">4.</span> <span class="nav-text">注意</span></a></li></ol></div>
             
 
           </div>
