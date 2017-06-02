@@ -374,7 +374,7 @@
 <blockquote>
 <p>通知传值就适用于类与类之间的数据传递. </p>
 </blockquote>
-<h3 id="代码示例"><a href="#代码示例" class="headerlink" title="代码示例"></a>代码示例</h3><p><code>notiName</code>表示的是自定义的字符串,</p>
+<p>###代码示例<br><code>notiName</code>表示的是自定义的字符串,</p>
 <blockquote>
 <p>注册通知<br><code>[[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(notiAction:) name:notiName object:nil];</code><br>发送通知<br><code>NSDictionary * dic = @{@&quot;key&quot;:@&quot;value&quot;};[[NSNotificationCenter defaultCenter] postNotificationName:notiName object:dic];</code><br>移除通知在-(void)dealloc{};中<br><code>[[NSNotificationCenter defaultCenter] removeObserver:self name:notiName object:nil];</code></p>
 </blockquote>

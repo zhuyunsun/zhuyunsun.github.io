@@ -87,17 +87,17 @@
 
 
 
-<meta name="description" content="###传值一般指的是数据传递,有的是在某个类里面,有的是在类与类之间;   ###通知传值  通知传值就适用于类与类之间的数据传递.   代码示例notiName表示的是自定义的字符串,  注册通知[[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(notiAction:) name:notiName o">
+<meta name="description" content="###传值一般指的是数据传递,有的是在某个类里面,有的是在类与类之间;   ###通知传值  通知传值就适用于类与类之间的数据传递.   ###代码示例notiName表示的是自定义的字符串,  注册通知[[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(notiAction:) name:notiNam">
 <meta name="keywords" content="iOS开发,传值方式">
 <meta property="og:type" content="article">
 <meta property="og:title" content="通知传值">
 <meta property="og:url" content="http://yoursite.com/2017/06/02/通知传值/index.html">
 <meta property="og:site_name" content="烟飞烟灭">
-<meta property="og:description" content="###传值一般指的是数据传递,有的是在某个类里面,有的是在类与类之间;   ###通知传值  通知传值就适用于类与类之间的数据传递.   代码示例notiName表示的是自定义的字符串,  注册通知[[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(notiAction:) name:notiName o">
-<meta property="og:updated_time" content="2017-06-02T10:10:37.000Z">
+<meta property="og:description" content="###传值一般指的是数据传递,有的是在某个类里面,有的是在类与类之间;   ###通知传值  通知传值就适用于类与类之间的数据传递.   ###代码示例notiName表示的是自定义的字符串,  注册通知[[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(notiAction:) name:notiNam">
+<meta property="og:updated_time" content="2017-06-02T10:35:58.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="通知传值">
-<meta name="twitter:description" content="###传值一般指的是数据传递,有的是在某个类里面,有的是在类与类之间;   ###通知传值  通知传值就适用于类与类之间的数据传递.   代码示例notiName表示的是自定义的字符串,  注册通知[[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(notiAction:) name:notiName o">
+<meta name="twitter:description" content="###传值一般指的是数据传递,有的是在某个类里面,有的是在类与类之间;   ###通知传值  通知传值就适用于类与类之间的数据传递.   ###代码示例notiName表示的是自定义的字符串,  注册通知[[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(notiAction:) name:notiNam">
 
 
 
@@ -369,7 +369,7 @@
 <blockquote>
 <p>通知传值就适用于类与类之间的数据传递. </p>
 </blockquote>
-<h3 id="代码示例"><a href="#代码示例" class="headerlink" title="代码示例"></a>代码示例</h3><p><code>notiName</code>表示的是自定义的字符串,</p>
+<p>###代码示例<br><code>notiName</code>表示的是自定义的字符串,</p>
 <blockquote>
 <p>注册通知<br><code>[[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(notiAction:) name:notiName object:nil];</code><br>发送通知<br><code>NSDictionary * dic = @{@&quot;key&quot;:@&quot;value&quot;};[[NSNotificationCenter defaultCenter] postNotificationName:notiName object:dic];</code><br>移除通知在-(void)dealloc{};中<br><code>[[NSNotificationCenter defaultCenter] removeObserver:self name:notiName object:nil];</code></p>
 </blockquote>
@@ -475,17 +475,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <section class="site-overview sidebar-panel">
+      <section class="site-overview sidebar-panel sidebar-panel-active">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.png"
@@ -547,22 +538,6 @@
 
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#代码示例"><span class="nav-number">1.</span> <span class="nav-text">代码示例</span></a></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       
