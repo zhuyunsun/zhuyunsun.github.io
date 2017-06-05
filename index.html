@@ -375,7 +375,7 @@
 </blockquote>
 <h3 id="代码示例"><a href="#代码示例" class="headerlink" title="代码示例"></a>代码示例</h3><p><code>notiName</code>表示的是自定义的字符串,</p>
 <blockquote>
-<p>注册通知<br><code>[[NSNotificationCenterdefaultCenter]addObserver:self selector:@selector(notiAction:) name:notiName object:nil];</code><br>发送通知<br><code>NSDictionary * dic = @{@&quot;key&quot;:@&quot;value&quot;};[[NSNotificationCenter defaultCenter] postNotificationName:notiName object:dic];</code><br>移除通知<br>在-(void)dealloc{};中<br><code>[[NSNotificationCenter defaultCenter] removeObserver:self name:notiName object:nil];</code></p>
+<p><strong>注册通知</strong><br>[[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(notiAction:) name:notiName object:nil];<br><strong>发送通知</strong><br>NSDictionary <em> dic = @{@”key”:@”value”};[[NSNotificationCenter defaultCenter] postNotificationName:notiName object:dic];<br><em>*移除通知</em></em><br>在-(void)dealloc{};中<br>[[NSNotificationCenter defaultCenter] removeObserver:self name:notiName object:nil];</p>
 </blockquote>
 <p><strong>小结:使用通知的时候,一定不要忘记通知使用的三步曲.</strong></p>
 
