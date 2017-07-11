@@ -94,7 +94,7 @@
 <meta property="og:url" content="http://yoursite.com/2017/07/11/Block/index.html">
 <meta property="og:site_name" content="烟飞烟灭">
 <meta property="og:description" content="序言block:简单来说就是一段代码块,block里面存在可执行代码,可以在函数内进行使用;也可以作为函数中形参进行使用;最常用的应该是替换delegate来进行回调或者传值.    注意:block只是声明和保留了一段代码块,必须要调用才会执行里面的代码.  基本结构block结构:返回值类型(^Block名字)(参数列表);">
-<meta property="og:updated_time" content="2017-07-11T08:45:38.000Z">
+<meta property="og:updated_time" content="2017-07-11T09:11:42.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Block的简单使用">
 <meta name="twitter:description" content="序言block:简单来说就是一段代码块,block里面存在可执行代码,可以在函数内进行使用;也可以作为函数中形参进行使用;最常用的应该是替换delegate来进行回调或者传值.    注意:block只是声明和保留了一段代码块,必须要调用才会执行里面的代码.  基本结构block结构:返回值类型(^Block名字)(参数列表);">
@@ -369,10 +369,13 @@
 <p><strong>注意:block只是声明和保留了一段代码块,必须要调用才会执行里面的代码.</strong></p>
 </blockquote>
 <h3 id="基本结构"><a href="#基本结构" class="headerlink" title="基本结构"></a>基本结构</h3><p><strong>block结构:返回值类型(^Block名字)(参数列表);</strong> <a id="more"></a>  </p>
-<blockquote>
-<p>(void)(^myBlock)(NSString <em>) = ^(NSString </em> n1){<br>NSLog(@”block”);<br>}<br>(void)表示的是返回值,^:block的标示符,myBlock:这个block块的名称,(NSString * )表示形参.<br>调用:myBlock(@”124”);  </p>
-</blockquote>
-<h3 id="基本用法"><a href="#基本用法" class="headerlink" title="基本用法"></a>基本用法</h3><pre><code>//无参数无返回值
+<pre><code>//
+(void)(^myBlock)(NSString *) = ^( NSString * n1){  
+ NSLog(@&quot;block&quot;);  
+}  
+(void)表示的是返回值,^:block的标示符,myBlock:这个block块的名称,(NSString * )表示形参.  
+调用:myBlock(@&quot;124&quot;);  
+</code></pre><h3 id="基本用法"><a href="#基本用法" class="headerlink" title="基本用法"></a>基本用法</h3><pre><code>//无参数无返回值
 void(^myBlock2)(void) = ^{
     SPLog(@&quot;come on 2&quot;);
 };
