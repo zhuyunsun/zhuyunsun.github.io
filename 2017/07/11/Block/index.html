@@ -1,0 +1,837 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="block,闭包," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="序言block:简单来说就是一段代码块,block里面存在可执行代码,可以在函数内进行使用;也可以作为函数中形参进行使用;最常用的应该是替换delegate来进行回调或者传值.    注意:block只是声明和保留了一段代码块,必须要调用才会执行里面的代码.  基本结构block结构:返回值类型(^Block名字)(参数列表);">
+<meta name="keywords" content="block,闭包">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Block的简单使用">
+<meta property="og:url" content="http://yoursite.com/2017/07/11/Block/index.html">
+<meta property="og:site_name" content="烟飞烟灭">
+<meta property="og:description" content="序言block:简单来说就是一段代码块,block里面存在可执行代码,可以在函数内进行使用;也可以作为函数中形参进行使用;最常用的应该是替换delegate来进行回调或者传值.    注意:block只是声明和保留了一段代码块,必须要调用才会执行里面的代码.  基本结构block结构:返回值类型(^Block名字)(参数列表);">
+<meta property="og:updated_time" content="2017-07-11T08:45:38.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Block的简单使用">
+<meta name="twitter:description" content="序言block:简单来说就是一段代码块,block里面存在可执行代码,可以在函数内进行使用;也可以作为函数中形参进行使用;最常用的应该是替换delegate来进行回调或者传值.    注意:block只是声明和保留了一段代码块,必须要调用才会执行里面的代码.  基本结构block结构:返回值类型(^Block名字)(参数列表);">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/07/11/Block/"/>
+
+
+
+
+
+  <title> Block的简单使用 | 烟飞烟灭 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">烟飞烟灭</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">好的文章,就是原来不懂得;看了之后有一种原来是这样的感觉!</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-guestbook">
+          <a href="/guestbook" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            留言
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/11/Block/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="自由">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="烟飞烟灭">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                Block的简单使用
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-11T11:03:25+08:00">
+                2017-07-11 11:03
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/iOS开发/" itemprop="url" rel="index">
+                    <span itemprop="name">iOS开发</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h3 id="序言"><a href="#序言" class="headerlink" title="序言"></a>序言</h3><p>block:简单来说就是一段代码块,block里面存在可执行代码,可以在函数内进行使用;也可以作为函数中形参进行使用;最常用的应该是替换delegate来进行回调或者传值.  </p>
+<blockquote>
+<p><strong>注意:block只是声明和保留了一段代码块,必须要调用才会执行里面的代码.</strong></p>
+</blockquote>
+<h3 id="基本结构"><a href="#基本结构" class="headerlink" title="基本结构"></a>基本结构</h3><p><strong>block结构:返回值类型(^Block名字)(参数列表);</strong> <a id="more"></a>  </p>
+<blockquote>
+<p>(void)(^myBlock)(NSString <em>) = ^(NSString </em> n1){<br>NSLog(@”block”);<br>}<br>(void)表示的是返回值,^:block的标示符,myBlock:这个block块的名称,(NSString * )表示形参.<br>调用:myBlock(@”124”);  </p>
+</blockquote>
+<h3 id="基本用法"><a href="#基本用法" class="headerlink" title="基本用法"></a>基本用法</h3><pre><code>//无参数无返回值
+void(^myBlock2)(void) = ^{
+    SPLog(@&quot;come on 2&quot;);
+};
+myBlock2();
+//有参数无返回值
+void(^myBlock1)(NSString *,NSUInteger) = ^(NSString *n1,NSUInteger i1){
+    SPLog(@&quot;come on 1 - %@,%ld&quot;,n1,i1);
+};
+myBlock1(@&quot;2b_block&quot;,2);
+//有参数有返回值
+NSString *(^myBlock3)(NSString *) = ^(NSString *n1){
+    return [n1 stringByAppendingString:@&quot;-143&quot;];
+};
+NSString * bn1 = myBlock3(@&quot;341&quot;);
+SPLog(@&quot;%@&quot;,bn1);
+</code></pre><h3 id="修改局部变量"><a href="#修改局部变量" class="headerlink" title="修改局部变量"></a>修改局部变量</h3><p>block内是不能直接修改block外变量的值的.<br>如果需要修改,被修改的变量必须用__block来修饰.  </p>
+<pre><code> //修改局部变量
+__block NSUInteger i2 = 10;
+void(^myBlock4)(NSUInteger) = ^(NSUInteger i3){
+    i2 = i3 + 10;
+    SPLog(@&quot;block 内i2 = %ld&quot;,i2);
+};
+SPLog(@&quot;block 外i2 = %ld&quot;,i2);
+myBlock4(i2);
+</code></pre><h3 id="避免循环引用"><a href="#避免循环引用" class="headerlink" title="避免循环引用"></a>避免循环引用</h3><p>在类:Block1ViewController中存在2个变量.  </p>
+<pre><code>//  
+@property(nonatomic,copy)void(^b1)(void);  
+@property(nonatomic,strong)NSString * myName;  
+</code></pre><p>在类:ViewController中viewDidLoad调用:  </p>
+<pre><code>   //避免循环引用
+Block1ViewController * b1VC = [[Block1ViewController alloc]init];
+b1VC.myName = @&quot;b1-block&quot;;
+__weak typeof(b1VC) weakObjB = b1VC;
+b1VC.b1 = ^(){
+    NSString * myName = weakObjB.myName;
+    SPLog(@&quot;%@&quot;,myName);
+};
+b1VC.b1();
+</code></pre><p>b1VC需要<code>__weak typeof(b1VC) weakObjB = b1VC;</code>使用__weak进行修饰.  </p>
+<blockquote>
+<p>简单说明:<br>首先,b1是Block1ViewController拥有的一个属性,因此Block1ViewController对b1是强引用的;其次,b1对代码块中的属性也是强引用的;所以会导致他们之间相互强引用,从而导致循环引用.  </p>
+</blockquote>
+<h3 id="作为函数参数"><a href="#作为函数参数" class="headerlink" title="作为函数参数"></a>作为函数参数</h3><p>在类Block1ViewController.h中声明:<br> <code>-(void)common_from:(void (^)(id message))success;</code><br>在类Block1ViewController.m中实现:  </p>
+<pre><code>//
+-(void)common_from:(void (^)(id message))success{
+ success(@&quot;come from&quot;);
+}  
+</code></pre><p>在类:ViewController中viewDidLoad调用:  </p>
+<pre><code> //作为参数使用
+Block1ViewController * b2VC = [[Block1ViewController alloc]init];
+[b2VC common_from:^(id message) {
+    SPLog(@&quot; -- %@&quot;,message);
+}];
+</code></pre><p><strong>这一步其实已经实现了值在2个不同类之间传递,但是传递的值有局限性,只能在当前函数里面进行回调,好处是书写较方便.</strong></p>
+<h3 id="typedef结合使用"><a href="#typedef结合使用" class="headerlink" title="typedef结合使用"></a>typedef结合使用</h3><p>有时候,我们需要声明多个参数值的时候,需要重复编写,而结合typedef可以简化block使用;好处是可以在类的任何方法里面进行回调,但是书写较麻烦.  </p>
+<pre><code>//.h文件
+#import &lt;UIKit/UIKit.h&gt;
+typedef void(^nameColor)(void);
+@interface Block1ViewController : UIViewController
+@property(nonatomic,copy)nameColor name1;
+-(void)typedef_from:(nameColor )m1;
+@end  
+
+//.m文件  
+#import &quot;Block1ViewController.h&quot;
+@implementation Block1ViewController
+-(void)typedef_from:(nameColor )m1{
+   self.name1 = m1;
+}
+-(void)touchesBegan:(NSSet&lt;UITouch * &gt; * )touches withEvent:(UIEvent *)event{
+   self.name1();//可以在任何函数内进行调用.
+   [self dismissViewControllerAnimated:YES completion:nil];
+}
+</code></pre><p><strong>一样可以实现类之间的值的传递和delegate协议的处理.</strong></p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/block/" rel="tag"># block</a>
+          
+            <a href="/tags/闭包/" rel="tag"># 闭包</a>
+          
+        </div>
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/06/19/iOS审核之-内购产品感叹号 !/" rel="prev" title="iOS审核之-“内购买项目被退回,并需要开发人员操作”">
+                iOS审核之-“内购买项目被退回,并需要开发人员操作” <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="lv-container" data-id="city" data-uid="MTAyMC8yODI3Ny80ODQ5"></div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.png"
+               alt="自由" />
+          <p class="site-author-name" itemprop="name">自由</p>
+           
+              <p class="site-description motion-element" itemprop="description">离文明世界有多远?</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">21</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">10</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">33</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#序言"><span class="nav-number">1.</span> <span class="nav-text">序言</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#基本结构"><span class="nav-number">2.</span> <span class="nav-text">基本结构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#基本用法"><span class="nav-number">3.</span> <span class="nav-text">基本用法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#修改局部变量"><span class="nav-number">4.</span> <span class="nav-text">修改局部变量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#避免循环引用"><span class="nav-number">5.</span> <span class="nav-text">避免循环引用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#作为函数参数"><span class="nav-number">6.</span> <span class="nav-text">作为函数参数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#typedef结合使用"><span class="nav-number">7.</span> <span class="nav-text">typedef结合使用</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">自由</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+  
+  <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.0"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
+<!-- 背景动画 -->
+<script type="text/javascript" src="/js/src/particle.js"></script>
+<!-- 页面点击小红心 -->
+<script type="text/javascript" src="/js/src/love.js"></script>
