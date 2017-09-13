@@ -71,7 +71,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="“iOS,svn,Mac”" />
+  <meta name="keywords" content="iOS开发,协议,委托模式," />
 
 
 
@@ -87,17 +87,17 @@
 
 
 
-<meta name="description" content="title: iOS中协议的简单使用categories: iOStags:    iOS开发   协议   委托模式     什么是协议?简单的理解:两个类之间,一个类委托另外一个类去实现某些方法或者功能;">
-<meta name="keywords">
+<meta name="description" content="什么是协议?简单的理解:两个类之间,一个类委托另外一个类去实现某些方法或者功能;">
+<meta name="keywords" content="iOS开发,协议,委托模式">
 <meta property="og:type" content="article">
-<meta property="og:title" content="烟飞烟灭">
+<meta property="og:title" content="iOS中协议的简单使用">
 <meta property="og:url" content="http://yoursite.com/2017/09/13/iOS中的协议/index.html">
 <meta property="og:site_name" content="烟飞烟灭">
-<meta property="og:description" content="title: iOS中协议的简单使用categories: iOStags:    iOS开发   协议   委托模式     什么是协议?简单的理解:两个类之间,一个类委托另外一个类去实现某些方法或者功能;">
-<meta property="og:updated_time" content="2017-09-13T08:13:49.000Z">
+<meta property="og:description" content="什么是协议?简单的理解:两个类之间,一个类委托另外一个类去实现某些方法或者功能;">
+<meta property="og:updated_time" content="2017-09-13T08:23:07.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="烟飞烟灭">
-<meta name="twitter:description" content="title: iOS中协议的简单使用categories: iOStags:    iOS开发   协议   委托模式     什么是协议?简单的理解:两个类之间,一个类委托另外一个类去实现某些方法或者功能;">
+<meta name="twitter:title" content="iOS中协议的简单使用">
+<meta name="twitter:description" content="什么是协议?简单的理解:两个类之间,一个类委托另外一个类去实现某些方法或者功能;">
 
 
 
@@ -131,7 +131,7 @@
 
 
 
-  <title>  | 烟飞烟灭 </title>
+  <title> iOS中协议的简单使用 | 烟飞烟灭 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -291,7 +291,7 @@
             
             
               
-                
+                iOS中协议的简单使用
               
             
           </h1>
@@ -316,6 +316,28 @@
             
           </span>
 
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/iOS/" itemprop="url" rel="index">
+                    <span itemprop="name">iOS</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -342,15 +364,7 @@
       
 
       
-        <hr>
-<p>title: iOS中协议的简单使用<br>categories: iOS<br>tags:  </p>
-<ul>
-<li>iOS开发  </li>
-<li>协议  </li>
-<li>委托模式  </li>
-</ul>
-<hr>
-<h4 id="什么是协议"><a href="#什么是协议" class="headerlink" title="什么是协议?"></a>什么是协议?</h4><p>简单的理解:两个类之间,一个类委托另外一个类去实现某些方法或者功能;<a id="more"></a>  </p>
+        <h4 id="什么是协议"><a href="#什么是协议" class="headerlink" title="什么是协议?"></a>什么是协议?</h4><p>简单的理解:两个类之间,一个类委托另外一个类去实现某些方法或者功能;<a id="more"></a>  </p>
 <h4 id="实现1-DelegateViewController"><a href="#实现1-DelegateViewController" class="headerlink" title="实现1(DelegateViewController)"></a>实现1(DelegateViewController)</h4><p>协议的关键字是@protocol<br>DelegateViewController.h  </p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">#import &lt;UIKit/UIKit.h&gt;</div><div class="line">@protocol CoustomDelegate;//声明一个协议</div><div class="line">@interface DelegateViewController : UIViewController</div><div class="line">@property(nonatomic,weak)id&lt;CoustomDelegate&gt;delegate;//定义一个协议属性</div><div class="line">@end</div><div class="line">//协议方法</div><div class="line">@protocol CoustomDelegate &lt;NSObject&gt;</div><div class="line">//@required  默认方法是必须实现的,修饰词是@required,不实现的话,会报警告;</div><div class="line">//@optional  修饰的方法不强制实现;</div><div class="line">@optional</div><div class="line">-(void)showMessage:(NSDictionary *)dic;</div><div class="line">@end</div></pre></td></tr></table></figure>
 <p>DelegateViewController.m<br>在适当位置实现协议中的方法;</p>
@@ -382,6 +396,16 @@
     </div>
 
     <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/iOS开发/" rel="tag"># iOS开发</a>
+          
+            <a href="/tags/协议/" rel="tag"># 协议</a>
+          
+            <a href="/tags/委托模式/" rel="tag"># 委托模式</a>
+          
+        </div>
       
 
       
@@ -496,7 +520,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">35</span>
+                <span class="site-state-item-count">37</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
