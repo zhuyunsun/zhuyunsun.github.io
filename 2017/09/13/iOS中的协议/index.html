@@ -71,7 +71,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="xcode,iOS技巧,代码块," />
+  <meta name="keywords" content="“iOS,svn,Mac”" />
 
 
 
@@ -87,22 +87,17 @@
 
 
 
-<meta name="description" content="一 简单描述 敲代码的时候,我们会经常用到重复类属性或者方法,如UITaleView中必须实现的2个代理方法,而每次都进行敲的话,浪费很多不必要的时间;如果我们能把它们封装成一个代码块,在需要的时候,直接拖进来使用,能省掉不少时间;Xcode开发工具是强大的,他不紧提供了一些常用的代码块(有时间可以自己看看Xcode自带的代码块),还允许我们自定义代码块.">
-<meta name="keywords" content="xcode,iOS技巧,代码块">
+<meta name="description" content="title: iOS中协议的简单使用categories: iOStags:    iOS开发   协议   委托模式     什么是协议?简单的理解:两个类之间,一个类委托另外一个类去实现某些方法或者功能;">
+<meta name="keywords">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Xcode中自定义代码块的使用">
-<meta property="og:url" content="http://yoursite.com/2017/05/08/xcode中代码块使用/index.html">
+<meta property="og:title" content="烟飞烟灭">
+<meta property="og:url" content="http://yoursite.com/2017/09/13/iOS中的协议/index.html">
 <meta property="og:site_name" content="烟飞烟灭">
-<meta property="og:description" content="一 简单描述 敲代码的时候,我们会经常用到重复类属性或者方法,如UITaleView中必须实现的2个代理方法,而每次都进行敲的话,浪费很多不必要的时间;如果我们能把它们封装成一个代码块,在需要的时候,直接拖进来使用,能省掉不少时间;Xcode开发工具是强大的,他不紧提供了一些常用的代码块(有时间可以自己看看Xcode自带的代码块),还允许我们自定义代码块.">
-<meta property="og:image" content="http://oodrfzkav.bkt.clouddn.com/daimakuai/png/%E4%BB%A3%E7%A0%81%E5%9D%97%E4%BD%8D%E7%BD%AE.png">
-<meta property="og:image" content="http://oodrfzkav.bkt.clouddn.com/daimakuai/png/%E4%BB%A3%E7%A0%81%E5%9D%97%E6%8F%8F%E8%BF%B0.png">
-<meta property="og:image" content="http://oodrfzkav.bkt.clouddn.com/daimakuai/png/%E4%BB%A3%E7%A0%81%E5%9D%97%E4%BD%BF%E7%94%A8.png">
-<meta property="og:image" content="http://oodrfzkav.bkt.clouddn.com/daimakuai/png/%E4%BD%BF%E7%94%A8%E6%95%88%E6%9E%9C.png">
-<meta property="og:updated_time" content="2017-05-09T04:29:53.000Z">
+<meta property="og:description" content="title: iOS中协议的简单使用categories: iOStags:    iOS开发   协议   委托模式     什么是协议?简单的理解:两个类之间,一个类委托另外一个类去实现某些方法或者功能;">
+<meta property="og:updated_time" content="2017-09-13T08:13:49.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Xcode中自定义代码块的使用">
-<meta name="twitter:description" content="一 简单描述 敲代码的时候,我们会经常用到重复类属性或者方法,如UITaleView中必须实现的2个代理方法,而每次都进行敲的话,浪费很多不必要的时间;如果我们能把它们封装成一个代码块,在需要的时候,直接拖进来使用,能省掉不少时间;Xcode开发工具是强大的,他不紧提供了一些常用的代码块(有时间可以自己看看Xcode自带的代码块),还允许我们自定义代码块.">
-<meta name="twitter:image" content="http://oodrfzkav.bkt.clouddn.com/daimakuai/png/%E4%BB%A3%E7%A0%81%E5%9D%97%E4%BD%8D%E7%BD%AE.png">
+<meta name="twitter:title" content="烟飞烟灭">
+<meta name="twitter:description" content="title: iOS中协议的简单使用categories: iOStags:    iOS开发   协议   委托模式     什么是协议?简单的理解:两个类之间,一个类委托另外一个类去实现某些方法或者功能;">
 
 
 
@@ -130,13 +125,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/05/08/xcode中代码块使用/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/09/13/iOS中的协议/"/>
 
 
 
 
 
-  <title> Xcode中自定义代码块的使用 | 烟飞烟灭 </title>
+  <title>  | 烟飞烟灭 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -275,7 +270,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/05/08/xcode中代码块使用/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/09/13/iOS中的协议/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="自由">
@@ -296,7 +291,7 @@
             
             
               
-                Xcode中自定义代码块的使用
+                
               
             
           </h1>
@@ -311,8 +306,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-05-08T12:25:51+08:00">
-                2017-05-08 12:25
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-13T14:15:40+08:00">
+                2017-09-13 14:15
               </time>
             
 
@@ -321,28 +316,6 @@
             
           </span>
 
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/iOS开发/" itemprop="url" rel="index">
-                    <span itemprop="name">iOS开发</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
           
 
           
@@ -369,34 +342,20 @@
       
 
       
-        <h3 id="一-简单描述"><a href="#一-简单描述" class="headerlink" title="一 简单描述"></a>一 简单描述</h3><blockquote>
-<p><strong>敲代码的时候,我们会经常用到重复类属性或者方法,如UITaleView中必须实现的2个代理方法,而每次都进行敲的话,浪费很多不必要的时间;<br>如果我们能把它们封装成一个代码块,在需要的时候,直接拖进来使用,能省掉不少时间;<br>Xcode开发工具是强大的,他不紧提供了一些常用的代码块(有时间可以自己看看Xcode自带的代码块),还允许我们自定义代码块.</strong>  </p>
-</blockquote>
-<a id="more"></a>
-<h3 id="二-代码块在Xcode工程的位置"><a href="#二-代码块在Xcode工程的位置" class="headerlink" title="二 代码块在Xcode工程的位置"></a>二 代码块在Xcode工程的位置</h3><p><img src="http://oodrfzkav.bkt.clouddn.com/daimakuai/png/%E4%BB%A3%E7%A0%81%E5%9D%97%E4%BD%8D%E7%BD%AE.png" width="50%" height="50%" align="center/"></p>
-<h3 id="三-创建属于自己的代码块和使用"><a href="#三-创建属于自己的代码块和使用" class="headerlink" title="三 创建属于自己的代码块和使用"></a>三 创建属于自己的代码块和使用</h3><h4 id="选中创建好的代码块-如下就是一个创建属性常用方法-点击鼠标左键-把它拖进上面图中代码块所在的位置"><a href="#选中创建好的代码块-如下就是一个创建属性常用方法-点击鼠标左键-把它拖进上面图中代码块所在的位置" class="headerlink" title="选中创建好的代码块(如下就是一个创建属性常用方法),点击鼠标左键,把它拖进上面图中代码块所在的位置;"></a>选中创建好的代码块(如下就是一个创建属性常用方法),点击鼠标左键,把它拖进上面图中代码块所在的位置;</h4><blockquote>
-<p><code>@property (nonatomic, strong) &lt;#type#&gt; * &lt;#name#&gt;;</code> </p>
-</blockquote>
-<h4 id="这时候会代码块的描述的信息-当然你可以在后续中对它再次进行修改"><a href="#这时候会代码块的描述的信息-当然你可以在后续中对它再次进行修改" class="headerlink" title="这时候会代码块的描述的信息,当然你可以在后续中对它再次进行修改:"></a>这时候会代码块的描述的信息,当然你可以在后续中对它再次进行修改:</h4><p><img src="http://oodrfzkav.bkt.clouddn.com/daimakuai/png/%E4%BB%A3%E7%A0%81%E5%9D%97%E6%8F%8F%E8%BF%B0.png" width="50%" height="50%" align="center/"></p>
-<h5 id="图片中可以编辑的信息"><a href="#图片中可以编辑的信息" class="headerlink" title="图片中可以编辑的信息:"></a>图片中可以编辑的信息:</h5><blockquote>
+        <hr>
+<p>title: iOS中协议的简单使用<br>categories: iOS<br>tags:  </p>
 <ul>
-<li>Title:<br>代码块的标题,方便查找;  </li>
-<li>Summary:<br>代码块功能的描述,比如说它是快速创建一个属性的代码块;  </li>
-<li>Platform:<br>可以使用代码块的平台,All,iOS,macOS,tvOS,watchOS四个;  </li>
-<li>Completion Shortcut:<br>使用代码块的快捷方式,比如你输入的是@p,那么当你输入@p的时候,它会主动帮你补全这一段代码块;  </li>
-<li>Completion Scopes:<br>代码块可以在哪些文件中使用;  </li>
-<li>最后的是代码块的预览效果.  </li>
+<li>iOS开发  </li>
+<li>协议  </li>
+<li>委托模式  </li>
 </ul>
-</blockquote>
-<h4 id="代码块的使用"><a href="#代码块的使用" class="headerlink" title="代码块的使用"></a>代码块的使用</h4><p>1,可以直接选中代码块,然后把它拖到需要使用的地方;<br>2,利用上面:Completion Shortcut进行使用;  </p>
-<p><img src="http://oodrfzkav.bkt.clouddn.com/daimakuai/png/%E4%BB%A3%E7%A0%81%E5%9D%97%E4%BD%BF%E7%94%A8.png" width="50%" height="50%" align="center/"></p>
-<h4 id="代码块的删除"><a href="#代码块的删除" class="headerlink" title="代码块的删除"></a>代码块的删除</h4><p>直接选中想删除的代码块,按键盘上的delete键进行删除;  </p>
-<h3 id="四-代码块的在不同电脑的复用"><a href="#四-代码块的在不同电脑的复用" class="headerlink" title="四 代码块的在不同电脑的复用"></a>四 代码块的在不同电脑的复用</h3><p>代码块保存的路径:</p>
-<blockquote>
-<p>~/Library/Developer/Xcode/UserData/CodeSnippets  </p>
-</blockquote>
-<p>你可以进行备份,或者复制到不同的电脑中使用.  </p>
-<h3 id="补充"><a href="#补充" class="headerlink" title="补充"></a>补充</h3><p>在上面中使用&lt;#type#&gt;修饰在工程中使用的效果如下:<br><img src="http://oodrfzkav.bkt.clouddn.com/daimakuai/png/%E4%BD%BF%E7%94%A8%E6%95%88%E6%9E%9C.png" width="50%" height="50%" align="center/"></p>
+<hr>
+<h4 id="什么是协议"><a href="#什么是协议" class="headerlink" title="什么是协议?"></a>什么是协议?</h4><p>简单的理解:两个类之间,一个类委托另外一个类去实现某些方法或者功能;<a id="more"></a>  </p>
+<h4 id="实现1-DelegateViewController"><a href="#实现1-DelegateViewController" class="headerlink" title="实现1(DelegateViewController)"></a>实现1(DelegateViewController)</h4><p>协议的关键字是@protocol<br>DelegateViewController.h  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">#import &lt;UIKit/UIKit.h&gt;</div><div class="line">@protocol CoustomDelegate;//声明一个协议</div><div class="line">@interface DelegateViewController : UIViewController</div><div class="line">@property(nonatomic,weak)id&lt;CoustomDelegate&gt;delegate;//定义一个协议属性</div><div class="line">@end</div><div class="line">//协议方法</div><div class="line">@protocol CoustomDelegate &lt;NSObject&gt;</div><div class="line">//@required  默认方法是必须实现的,修饰词是@required,不实现的话,会报警告;</div><div class="line">//@optional  修饰的方法不强制实现;</div><div class="line">@optional</div><div class="line">-(void)showMessage:(NSDictionary *)dic;</div><div class="line">@end</div></pre></td></tr></table></figure>
+<p>DelegateViewController.m<br>在适当位置实现协议中的方法;</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line">-(void)viewDidAppear:(BOOL)animated&#123;</div><div class="line">    [self.delegate showMessage:@&#123;@&quot;key&quot;:@&quot;value&quot;&#125;];</div><div class="line">&#125;  </div><div class="line">```  </div><div class="line"></div><div class="line">#### 实现2(ViewController)  </div><div class="line"></div><div class="line">在ViewController.m 中  </div><div class="line"></div><div class="line">``` </div><div class="line">#import &quot;ViewController.h&quot;</div><div class="line">#import &quot;DelegateViewController.h&quot;</div><div class="line">@interface ViewController ()&lt;CoustomDelegate&gt;</div><div class="line"></div><div class="line">@end</div><div class="line">``` </div><div class="line">```  </div><div class="line">-(void)touchesBegan:(NSSet&lt;UITouch *&gt; *)touches withEvent:(UIEvent *)event&#123;</div><div class="line">    DelegateViewController * delegateVC = [[DelegateViewController alloc]init];</div><div class="line">    delegateVC.delegate = self;//实现委托,不要忘记;</div><div class="line">    [self presentViewController:delegateVC animated:YES completion:nil];</div><div class="line">&#125;</div><div class="line">//协议方法</div><div class="line">-(void)showMessage:(NSDictionary *)dic&#123;</div><div class="line">    NSLog(@&quot;delegate = %@&quot;,dic);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h4 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h4><p>协议是委托模式中的一种,</p>
 
       
     </div>
@@ -424,16 +383,6 @@
 
     <footer class="post-footer">
       
-        <div class="post-tags">
-          
-            <a href="/tags/xcode/" rel="tag"># xcode</a>
-          
-            <a href="/tags/iOS技巧/" rel="tag"># iOS技巧</a>
-          
-            <a href="/tags/代码块/" rel="tag"># 代码块</a>
-          
-        </div>
-      
 
       
         
@@ -443,18 +392,14 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/05/11/iOS开发中的懒加载/" rel="next" title="iOS开发中的懒加载">
-                <i class="fa fa-chevron-left"></i> iOS开发中的懒加载
-              </a>
-            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/05/04/正确导出上架ipa包/" rel="prev" title="从xcode工程中导出各种ipa包">
-                从xcode工程中导出各种ipa包 <i class="fa fa-chevron-right"></i>
+              <a href="/2017/07/31/iOS开发启动页设置/" rel="prev" title="iOS设置启动页">
+                iOS设置启动页 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -586,7 +531,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#一-简单描述"><span class="nav-number">1.</span> <span class="nav-text">一 简单描述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二-代码块在Xcode工程的位置"><span class="nav-number">2.</span> <span class="nav-text">二 代码块在Xcode工程的位置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#三-创建属于自己的代码块和使用"><span class="nav-number">3.</span> <span class="nav-text">三 创建属于自己的代码块和使用</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#选中创建好的代码块-如下就是一个创建属性常用方法-点击鼠标左键-把它拖进上面图中代码块所在的位置"><span class="nav-number">3.1.</span> <span class="nav-text">选中创建好的代码块(如下就是一个创建属性常用方法),点击鼠标左键,把它拖进上面图中代码块所在的位置;</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#这时候会代码块的描述的信息-当然你可以在后续中对它再次进行修改"><span class="nav-number">3.2.</span> <span class="nav-text">这时候会代码块的描述的信息,当然你可以在后续中对它再次进行修改:</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#图片中可以编辑的信息"><span class="nav-number">3.2.1.</span> <span class="nav-text">图片中可以编辑的信息:</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#代码块的使用"><span class="nav-number">3.3.</span> <span class="nav-text">代码块的使用</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#代码块的删除"><span class="nav-number">3.4.</span> <span class="nav-text">代码块的删除</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#四-代码块的在不同电脑的复用"><span class="nav-number">4.</span> <span class="nav-text">四 代码块的在不同电脑的复用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#补充"><span class="nav-number">5.</span> <span class="nav-text">补充</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#什么是协议"><span class="nav-number">1.</span> <span class="nav-text">什么是协议?</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#实现1-DelegateViewController"><span class="nav-number">2.</span> <span class="nav-text">实现1(DelegateViewController)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#小结"><span class="nav-number">3.</span> <span class="nav-text">小结</span></a></li></ol></div>
             
 
           </div>
