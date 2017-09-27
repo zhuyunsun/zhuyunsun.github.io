@@ -71,7 +71,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="block,闭包," />
+  <meta name="keywords" content="常量,变量,Swift学习," />
 
 
 
@@ -87,17 +87,17 @@
 
 
 
-<meta name="description" content="序言block:简单来说就是一段代码块,block里面存在可执行代码,可以在函数内进行使用;也可以作为函数中形参进行使用;最常用的应该是替换delegate来进行回调或者传值.    注意:block只是声明和保留了一段代码块,必须要调用才会执行里面的代码.  基本结构block结构:返回值类型(^Block名字)(参数列表);">
-<meta name="keywords" content="block,闭包">
+<meta name="description" content="序言常量和变量把名字和特定类型的值关联在一起;(Swift已经去掉指针的概念)    注意:常量一经设置好就不能再改变,变量则可以进行修改;    声明常量和变量常量和变量在使用之前必须被声明,使用关键字let来声明常量,关键字var来声明变量.">
+<meta name="keywords" content="常量,变量,Swift学习">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Block的简单使用">
-<meta property="og:url" content="http://yoursite.com/2017/07/11/Block/index.html">
+<meta property="og:title" content="Swift学习之-常量与变量">
+<meta property="og:url" content="http://yoursite.com/2017/09/26/swift学习之-常量与变量/index.html">
 <meta property="og:site_name" content="烟飞烟灭">
-<meta property="og:description" content="序言block:简单来说就是一段代码块,block里面存在可执行代码,可以在函数内进行使用;也可以作为函数中形参进行使用;最常用的应该是替换delegate来进行回调或者传值.    注意:block只是声明和保留了一段代码块,必须要调用才会执行里面的代码.  基本结构block结构:返回值类型(^Block名字)(参数列表);">
-<meta property="og:updated_time" content="2017-07-11T09:11:42.000Z">
+<meta property="og:description" content="序言常量和变量把名字和特定类型的值关联在一起;(Swift已经去掉指针的概念)    注意:常量一经设置好就不能再改变,变量则可以进行修改;    声明常量和变量常量和变量在使用之前必须被声明,使用关键字let来声明常量,关键字var来声明变量.">
+<meta property="og:updated_time" content="2017-09-26T10:04:29.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Block的简单使用">
-<meta name="twitter:description" content="序言block:简单来说就是一段代码块,block里面存在可执行代码,可以在函数内进行使用;也可以作为函数中形参进行使用;最常用的应该是替换delegate来进行回调或者传值.    注意:block只是声明和保留了一段代码块,必须要调用才会执行里面的代码.  基本结构block结构:返回值类型(^Block名字)(参数列表);">
+<meta name="twitter:title" content="Swift学习之-常量与变量">
+<meta name="twitter:description" content="序言常量和变量把名字和特定类型的值关联在一起;(Swift已经去掉指针的概念)    注意:常量一经设置好就不能再改变,变量则可以进行修改;    声明常量和变量常量和变量在使用之前必须被声明,使用关键字let来声明常量,关键字var来声明变量.">
 
 
 
@@ -125,13 +125,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/07/11/Block/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/09/26/swift学习之-常量与变量/"/>
 
 
 
 
 
-  <title> Block的简单使用 | 烟飞烟灭 </title>
+  <title> Swift学习之-常量与变量 | 烟飞烟灭 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -270,7 +270,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/11/Block/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/09/26/swift学习之-常量与变量/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="自由">
@@ -291,7 +291,7 @@
             
             
               
-                Block的简单使用
+                Swift学习之-常量与变量
               
             
           </h1>
@@ -306,8 +306,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-11T11:03:25+08:00">
-                2017-07-11 11:03
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-26T11:44:05+08:00">
+                2017-09-26 11:44
               </time>
             
 
@@ -329,8 +329,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/iOS开发/" itemprop="url" rel="index">
-                    <span itemprop="name">iOS开发</span>
+                  <a href="/categories/Swift/" itemprop="url" rel="index">
+                    <span itemprop="name">Swift</span>
                   </a>
                 </span>
 
@@ -364,92 +364,59 @@
       
 
       
-        <h3 id="序言"><a href="#序言" class="headerlink" title="序言"></a>序言</h3><p>block:简单来说就是一段代码块,block里面存在可执行代码,可以在函数内进行使用;也可以作为函数中形参进行使用;最常用的应该是替换delegate来进行回调或者传值.  </p>
+        <h4 id="序言"><a href="#序言" class="headerlink" title="序言"></a>序言</h4><p>常量和变量把名字和特定类型的值关联在一起;(Swift已经去掉指针的概念)  </p>
 <blockquote>
-<p><strong>注意:block只是声明和保留了一段代码块,必须要调用才会执行里面的代码.</strong></p>
+<p>注意:常量一经设置好就不能再改变,变量则可以进行修改;  </p>
 </blockquote>
-<h3 id="基本结构"><a href="#基本结构" class="headerlink" title="基本结构"></a>基本结构</h3><p><strong>block结构:返回值类型(^Block名字)(参数列表);</strong> <a id="more"></a>  </p>
-<pre><code>//
-(void)(^myBlock)(NSString *) = ^( NSString * n1){  
- NSLog(@&quot;block&quot;);  
-}  
-(void)表示的是返回值,^:block的标示符,myBlock:这个block块的名称,(NSString * )表示形参.  
-调用:myBlock(@&quot;124&quot;);  
-</code></pre><h3 id="基本用法"><a href="#基本用法" class="headerlink" title="基本用法"></a>基本用法</h3><pre><code>//无参数无返回值
-void(^myBlock2)(void) = ^{
-    SPLog(@&quot;come on 2&quot;);
-};
-myBlock2();
-//有参数无返回值
-void(^myBlock1)(NSString *,NSUInteger) = ^(NSString *n1,NSUInteger i1){
-    SPLog(@&quot;come on 1 - %@,%ld&quot;,n1,i1);
-};
-myBlock1(@&quot;2b_block&quot;,2);
-//有参数有返回值
-NSString *(^myBlock3)(NSString *) = ^(NSString *n1){
-    return [n1 stringByAppendingString:@&quot;-143&quot;];
-};
-NSString * bn1 = myBlock3(@&quot;341&quot;);
-SPLog(@&quot;%@&quot;,bn1);
-</code></pre><h3 id="修改局部变量"><a href="#修改局部变量" class="headerlink" title="修改局部变量"></a>修改局部变量</h3><p>block内是不能直接修改block外变量的值的.<br>如果需要修改,被修改的变量必须用__block来修饰.  </p>
-<pre><code> //修改局部变量
-__block NSUInteger i2 = 10;
-void(^myBlock4)(NSUInteger) = ^(NSUInteger i3){
-    i2 = i3 + 10;
-    SPLog(@&quot;block 内i2 = %ld&quot;,i2);
-};
-SPLog(@&quot;block 外i2 = %ld&quot;,i2);
-myBlock4(i2);
-</code></pre><h3 id="避免循环引用"><a href="#避免循环引用" class="headerlink" title="避免循环引用"></a>避免循环引用</h3><p>在类:Block1ViewController中存在2个变量.  </p>
-<pre><code>//  
-@property(nonatomic,copy)void(^b1)(void);  
-@property(nonatomic,strong)NSString * myName;  
-</code></pre><p>在类:ViewController中viewDidLoad调用:  </p>
-<pre><code>   //避免循环引用
-Block1ViewController * b1VC = [[Block1ViewController alloc]init];
-b1VC.myName = @&quot;b1-block&quot;;
-__weak typeof(b1VC) weakObjB = b1VC;
-b1VC.b1 = ^(){
-    NSString * myName = weakObjB.myName;
-    SPLog(@&quot;%@&quot;,myName);
-};
-b1VC.b1();
-</code></pre><p>b1VC需要<code>__weak typeof(b1VC) weakObjB = b1VC;</code>使用__weak进行修饰.  </p>
+<h4 id="声明常量和变量"><a href="#声明常量和变量" class="headerlink" title="声明常量和变量"></a>声明常量和变量</h4><p>常量和变量在使用之前<strong>必须被声明</strong>,使用关键字let来声明常量,关键字var来声明变量.<a id="more"></a><br>示例:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">let A = 10 </div><div class="line">var B = 0</div></pre></td></tr></table></figure>
+<p>代码可以读作:<br><strong>“声明一个就做A的新常量,并设置值为10.然后声明一个B的变量,并且给它一个初始值为0.”</strong><br>常量A一经声明,就不能再次改变,修改的话,编译会报错;变量B则可以进行修改;  </p>
+<p>当然,你可以在一行中声明多个变量或者常量,用逗号隔开:  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">var x = 0,y = 1,z = 2</div></pre></td></tr></table></figure>
 <blockquote>
-<p>简单说明:<br>首先,b1是Block1ViewController拥有的一个属性,因此Block1ViewController对b1是强引用的;其次,b1对代码块中的属性也是强引用的;所以会导致他们之间相互强引用,从而导致循环引用.  </p>
+<p>注意:在你的代码中,如果存储的值不会改变,请用关键字let来声明一个常量.只有存储会改变的值的时候才使用变量.  </p>
 </blockquote>
-<h3 id="作为函数参数"><a href="#作为函数参数" class="headerlink" title="作为函数参数"></a>作为函数参数</h3><p>在类Block1ViewController.h中声明:<br> <code>-(void)common_from:(void (^)(id message))success;</code><br>在类Block1ViewController.m中实现:  </p>
-<pre><code>//
--(void)common_from:(void (^)(id message))success{
- success(@&quot;come from&quot;);
-}  
-</code></pre><p>在类:ViewController中viewDidLoad调用:  </p>
-<pre><code> //作为参数使用
-Block1ViewController * b2VC = [[Block1ViewController alloc]init];
-[b2VC common_from:^(id message) {
-    SPLog(@&quot; -- %@&quot;,message);
-}];
-</code></pre><p><strong>这一步其实已经实现了值在2个不同类之间传递,但是传递的值有局限性,只能在当前函数里面进行回调,好处是书写较方便.</strong></p>
-<h3 id="typedef结合使用"><a href="#typedef结合使用" class="headerlink" title="typedef结合使用"></a>typedef结合使用</h3><p>有时候,我们需要声明多个参数值的时候,需要重复编写,而结合typedef可以简化block使用;好处是可以在类的任何方法里面进行回调,但是书写较麻烦.  </p>
-<pre><code>//.h文件
-#import &lt;UIKit/UIKit.h&gt;
-typedef void(^nameColor)(void);
-@interface Block1ViewController : UIViewController
-@property(nonatomic,copy)nameColor name1;
--(void)typedef_from:(nameColor )m1;
-@end  
-
-//.m文件  
-#import &quot;Block1ViewController.h&quot;
-@implementation Block1ViewController
--(void)typedef_from:(nameColor )m1{
-   self.name1 = m1;
-}
--(void)touchesBegan:(NSSet&lt;UITouch * &gt; * )touches withEvent:(UIEvent *)event{
-   self.name1();//可以在任何函数内进行调用.
-   [self dismissViewControllerAnimated:YES completion:nil];
-}
-</code></pre><p><strong>一样可以实现类之间的值的传递和delegate协议的处理.</strong></p>
+<h4 id="类型标注"><a href="#类型标注" class="headerlink" title="类型标注"></a>类型标注</h4><p>你可以在声明一个常量或者变量的时候,标注它能够进行存储的类型.<br>如下:  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">var nickName:String</div></pre></td></tr></table></figure>
+<p>声明中的“:”的意思是“是…类型”,所以上面的代码可以读作:<br>“声明了一个叫做nickName的变量,它的类型是String”;<br>这意味着它可以存储任何String值而不会报错:  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">nickName = &quot;mark&quot;</div></pre></td></tr></table></figure>
+<p>你也可以在一行中定义多个相关的变量为相同的类型,用逗号分隔,只要在最后加上类型标注就可以了:  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">var red,green,blue:Double</div></pre></td></tr></table></figure>
+<blockquote>
+<p>Tips:<br>实际上,你并不需要经常使用类型标注,如果你在定义一个常量或者变量的时候设定一个初始值,那么Swift本身可以根据<strong>类型安全和类型推断</strong>(下面会讲到)中描述那样,可以推断出这个常量或者变量的类型;  </p>
+</blockquote>
+<h4 id="命名常量和变量"><a href="#命名常量和变量" class="headerlink" title="命名常量和变量"></a>命名常量和变量</h4><p>常量和变量的名字几乎可以使用任何字符,甚至包括Unicode字符:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">let π = 3.14159  </div><div class="line">let 你好 = &quot;你好,world!&quot;  </div><div class="line">let 🤕 = &quot;back&quot;</div></pre></td></tr></table></figure>
+<p>当然,常量和变量的名字不能包含:  </p>
+<blockquote>
+<p>1,空白字符;<br>2,数学符号;<br>3,箭头;<br>4,保留的或者无效的Unicode码位;<br>5,连线和制表符;<br>6,不能以数字开头;  </p>
+</blockquote>
+<p>&emsp;&emsp;一旦你声明了一个确定类型的常量或者变量,就不能使用相同的名字再次进行声明,也不能让他改存其他类型的值,常量和变量之间也不能互换;  </p>
+<blockquote>
+<p>注意:<br>如果你需要用Swift保留的关键字给常量或变量命名,可以使用反引号`let`来进行命名;</p>
+</blockquote>
+<h4 id="输出常量和变量"><a href="#输出常量和变量" class="headerlink" title="输出常量和变量"></a>输出常量和变量</h4><p>你可以使用<strong>print(&lt;#T##items: Any…##Any#&gt;)</strong>函数来打印常量和变量;<br>替换了oc中NSLog()格式化输出;  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">print(&quot;mark&quot;)</div><div class="line">//输出“mark”</div></pre></td></tr></table></figure>
+<p>print函数可以输出不同类型的常量或者变量,用(,)隔开;<br>如:  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">print(234,&quot;mark&quot;,2.67)</div><div class="line">//输出“234,mark,2.67”</div></pre></td></tr></table></figure>
+<p>Swift 使用<strong>字符串插值</strong>的方式把常量名或者变量名当做占位符加入到更长的字符串中,然后让Swift用常量或者变量的当前值替换这些占位符.<br>将常量或变量名放入圆括号中并在括号前使用反斜杠\()将其转义:  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">let place = &quot;USA&quot;  </div><div class="line">print(&quot;Are you from \(place)?&quot;)  </div><div class="line">//输出&quot;Are you from USA?&quot;</div></pre></td></tr></table></figure>
+<blockquote>
+<p>Tips:你可以用转义方式将字符串插入另外一个字符串中,从而生成一个新的字符串;  </p>
+</blockquote>
+<h4 id="类型安全和类型推断"><a href="#类型安全和类型推断" class="headerlink" title="类型安全和类型推断"></a>类型安全和类型推断</h4><p><strong>Swift是一门类型安全的语言.</strong>  </p>
+<blockquote>
+<p>1,类型安全的语言可以让你清楚知道代码可以处理的值的类型.如果你的一部分代码期望获得String,那你就不该错误的传给它一个Int类型.  </p>
+<p>2,因为Swift是类型安全的,他在编译代码的时候会进行类型检查,任何不匹配的类型都会标记为错误.<strong>这会帮助你在开发阶段更早的发现并修复错误!</strong>  </p>
+<p>3,当你操作不同类型的值时,类型检查能帮助你避免错误.当然,这并不意味着你得为每一个常量或者变量声明一个特定的类型.如果你没有为所需要的值进行类型声明,Swift会使用类型推断的功能来推断出合适的类型.通过检查你给变量赋的值,类型推断能够在编译阶段自动推断出值得类型.  </p>
+<p>4,在你为一个变量或常量设定一个初始值的时候,类型推断就显得更加有用.它通常在你声明一个变量或常量同时设置一个初始的字面量（文本）时就已经完成.(字面量就是会直接出现在你代码中的值,比如下边代码中的 42 和 3.14159)  </p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">let middleWidth = 42</div><div class="line">//表示middleWidth 是 Int类型  </div><div class="line"></div><div class="line">let pi = 3.14  </div><div class="line">//pi推断的类型是Double.</div></pre></td></tr></table></figure>
+<p>Swift中对浮点值的推断始终会选择Double而不是Float.  </p>
+<p>如果你在一个表达式中将整数和浮点数结合起来,Double会从内容中被推断出来.  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">let add = 4 + 1.23  </div><div class="line">//add 的类型将会是Double</div></pre></td></tr></table></figure>
+<p>这字面量3没有显式的声明它的类型,但是因为后面有一个浮点类型的字面量,所以这个类型就被推断为Double;  </p>
+<p>END;</p>
 
       
     </div>
@@ -479,9 +446,11 @@ typedef void(^nameColor)(void);
       
         <div class="post-tags">
           
-            <a href="/tags/block/" rel="tag"># block</a>
+            <a href="/tags/常量/" rel="tag"># 常量</a>
           
-            <a href="/tags/闭包/" rel="tag"># 闭包</a>
+            <a href="/tags/变量/" rel="tag"># 变量</a>
+          
+            <a href="/tags/Swift学习/" rel="tag"># Swift学习</a>
           
         </div>
       
@@ -494,18 +463,14 @@ typedef void(^nameColor)(void);
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/07/18/xcode7以上给项目添加pch文件/" rel="next" title="Xcode7以上给项目添加pch文件">
-                <i class="fa fa-chevron-left"></i> Xcode7以上给项目添加pch文件
-              </a>
-            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/06/19/iOS审核之-内购产品感叹号 !/" rel="prev" title="iOS审核之-“内购买项目被退回,并需要开发人员操作”">
-                iOS审核之-“内购买项目被退回,并需要开发人员操作” <i class="fa fa-chevron-right"></i>
+              <a href="/2017/09/25/xcode8或者9去掉打印多余的log/" rel="prev" title="xcode8或者9去掉打印多余的log;">
+                xcode8或者9去掉打印多余的log; <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -637,7 +602,7 @@ typedef void(^nameColor)(void);
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#序言"><span class="nav-number">1.</span> <span class="nav-text">序言</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#基本结构"><span class="nav-number">2.</span> <span class="nav-text">基本结构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#基本用法"><span class="nav-number">3.</span> <span class="nav-text">基本用法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#修改局部变量"><span class="nav-number">4.</span> <span class="nav-text">修改局部变量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#避免循环引用"><span class="nav-number">5.</span> <span class="nav-text">避免循环引用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#作为函数参数"><span class="nav-number">6.</span> <span class="nav-text">作为函数参数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#typedef结合使用"><span class="nav-number">7.</span> <span class="nav-text">typedef结合使用</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#序言"><span class="nav-number">1.</span> <span class="nav-text">序言</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#声明常量和变量"><span class="nav-number">2.</span> <span class="nav-text">声明常量和变量</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#类型标注"><span class="nav-number">3.</span> <span class="nav-text">类型标注</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#命名常量和变量"><span class="nav-number">4.</span> <span class="nav-text">命名常量和变量</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#输出常量和变量"><span class="nav-number">5.</span> <span class="nav-text">输出常量和变量</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#类型安全和类型推断"><span class="nav-number">6.</span> <span class="nav-text">类型安全和类型推断</span></a></li></ol></div>
             
 
           </div>
