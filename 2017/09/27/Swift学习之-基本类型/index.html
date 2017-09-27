@@ -71,7 +71,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="工作相关,业务," />
+  <meta name="keywords" content="Swift,基本类型," />
 
 
 
@@ -87,17 +87,17 @@
 
 
 
-<meta name="description" content="前序介绍sdk运行逻辑及出现错误的问题解答.">
-<meta name="keywords" content="工作相关,业务">
+<meta name="description" content="序言Swift较OC的基本类型关键字有一些明显变化,但基本类型是基本没有变化的.">
+<meta name="keywords" content="Swift,基本类型">
 <meta property="og:type" content="article">
-<meta property="og:title" content="SDK业务逻辑及FAQ">
-<meta property="og:url" content="http://yoursite.com/2017/05/15/SDK业务FAQ/index.html">
+<meta property="og:title" content="Swift学习之-基本类型">
+<meta property="og:url" content="http://yoursite.com/2017/09/27/Swift学习之-基本类型/index.html">
 <meta property="og:site_name" content="烟飞烟灭">
-<meta property="og:description" content="前序介绍sdk运行逻辑及出现错误的问题解答.">
-<meta property="og:updated_time" content="2017-05-15T15:58:44.000Z">
+<meta property="og:description" content="序言Swift较OC的基本类型关键字有一些明显变化,但基本类型是基本没有变化的.">
+<meta property="og:updated_time" content="2017-09-27T08:39:23.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="SDK业务逻辑及FAQ">
-<meta name="twitter:description" content="前序介绍sdk运行逻辑及出现错误的问题解答.">
+<meta name="twitter:title" content="Swift学习之-基本类型">
+<meta name="twitter:description" content="序言Swift较OC的基本类型关键字有一些明显变化,但基本类型是基本没有变化的.">
 
 
 
@@ -125,13 +125,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/05/15/SDK业务FAQ/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/09/27/Swift学习之-基本类型/"/>
 
 
 
 
 
-  <title> SDK业务逻辑及FAQ | 烟飞烟灭 </title>
+  <title> Swift学习之-基本类型 | 烟飞烟灭 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -270,7 +270,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/05/15/SDK业务FAQ/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/09/27/Swift学习之-基本类型/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="自由">
@@ -291,7 +291,7 @@
             
             
               
-                SDK业务逻辑及FAQ
+                Swift学习之-基本类型
               
             
           </h1>
@@ -306,8 +306,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-05-15T14:42:50+08:00">
-                2017-05-15 14:42
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-27T10:11:00+08:00">
+                2017-09-27 10:11
               </time>
             
 
@@ -329,8 +329,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/业务/" itemprop="url" rel="index">
-                    <span itemprop="name">业务</span>
+                  <a href="/categories/Swift/" itemprop="url" rel="index">
+                    <span itemprop="name">Swift</span>
                   </a>
                 </span>
 
@@ -364,47 +364,30 @@
       
 
       
-        <h4 id="前序"><a href="#前序" class="headerlink" title="前序"></a>前序</h4><p>介绍sdk运行逻辑及出现错误的问题解答.<br><a id="more"></a> </p>
-<h4 id="初始化"><a href="#初始化" class="headerlink" title="初始化"></a>初始化</h4><p>Q:怎么一直初始化失败?<br>A:</p>
+        <h4 id="序言"><a href="#序言" class="headerlink" title="序言"></a>序言</h4><p>Swift较OC的基本类型关键字有一些明显变化,但基本类型是基本没有变化的.<a id="more"></a>  </p>
+<h4 id="整型"><a href="#整型" class="headerlink" title="整型"></a>整型</h4><p>OC之前用的是int或者NSInteger来表示整数;<br>而Swift使用的是Int;Int它拥有与当前平台的原生字相同的长度;  </p>
+<p>在32位平台上,Int的长度和Int32相同;<br>在64位平台上,Int的长度和Int64相同;  </p>
+<p>Int可以存储-2,147,483,648到2,147,483,647之间的任意值.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">let count:Int = 3</div><div class="line">var amount:Int = 6</div></pre></td></tr></table></figure>
+<p>Swift也提供了一种无符号的整型类型:UInt,它与当前平台的原生字长相同.</p>
+<p> 在32位平台上， UInt 长度和 UInt32 长度相同.<br> 在64位平台上， UInt 长度和 UInt64 长度相同.  </p>
 <blockquote>
-<p>1.初始化4个参数[AppKey,AppID,md_id(渠道号),cch_id(广告号)]是否是对应游戏参数.<br>2.Xcode工程中配置信息是否配置正确,这个配置信息可以参考sdk文档或者demo.  </p>
+<p>注意:<br>只在的确需要存储一个和当前平台原生字长度相同的无符号整数的时候才使用UInt.其他情况下,推荐使用Int.  </p>
 </blockquote>
-<h4 id="登录"><a href="#登录" class="headerlink" title="登录"></a>登录</h4><p>Q:怎么一直登录失败?<br>A:</p>
+<h4 id="浮点型"><a href="#浮点型" class="headerlink" title="浮点型"></a>浮点型</h4><p>浮点数是有小数的数字,如3.5,12.6;<br>浮点型相比整数类型来说,能表示更大范围的值或存储更小的数字.<br>Swift提供了两种有符号的浮点数类型;  </p>
+<p>Double代表64位的浮点数;<br>Float代表32位的浮点数;  </p>
 <blockquote>
-<p>1.后台对应游戏相关信息是否配置.<br>2.后台是否允许当前游戏进行登录.  </p>
+<p>注意:<br>Double 有至少15位数字的精度,而Float的精度只有6位.<br>具体用哪一种取决于你代码需要处理的值得范围,在两种类型都可以的情况下,推荐使用Double类型;  </p>
 </blockquote>
-<h4 id="支付"><a href="#支付" class="headerlink" title="支付"></a>支付</h4><p>Q:下单失败?<br>A:</p>
-<blockquote>
-<p>1.确认后台内购产品信息是否配置.<br>2.下单接口中的参数不能为<code>nil</code>,<code>@&quot;&quot;</code>,<code>null</code>.<br>3.下单接口中amount参数和subject参数是否填写正确,比如说,amount参数是6,那么就需要根据内购产品文档来确定subject是60元宝,还是60钻石.<br>4.后台是否允许当前游戏进行支付.  </p>
-</blockquote>
-<p>Q:没有购买的内购产品?<br>A:  </p>
-<blockquote>
-<p>1.苹果开发者账号中心对应的App是否填写了内购产品信息.<br>2.苹果开发者账号中心对应的银行等信息是否填写完整并通过审核.<br>3.Xcode工程中的证书和Bundle Identifier是否配置正确.<br>4.后台内购产品信息的product_id是否配置正确.  </p>
-</blockquote>
-<p>Q:请求AppStrore购买失败?<br>A:  </p>
-<blockquote>
-<p>1.这可能是网络原因造成的,可以稍后再次进行尝试.  </p>
-</blockquote>
-<p>Q:当前你没有权限购买?<br>A:  </p>
-<blockquote>
-<p>1.当前测试沙箱账号不正确,请用当前App所在的苹果开发者账号创建的沙箱账号进行测试.  </p>
-</blockquote>
-<p>Q:发货失败?<br>A:  </p>
-<blockquote>
-<p>1.后台发货url是否配置正确.</p>
-</blockquote>
-<h4 id="证书方面"><a href="#证书方面" class="headerlink" title="证书方面"></a>证书方面</h4><p>Q:如果出现:Provisioning profile “xxx-Development” doesn’t include the currently selected device “xx”的iPhone.<br>A:  </p>
-<blockquote>
-<p>1.看英文知道,当前的描述文件中的uuid并没有包括当前选择的”xx”iPhone的uuid.请去开发者中心添加当前iPhone的uuid并重新下载描述文件.  </p>
-</blockquote>
-<p>Q:测试证书和发布证书的区别.<br>A:  </p>
-<blockquote>
-<p>1.测试证书,为了测试当前app创建的证书,只能用于测试,不能用于提交审核.<br>2.发布证书,只能用于提交审核.<br>3.他们打出的ipa包除了证书不一致,其他内容是一致的.  </p>
-</blockquote>
-<h4 id="首次提交审核的app和已经上架的app提交审核的内购产品"><a href="#首次提交审核的app和已经上架的app提交审核的内购产品" class="headerlink" title="首次提交审核的app和已经上架的app提交审核的内购产品"></a>首次提交审核的app和已经上架的app提交审核的内购产品</h4><p>Q:已经审核通过的内购产品在新版本的时候,还需要进行测试吗?<br>A:  </p>
-<blockquote>
-<p>1.已经通过审核的内购产品是不需要再次进行测试.<br>2.为了严谨,要测试.如果内购中购买凭证是在服务端进行验证话,由于验证购买凭证上架的和测试的URL是不一样的,所以需要服务端进行切换来测试已经上架的内购产品.  </p>
-</blockquote>
+<p><strong>CGFloat:对于需要兼容64位的机器而言,则需要使用CGFloat;而不是Float;</strong>  </p>
+<h4 id="布尔类型"><a href="#布尔类型" class="headerlink" title="布尔类型"></a>布尔类型</h4><p>OC之前用YES和NO来表示;<br>而Swift则用更直白的false和true来表示;  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">let on = true</div><div class="line">var off = false</div><div class="line">off = true</div><div class="line"></div><div class="line">if on &#123;</div><div class="line">    print(1)</div><div class="line">&#125;</div><div class="line">if off &#123;</div><div class="line">    print(0)</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h4 id="字符串类型"><a href="#字符串类型" class="headerlink" title="字符串类型"></a>字符串类型</h4><p>OC中用NSString来表示字符串类集;<br>Swift中则是String来表示字符串;<br>字符串格式””:  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">let myName:String = &quot;mark&quot;</div></pre></td></tr></table></figure>
+<h4 id="元组类型"><a href="#元组类型" class="headerlink" title="元组类型"></a>元组类型</h4><p>元组类型是Swift中新添加的类型;<br>元组把多个值合并成单一的复合型的值,元组内的值可以是任意类型的,而且不必是同一类型;  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">let man = (32,&quot;China&quot;)  </div><div class="line">//可以看出它包含的类型有Int和String</div></pre></td></tr></table></figure>
+<p>它可以被描述为:一个类型为(Int,String)的元组;  </p>
+<p><strong>任何类型</strong>的排列都可以被用来创建一个元组,它可以包含任意多的类型.例如:(Int,Int,Int)或者(Int,Int,Bool);  </p>
 
       
     </div>
@@ -434,9 +417,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/工作相关/" rel="tag"># 工作相关</a>
+            <a href="/tags/Swift/" rel="tag"># Swift</a>
           
-            <a href="/tags/业务/" rel="tag"># 业务</a>
+            <a href="/tags/基本类型/" rel="tag"># 基本类型</a>
           
         </div>
       
@@ -449,18 +432,14 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/05/16/病记(牙龈上火)/" rel="next" title="牙龈上火(5月15号)">
-                <i class="fa fa-chevron-left"></i> 牙龈上火(5月15号)
-              </a>
-            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/05/11/iOS开发中的懒加载/" rel="prev" title="iOS开发中的懒加载">
-                iOS开发中的懒加载 <i class="fa fa-chevron-right"></i>
+              <a href="/2017/09/26/swift学习之-常量与变量/" rel="prev" title="Swift学习之-常量与变量">
+                Swift学习之-常量与变量 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -592,7 +571,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#前序"><span class="nav-number">1.</span> <span class="nav-text">前序</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#初始化"><span class="nav-number">2.</span> <span class="nav-text">初始化</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#登录"><span class="nav-number">3.</span> <span class="nav-text">登录</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#支付"><span class="nav-number">4.</span> <span class="nav-text">支付</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#证书方面"><span class="nav-number">5.</span> <span class="nav-text">证书方面</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#首次提交审核的app和已经上架的app提交审核的内购产品"><span class="nav-number">6.</span> <span class="nav-text">首次提交审核的app和已经上架的app提交审核的内购产品</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#序言"><span class="nav-number">1.</span> <span class="nav-text">序言</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#整型"><span class="nav-number">2.</span> <span class="nav-text">整型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#浮点型"><span class="nav-number">3.</span> <span class="nav-text">浮点型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#布尔类型"><span class="nav-number">4.</span> <span class="nav-text">布尔类型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#字符串类型"><span class="nav-number">5.</span> <span class="nav-text">字符串类型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#元组类型"><span class="nav-number">6.</span> <span class="nav-text">元组类型</span></a></li></ol></div>
             
 
           </div>
