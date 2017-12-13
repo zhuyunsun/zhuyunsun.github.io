@@ -94,7 +94,7 @@
 <meta property="og:url" content="http://yoursite.com/2017/05/17/cocoapods简单使用/index.html">
 <meta property="og:site_name" content="烟飞烟灭">
 <meta property="og:description" content="前序当你正确的安装了cocoapods之后,那么接下来则是cocoapods使用;">
-<meta property="og:updated_time" content="2017-05-17T03:29:00.000Z">
+<meta property="og:updated_time" content="2017-11-15T02:21:41.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="cocoapods简单使用">
 <meta name="twitter:description" content="前序当你正确的安装了cocoapods之后,那么接下来则是cocoapods使用;">
@@ -370,7 +370,7 @@
 </blockquote>
 <h4 id="cocoapods使用"><a href="#cocoapods使用" class="headerlink" title="cocoapods使用"></a>cocoapods使用</h4><p>要查找某个cocoaspod上面存在的库时候,可以在终端使用:pod search (第三库名称)<br>cocoapods基本都是在终端进行操作的,那么现在打开终端,进行如下操作:  </p>
 <blockquote>
-<p><strong>第一,cd  工程路径(.xcodeproj所在的文件夹)<br>第二,vim Podfie  这个时候,就会创建一个Podfile文件并且进入编辑状态.<br>第三,进行编辑：<br>platform: ios ‘8.0’<br>target ‘你的工程名称’ do<br>pod ‘FMDB’,’~&gt; 2.6.2’<br>end<br>(8.0表示sdk支持的iOS系统版本,FMDB表示第三方库在cocoapods上面的名称,2.6.2表示的是准备下载第三方库的版本.)<br>然后按esc退出编辑状态,再输入:号,在最下面输入wq,再按enter回到终端<br>第四,输入pod install 这个时候就应该在下载第三方工程,等待下载完成.<br>第五,下载完成之后,这个时候会新生成一个.xcworkspace后缀的工程,之后工作的工程就应该打开这个,而不是.xcodeproj<br>第六,如果要删除或者是添加第三方库,可以在第三步那样重新对Podfile进行编辑就行,也可以在打开工程之后的Podfile进行编辑,2种方法;</strong>  </p>
+<p><strong>第一,cd  工程路径(.xcodeproj所在的文件夹)<br>第二,vim Podfie  这个时候,就会创建一个Podfile文件并且进入编辑状态.<br>第三,进行编辑：<br>platform: ios,’8.0’<br>target ‘你的工程名称’ do<br>pod ‘FMDB’,’~&gt; 2.6.2’<br>end<br>(8.0表示sdk支持的iOS系统版本,FMDB表示第三方库在cocoapods上面的名称,2.6.2表示的是准备下载第三方库的版本.)<br>然后按esc退出编辑状态,再输入:号,在最下面输入wq,再按enter回到终端<br>第四,输入pod install 这个时候就应该在下载第三方工程,等待下载完成.<br>第五,下载完成之后,这个时候会新生成一个.xcworkspace后缀的工程,之后工作的工程就应该打开这个,而不是.xcodeproj<br>第六,如果要删除或者是添加第三方库,可以在第三步那样重新对Podfile进行编辑就行,也可以在打开工程之后的Podfile进行编辑,2种方法;</strong>  </p>
 </blockquote>
 <h4 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h4><p>有时候需要用到pod update 来查看有的第三方库是否有更新版本.<br>需要查看更多cocoapods命令,可以在终端输入pod help.</p>
 
@@ -505,7 +505,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">28</span>
+                <span class="site-state-item-count">29</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
