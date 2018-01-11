@@ -270,6 +270,156 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/01/09/自定义日期选择(年月日)/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="自由不可待">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="烟飞烟灭">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2018/01/09/自定义日期选择(年月日)/" itemprop="url">
+                  一个自定义日期选择器(年月日)
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-01-09T11:31:12+08:00">
+                2018-01-09 11:31
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/iOS开发/" itemprop="url" rel="index">
+                    <span itemprop="name">iOS开发</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><strong>最近项目中需要用到生日的选择,用到了日期选择器;<br>而系统自带的UIDatePicker又不符合要求,所以自定义了一个;</strong>  </p>
+<p>效果先奉上:</p>
+<p><img src="http://oodrfzkav.bkt.clouddn.com/date/date-show.gif" alt="image">  </p>
+<p>地址:<a href="https://github.com/zhuyunsun/FDDatePicker" target="_blank" rel="external">github地址</a></p>
+<h3 id="简单用法"><a href="#简单用法" class="headerlink" title="简单用法"></a>简单用法</h3><h4 id="设置默认日期"><a href="#设置默认日期" class="headerlink" title="设置默认日期"></a>设置默认日期</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">@property(nonatomic,strong)NSString *beginYear;/**&lt;开始年份*/</div><div class="line">@property(nonatomic,strong)NSString *endYear;/**&lt;结束年份*/</div><div class="line">@property(nonatomic,strong)NSString *year;/**&lt;默认年份*/</div><div class="line">@property(nonatomic,strong)NSString *month;/**&lt;默认月份*/</div><div class="line">@property(nonatomic,strong)NSString *day;/**&lt;默认日份*/</div><div class="line">@property(nonatomic)BOOL keepDate;/**&lt;是否保存上一次的日期选择状态,默认是YES*/</div><div class="line"></div><div class="line">datePicker = [[FDDatePicker alloc]init];</div><div class="line">datePicker.delegate = self;</div><div class="line">datePicker.month = @&quot;12&quot;;</div><div class="line">datePicker.day = @&quot;12&quot;;</div><div class="line">datePicker.year = @&quot;1990&quot;;</div><div class="line">datePicker.beginYear = @&quot;1949&quot;;</div><div class="line">datePicker.endYear = @&quot;2000&quot;;</div><div class="line">datePicker.keepDate = NO;</div></pre></td></tr></table></figure>
+<h4 id="展示界面"><a href="#展示界面" class="headerlink" title="展示界面"></a>展示界面</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">[datePicker showPickerView];</div></pre></td></tr></table></figure>
+<h4 id="协议回调"><a href="#协议回调" class="headerlink" title="协议回调"></a>协议回调</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">-(void)selectDate:(NSString *)dateString&#123;</div><div class="line">    NSLog(@&quot;选择的日期=%@&quot;,dateString);</div><div class="line">    _selectDateLabel.text = dateString;</div><div class="line">&#125;</div><div class="line">-(void)cancleAction&#123;</div><div class="line">    NSLog(@&quot;取消&quot;);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>end</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/01/09/iOS开发截取当前屏幕/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -849,159 +999,11 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/09/25/xcode8或者9去掉打印多余的log/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="自由不可待">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="烟飞烟灭">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/09/25/xcode8或者9去掉打印多余的log/" itemprop="url">
-                  xcode8或者9去掉打印多余的log;
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-25T16:35:22+08:00">
-                2017-09-25 16:35
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/xcode/" itemprop="url" rel="index">
-                    <span itemprop="name">xcode</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <blockquote>
-<p>xcode8之后会出现一些莫名其妙的log在xcode的打印台,强迫症表示受不了😖;<br>下面是解决方案:</p>
-</blockquote>
-<h4 id="第一-选中如下"><a href="#第一-选中如下" class="headerlink" title="第一,选中如下:"></a>第一,选中如下:</h4><p><img src="http://oodrfzkav.bkt.clouddn.com/log/edit.png" alt="image"></p>
-<h4 id="第二-如下图所示添加字段-OS-ACTIVITY-MODE并且设置为disable"><a href="#第二-如下图所示添加字段-OS-ACTIVITY-MODE并且设置为disable" class="headerlink" title="第二,如下图所示添加字段:OS_ACTIVITY_MODE并且设置为disable"></a>第二,如下图所示添加字段:OS_ACTIVITY_MODE并且设置为disable</h4><p><img src="http://oodrfzkav.bkt.clouddn.com/log/xcode8%E6%88%96%E8%80%859%E5%8E%BB%E6%8E%89%E6%89%93%E5%8D%B0%E5%A4%9A%E4%BD%99%E7%9A%84log.png" alt="image"></p>
-<p>end</p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
   <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -1046,7 +1048,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">30</span>
+                <span class="site-state-item-count">31</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -1068,7 +1070,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">44</span>
+                <span class="site-state-item-count">47</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
