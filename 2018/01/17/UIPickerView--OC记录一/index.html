@@ -94,13 +94,13 @@
 <meta property="og:url" content="http://yoursite.com/2018/01/17/UIPickerView--OC记录一/index.html">
 <meta property="og:site_name" content="烟飞烟灭">
 <meta property="og:description" content="UIPickerView官方描述:  A view that uses a spinning-wheel or slot-machine metaphor to show one or more sets of values.A picker view displays one or more wheels that the user manipulates to select items. Ea">
-<meta property="og:image" content="http://yoursite.com/Users/zhuyun/Desktop/屏幕快照%202018-01-17%20下午2.48.38.png">
-<meta property="og:image" content="http://yoursite.com/Users/zhuyun/Desktop/屏幕快照%202018-01-17%20下午7.09.02.png">
-<meta property="og:updated_time" content="2018-01-17T11:14:21.000Z">
+<meta property="og:image" content="http://oodrfzkav.bkt.clouddn.com/UIPickerView/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202018-01-17%20%E4%B8%8B%E5%8D%882.48.38.png">
+<meta property="og:image" content="http://oodrfzkav.bkt.clouddn.com/UIPickerView/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202018-01-17%20%E4%B8%8B%E5%8D%887.09.02.png">
+<meta property="og:updated_time" content="2018-01-18T01:22:14.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="OC记录1--UIPickerView">
 <meta name="twitter:description" content="UIPickerView官方描述:  A view that uses a spinning-wheel or slot-machine metaphor to show one or more sets of values.A picker view displays one or more wheels that the user manipulates to select items. Ea">
-<meta name="twitter:image" content="http://yoursite.com/Users/zhuyun/Desktop/屏幕快照%202018-01-17%20下午2.48.38.png">
+<meta name="twitter:image" content="http://oodrfzkav.bkt.clouddn.com/UIPickerView/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202018-01-17%20%E4%B8%8B%E5%8D%882.48.38.png">
 
 
 
@@ -395,10 +395,7 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">- (void)selectRow:(NSInteger)row inComponent:(NSInteger)component animated:(BOOL)animated;</div></pre></td></tr></table></figure>
 <p>6,获取当前选中的行, -1 if nothing selected:</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">- (NSInteger)selectedRowInComponent:(NSInteger)component;</div><div class="line"> // returns selected row. -1 if nothing selected</div></pre></td></tr></table></figure>
-<h4 id="实现的2个协议-UIPickerViewDataSource-UIPickerViewDelegate"><a href="#实现的2个协议-UIPickerViewDataSource-UIPickerViewDelegate" class="headerlink" title="实现的2个协议: UIPickerViewDataSource,UIPickerViewDelegate"></a>实现的2个协议: UIPickerViewDataSource,UIPickerViewDelegate</h4><p>&gt;</p>
-<blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&gt;@property(nullable,nonatomic,weak) id&lt;UIPickerViewDataSource&gt; dataSource;                // default is nil. weak reference</div><div class="line">@property(nullable,nonatomic,weak) id&lt;UIPickerViewDelegate&gt;   delegate;                  // default is nil. weak reference</div><div class="line">&gt;</div></pre></td></tr></table></figure>
-</blockquote>
+<h4 id="实现的2个协议-UIPickerViewDataSource-UIPickerViewDelegate"><a href="#实现的2个协议-UIPickerViewDataSource-UIPickerViewDelegate" class="headerlink" title="实现的2个协议: UIPickerViewDataSource,UIPickerViewDelegate"></a>实现的2个协议: UIPickerViewDataSource,UIPickerViewDelegate</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">@property(nullable,nonatomic,weak) id&lt;UIPickerViewDataSource&gt; dataSource;                // default is nil. weak reference</div><div class="line">@property(nullable,nonatomic,weak) id&lt;UIPickerViewDelegate&gt;   delegate;                  // default is nil. weak reference</div></pre></td></tr></table></figure>
 <p>1,UIPickerViewDataSource</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">@required //表示下面协议方法必须实现</div><div class="line">//返回component的个数</div><div class="line">// returns the number of &apos;columns&apos; to display.</div><div class="line">- (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView;</div><div class="line">//返回某个component中行数</div><div class="line">// returns the # of rows in each component..</div><div class="line">- (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component;</div><div class="line">@end</div></pre></td></tr></table></figure>
 <p>2,UIPickerViewDelegate,由@optional进行修饰,表示该协议下的方法可以选择性的实现:</p>
@@ -411,9 +408,9 @@
 <p>2.4,当前选中的component和row</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">- (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component __TVOS_PROHIBITED;</div></pre></td></tr></table></figure>
 <h3 id="代码示例"><a href="#代码示例" class="headerlink" title="代码示例"></a>代码示例</h3><h4 id="默认大小"><a href="#默认大小" class="headerlink" title="默认大小"></a>默认大小</h4><p>1,当UIPickerView没有设置frame值时,默认宽是320,高是216;  </p>
-<p><img src="/Users/zhuyun/Desktop/屏幕快照 2018-01-17 下午2.48.38.png" alt="image"></p>
+<p><img src="http://oodrfzkav.bkt.clouddn.com/UIPickerView/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202018-01-17%20%E4%B8%8B%E5%8D%882.48.38.png" alt="image"></p>
 <h4 id="用法"><a href="#用法" class="headerlink" title="用法"></a>用法</h4><p><a href="https://github.com/zhuyunsun/UIPickerView" target="_blank" rel="external"><strong>示例代码github地址</strong></a>  </p>
-<p><img src="/Users/zhuyun/Desktop/屏幕快照 2018-01-17 下午7.09.02.png" alt="image"></p>
+<p><img src="http://oodrfzkav.bkt.clouddn.com/UIPickerView/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202018-01-17%20%E4%B8%8B%E5%8D%887.09.02.png" alt="image"></p>
 
       
     </div>
