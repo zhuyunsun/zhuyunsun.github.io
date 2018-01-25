@@ -1,0 +1,821 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="iOS学习,相册,相机," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="UIImagePickerController一个获取图片和视频的类,简单特点:   1,可获取相册,图库的图片;2,可进行拍照,视频录制;3,可对图片进行编辑;4,可保存图片和视频到手机;5,由下面方法推出:12&amp;gt;- (void)presentViewController:(UIViewController *)viewControllerToPresent animated: (BOOL">
+<meta name="keywords" content="iOS学习,相册,相机">
+<meta property="og:type" content="article">
+<meta property="og:title" content="OC记录3--UIImagePickerController">
+<meta property="og:url" content="http://yoursite.com/2018/01/23/OC记录3--UIImagePickerController/index.html">
+<meta property="og:site_name" content="烟飞烟灭">
+<meta property="og:description" content="UIImagePickerController一个获取图片和视频的类,简单特点:   1,可获取相册,图库的图片;2,可进行拍照,视频录制;3,可对图片进行编辑;4,可保存图片和视频到手机;5,由下面方法推出:12&amp;gt;- (void)presentViewController:(UIViewController *)viewControllerToPresent animated: (BOOL">
+<meta property="og:updated_time" content="2018-01-25T06:47:06.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="OC记录3--UIImagePickerController">
+<meta name="twitter:description" content="UIImagePickerController一个获取图片和视频的类,简单特点:   1,可获取相册,图库的图片;2,可进行拍照,视频录制;3,可对图片进行编辑;4,可保存图片和视频到手机;5,由下面方法推出:12&amp;gt;- (void)presentViewController:(UIViewController *)viewControllerToPresent animated: (BOOL">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/01/23/OC记录3--UIImagePickerController/"/>
+
+
+
+
+
+  <title> OC记录3--UIImagePickerController | 烟飞烟灭 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">烟飞烟灭</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">好的文章,就是原来不懂得;看了之后有一种原来是这样的感觉!</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-guestbook">
+          <a href="/guestbook" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            留言
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/01/23/OC记录3--UIImagePickerController/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="自由不可待">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="烟飞烟灭">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                OC记录3--UIImagePickerController
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-01-23T15:19:29+08:00">
+                2018-01-23 15:19
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/iOS学习/" itemprop="url" rel="index">
+                    <span itemprop="name">iOS学习</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><strong>UIImagePickerController一个获取图片和视频的类,简单特点:</strong> </p>
+<blockquote>
+<p>1,可获取相册,图库的图片;<br>2,可进行拍照,视频录制;<br>3,可对图片进行编辑;<br>4,可保存图片和视频到手机;<br>5,由下面方法推出:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&gt;- (void)presentViewController:(UIViewController *)viewControllerToPresent animated: (BOOL)flag completion:(void (^ __nullable)(void))completion;</div><div class="line">&gt;</div></pre></td></tr></table></figure></p>
+<p>6,只支持竖屏模式;</p>
+</blockquote>
+<a id="more"></a>
+<h3 id="UIImagePickerController-h文件查看"><a href="#UIImagePickerController-h文件查看" class="headerlink" title="UIImagePickerController.h文件查看"></a>UIImagePickerController.h文件查看</h3><p>UIImagePickerController 父类继承关系<br>UIImagePickerController -&gt; UINavigationController -&gt; UIViewController -&gt; UIResponder -&gt; NSObject</p>
+<h4 id="类方法"><a href="#类方法" class="headerlink" title="类方法"></a>类方法</h4><p>1,当前UIImagePickerControllerSourceType类型是否可用;  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">+ (BOOL)isSourceTypeAvailable:(UIImagePickerControllerSourceType)sourceType;</div></pre></td></tr></table></figure>
+<p>UIImagePickerControllerSourceType是一个枚举类型,表示打开类型:  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">typedef NS_ENUM(NSInteger, UIImagePickerControllerSourceType) &#123;</div><div class="line">    UIImagePickerControllerSourceTypePhotoLibrary,//图库,所有图片</div><div class="line">    UIImagePickerControllerSourceTypeCamera,//相机</div><div class="line">    UIImagePickerControllerSourceTypeSavedPhotosAlbum//相册</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>2,返回一个当前相机支持类型,拍照,视频,拍照和视频等三种方式;  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">+ (nullable NSArray&lt;NSString *&gt; *)availableMediaTypesForSourceType:(UIImagePickerControllerSourceType)sourceType;</div></pre></td></tr></table></figure>
+<p>3,判断当前手机摄像头是否可用;    </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">+ (BOOL)isCameraDeviceAvailable:(UIImagePickerControllerCameraDevice)cameraDevice;</div></pre></td></tr></table></figure>
+<p>UIImagePickerControllerCameraDevice是一个枚举类型,表示的是摄像头的方向;  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">typedef NS_ENUM(NSInteger, UIImagePickerControllerCameraDevice) &#123;</div><div class="line">    UIImagePickerControllerCameraDeviceRear,//后置摄像头</div><div class="line">    UIImagePickerControllerCameraDeviceFront//前置摄像头</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>4,判断手机前置摄像头或者后置摄像头是否支持闪光灯和手电筒;  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">+ (BOOL)isFlashAvailableForCameraDevice:(UIImagePickerControllerCameraDevice)cameraDevice;</div></pre></td></tr></table></figure>
+<p>5,判断手机不同摄像头支持的拍摄类型,有图片和视频;</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">+ (nullable NSArray&lt;NSNumber *&gt; *)availableCaptureModesForCameraDevice:(UIImagePickerControllerCameraDevice)cameraDevice</div></pre></td></tr></table></figure>
+<p>UIImagePickerControllerCameraDevice一个枚举,表示摄像头支持拍摄类型;  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">typedef NS_ENUM(NSInteger, UIImagePickerControllerCameraCaptureMode) &#123;</div><div class="line">    UIImagePickerControllerCameraCaptureModePhoto,//照片</div><div class="line">    UIImagePickerControllerCameraCaptureModeVideo//视频</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h4 id="属性"><a href="#属性" class="headerlink" title="属性"></a>属性</h4><p>1,UIImagePickerController协议,包含本身UIImagePickerControllerDelegate和父类中的UINavigationControllerDelegate;  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">@property(nullable,nonatomic,weak)id &lt;UINavigationControllerDelegate, UIImagePickerControllerDelegate&gt; delegate;</div></pre></td></tr></table></figure>
+<p>UIImagePickerControllerDelegate协议方法;  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">@optional//该修饰词修饰的方法不要求强制实现</div><div class="line">//需要在如下可用方法中关闭相册等界面,调用方法:  </div><div class="line">- (void)dismissViewControllerAnimated: (BOOL)flag completion: (void (^ __nullable)(void))completion;</div><div class="line">//该方法已经被废弃</div><div class="line">- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingImage:(UIImage *)image editingInfo:(nullable NSDictionary&lt;NSString *,id&gt; *)editingInfo NS_DEPRECATED_IOS(2_0, 3_0);</div><div class="line">//获取到的图片或者视频的信息的回调</div><div class="line">- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary&lt;NSString *,id&gt; *)info;</div><div class="line">info中的key值</div><div class="line">NSString *const UIImagePickerControllerMediaType //用户指定的媒体类型:public.image或者是public.movie</div><div class="line">NSString *const UIImagePickerControllerOriginalImage  //原始图片</div><div class="line">NSString *const UIImagePickerControllerEditedImage //编辑后的图片</div><div class="line">NSString *const UIImagePickerControllerCropRect //裁剪尺寸</div><div class="line">NSString *const UIImagePickerControllerMediaURL // 媒体的url</div><div class="line">NSString *const UIImagePickerControllerReferenceURL // NS_DEPRECATED_IOS(4_1, 11_0, &quot;Replace with public API: UIImagePickerControllerPHAsset&quot;) 原件的url</div><div class="line">UIImagePickerControllerMediaMetadata // 图片的元数据</div><div class="line">NSString *const UIImagePickerControllerLivePhoto //iOS9.1之后 所选或拍摄的照片的实时照片表示</div><div class="line">NSString *const UIImagePickerControllerPHAsset // iOS11.0之后 原件的url</div><div class="line">NSString *const UIImagePickerControllerImageURL //iOS11.0之后 包含图像文件的URL</div><div class="line">//取消</div><div class="line">- (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker;</div></pre></td></tr></table></figure>
+<p>2,设置打开类型,UIImagePickerControllerSourceType,包含:图库,照相机,相册;默认是:UIImagePickerControllerSourceTypePhotoLibrary,图库  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">@property(nonatomic)UIImagePickerControllerSourceType  sourceType;</div></pre></td></tr></table></figure>
+<p>3,在<strong>打开照相机</strong>下该值才有效,3中情况:只有拍照,只有视频,视频和拍照;</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">//@[@&quot;public.image&quot;,@&quot;public.movie&quot;]</div><div class="line">@property(nonatomic,copy) NSArray&lt;NSString *&gt; *mediaTypes;//kUTTypeImage</div></pre></td></tr></table></figure>
+<p>4,获取到的图片(视频无效)是否可以编辑,默认为NO:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">//</div><div class="line">@property(nonatomic)BOOL  allowsEditing NS_AVAILABLE_IOS(3_1);</div><div class="line">//废弃</div><div class="line">@property(nonatomic)BOOL  allowsImageEditing NS_DEPRECATED_IOS(2_0, 3_1);</div></pre></td></tr></table></figure>
+<p>5,获取到图片转换的类型,枚举类型;</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">//iOS11 的一个新属性,默认Current</div><div class="line">@property(nonatomic)UIImagePickerControllerImageURLExportPreset imageExportPreset NS_AVAILABLE_IOS(11_0);</div></pre></td></tr></table></figure>
+<p>UIImagePickerControllerImageURLExportPreset </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">typedef NS_ENUM(NSInteger, UIImagePickerControllerImageURLExportPreset) &#123;</div><div class="line">    UIImagePickerControllerImageURLExportPresetCompatible = 0,//jpeg</div><div class="line">    UIImagePickerControllerImageURLExportPresetCurrent//data</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>6,视频模式下才有效,最大录制时间,默认10分钟;</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">@property(nonatomic)NSTimeInterval   videoMaximumDuration;</div></pre></td></tr></table></figure>
+<p>7,视频下有效,录制视频的质量,枚举类型;</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">@property(nonatomic)UIImagePickerControllerQualityType  videoQuality NS_AVAILABLE_IOS(3_1);</div></pre></td></tr></table></figure>
+<p>UIImagePickerControllerQualityType  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">typedef NS_ENUM(NSInteger, UIImagePickerControllerQualityType) &#123;</div><div class="line">    UIImagePickerControllerQualityTypeHigh = 0,       // 高质量</div><div class="line">    UIImagePickerControllerQualityTypeMedium = 1,     // 适合WiFi下的质量</div><div class="line">    UIImagePickerControllerQualityTypeLow = 2,         //低质量</div><div class="line">    UIImagePickerControllerQualityType640x480 NS_ENUM_AVAILABLE_IOS(4_0) = 3,    // VGA 640x480</div><div class="line">    UIImagePickerControllerQualityTypeIFrame1280x720 NS_ENUM_AVAILABLE_IOS(5_0) = 4,//1280x720</div><div class="line">    UIImagePickerControllerQualityTypeIFrame960x540 NS_ENUM_AVAILABLE_IOS(5_0) = 5,//960x540</div><div class="line">&#125; __TVOS_PROHIBITED;</div></pre></td></tr></table></figure>
+<p>8,视频压缩质量,当为nil时,默认使用第七点中videoQuality的值;</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">//AVAssetExportPreset* string,该属性在iOS 11后生效</div><div class="line">@property(nonatomic, copy)NSString *videoExportPreset NS_AVAILABLE_IOS(11_0);</div></pre></td></tr></table></figure>
+<h4 id="自定义相机UI-属性-方法"><a href="#自定义相机UI-属性-方法" class="headerlink" title="自定义相机UI,属性,方法"></a>自定义相机UI,属性,方法</h4><p>在UIImagePickerControllerSourceTypeCamera下有效;</p>
+<p>1,是否隐藏系统相机自带的的UI,默认是YES;设置为NO时,隐藏系统相机UI;  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">@property(nonatomic)BOOL  showsCameraControls</div></pre></td></tr></table></figure>
+<p>2,设置一个覆盖相机的view; preview对应的图层表示的是相机所在的view层;</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">@property(nullable, nonatomic,strong) __kindof UIView *cameraOverlayView  NS_AVAILABLE_IOS(3_1);   // set a view to overlay the preview view.</div></pre></td></tr></table></figure>
+<p>3,设置preview的CGAffineTransform, CGAffineTransform是一个用于处理形变的类,其可以改变控件的平移、缩放、旋转等,其坐标系统采用的是二维坐标系,即向右为x轴正方向,向下为y轴正方向;</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">@property(nonatomic)CGAffineTransform cameraViewTransform NS_AVAILABLE_IOS(3_1);   // set the transform of the preview view.</div></pre></td></tr></table></figure>
+<p>4,拍照;</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">- (void)takePicture;</div></pre></td></tr></table></figure>
+<p>5,开始录像,停止录像;</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">- (BOOL)startVideoCapture;</div><div class="line">- (void)stopVideoCapture;</div></pre></td></tr></table></figure>
+<p>6,摄像头支持类型,默认是照片:UIImagePickerControllerCameraCaptureModePhoto;</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">@property(nonatomic) UIImagePickerControllerCameraCaptureMode cameraCaptureMode NS_AVAILABLE_IOS(4_0);</div></pre></td></tr></table></figure>
+<p>7,摄像头方向,默认使用后置摄像头:UIImagePickerControllerCameraDeviceRear;</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">@property(nonatomic) UIImagePickerControllerCameraDevice    cameraDevice      NS_AVAILABLE_IOS(4_0);</div></pre></td></tr></table></figure>
+<p>8,摄像头闪光灯模式,默认自动:UIImagePickerControllerCameraFlashModeAuto;</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">@property(nonatomic) UIImagePickerControllerCameraFlashMode  cameraFlashMode   NS_AVAILABLE_IOS(4_0);</div></pre></td></tr></table></figure>
+<h4 id="扩展函数-保存照片和视频到图库"><a href="#扩展函数-保存照片和视频到图库" class="headerlink" title="扩展函数:保存照片和视频到图库"></a>扩展函数:保存照片和视频到图库</h4><h5 id="保存图片到图库"><a href="#保存图片到图库" class="headerlink" title="保存图片到图库"></a>保存图片到图库</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">UIKIT_EXTERN void UIImageWriteToSavedPhotosAlbum(UIImage *image, __nullable id completionTarget, __nullable SEL completionSelector, void * __nullable contextInfo)</div><div class="line">//调用</div><div class="line">UIImageWriteToSavedPhotosAlbum(self.selectImageView.image, self, @selector(image:  didFinishSavingWithError: contextInfo:), nil);</div><div class="line">//保存状态</div><div class="line">- (void)image:(UIImage *)image didFinishSavingWithError:(NSError *)error contextInfo:(void *)contextInfo&#123;</div><div class="line">    if (error == nil) &#123;</div><div class="line">        NSLog(@&quot;保存相册成功&quot;);</div><div class="line">    &#125;else&#123;</div><div class="line">        NSLog(@&quot;保存失败&quot;);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h5 id="判断当前路径下的视频是否可以保存到相册"><a href="#判断当前路径下的视频是否可以保存到相册" class="headerlink" title="判断当前路径下的视频是否可以保存到相册;"></a>判断当前路径下的视频是否可以保存到相册;</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">UIKIT_EXTERN BOOL UIVideoAtPathIsCompatibleWithSavedPhotosAlbum(NSString *videoPath)</div></pre></td></tr></table></figure>
+<h5 id="保存视频到图库"><a href="#保存视频到图库" class="headerlink" title="保存视频到图库"></a>保存视频到图库</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">UIKIT_EXTERN void UISaveVideoAtPathToSavedPhotosAlbum(NSString *videoPath, __nullable id completionTarget, __nullable SEL completionSelector, void * __nullable contextInfo)</div><div class="line">//调用, videoPath视频路径</div><div class="line">UISaveVideoAtPathToSavedPhotosAlbum([info[UIImagePickerControllerMediaURL] path], self, @selector(video: didFinishSavingWithError: contextInfo:), nil);</div><div class="line">//保存状态</div><div class="line">- (void)video:(NSString *)videoPath didFinishSavingWithError:(NSError *)error contextInfo:(void *)contextInfo&#123;</div><div class="line">    if (error == nil) &#123;</div><div class="line">        NSLog(@&quot;保存视频成功&quot;);</div><div class="line">    &#125;else&#123;</div><div class="line">        NSLog(@&quot;视频保存失败&quot;);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h4 id="代码示例-GitHub地址"><a href="#代码示例-GitHub地址" class="headerlink" title="代码示例:GitHub地址"></a><a href="https://github.com/zhuyunsun/UIImagePicker" target="_blank" rel="external">代码示例:GitHub地址</a></h4>
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/iOS学习/" rel="tag"># iOS学习</a>
+          
+            <a href="/tags/相册/" rel="tag"># 相册</a>
+          
+            <a href="/tags/相机/" rel="tag"># 相机</a>
+          
+        </div>
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/01/18/UIDatePicker/" rel="prev" title="OC记录2--UIDatePicker">
+                OC记录2--UIDatePicker <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="lv-container" data-id="city" data-uid="MTAyMC8yODI3Ny80ODQ5"></div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.png"
+               alt="自由不可待" />
+          <p class="site-author-name" itemprop="name">自由不可待</p>
+           
+              <p class="site-description motion-element" itemprop="description">离文明世界有多远?</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">37</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">13</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">52</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#UIImagePickerController-h文件查看"><span class="nav-number">1.</span> <span class="nav-text">UIImagePickerController.h文件查看</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#类方法"><span class="nav-number">1.1.</span> <span class="nav-text">类方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#属性"><span class="nav-number">1.2.</span> <span class="nav-text">属性</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#自定义相机UI-属性-方法"><span class="nav-number">1.3.</span> <span class="nav-text">自定义相机UI,属性,方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#扩展函数-保存照片和视频到图库"><span class="nav-number">1.4.</span> <span class="nav-text">扩展函数:保存照片和视频到图库</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#保存图片到图库"><span class="nav-number">1.4.1.</span> <span class="nav-text">保存图片到图库</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#判断当前路径下的视频是否可以保存到相册"><span class="nav-number">1.4.2.</span> <span class="nav-text">判断当前路径下的视频是否可以保存到相册;</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#保存视频到图库"><span class="nav-number">1.4.3.</span> <span class="nav-text">保存视频到图库</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#代码示例-GitHub地址"><span class="nav-number">1.5.</span> <span class="nav-text">代码示例:GitHub地址</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2017 - 
+  <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">自由不可待</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+  
+  <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.0"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
+<!-- 背景动画 -->
+<script type="text/javascript" src="/js/src/particle.js"></script>
+<!-- 页面点击小红心 -->
+<script type="text/javascript" src="/js/src/love.js"></script>
