@@ -87,17 +87,17 @@
 
 
 
-<meta name="description" content="队列:串行,执行完一个任务再执行下一个任务;并行,可以多个任务同时执行;函数:同步,不开启新线程,在主线程执行;异步,开启新线程(当队列是主队列时,不开新线程);最佳执行方案:异步函数+并发队列死锁问题;耗时的任务放到后台去运行;">
+<meta name="description" content="队列:串行,执行完一个任务再执行下一个任务;并发,可以多个任务同时执行;函数:同步,不开启新线程,在主线程执行;异步,开启新线程(当队列是主队列时,不开新线程);最佳执行方案:异步函数+并发队列死锁问题;耗时的任务放到后台去运行;">
 <meta name="keywords" content="多线程,GCD">
 <meta property="og:type" content="article">
 <meta property="og:title" content="多线程之-GCD">
 <meta property="og:url" content="http://yoursite.com/2018/07/31/多线程之-GCD/index.html">
 <meta property="og:site_name" content="烟飞烟灭">
-<meta property="og:description" content="队列:串行,执行完一个任务再执行下一个任务;并行,可以多个任务同时执行;函数:同步,不开启新线程,在主线程执行;异步,开启新线程(当队列是主队列时,不开新线程);最佳执行方案:异步函数+并发队列死锁问题;耗时的任务放到后台去运行;">
-<meta property="og:updated_time" content="2018-08-03T06:08:16.479Z">
+<meta property="og:description" content="队列:串行,执行完一个任务再执行下一个任务;并发,可以多个任务同时执行;函数:同步,不开启新线程,在主线程执行;异步,开启新线程(当队列是主队列时,不开新线程);最佳执行方案:异步函数+并发队列死锁问题;耗时的任务放到后台去运行;">
+<meta property="og:updated_time" content="2018-08-07T06:55:10.162Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="多线程之-GCD">
-<meta name="twitter:description" content="队列:串行,执行完一个任务再执行下一个任务;并行,可以多个任务同时执行;函数:同步,不开启新线程,在主线程执行;异步,开启新线程(当队列是主队列时,不开新线程);最佳执行方案:异步函数+并发队列死锁问题;耗时的任务放到后台去运行;">
+<meta name="twitter:description" content="队列:串行,执行完一个任务再执行下一个任务;并发,可以多个任务同时执行;函数:同步,不开启新线程,在主线程执行;异步,开启新线程(当队列是主队列时,不开新线程);最佳执行方案:异步函数+并发队列死锁问题;耗时的任务放到后台去运行;">
 
 
 
@@ -394,7 +394,7 @@
 
       
         <blockquote>
-<p>队列:串行,执行完一个任务再执行下一个任务;并行,可以多个任务同时执行;<br>函数:同步,不开启新线程,在主线程执行;异步,开启新线程(当队列是主队列时,不开新线程);<br>最佳执行方案:异步函数+并发队列<br>死锁问题;<br>耗时的任务放到后台去运行;<a id="more"></a>      </p>
+<p>队列:串行,执行完一个任务再执行下一个任务;并发,可以多个任务同时执行;<br>函数:同步,不开启新线程,在主线程执行;异步,开启新线程(当队列是主队列时,不开新线程);<br>最佳执行方案:异步函数+并发队列<br>死锁问题;<br>耗时的任务放到后台去运行;<a id="more"></a>      </p>
 </blockquote>
 <h4 id="GCD"><a href="#GCD" class="headerlink" title="GCD"></a>GCD</h4><blockquote>
 <p>GCD全称是Grand Central Dispatch,是一套纯C的API;<br>GCD会自动利用更多的CPU内核;<br>GCD会自动管理线程的生命周期,使用block块来执行任务;<br>常用;  </p>
