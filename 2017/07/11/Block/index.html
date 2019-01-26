@@ -94,7 +94,7 @@
 <meta property="og:url" content="http://yoursite.com/2017/07/11/Block/index.html">
 <meta property="og:site_name" content="烟飞烟灭">
 <meta property="og:description" content="序言block:简单来说就是一段代码块,block里面存在可执行代码,可以在函数内进行使用;也可以作为函数中形参进行使用;最常用的应该是替换delegate来进行回调或者传值.    注意:block只是声明和保留了一段代码块,必须要调用才会执行里面的代码.  基本结构block结构:返回值类型(^Block名字)(参数列表);">
-<meta property="og:updated_time" content="2019-01-26T12:43:23.483Z">
+<meta property="og:updated_time" content="2019-01-26T13:02:21.540Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Block的简单使用">
 <meta name="twitter:description" content="序言block:简单来说就是一段代码块,block里面存在可执行代码,可以在函数内进行使用;也可以作为函数中形参进行使用;最常用的应该是替换delegate来进行回调或者传值.    注意:block只是声明和保留了一段代码块,必须要调用才会执行里面的代码.  基本结构block结构:返回值类型(^Block名字)(参数列表);">
@@ -370,7 +370,7 @@
                   <span class="post-meta-item-text">字数统计</span>
                 
                 <span title="字数统计">
-                  690 字
+                  695 字
                 </span>
               
 
@@ -420,7 +420,7 @@ NSString *(^myBlock3)(NSString *) = ^(NSString *n1){
 };
 NSString * bn1 = myBlock3(@&quot;341&quot;);
 SPLog(@&quot;%@&quot;,bn1);
-</code></pre><h3 id="修改局部变量"><a href="#修改局部变量" class="headerlink" title="修改局部变量"></a>修改局部变量</h3><p>block内是不能直接修改block外变量的值的.<br>如果需要修改,被修改的变量必须用__block来修饰.  </p>
+</code></pre><h3 id="修改局部变量"><a href="#修改局部变量" class="headerlink" title="修改局部变量"></a>修改局部变量</h3><p>block内是不能直接修改block外变量的值的.<br>如果需要修改,被修改的变量必须用_<em>block来修饰(注意是2个</em>).  </p>
 <pre><code> //修改局部变量
 __block NSUInteger i2 = 10;
 void(^myBlock4)(NSUInteger) = ^(NSUInteger i3){
