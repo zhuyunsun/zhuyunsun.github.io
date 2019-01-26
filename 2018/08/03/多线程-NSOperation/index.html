@@ -94,7 +94,7 @@
 <meta property="og:url" content="http://yoursite.com/2018/08/03/多线程-NSOperation/index.html">
 <meta property="og:site_name" content="烟飞烟灭">
 <meta property="og:description" content="NSOperation 1.和NSThread,GCD一样,NSOperation也是苹果提供的一套多线程并发编程方案;2.它是对GCD在OC层面的一个封装,是完全面向对象的;3.它比GCD多了一些更加实用的功能;4.经常使用;5.自动管理;   NSOperation用法NSOperation是一个抽象类,在使用的时候,需要使用的是它的子类,并且有3种方式:    1.NSInvocationO">
-<meta property="og:updated_time" content="2018-08-07T06:16:52.653Z">
+<meta property="og:updated_time" content="2018-08-14T09:49:10.327Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="多线程之-NSOperation">
 <meta name="twitter:description" content="NSOperation 1.和NSThread,GCD一样,NSOperation也是苹果提供的一套多线程并发编程方案;2.它是对GCD在OC层面的一个封装,是完全面向对象的;3.它比GCD多了一些更加实用的功能;4.经常使用;5.自动管理;   NSOperation用法NSOperation是一个抽象类,在使用的时候,需要使用的是它的子类,并且有3种方式:    1.NSInvocationO">
@@ -348,7 +348,7 @@
                   <span class="post-meta-item-text">字数统计</span>
                 
                 <span title="字数统计">
-                  978 字
+                  979 字
                 </span>
               
 
@@ -403,7 +403,7 @@
 <p>设置依赖的意思就是可以设置某个任务的开始执行依赖于另外一个任务的完成</p>
 </blockquote>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">//blcok1 任务会在invocationOperation1所有任务完成之后才开始执行</div><div class="line">[block1 addDependency:invocationOperation1];</div><div class="line">//可以移除依赖</div><div class="line">- (void)removeDependency:(NSOperation *)op;</div></pre></td></tr></table></figure>
-<h5 id="NSOperation其他的一些设置"><a href="#NSOperation其他的一些设置" class="headerlink" title="NSOperation其他的一些设置"></a>NSOperation其他的一些设置</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">//设置任务的优先级,默认NSOperationQueuePriorityNormal,优先级高只表明优先被执行,而不代表被完成</div><div class="line">typedef NS_ENUM(NSInteger, NSOperationQueuePriority) &#123;</div><div class="line">	NSOperationQueuePriorityVeryLow = -8L,</div><div class="line">	NSOperationQueuePriorityLow = -4L,</div><div class="line">	NSOperationQueuePriorityNormal = 0,</div><div class="line">	NSOperationQueuePriorityHigh = 4,</div><div class="line">	NSOperationQueuePriorityVeryHigh = 8</div><div class="line">&#125;;</div><div class="line">@property NSOperationQueuePriority queuePriority;</div><div class="line">//获取某个任务的所有依赖,只读属性</div><div class="line">@property (readonly, copy) NSArray&lt;NSOperation *&gt; *dependencies;</div><div class="line">//等待某个任务完成,会阻塞主线程</div><div class="line">- (void)waitUntilFinished</div></pre></td></tr></table></figure>
+<h5 id="NSOperation其他的一些设置"><a href="#NSOperation其他的一些设置" class="headerlink" title="NSOperation其他的一些设置"></a>NSOperation其他的一些设置</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">//设置任务的优先级,默认NSOperationQueuePriorityNormal,优先级高只表明优先被执行,而不代表被完成,在</div><div class="line">typedef NS_ENUM(NSInteger, NSOperationQueuePriority) &#123;</div><div class="line">	NSOperationQueuePriorityVeryLow = -8L,</div><div class="line">	NSOperationQueuePriorityLow = -4L,</div><div class="line">	NSOperationQueuePriorityNormal = 0,</div><div class="line">	NSOperationQueuePriorityHigh = 4,</div><div class="line">	NSOperationQueuePriorityVeryHigh = 8</div><div class="line">&#125;;</div><div class="line">@property NSOperationQueuePriority queuePriority;</div><div class="line">//获取某个任务的所有依赖,只读属性</div><div class="line">@property (readonly, copy) NSArray&lt;NSOperation *&gt; *dependencies;</div><div class="line">//等待某个任务完成,会阻塞主线程</div><div class="line">- (void)waitUntilFinished</div></pre></td></tr></table></figure>
 
       
     </div>
@@ -610,7 +610,7 @@
         <div class="copyright" >
   
   &copy;  2017 - 
-  <span itemprop="copyrightYear">2018</span>
+  <span itemprop="copyrightYear">2019</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
