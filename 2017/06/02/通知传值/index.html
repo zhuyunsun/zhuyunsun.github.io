@@ -94,7 +94,7 @@
 <meta property="og:url" content="http://yoursite.com/2017/06/02/通知传值/index.html">
 <meta property="og:site_name" content="烟飞烟灭">
 <meta property="og:description" content="传值一般指的是数据传递,有的是在某个类里面,有的是在类与类之间;   通知传值 通知传值就适用于类与类之间的数据传递.   代码示例notiName表示的是自定义的字符串,  注册通知[[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(notiAction:) name:notiName object:n">
-<meta property="og:updated_time" content="2017-06-05T02:19:14.000Z">
+<meta property="og:updated_time" content="2019-04-24T06:37:59.933Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="通知传值">
 <meta name="twitter:description" content="传值一般指的是数据传递,有的是在某个类里面,有的是在类与类之间;   通知传值 通知传值就适用于类与类之间的数据传递.   代码示例notiName表示的是自定义的字符串,  注册通知[[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(notiAction:) name:notiName object:n">
@@ -370,7 +370,7 @@
                   <span class="post-meta-item-text">字数统计</span>
                 
                 <span title="字数统计">
-                  135 字
+                  147 字
                 </span>
               
 
@@ -401,7 +401,7 @@
 <blockquote>
 <p><strong>注册通知</strong><br>[[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(notiAction:) name:notiName object:nil];<br><strong>发送通知</strong><br>NSDictionary * dic = @{@”key”:@”value”};<br>[[NSNotificationCenter defaultCenter] postNotificationName:notiName object:dic];<br><strong>移除通知</strong><br>在-(void)dealloc{};中<br>[[NSNotificationCenter defaultCenter] removeObserver:self name:notiName object:nil];</p>
 </blockquote>
-<p><strong>小结:使用通知的时候,一定不要忘记通知使用的三步曲.</strong></p>
+<p><strong>小结:使用通知的时候,一定不要忘记通知使用的三步曲:注册通知,发送通知,移除通知.</strong></p>
 
       
     </div>

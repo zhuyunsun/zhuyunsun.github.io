@@ -94,12 +94,12 @@
 <meta property="og:url" content="http://yoursite.com/2018/01/09/自定义日期选择(年月日)/index.html">
 <meta property="og:site_name" content="烟飞烟灭">
 <meta property="og:description" content="最近项目中需要用到生日的选择,用到了日期选择器;而系统自带的UIDatePicker又不符合要求,所以自定义了一个;   效果先奉上:    地址:github地址 简单用法设置默认日期123456789101112131415@property(nonatomic,strong)NSString *beginYear;/**&amp;lt;开始年份*/@property(nonatomic,strong">
-<meta property="og:image" content="http://oodrfzkav.bkt.clouddn.com/date/date-show.gif">
-<meta property="og:updated_time" content="2018-01-11T03:42:55.000Z">
+<meta property="og:image" content="https://20190422zy.oss-cn-shenzhen.aliyuncs.com/2019-4-24-01/date-show.gif?Expires=1556092285&OSSAccessKeyId=TMP.AgGcYoxX6jm8u_pJ0e7SVkKfHrZ5fgBIW9rAKBzIir6OKmxyoHPyH3eD2yMSADAtAhUAqpCFX8h4cYcB8X8pGXGna9INF-4CFFyUWu051zkAytuPbWl5oj2fPVkz&Signature=KCu%2BZhcnZCNYhZ3By1FCR9OXaQg%3D">
+<meta property="og:updated_time" content="2019-04-24T06:51:39.144Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="一个自定义日期选择器(年月日)">
 <meta name="twitter:description" content="最近项目中需要用到生日的选择,用到了日期选择器;而系统自带的UIDatePicker又不符合要求,所以自定义了一个;   效果先奉上:    地址:github地址 简单用法设置默认日期123456789101112131415@property(nonatomic,strong)NSString *beginYear;/**&amp;lt;开始年份*/@property(nonatomic,strong">
-<meta name="twitter:image" content="http://oodrfzkav.bkt.clouddn.com/date/date-show.gif">
+<meta name="twitter:image" content="https://20190422zy.oss-cn-shenzhen.aliyuncs.com/2019-4-24-01/date-show.gif?Expires=1556092285&OSSAccessKeyId=TMP.AgGcYoxX6jm8u_pJ0e7SVkKfHrZ5fgBIW9rAKBzIir6OKmxyoHPyH3eD2yMSADAtAhUAqpCFX8h4cYcB8X8pGXGna9INF-4CFFyUWu051zkAytuPbWl5oj2fPVkz&Signature=KCu%2BZhcnZCNYhZ3By1FCR9OXaQg%3D">
 
 
 
@@ -397,7 +397,7 @@
       
         <p><strong>最近项目中需要用到生日的选择,用到了日期选择器;<br>而系统自带的UIDatePicker又不符合要求,所以自定义了一个;</strong>  </p>
 <p>效果先奉上:</p>
-<p><img src="http://oodrfzkav.bkt.clouddn.com/date/date-show.gif" alt="image">  </p>
+<p><img src="https://20190422zy.oss-cn-shenzhen.aliyuncs.com/2019-4-24-01/date-show.gif?Expires=1556092285&amp;OSSAccessKeyId=TMP.AgGcYoxX6jm8u_pJ0e7SVkKfHrZ5fgBIW9rAKBzIir6OKmxyoHPyH3eD2yMSADAtAhUAqpCFX8h4cYcB8X8pGXGna9INF-4CFFyUWu051zkAytuPbWl5oj2fPVkz&amp;Signature=KCu%2BZhcnZCNYhZ3By1FCR9OXaQg%3D" alt="image">  </p>
 <p>地址:<a href="https://github.com/zhuyunsun/FDDatePicker" target="_blank" rel="external">github地址</a></p>
 <h3 id="简单用法"><a href="#简单用法" class="headerlink" title="简单用法"></a>简单用法</h3><h4 id="设置默认日期"><a href="#设置默认日期" class="headerlink" title="设置默认日期"></a>设置默认日期</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">@property(nonatomic,strong)NSString *beginYear;/**&lt;开始年份*/</div><div class="line">@property(nonatomic,strong)NSString *endYear;/**&lt;结束年份*/</div><div class="line">@property(nonatomic,strong)NSString *year;/**&lt;默认年份*/</div><div class="line">@property(nonatomic,strong)NSString *month;/**&lt;默认月份*/</div><div class="line">@property(nonatomic,strong)NSString *day;/**&lt;默认日份*/</div><div class="line">@property(nonatomic)BOOL keepDate;/**&lt;是否保存上一次的日期选择状态,默认是YES*/</div><div class="line"></div><div class="line">datePicker = [[FDDatePicker alloc]init];</div><div class="line">datePicker.delegate = self;</div><div class="line">datePicker.month = @&quot;12&quot;;</div><div class="line">datePicker.day = @&quot;12&quot;;</div><div class="line">datePicker.year = @&quot;1990&quot;;</div><div class="line">datePicker.beginYear = @&quot;1949&quot;;</div><div class="line">datePicker.endYear = @&quot;2000&quot;;</div><div class="line">datePicker.keepDate = NO;</div></pre></td></tr></table></figure>
 <h4 id="展示界面"><a href="#展示界面" class="headerlink" title="展示界面"></a>展示界面</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">[datePicker showPickerView];</div></pre></td></tr></table></figure>

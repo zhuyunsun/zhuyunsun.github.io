@@ -94,12 +94,12 @@
 <meta property="og:url" content="http://yoursite.com/2017/05/02/app版本号/index.html">
 <meta property="og:site_name" content="烟飞烟灭">
 <meta property="og:description" content="版本号:VersionVersion是对外展示给用户的版本号,也可以在AppStore中看到,OC中代码的获取:">
-<meta property="og:image" content="http://oodrfzkav.bkt.clouddn.com/version%E5%92%8Cbuild.png">
-<meta property="og:updated_time" content="2017-05-02T03:45:59.000Z">
+<meta property="og:image" content="https://20190422zy.oss-cn-shenzhen.aliyuncs.com/2019-4-24-01/version%E5%92%8Cbuild.png?Expires=1556090721&OSSAccessKeyId=TMP.AgGcYoxX6jm8u_pJ0e7SVkKfHrZ5fgBIW9rAKBzIir6OKmxyoHPyH3eD2yMSADAtAhUAqpCFX8h4cYcB8X8pGXGna9INF-4CFFyUWu051zkAytuPbWl5oj2fPVkz&Signature=BblnJtExFk3v7L49MDTdKpLwkAg%3D">
+<meta property="og:updated_time" content="2019-04-24T06:25:54.394Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="xcode工程中version和build">
 <meta name="twitter:description" content="版本号:VersionVersion是对外展示给用户的版本号,也可以在AppStore中看到,OC中代码的获取:">
-<meta name="twitter:image" content="http://oodrfzkav.bkt.clouddn.com/version%E5%92%8Cbuild.png">
+<meta name="twitter:image" content="https://20190422zy.oss-cn-shenzhen.aliyuncs.com/2019-4-24-01/version%E5%92%8Cbuild.png?Expires=1556090721&OSSAccessKeyId=TMP.AgGcYoxX6jm8u_pJ0e7SVkKfHrZ5fgBIW9rAKBzIir6OKmxyoHPyH3eD2yMSADAtAhUAqpCFX8h4cYcB8X8pGXGna9INF-4CFFyUWu051zkAytuPbWl5oj2fPVkz&Signature=BblnJtExFk3v7L49MDTdKpLwkAg%3D">
 
 
 
@@ -400,7 +400,7 @@
 <p>版本号最多由三个分隔开的整数组成的字符串,如x.y.z;<br>第一个整数x表示:重大修改的版本,如新添加功能或者重大变化的修改;<br>第二个整数y表示:修改了一些突出的功能;<br>第三个整数z表示:维护版本,修复bug或者优化等等  </p>
 <h3 id="Build号"><a href="#Build号" class="headerlink" title="Build号"></a>Build号</h3><p>Build号,只有开发者能看到,是内部版本号(形式可以是单个整数,也可以是多个.分割的多个整数)<br>如提交了版本号为1.0.4 build号为8去审核而被拒绝,那么下次再次提交审核的时候,版本号可以不变,而build号需要往上加到9或者10,比原来的build号大就可以了.<br>OC代码的获取:</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">[[[NSBundle mainBundle] infoDictionary] objectForKey:@&quot;CFBundleVersion&quot;];</div></pre></td></tr></table></figure>
-<h3 id="工程中的位置"><a href="#工程中的位置" class="headerlink" title="工程中的位置"></a>工程中的位置</h3><p><img src="http://oodrfzkav.bkt.clouddn.com/version%E5%92%8Cbuild.png" alt="image"></p>
+<h3 id="工程中的位置"><a href="#工程中的位置" class="headerlink" title="工程中的位置"></a>工程中的位置</h3><p><img src="https://20190422zy.oss-cn-shenzhen.aliyuncs.com/2019-4-24-01/version%E5%92%8Cbuild.png?Expires=1556090721&amp;OSSAccessKeyId=TMP.AgGcYoxX6jm8u_pJ0e7SVkKfHrZ5fgBIW9rAKBzIir6OKmxyoHPyH3eD2yMSADAtAhUAqpCFX8h4cYcB8X8pGXGna9INF-4CFFyUWu051zkAytuPbWl5oj2fPVkz&amp;Signature=BblnJtExFk3v7L49MDTdKpLwkAg%3D" alt="image"></p>
 
       
     </div>

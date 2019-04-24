@@ -94,7 +94,7 @@
 <meta property="og:url" content="http://yoursite.com/2017/05/18/静态库中支持模拟器和真机架构的合并/index.html">
 <meta property="og:site_name" content="烟飞烟灭">
 <meta property="og:description" content="前序静态库:是对功能性代码的封装,后缀包括.a和.framework.   模拟器和真机的ARM处理器指令集ARM处理器,特点是体积小,低功耗,低成本,高性能,所以几乎所有手机处理器都基于ARM，在嵌入式系统中应用广泛.">
-<meta property="og:updated_time" content="2017-05-18T09:55:41.000Z">
+<meta property="og:updated_time" content="2019-04-24T06:37:12.297Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="静态库架构同时支持真机和模拟器">
 <meta name="twitter:description" content="前序静态库:是对功能性代码的封装,后缀包括.a和.framework.   模拟器和真机的ARM处理器指令集ARM处理器,特点是体积小,低功耗,低成本,高性能,所以几乎所有手机处理器都基于ARM，在嵌入式系统中应用广泛.">
@@ -370,7 +370,7 @@
                   <span class="post-meta-item-text">字数统计</span>
                 
                 <span title="字数统计">
-                  474 字
+                  482 字
                 </span>
               
 
@@ -408,7 +408,7 @@
 <h4 id="查看静态库支持的架构"><a href="#查看静态库支持的架构" class="headerlink" title="查看静态库支持的架构"></a>查看静态库支持的架构</h4><p>在终端输入:lipo -info 所在路径/xxx.a或者lipo -info 所在路径/xxx.framework  </p>
 <h4 id="静态库合并"><a href="#静态库合并" class="headerlink" title="静态库合并"></a>静态库合并</h4><p>终端操作:  </p>
 <blockquote>
-<p>.framework:<br>lipo -create 模拟器所在的路径/xxx.framework/xxx  真机所在路径/xxx.framework/xxx -output 合并二进制保存路径/xxx<br>然后任意替换模拟器或者真机中的xxx二进制白板文件.<br>.a:<br>lipo -create 模拟器所在的路径/xxx.a  真机所在路径/xxx.a -output 合并二进制保存路径/xxx.a<br><strong>查看合并后支持架构,再次在终端输入: lipo -info 所在路径/xxx.a或者lipo -info 所在路径/xxx.framework</strong>  </p>
+<p>.framework:<br>lipo -create 模拟器所在的路径/xxx.framework/xxx(白板文件)  真机所在路径/xxx.framework/xxx(白板文件) -output 合并二进制保存路径/xxx<br>然后任意替换模拟器或者真机中的xxx二进制<strong>白板文件</strong>.<br>.a:<br>lipo -create 模拟器所在的路径/xxx.a  真机所在路径/xxx.a -output 合并二进制保存路径/xxx.a<br><strong>查看合并后支持架构,再次在终端输入: lipo -info 所在路径/xxx.a或者lipo -info 所在路径/xxx.framework</strong>  </p>
 </blockquote>
 
       
