@@ -87,19 +87,19 @@
 
 
 
-<meta name="description" content="序言 由于swift中是没有宏定义的,那么在打印log的时候, 如何设置:在debug的时候打印log,在release的时候不打印log.   创建准备书写的swift文件,书写以下函数     图中的:DebugType 可自己定义.   配置一下工程![image] (https://20190422zy.oss-cn-shenzhen.aliyuncs.com/2019-4-24-01/%">
+<meta name="description" content="序言 由于swift中是没有宏定义的,那么在打印log的时候, 如何设置:在debug的时候打印log,在release的时候不打印log.   创建准备书写的swift文件,书写以下函数     图中的:DebugType 可自己定义.   配置一下工程![image] (https://20190422zy.oss-cn-shenzhen.aliyuncs.com/2019-4-24-01/s">
 <meta name="keywords" content="swift">
 <meta property="og:type" content="article">
 <meta property="og:title" content="swift学习之-log打印">
 <meta property="og:url" content="http://yoursite.com/2017/06/15/swift学习之-log打印/index.html">
 <meta property="og:site_name" content="烟飞烟灭">
-<meta property="og:description" content="序言 由于swift中是没有宏定义的,那么在打印log的时候, 如何设置:在debug的时候打印log,在release的时候不打印log.   创建准备书写的swift文件,书写以下函数     图中的:DebugType 可自己定义.   配置一下工程![image] (https://20190422zy.oss-cn-shenzhen.aliyuncs.com/2019-4-24-01/%">
-<meta property="og:image" content="https://20190422zy.oss-cn-shenzhen.aliyuncs.com/2019-4-24-01/%E4%BE%8B%E5%AD%90.png?Expires=1556091720&OSSAccessKeyId=TMP.AgGcYoxX6jm8u_pJ0e7SVkKfHrZ5fgBIW9rAKBzIir6OKmxyoHPyH3eD2yMSADAtAhUAqpCFX8h4cYcB8X8pGXGna9INF-4CFFyUWu051zkAytuPbWl5oj2fPVkz&Signature=0HSI3%2FHb54A6xzMJmLhe%2BdMYwCQ%3D">
-<meta property="og:updated_time" content="2019-04-24T06:42:12.312Z">
+<meta property="og:description" content="序言 由于swift中是没有宏定义的,那么在打印log的时候, 如何设置:在debug的时候打印log,在release的时候不打印log.   创建准备书写的swift文件,书写以下函数     图中的:DebugType 可自己定义.   配置一下工程![image] (https://20190422zy.oss-cn-shenzhen.aliyuncs.com/2019-4-24-01/s">
+<meta property="og:image" content="https://20190422zy.oss-cn-shenzhen.aliyuncs.com/2019-4-24-01/swift-log%E6%89%93%E5%8D%B0/%E4%BE%8B%E5%AD%90.png">
+<meta property="og:updated_time" content="2019-06-12T07:17:24.320Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="swift学习之-log打印">
-<meta name="twitter:description" content="序言 由于swift中是没有宏定义的,那么在打印log的时候, 如何设置:在debug的时候打印log,在release的时候不打印log.   创建准备书写的swift文件,书写以下函数     图中的:DebugType 可自己定义.   配置一下工程![image] (https://20190422zy.oss-cn-shenzhen.aliyuncs.com/2019-4-24-01/%">
-<meta name="twitter:image" content="https://20190422zy.oss-cn-shenzhen.aliyuncs.com/2019-4-24-01/%E4%BE%8B%E5%AD%90.png?Expires=1556091720&OSSAccessKeyId=TMP.AgGcYoxX6jm8u_pJ0e7SVkKfHrZ5fgBIW9rAKBzIir6OKmxyoHPyH3eD2yMSADAtAhUAqpCFX8h4cYcB8X8pGXGna9INF-4CFFyUWu051zkAytuPbWl5oj2fPVkz&Signature=0HSI3%2FHb54A6xzMJmLhe%2BdMYwCQ%3D">
+<meta name="twitter:description" content="序言 由于swift中是没有宏定义的,那么在打印log的时候, 如何设置:在debug的时候打印log,在release的时候不打印log.   创建准备书写的swift文件,书写以下函数     图中的:DebugType 可自己定义.   配置一下工程![image] (https://20190422zy.oss-cn-shenzhen.aliyuncs.com/2019-4-24-01/s">
+<meta name="twitter:image" content="https://20190422zy.oss-cn-shenzhen.aliyuncs.com/2019-4-24-01/swift-log%E6%89%93%E5%8D%B0/%E4%BE%8B%E5%AD%90.png">
 
 
 
@@ -372,7 +372,7 @@
                   <span class="post-meta-item-text">字数统计</span>
                 
                 <span title="字数统计">
-                  124 字
+                  122 字
                 </span>
               
 
@@ -396,9 +396,9 @@
 
       
         <h4 id="序言"><a href="#序言" class="headerlink" title="序言"></a>序言</h4><p> <strong>由于swift中是没有宏定义的,那么在打印log的时候,<br> 如何设置:在debug的时候打印log,在release的时候不打印log.</strong>  </p>
-<h4 id="创建准备书写的swift文件-书写以下函数"><a href="#创建准备书写的swift文件-书写以下函数" class="headerlink" title="创建准备书写的swift文件,书写以下函数"></a>创建准备书写的swift文件,书写以下函数</h4><p> <img src="https://20190422zy.oss-cn-shenzhen.aliyuncs.com/2019-4-24-01/%E4%BE%8B%E5%AD%90.png?Expires=1556091720&amp;OSSAccessKeyId=TMP.AgGcYoxX6jm8u_pJ0e7SVkKfHrZ5fgBIW9rAKBzIir6OKmxyoHPyH3eD2yMSADAtAhUAqpCFX8h4cYcB8X8pGXGna9INF-4CFFyUWu051zkAytuPbWl5oj2fPVkz&amp;Signature=0HSI3%2FHb54A6xzMJmLhe%2BdMYwCQ%3D" alt="image">  </p>
+<h4 id="创建准备书写的swift文件-书写以下函数"><a href="#创建准备书写的swift文件-书写以下函数" class="headerlink" title="创建准备书写的swift文件,书写以下函数"></a>创建准备书写的swift文件,书写以下函数</h4><p> <img src="https://20190422zy.oss-cn-shenzhen.aliyuncs.com/2019-4-24-01/swift-log%E6%89%93%E5%8D%B0/%E4%BE%8B%E5%AD%90.png" alt="image">  </p>
 <p> 图中的:DebugType 可自己定义.  </p>
-<h4 id="配置一下工程"><a href="#配置一下工程" class="headerlink" title="配置一下工程"></a>配置一下工程</h4><p>![image] (<a href="https://20190422zy.oss-cn-shenzhen.aliyuncs.com/2019-4-24-01/%E6%96%87%E4%BB%B6%E8%AE%BE%E7%BD%AE.png?Expires=1556091645&amp;OSSAccessKeyId=TMP.AgGcYoxX6jm8u_pJ0e7SVkKfHrZ5fgBIW9rAKBzIir6OKmxyoHPyH3eD2yMSADAtAhUAqpCFX8h4cYcB8X8pGXGna9INF-4CFFyUWu051zkAytuPbWl5oj2fPVkz&amp;Signature=xxnH%2Ff4GtDZ1PesTAdgSexrCqgc%3D" target="_blank" rel="external">https://20190422zy.oss-cn-shenzhen.aliyuncs.com/2019-4-24-01/%E6%96%87%E4%BB%B6%E8%AE%BE%E7%BD%AE.png?Expires=1556091645&amp;OSSAccessKeyId=TMP.AgGcYoxX6jm8u_pJ0e7SVkKfHrZ5fgBIW9rAKBzIir6OKmxyoHPyH3eD2yMSADAtAhUAqpCFX8h4cYcB8X8pGXGna9INF-4CFFyUWu051zkAytuPbWl5oj2fPVkz&amp;Signature=xxnH%2Ff4GtDZ1PesTAdgSexrCqgc%3D</a>) </p>
+<h4 id="配置一下工程"><a href="#配置一下工程" class="headerlink" title="配置一下工程"></a>配置一下工程</h4><p>![image] (<a href="https://20190422zy.oss-cn-shenzhen.aliyuncs.com/2019-4-24-01/swift-log%E6%89%93%E5%8D%B0/%E6%96%87%E4%BB%B6%E8%AE%BE%E7%BD%AE.png" target="_blank" rel="external">https://20190422zy.oss-cn-shenzhen.aliyuncs.com/2019-4-24-01/swift-log%E6%89%93%E5%8D%B0/%E6%96%87%E4%BB%B6%E8%AE%BE%E7%BD%AE.png</a>) </p>
 <p>-D 后面的DebugType为上图设置,请保持2者一致.</p>
 
       

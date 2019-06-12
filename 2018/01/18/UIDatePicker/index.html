@@ -94,15 +94,15 @@
 <meta property="og:url" content="http://yoursite.com/2018/01/18/UIDatePicker/index.html">
 <meta property="og:site_name" content="烟飞烟灭">
 <meta property="og:description" content="官方描述:  A control used for the inputting of date and time values.You can use a date picker to allow a user to enter either a point in time (calendar date, time value or both) or a time interval (for ex">
-<meta property="og:image" content="http://oodrfzkav.bkt.clouddn.com/UIDatePicker/UIDatePickerModeTime.png">
-<meta property="og:image" content="http://oodrfzkav.bkt.clouddn.com/UIDatePicker/UIDatePickerModeDate.png">
-<meta property="og:image" content="http://oodrfzkav.bkt.clouddn.com/UIDatePicker/UIDatePickerModeDateAndTime.png">
-<meta property="og:image" content="http://oodrfzkav.bkt.clouddn.com/UIDatePicker/UIDatePickerModeCountDownTimer.png">
-<meta property="og:updated_time" content="2019-04-24T07:09:57.348Z">
+<meta property="og:image" content="https://20190422zy.oss-cn-shenzhen.aliyuncs.com/2019-4-24-01/UIDatePicker/UIDatePickerModeTime.png">
+<meta property="og:image" content="https://20190422zy.oss-cn-shenzhen.aliyuncs.com/2019-4-24-01/UIDatePicker/UIDatePickerModeDate.png">
+<meta property="og:image" content="https://20190422zy.oss-cn-shenzhen.aliyuncs.com/2019-4-24-01/UIDatePicker/UIDatePickerModeDateAndTime.png">
+<meta property="og:image" content="https://20190422zy.oss-cn-shenzhen.aliyuncs.com/2019-4-24-01/UIDatePicker/UIDatePickerModeCountDownTimer.png">
+<meta property="og:updated_time" content="2019-06-12T07:46:52.851Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="OC记录2--UIDatePicker">
 <meta name="twitter:description" content="官方描述:  A control used for the inputting of date and time values.You can use a date picker to allow a user to enter either a point in time (calendar date, time value or both) or a time interval (for ex">
-<meta name="twitter:image" content="http://oodrfzkav.bkt.clouddn.com/UIDatePicker/UIDatePickerModeTime.png">
+<meta name="twitter:image" content="https://20190422zy.oss-cn-shenzhen.aliyuncs.com/2019-4-24-01/UIDatePicker/UIDatePickerModeTime.png">
 
 
 
@@ -414,19 +414,19 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">typedef NS_ENUM(NSInteger, UIDatePickerMode) &#123;</div><div class="line">    UIDatePickerModeTime,           // Displays hour, minute, and optionally AM/PM designation depending on the locale setting (e.g. 6 | 53 | PM)</div><div class="line">    UIDatePickerModeDate,           // Displays month, day, and year depending on the locale setting (e.g. November | 15 | 2007)</div><div class="line">    UIDatePickerModeDateAndTime,    // Displays date, hour, minute, and optionally AM/PM designation depending on the locale setting (e.g. Wed Nov 15 | 6 | 53 | PM)</div><div class="line">    UIDatePickerModeCountDownTimer, // Displays hour and minute (e.g. 1 | 53)</div><div class="line">&#125; __TVOS_PROHIBITED</div></pre></td></tr></table></figure>
 <p><strong>UIDatePickerModeTime:只展示小时,分钟和AM(早上),PM(下午)</strong> </p>
 <blockquote>
-<p><img src="http://oodrfzkav.bkt.clouddn.com/UIDatePicker/UIDatePickerModeTime.png" alt="image">  </p>
+<p><img src="https://20190422zy.oss-cn-shenzhen.aliyuncs.com/2019-4-24-01/UIDatePicker/UIDatePickerModeTime.png" alt="image">  </p>
 </blockquote>
 <p><strong>UIDatePickerModeDate:展示年月日</strong>    </p>
 <blockquote>
-<p><img src="http://oodrfzkav.bkt.clouddn.com/UIDatePicker/UIDatePickerModeDate.png" alt="image">  </p>
+<p><img src="https://20190422zy.oss-cn-shenzhen.aliyuncs.com/2019-4-24-01/UIDatePicker/UIDatePickerModeDate.png" alt="image">  </p>
 </blockquote>
 <p><strong>UIDatePickerModeDateAndTime:展示日期和时间</strong>  </p>
 <blockquote>
-<p><img src="http://oodrfzkav.bkt.clouddn.com/UIDatePicker/UIDatePickerModeDateAndTime.png" alt="image">  </p>
+<p><img src="https://20190422zy.oss-cn-shenzhen.aliyuncs.com/2019-4-24-01/UIDatePicker/UIDatePickerModeDateAndTime.png" alt="image">  </p>
 </blockquote>
 <p><strong>UIDatePickerModeCountDownTimer:倒计时模式</strong>  </p>
 <blockquote>
-<p><img src="http://oodrfzkav.bkt.clouddn.com/UIDatePicker/UIDatePickerModeCountDownTimer.png" alt="image"></p>
+<p><img src="https://20190422zy.oss-cn-shenzhen.aliyuncs.com/2019-4-24-01/UIDatePicker/UIDatePickerModeCountDownTimer.png" alt="image"></p>
 </blockquote>
 <h5 id="locale-本地化"><a href="#locale-本地化" class="headerlink" title="locale:本地化"></a>locale:本地化</h5><p>该属性表示的是设置日期展示的语言,不进行设置时,默认手机系统当前语言;</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">@property (nullable, nonatomic, strong) NSLocale   *locale;   // default is [NSLocale currentLocale]. setting nil returns to default</div></pre></td></tr></table></figure>
