@@ -401,7 +401,7 @@
             <blockquote>
 <p>今天给大家介绍一个关于cell的比较炫酷的点击动画效果,具体效果请看下面  </p>
 </blockquote>
-<p><img src="https://20190422zy.oss-cn-shenzhen.aliyuncs.com/images/3.gif" alt="image"></p>
+<p><img src="https://20190422zy.oss-cn-shenzhen.aliyuncs.com/2019-4-24-01/cell%E5%8A%A8%E6%80%81%E6%95%88%E6%9E%9C/3.gif" alt="image"></p>
 <p>代码如下:  </p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">//点击状态</div><div class="line">-(void)tableView:(UITableView *)tableView didHighlightRowAtIndexPath:(NSIndexPath *)indexPath&#123;</div><div class="line">    UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];</div><div class="line">    [UIView beginAnimations:nil context:nil];</div><div class="line">    [UIView setAnimationDuration:0.2];</div><div class="line">    cell.transform = CGAffineTransformMakeScale(0.87, 0.87);//cell进行缩放</div><div class="line">    [UIView commitAnimations];</div><div class="line">&#125;</div><div class="line">//复原</div><div class="line">-(void)tableView:(UITableView *)tableView didUnhighlightRowAtIndexPath:(NSIndexPath *)indexPath&#123;</div><div class="line">    UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];</div><div class="line">    [UIView beginAnimations:nil context:nil];</div><div class="line">    [UIView setAnimationDuration:0.2];</div><div class="line">    cell.transform = CGAffineTransformMakeScale(1, 1);</div><div class="line">    [UIView commitAnimations];</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 
@@ -1120,7 +1120,7 @@
 
       
         
-          <p><strong>一个比较简单的省市选择器,效果如下:</strong><br><img src="https://20190422zy.oss-cn-shenzhen.aliyuncs.com/2019-4-24-01/area-show.gif" alt="image">  </p>
+          <p><strong>一个比较简单的省市选择器,效果如下:</strong><br><img src="https://20190422zy.oss-cn-shenzhen.aliyuncs.com/2019-4-24-01/%E8%87%AA%E5%AE%9A%E4%B9%89%E7%9A%84%E7%9C%81%E5%B8%82%E9%80%89%E6%8B%A9%E5%99%A8/area-show.gif" alt="image">  </p>
 <p><strong><a href="https://github.com/zhuyunsun/FDAreaPicker">github传送门</a></strong></p>
 <h4 id="简单用法"><a href="#简单用法" class="headerlink" title="简单用法"></a>简单用法</h4>
           <!--noindex-->
