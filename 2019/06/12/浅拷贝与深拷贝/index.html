@@ -1,0 +1,931 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="iOS,拷贝,copy,mutableCopy," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="浅拷贝和深拷贝 对象的(指针指向)内存地址    浅拷贝:第一,拷贝了指向对象的指针,拷贝出来的对象的指针和原对象的指针指向同一块内存地址.第二,几个对象共用一块内存,当内存被回收时候,指向这块内存的对象指针需要重新定义,不然会造成野指针错误.深拷贝:第一,拷贝对象的具体内容,开辟新的内存,内存地址自助分配.第二,拷贝完成之后,内存中的值是一样的,但是内存地址不一样,2个对象之间相互不影响,也不相">
+<meta name="keywords" content="iOS,拷贝,copy,mutableCopy">
+<meta property="og:type" content="article">
+<meta property="og:title" content="浅拷贝与深拷贝">
+<meta property="og:url" content="http://yoursite.com/2019/06/12/浅拷贝与深拷贝/index.html">
+<meta property="og:site_name" content="烟飞烟灭">
+<meta property="og:description" content="浅拷贝和深拷贝 对象的(指针指向)内存地址    浅拷贝:第一,拷贝了指向对象的指针,拷贝出来的对象的指针和原对象的指针指向同一块内存地址.第二,几个对象共用一块内存,当内存被回收时候,指向这块内存的对象指针需要重新定义,不然会造成野指针错误.深拷贝:第一,拷贝对象的具体内容,开辟新的内存,内存地址自助分配.第二,拷贝完成之后,内存中的值是一样的,但是内存地址不一样,2个对象之间相互不影响,也不相">
+<meta property="og:image" content="https://20190422zy.oss-cn-shenzhen.aliyuncs.com/2019-4-24-01/%E6%B7%B1%E6%8B%B7%E8%B4%9D%E5%92%8C%E6%B5%85%E6%8B%B7%E8%B4%9D/%E6%B5%85%E6%8B%B7%E8%B4%9D.png">
+<meta property="og:image" content="https://20190422zy.oss-cn-shenzhen.aliyuncs.com/2019-4-24-01/%E6%B7%B1%E6%8B%B7%E8%B4%9D%E5%92%8C%E6%B5%85%E6%8B%B7%E8%B4%9D/%E6%B7%B1%E6%8B%B7%E8%B4%9D.png">
+<meta property="og:updated_time" content="2019-06-14T06:16:30.451Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="浅拷贝与深拷贝">
+<meta name="twitter:description" content="浅拷贝和深拷贝 对象的(指针指向)内存地址    浅拷贝:第一,拷贝了指向对象的指针,拷贝出来的对象的指针和原对象的指针指向同一块内存地址.第二,几个对象共用一块内存,当内存被回收时候,指向这块内存的对象指针需要重新定义,不然会造成野指针错误.深拷贝:第一,拷贝对象的具体内容,开辟新的内存,内存地址自助分配.第二,拷贝完成之后,内存中的值是一样的,但是内存地址不一样,2个对象之间相互不影响,也不相">
+<meta name="twitter:image" content="https://20190422zy.oss-cn-shenzhen.aliyuncs.com/2019-4-24-01/%E6%B7%B1%E6%8B%B7%E8%B4%9D%E5%92%8C%E6%B5%85%E6%8B%B7%E8%B4%9D/%E6%B5%85%E6%8B%B7%E8%B4%9D.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2019/06/12/浅拷贝与深拷贝/"/>
+
+
+
+
+
+  <title> 浅拷贝与深拷贝 | 烟飞烟灭 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">烟飞烟灭</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">好的文章,就是原来不懂得;看了之后有一种原来是这样的感觉!</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-guestbook">
+          <a href="/guestbook" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            留言
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/12/浅拷贝与深拷贝/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="自由不可待">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="烟飞烟灭">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                浅拷贝与深拷贝
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-06-12T14:38:10+08:00">
+                2019-06-12 14:38
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/iOS/" itemprop="url" rel="index">
+                    <span itemprop="name">iOS</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2019/06/12/浅拷贝与深拷贝/" class="leancloud_visitors" data-flag-title="浅拷贝与深拷贝">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计</span>
+                
+                <span title="字数统计">
+                  1,166 字
+                </span>
+              
+
+              
+
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h3 id="浅拷贝和深拷贝"><a href="#浅拷贝和深拷贝" class="headerlink" title="浅拷贝和深拷贝"></a>浅拷贝和深拷贝</h3><blockquote>
+<p>对象的(<strong>指针</strong>指向)内存地址  </p>
+</blockquote>
+<p><strong>浅拷贝:<br>第一,拷贝了指向对象的指针,拷贝出来的对象的指针和原对象的指针指向同一块内存地址.<br>第二,几个对象共用一块内存,当内存被回收时候,指向这块内存的对象指针需要重新定义,不然会造成野指针错误.<br>深拷贝:<br>第一,拷贝对象的具体内容,开辟新的内存,内存地址自助分配.<br>第二,拷贝完成之后,内存中的值是一样的,但是内存地址不一样,2个对象之间相互不影响,也不相互干涉;</strong>  </p>
+<p>小结:用通俗话来讲,<br>浅拷贝就是一个人和他的影子,本体被销毁了,那么影子也不存在;<br><img src="https://20190422zy.oss-cn-shenzhen.aliyuncs.com/2019-4-24-01/%E6%B7%B1%E6%8B%B7%E8%B4%9D%E5%92%8C%E6%B5%85%E6%8B%B7%E8%B4%9D/%E6%B5%85%E6%8B%B7%E8%B4%9D.png" width="50%" align="center"><br>深拷贝就好比一个人和他的克隆人,本体被销毁了,克隆人依然存在;<br><img src="https://20190422zy.oss-cn-shenzhen.aliyuncs.com/2019-4-24-01/%E6%B7%B1%E6%8B%B7%E8%B4%9D%E5%92%8C%E6%B5%85%E6%8B%B7%E8%B4%9D/%E6%B7%B1%E6%8B%B7%E8%B4%9D.png" width="50%" height="" align="center">   </p>
+<blockquote>
+<p>额外知识:    </p>
+<blockquote>
+<p><strong>野指针</strong>:当前对象指针指向的内存已经被回收,但是依然有其他对象的指针指向这块内存,那么指向这块内存的对象指针就是野指针;<br><strong>内存泄漏</strong>:申请内存没有释放,造成内存越来越少;常见是block,delegate,NSTimer的使用不当造成的循环引用;  </p>
+</blockquote>
+</blockquote>
+<a id="more"></a>
+<p><strong><span style="color:red">注意</span>:要实现浅拷贝和深拷贝的类必须遵循NSCopying,NSMutableCopying这2个协议,他们分别实现了以下2个协议的方法;</strong>  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">@protocol NSCopying</div><div class="line"></div><div class="line">- (id)copyWithZone:(nullable NSZone *)zone;</div><div class="line"></div><div class="line">@end</div><div class="line"></div><div class="line">@protocol NSMutableCopying</div><div class="line"></div><div class="line">- (id)mutableCopyWithZone:(nullable NSZone *)zone;</div><div class="line"></div><div class="line">@end</div></pre></td></tr></table></figure>
+<h3 id="验证例子"><a href="#验证例子" class="headerlink" title="验证例子"></a>验证例子</h3><blockquote>
+<p>copy,mutableCopy<br>第一,区分拷贝之后对象是可变还是不可变;<br>第二,区分是深拷贝还是浅拷贝;</p>
+</blockquote>
+<h4 id="非容器类-NSString-NSMutableString"><a href="#非容器类-NSString-NSMutableString" class="headerlink" title="非容器类:NSString,NSMutableString"></a>非容器类:NSString,NSMutableString</h4><h5 id="NSString"><a href="#NSString" class="headerlink" title="NSString"></a>NSString</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">NSString *str = @&quot;123&quot;;</div><div class="line">NSMutableString *c01 = [str copy];</div><div class="line">// [c01 appendFormat:@&quot;123&quot;];//会出现崩溃,表明不可变字符串copy之后对象是不可变的</div><div class="line">NSMutableString *c02 = [str mutableCopy];</div><div class="line">[c02 appendFormat:@&quot;321&quot;];//表明mutableCopy之后的对象是可变的</div><div class="line">NSLog(@&quot;\nstr=%p,\nc01=%p,\nc02=%p&quot;,str,c01,c02);</div><div class="line"></div><div class="line">打印结果:</div><div class="line">str=0x103799078,</div><div class="line">c01=0x103799078,</div><div class="line">c02=0x600001904cf0</div></pre></td></tr></table></figure>
+<p><strong>小结1.1:不可变字符串NSString:copy是浅拷贝,返回不可变字符串;mutableCopy是深拷贝,返回类型可变字符串;</strong>  </p>
+<h5 id="NSMutableString"><a href="#NSMutableString" class="headerlink" title="NSMutableString"></a>NSMutableString</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">NSMutableString *muStr = [[NSMutableString alloc]initWithString:@&quot;123&quot;];</div><div class="line">NSMutableString *mu001 = [muStr copy];</div><div class="line">//    [mu001 appendFormat:@&quot;123&quot;];</div><div class="line">NSMutableString *mu002 = [muStr mutableCopy];</div><div class="line">[mu002 appendFormat:@&quot;23&quot;];</div><div class="line">NSLog(@&quot;\nmuStr=%p,\nmu001=%p,\nmu002=%p&quot;,muStr,mu001,mu002);</div><div class="line"></div><div class="line">打印结果:</div><div class="line">muStr=0x600001904ba0,</div><div class="line">mu001=0x9da610ee44eb2338,</div><div class="line">mu002=0x600001904f00</div></pre></td></tr></table></figure>
+<p><strong>小结1.2:可变字符串NSMutableString:copy和mutabCopy都是深拷贝,copy返回对象是不可变对象,mutableCopy返回的对象是可变对象;</strong></p>
+<blockquote>
+<p><strong><span style="color:green">copy返回的对象类型都是不可变类型,mutableCopy返回的类型都是可变类型,无论被拷贝的对象是可变还是不可变;<br>mutbalCopy都是深拷贝;<br>copy当被拷贝对象是不可变时候,是浅拷贝;当被拷贝的对象是可变时,是深拷贝;</span></strong>  </p>
+</blockquote>
+<h4 id="容器类-NSArray-NSMutableArray"><a href="#容器类-NSArray-NSMutableArray" class="headerlink" title="容器类:NSArray,NSMutableArray"></a>容器类:NSArray,NSMutableArray</h4><blockquote>
+<p>copy返回的对象类型都是不可变,被拷贝的对象是不可变时,依然是浅拷贝;被拷贝的对象是可变时,是深拷贝;<br>mutableCopy返回对象都是都是可变类型的,并且都是深拷贝;  </p>
+</blockquote>
+<h5 id="NSArray"><a href="#NSArray" class="headerlink" title="NSArray"></a>NSArray</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">NSArray *arr = @[@&quot;321&quot;];</div><div class="line">NSArray *a01 = [arr copy];//返回不可变对象</div><div class="line">NSMutableArray *a02 = [arr mutableCopy];//返回可变对象</div><div class="line">NSLog(@&quot;\narr=%p,\narr[0]=%p,\na01=%p,\na02=%p,\na02[0]=%p&quot;,arr,arr[0],a01,a02,a02[0]);</div><div class="line"></div><div class="line">打印结果:</div><div class="line">arr=0x600003c9dfb0,//原对象</div><div class="line">arr[0]=0x10fbd9098,</div><div class="line">a01=0x600003c9dfb0,//copy浅拷贝</div><div class="line">a02=0x6000030d0780,//mutableCopy深拷贝</div><div class="line">a02[0]=0x10fbd9098</div></pre></td></tr></table></figure>
+<h5 id="NSMutableArray"><a href="#NSMutableArray" class="headerlink" title="NSMutableArray"></a>NSMutableArray</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">NSMutableArray *muArr = [[NSMutableArray alloc]initWithObjects:@&quot;231&quot;, nil];</div><div class="line">NSArray *muAr1 = [muArr copy];//返回不可变对象</div><div class="line">NSMutableArray *muAr2 = [muArr mutableCopy];//返回可变对象</div><div class="line">NSLog(@&quot;\narr=%p,\narr[0]=%p,\na01=%p,\na02=%p,\na02[0]=%p&quot;,muArr,muArr[0],muAr1,muAr2,muAr2[0]);</div><div class="line"></div><div class="line">打印结果:</div><div class="line">muArr=0x6000017b5740,</div><div class="line">muArr[0]=0x108071158,//</div><div class="line">muAr1=0x600001beca90,//深拷贝</div><div class="line">muAr2=0x6000017b58c0,//深拷贝</div><div class="line">muAr2[0]=0x108071158//和muArr[0]相同</div></pre></td></tr></table></figure>
+<p>小结2.1:集合类深拷贝,虽然开辟了新的内存空间,但集合里面的值的内存还是指向相同的内存(指针拷贝),这叫单层深复制;</p>
+<h5 id="容器类实现完全深拷贝"><a href="#容器类实现完全深拷贝" class="headerlink" title="容器类实现完全深拷贝"></a>容器类实现完全深拷贝</h5><p>使用归档:  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">NSMutableArray *muA = [[NSMutableArray alloc]init];</div><div class="line">NSMutableString *table1 = [[NSMutableString alloc]initWithFormat:@&quot;123&quot;];</div><div class="line">NSMutableString *table2 = [[NSMutableString alloc]initWithFormat:@&quot;321&quot;];</div><div class="line">[muA addObject:table1];</div><div class="line">[muA addObject:table2];</div><div class="line">NSLog(@&quot;归档前:\nmuA   :%p,\nmuA[0]:%p,\nmuA[1]:%p&quot;,muA,muA[0],muA[1]);</div><div class="line">NSData *data = [NSKeyedArchiver archivedDataWithRootObject:muA];</div><div class="line">NSMutableArray *archiverMuA = [NSKeyedUnarchiver unarchiveObjectWithData:data];//注意,解档后的数据类型和解档前的保持一致;</div><div class="line">NSLog(@&quot;归档后:\narchiverMuA   :%p,\narchiverMuA[0]:%p,\narchiverMuA[1]:%p&quot;,archiverMuA,archiverMuA[0],archiverMuA[1]);</div><div class="line"></div><div class="line">打印:</div><div class="line">2019-06-14 11:55:32.870731+0800 Copy[15136:2127544] 归档前:</div><div class="line">muA   :0x600002a32490,</div><div class="line">muA[0]:0x600002a32250,</div><div class="line">muA[1]:0x600002a32550</div><div class="line">2019-06-14 11:55:32.871096+0800 Copy[15136:2127544] 归档后:</div><div class="line">archiverMuA   :0x600002a323d0,</div><div class="line">archiverMuA[0]:0x600002a32310,</div><div class="line">archiverMuA[1]:0x600002a32400</div></pre></td></tr></table></figure>
+<p>小结3.1:可以看出经过归档和解档之后,容器类内存地址和里面的值的内存地址和原来的不一样;</p>
+<p>end</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/iOS/" rel="tag"># iOS</a>
+          
+            <a href="/tags/拷贝/" rel="tag"># 拷贝</a>
+          
+            <a href="/tags/copy/" rel="tag"># copy</a>
+          
+            <a href="/tags/mutableCopy/" rel="tag"># mutableCopy</a>
+          
+        </div>
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/08/03/多线程-NSOperation/" rel="prev" title="多线程之-NSOperation">
+                多线程之-NSOperation <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="lv-container" data-id="city" data-uid="MTAyMC8yODI3Ny80ODQ5"></div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.png"
+               alt="自由不可待" />
+          <p class="site-author-name" itemprop="name">自由不可待</p>
+           
+              <p class="site-description motion-element" itemprop="description">离文明世界有多远?</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">44</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">14</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">63</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#浅拷贝和深拷贝"><span class="nav-number">1.</span> <span class="nav-text">浅拷贝和深拷贝</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#验证例子"><span class="nav-number">2.</span> <span class="nav-text">验证例子</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#非容器类-NSString-NSMutableString"><span class="nav-number">2.1.</span> <span class="nav-text">非容器类:NSString,NSMutableString</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#NSString"><span class="nav-number">2.1.1.</span> <span class="nav-text">NSString</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#NSMutableString"><span class="nav-number">2.1.2.</span> <span class="nav-text">NSMutableString</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#容器类-NSArray-NSMutableArray"><span class="nav-number">2.2.</span> <span class="nav-text">容器类:NSArray,NSMutableArray</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#NSArray"><span class="nav-number">2.2.1.</span> <span class="nav-text">NSArray</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#NSMutableArray"><span class="nav-number">2.2.2.</span> <span class="nav-text">NSMutableArray</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#容器类实现完全深拷贝"><span class="nav-number">2.2.3.</span> <span class="nav-text">容器类实现完全深拷贝</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2017 - 
+  <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">自由不可待</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+  
+  <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.0"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+  <script>AV.initialize("nob4HaXatIvkItI9S6ArKRIA-gzGzoHsz", "CbrpkFAYhQGiymDDgg5DRnXD");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
+<!-- 背景动画 -->
+<script type="text/javascript" src="/js/src/particle.js"></script>
+<!-- 页面点击小红心 -->
+<script type="text/javascript" src="/js/src/love.js"></script>
