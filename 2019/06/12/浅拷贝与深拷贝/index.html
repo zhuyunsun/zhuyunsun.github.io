@@ -96,7 +96,7 @@
 <meta property="og:description" content="浅拷贝和深拷贝 对象的(指针指向)内存地址    浅拷贝:第一,拷贝了指向对象的指针,拷贝出来的对象的指针和原对象的指针指向同一块内存地址.第二,几个对象共用一块内存,当内存被回收时候,指向这块内存的对象指针需要重新定义,不然会造成野指针错误.深拷贝:第一,拷贝对象的具体内容,开辟新的内存,内存地址自助分配.第二,拷贝完成之后,内存中的值是一样的,但是内存地址不一样,2个对象之间相互不影响,也不相">
 <meta property="og:image" content="https://20190422zy.oss-cn-shenzhen.aliyuncs.com/2019-4-24-01/%E6%B7%B1%E6%8B%B7%E8%B4%9D%E5%92%8C%E6%B5%85%E6%8B%B7%E8%B4%9D/%E6%B5%85%E6%8B%B7%E8%B4%9D.png">
 <meta property="og:image" content="https://20190422zy.oss-cn-shenzhen.aliyuncs.com/2019-4-24-01/%E6%B7%B1%E6%8B%B7%E8%B4%9D%E5%92%8C%E6%B5%85%E6%8B%B7%E8%B4%9D/%E6%B7%B1%E6%8B%B7%E8%B4%9D.png">
-<meta property="og:updated_time" content="2019-06-14T06:16:30.451Z">
+<meta property="og:updated_time" content="2019-06-14T06:38:36.681Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="浅拷贝与深拷贝">
 <meta name="twitter:description" content="浅拷贝和深拷贝 对象的(指针指向)内存地址    浅拷贝:第一,拷贝了指向对象的指针,拷贝出来的对象的指针和原对象的指针指向同一块内存地址.第二,几个对象共用一块内存,当内存被回收时候,指向这块内存的对象指针需要重新定义,不然会造成野指针错误.深拷贝:第一,拷贝对象的具体内容,开辟新的内存,内存地址自助分配.第二,拷贝完成之后,内存中的值是一样的,但是内存地址不一样,2个对象之间相互不影响,也不相">
@@ -373,7 +373,7 @@
                   <span class="post-meta-item-text">字数统计</span>
                 
                 <span title="字数统计">
-                  1,166 字
+                  1,169 字
                 </span>
               
 
@@ -411,7 +411,7 @@
 <p><strong><span style="color:red">注意</span>:要实现浅拷贝和深拷贝的类必须遵循NSCopying,NSMutableCopying这2个协议,他们分别实现了以下2个协议的方法;</strong>  </p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">@protocol NSCopying</div><div class="line"></div><div class="line">- (id)copyWithZone:(nullable NSZone *)zone;</div><div class="line"></div><div class="line">@end</div><div class="line"></div><div class="line">@protocol NSMutableCopying</div><div class="line"></div><div class="line">- (id)mutableCopyWithZone:(nullable NSZone *)zone;</div><div class="line"></div><div class="line">@end</div></pre></td></tr></table></figure>
 <h3 id="验证例子"><a href="#验证例子" class="headerlink" title="验证例子"></a>验证例子</h3><blockquote>
-<p>copy,mutableCopy<br>第一,区分拷贝之后对象是可变还是不可变;<br>第二,区分是深拷贝还是浅拷贝;</p>
+<p>copy,mutableCopy<br>第一,区分拷贝之后返回的对象是可变还是不可变;<br>第二,区分是深拷贝还是浅拷贝;</p>
 </blockquote>
 <h4 id="非容器类-NSString-NSMutableString"><a href="#非容器类-NSString-NSMutableString" class="headerlink" title="非容器类:NSString,NSMutableString"></a>非容器类:NSString,NSMutableString</h4><h5 id="NSString"><a href="#NSString" class="headerlink" title="NSString"></a>NSString</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">NSString *str = @&quot;123&quot;;</div><div class="line">NSMutableString *c01 = [str copy];</div><div class="line">// [c01 appendFormat:@&quot;123&quot;];//会出现崩溃,表明不可变字符串copy之后对象是不可变的</div><div class="line">NSMutableString *c02 = [str mutableCopy];</div><div class="line">[c02 appendFormat:@&quot;321&quot;];//表明mutableCopy之后的对象是可变的</div><div class="line">NSLog(@&quot;\nstr=%p,\nc01=%p,\nc02=%p&quot;,str,c01,c02);</div><div class="line"></div><div class="line">打印结果:</div><div class="line">str=0x103799078,</div><div class="line">c01=0x103799078,</div><div class="line">c02=0x600001904cf0</div></pre></td></tr></table></figure>
 <p><strong>小结1.1:不可变字符串NSString:copy是浅拷贝,返回不可变字符串;mutableCopy是深拷贝,返回类型可变字符串;</strong>  </p>
