@@ -449,6 +449,168 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/25/iOS常量和变量/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="自由不可待">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="烟飞烟灭">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2020/03/25/iOS常量和变量/" itemprop="url">
+                  未命名
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-03-25T09:46:57+08:00">
+                2020-03-25 09:46
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2020/03/25/iOS常量和变量/" class="leancloud_visitors" data-flag-title="">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计</span>
+                
+                <span title="字数统计">
+                  588 字
+                </span>
+              
+
+              
+
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <hr>
+<p>title: OC中的常量和变量<br>categories: iOS<br>tags:  </p>
+<ul>
+<li>常量const  </li>
+<li>变量  </li>
+<li><h2 id="iOS"><a href="#iOS" class="headerlink" title="iOS  "></a>iOS  </h2></li>
+</ul>
+<h4 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h4><p>变量就是初始化定义之后可以进行修改的实例对象.<br>变量又分为全局变量和局部变量.<br>不赋值的时候默认为0或者空值.<br>如:  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div></pre></td><td class="code"><pre><div class="line">Int a = 1;</div><div class="line">a = 2;</div><div class="line">Int b;</div><div class="line">```  </div><div class="line">##### 全局变量</div><div class="line">1,函数外部进行声明.  </div><div class="line">2,可以跨文件进行访问.  </div><div class="line">3,可以在声明的时候进行赋值.  </div><div class="line">4,声明的时候,如果不赋值默认为空值.  </div><div class="line">5,存储的位置不是栈区也不是堆区,而是在专门:全局静态存储区.  </div><div class="line">6,程序启动就分配内存,直到程序结束才会释放;</div><div class="line"></div><div class="line">##### 局部变量</div><div class="line">写在代码块或者函数之中;  </div><div class="line">作用域:从创建那一刻开始一直遇到大括号&#125;或者return;  </div><div class="line">可以先定义再初始化,也可以在定义的时候初始化;  </div><div class="line">存储在栈区,由系统进行管理;</div><div class="line">会在函数结束后释放;  </div><div class="line"></div><div class="line">##### 成员变量</div><div class="line">写在类声明的大括号内变量叫成员变量(也叫**属性/实例变量**)  </div><div class="line">不能再定义的时候进行初始化;  </div><div class="line">只能通过对象来进行访问;  </div><div class="line">存储于堆中(当前对象的堆对应的存储空间),需要程序员手动进行管理(引用计数);  </div><div class="line">#### 常量</div><div class="line"></div><div class="line">一旦定义,不能修改的实例.  </div><div class="line">使用const关键字进行修饰.  </div><div class="line">结合static和extern关键字来使用;</div><div class="line">##### 静态局部常量</div><div class="line">写在代码块或者函数之中;  </div><div class="line">static修饰:静态局部常量  </div><div class="line">只会初始化一次,只有一份内存,延长变量或者常量的生命周期,直到程序结束才被销毁;</div></pre></td></tr></table></figure>
+<p>static NSString <em>const game1 = @”game1”;<br>//game1不可被修改, </em>game1可以被修改<br>static const NSString <em>game2 = @”game2”;<br>static NSString const </em>game3 = @”game3”;<br>//<em>game2和</em>game3不可被修改,他们是一样的<br>//game2和game3可以被修改;<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">const修饰的右边总是不能被修改;</div><div class="line"></div><div class="line">##### 全局静态常量</div><div class="line"></div><div class="line">声明在函数外部  </div><div class="line">在类.h中声明可以被导入的类进行引用;  </div><div class="line">在类.m中声明则只能在该类中使用;  </div><div class="line"></div><div class="line">##### extern修饰全局常量</div><div class="line"></div><div class="line">在.h声明:</div></pre></td></tr></table></figure></p>
+<p>extern float const age;<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">在.m中赋值</div></pre></td></tr></table></figure></p>
+<p>float const age = 10;<br>```<br>需要导入该类才能引用;  </p>
+<p>extern也可以修饰全局变量;  </p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/17/内联函数/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -963,183 +1125,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/07/31/多线程之-GCD/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="自由不可待">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="烟飞烟灭">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2018/07/31/多线程之-GCD/" itemprop="url">
-                  多线程之-GCD
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-31T15:15:31+08:00">
-                2018-07-31 15:15
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/iOS开发/" itemprop="url" rel="index">
-                    <span itemprop="name">iOS开发</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-             <span id="/2018/07/31/多线程之-GCD/" class="leancloud_visitors" data-flag-title="多线程之-GCD">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数 </span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计</span>
-                
-                <span title="字数统计">
-                  2,381 字
-                </span>
-              
-
-              
-
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <blockquote>
-<p>队列:串行,执行完一个任务再执行下一个任务;并发,可以多个任务同时执行;<br>函数:同步,不开启新线程,在主线程执行;异步,开启新线程(当队列是主队列时,不开新线程);<br>最佳执行方案:异步函数+并发队列<br>死锁问题;<br>耗时的任务放到后台去运行;
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/07/31/多线程之-GCD/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -1189,7 +1174,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">46</span>
+                <span class="site-state-item-count">47</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
