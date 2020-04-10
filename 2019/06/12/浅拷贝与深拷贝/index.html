@@ -88,18 +88,21 @@
 
 
 <meta name="description" content="浅拷贝和深拷贝 对象的(指针指向)内存地址    浅拷贝:第一,拷贝了指向对象的指针,拷贝出来的对象的指针和原对象的指针指向同一块内存地址.第二,几个对象共用一块内存,当内存被回收时候,指向这块内存的对象指针需要重新定义,不然会造成野指针错误.深拷贝:第一,拷贝对象的具体内容,开辟新的内存,内存地址自助分配.第二,拷贝完成之后,内存中的值是一样的,但是内存地址不一样,2个对象之间相互不影响,也不相">
-<meta name="keywords" content="iOS,拷贝,copy,mutableCopy">
 <meta property="og:type" content="article">
 <meta property="og:title" content="浅拷贝与深拷贝">
-<meta property="og:url" content="http://yoursite.com/2019/06/12/浅拷贝与深拷贝/index.html">
+<meta property="og:url" content="http://yoursite.com/2019/06/12/%E6%B5%85%E6%8B%B7%E8%B4%9D%E4%B8%8E%E6%B7%B1%E6%8B%B7%E8%B4%9D/index.html">
 <meta property="og:site_name" content="烟飞烟灭">
 <meta property="og:description" content="浅拷贝和深拷贝 对象的(指针指向)内存地址    浅拷贝:第一,拷贝了指向对象的指针,拷贝出来的对象的指针和原对象的指针指向同一块内存地址.第二,几个对象共用一块内存,当内存被回收时候,指向这块内存的对象指针需要重新定义,不然会造成野指针错误.深拷贝:第一,拷贝对象的具体内容,开辟新的内存,内存地址自助分配.第二,拷贝完成之后,内存中的值是一样的,但是内存地址不一样,2个对象之间相互不影响,也不相">
 <meta property="og:image" content="https://20190422zy.oss-cn-shenzhen.aliyuncs.com/2019-4-24-01/%E6%B7%B1%E6%8B%B7%E8%B4%9D%E5%92%8C%E6%B5%85%E6%8B%B7%E8%B4%9D/%E6%B5%85%E6%8B%B7%E8%B4%9D.png">
 <meta property="og:image" content="https://20190422zy.oss-cn-shenzhen.aliyuncs.com/2019-4-24-01/%E6%B7%B1%E6%8B%B7%E8%B4%9D%E5%92%8C%E6%B5%85%E6%8B%B7%E8%B4%9D/%E6%B7%B1%E6%8B%B7%E8%B4%9D.png">
-<meta property="og:updated_time" content="2019-06-14T06:38:36.000Z">
+<meta property="article:published_time" content="2019-06-12T06:38:10.000Z">
+<meta property="article:modified_time" content="2019-06-14T06:38:36.000Z">
+<meta property="article:author" content="自由不可待">
+<meta property="article:tag" content="iOS">
+<meta property="article:tag" content="拷贝">
+<meta property="article:tag" content="copy">
+<meta property="article:tag" content="mutableCopy">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="浅拷贝与深拷贝">
-<meta name="twitter:description" content="浅拷贝和深拷贝 对象的(指针指向)内存地址    浅拷贝:第一,拷贝了指向对象的指针,拷贝出来的对象的指针和原对象的指针指向同一块内存地址.第二,几个对象共用一块内存,当内存被回收时候,指向这块内存的对象指针需要重新定义,不然会造成野指针错误.深拷贝:第一,拷贝对象的具体内容,开辟新的内存,内存地址自助分配.第二,拷贝完成之后,内存中的值是一样的,但是内存地址不一样,2个对象之间相互不影响,也不相">
 <meta name="twitter:image" content="https://20190422zy.oss-cn-shenzhen.aliyuncs.com/2019-4-24-01/%E6%B7%B1%E6%8B%B7%E8%B4%9D%E5%92%8C%E6%B5%85%E6%8B%B7%E8%B4%9D/%E6%B5%85%E6%8B%B7%E8%B4%9D.png">
 
 
@@ -135,7 +138,7 @@
 
 
   <title> 浅拷贝与深拷贝 | 烟飞烟灭 </title>
-</head>
+<meta name="generator" content="Hexo 4.2.0"></head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
@@ -273,7 +276,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/12/浅拷贝与深拷贝/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/12/%E6%B5%85%E6%8B%B7%E8%B4%9D%E4%B8%8E%E6%B7%B1%E6%8B%B7%E8%B4%9D/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="自由不可待">
@@ -361,7 +364,7 @@
 
           
           
-             <span id="/2019/06/12/浅拷贝与深拷贝/" class="leancloud_visitors" data-flag-title="浅拷贝与深拷贝">
+             <span id="/2019/06/12/%E6%B5%85%E6%8B%B7%E8%B4%9D%E4%B8%8E%E6%B7%B1%E6%8B%B7%E8%B4%9D/" class="leancloud_visitors" data-flag-title="浅拷贝与深拷贝">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -385,7 +388,7 @@
                   <span class="post-meta-item-text">字数统计</span>
                 
                 <span title="字数统计">
-                  1,169 字
+                  1.3k 字
                 </span>
               
 
@@ -420,14 +423,18 @@
 </blockquote>
 </blockquote>
 <a id="more"></a>
+
 <p><strong><span style="color:red">注意</span>:要实现浅拷贝和深拷贝的类必须遵循NSCopying,NSMutableCopying这2个协议,他们分别实现了以下2个协议的方法;</strong>  </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">@protocol NSCopying</div><div class="line"></div><div class="line">- (id)copyWithZone:(nullable NSZone *)zone;</div><div class="line"></div><div class="line">@end</div><div class="line"></div><div class="line">@protocol NSMutableCopying</div><div class="line"></div><div class="line">- (id)mutableCopyWithZone:(nullable NSZone *)zone;</div><div class="line"></div><div class="line">@end</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">@protocol NSCopying</span><br><span class="line"></span><br><span class="line">- (id)copyWithZone:(nullable NSZone *)zone;</span><br><span class="line"></span><br><span class="line">@end</span><br><span class="line"></span><br><span class="line">@protocol NSMutableCopying</span><br><span class="line"></span><br><span class="line">- (id)mutableCopyWithZone:(nullable NSZone *)zone;</span><br><span class="line"></span><br><span class="line">@end</span><br></pre></td></tr></table></figure>
+
 <h3 id="验证例子"><a href="#验证例子" class="headerlink" title="验证例子"></a>验证例子</h3><blockquote>
 <p>copy,mutableCopy<br>第一,区分拷贝之后返回的对象是可变还是不可变;<br>第二,区分是深拷贝还是浅拷贝;</p>
 </blockquote>
-<h4 id="非容器类-NSString-NSMutableString"><a href="#非容器类-NSString-NSMutableString" class="headerlink" title="非容器类:NSString,NSMutableString"></a>非容器类:NSString,NSMutableString</h4><h5 id="NSString"><a href="#NSString" class="headerlink" title="NSString"></a>NSString</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">NSString *str = @&quot;123&quot;;</div><div class="line">NSMutableString *c01 = [str copy];</div><div class="line">// [c01 appendFormat:@&quot;123&quot;];//会出现崩溃,表明不可变字符串copy之后对象是不可变的</div><div class="line">NSMutableString *c02 = [str mutableCopy];</div><div class="line">[c02 appendFormat:@&quot;321&quot;];//表明mutableCopy之后的对象是可变的</div><div class="line">NSLog(@&quot;\nstr=%p,\nc01=%p,\nc02=%p&quot;,str,c01,c02);</div><div class="line"></div><div class="line">打印结果:</div><div class="line">str=0x103799078,</div><div class="line">c01=0x103799078,</div><div class="line">c02=0x600001904cf0</div></pre></td></tr></table></figure>
+<h4 id="非容器类-NSString-NSMutableString"><a href="#非容器类-NSString-NSMutableString" class="headerlink" title="非容器类:NSString,NSMutableString"></a>非容器类:NSString,NSMutableString</h4><h5 id="NSString"><a href="#NSString" class="headerlink" title="NSString"></a>NSString</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">NSString *str &#x3D; @&quot;123&quot;;</span><br><span class="line">NSMutableString *c01 &#x3D; [str copy];</span><br><span class="line">&#x2F;&#x2F; [c01 appendFormat:@&quot;123&quot;];&#x2F;&#x2F;会出现崩溃,表明不可变字符串copy之后对象是不可变的</span><br><span class="line">NSMutableString *c02 &#x3D; [str mutableCopy];</span><br><span class="line">[c02 appendFormat:@&quot;321&quot;];&#x2F;&#x2F;表明mutableCopy之后的对象是可变的</span><br><span class="line">NSLog(@&quot;\nstr&#x3D;%p,\nc01&#x3D;%p,\nc02&#x3D;%p&quot;,str,c01,c02);</span><br><span class="line"></span><br><span class="line">打印结果:</span><br><span class="line">str&#x3D;0x103799078,</span><br><span class="line">c01&#x3D;0x103799078,</span><br><span class="line">c02&#x3D;0x600001904cf0</span><br></pre></td></tr></table></figure>
+
 <p><strong>小结1.1:不可变字符串NSString:copy是浅拷贝,返回不可变字符串;mutableCopy是深拷贝,返回类型可变字符串;</strong>  </p>
-<h5 id="NSMutableString"><a href="#NSMutableString" class="headerlink" title="NSMutableString"></a>NSMutableString</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">NSMutableString *muStr = [[NSMutableString alloc]initWithString:@&quot;123&quot;];</div><div class="line">NSMutableString *mu001 = [muStr copy];</div><div class="line">//    [mu001 appendFormat:@&quot;123&quot;];</div><div class="line">NSMutableString *mu002 = [muStr mutableCopy];</div><div class="line">[mu002 appendFormat:@&quot;23&quot;];</div><div class="line">NSLog(@&quot;\nmuStr=%p,\nmu001=%p,\nmu002=%p&quot;,muStr,mu001,mu002);</div><div class="line"></div><div class="line">打印结果:</div><div class="line">muStr=0x600001904ba0,</div><div class="line">mu001=0x9da610ee44eb2338,</div><div class="line">mu002=0x600001904f00</div></pre></td></tr></table></figure>
+<h5 id="NSMutableString"><a href="#NSMutableString" class="headerlink" title="NSMutableString"></a>NSMutableString</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">NSMutableString *muStr &#x3D; [[NSMutableString alloc]initWithString:@&quot;123&quot;];</span><br><span class="line">NSMutableString *mu001 &#x3D; [muStr copy];</span><br><span class="line">&#x2F;&#x2F;    [mu001 appendFormat:@&quot;123&quot;];</span><br><span class="line">NSMutableString *mu002 &#x3D; [muStr mutableCopy];</span><br><span class="line">[mu002 appendFormat:@&quot;23&quot;];</span><br><span class="line">NSLog(@&quot;\nmuStr&#x3D;%p,\nmu001&#x3D;%p,\nmu002&#x3D;%p&quot;,muStr,mu001,mu002);</span><br><span class="line"></span><br><span class="line">打印结果:</span><br><span class="line">muStr&#x3D;0x600001904ba0,</span><br><span class="line">mu001&#x3D;0x9da610ee44eb2338,</span><br><span class="line">mu002&#x3D;0x600001904f00</span><br></pre></td></tr></table></figure>
+
 <p><strong>小结1.2:可变字符串NSMutableString:copy和mutabCopy都是深拷贝,copy返回对象是不可变对象,mutableCopy返回的对象是可变对象;</strong></p>
 <blockquote>
 <p><strong><span style="color:green">copy返回的对象类型都是不可变类型,mutableCopy返回的类型都是可变类型,无论被拷贝的对象是可变还是不可变;<br>mutbalCopy都是深拷贝;<br>copy当被拷贝对象是不可变时候,是浅拷贝;当被拷贝的对象是可变时,是深拷贝;</span></strong>  </p>
@@ -435,11 +442,13 @@
 <h4 id="容器类-NSArray-NSMutableArray"><a href="#容器类-NSArray-NSMutableArray" class="headerlink" title="容器类:NSArray,NSMutableArray"></a>容器类:NSArray,NSMutableArray</h4><blockquote>
 <p>copy返回的对象类型都是不可变,被拷贝的对象是不可变时,依然是浅拷贝;被拷贝的对象是可变时,是深拷贝;<br>mutableCopy返回对象都是都是可变类型的,并且都是深拷贝;  </p>
 </blockquote>
-<h5 id="NSArray"><a href="#NSArray" class="headerlink" title="NSArray"></a>NSArray</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">NSArray *arr = @[@&quot;321&quot;];</div><div class="line">NSArray *a01 = [arr copy];//返回不可变对象</div><div class="line">NSMutableArray *a02 = [arr mutableCopy];//返回可变对象</div><div class="line">NSLog(@&quot;\narr=%p,\narr[0]=%p,\na01=%p,\na02=%p,\na02[0]=%p&quot;,arr,arr[0],a01,a02,a02[0]);</div><div class="line"></div><div class="line">打印结果:</div><div class="line">arr=0x600003c9dfb0,//原对象</div><div class="line">arr[0]=0x10fbd9098,</div><div class="line">a01=0x600003c9dfb0,//copy浅拷贝</div><div class="line">a02=0x6000030d0780,//mutableCopy深拷贝</div><div class="line">a02[0]=0x10fbd9098</div></pre></td></tr></table></figure>
-<h5 id="NSMutableArray"><a href="#NSMutableArray" class="headerlink" title="NSMutableArray"></a>NSMutableArray</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">NSMutableArray *muArr = [[NSMutableArray alloc]initWithObjects:@&quot;231&quot;, nil];</div><div class="line">NSArray *muAr1 = [muArr copy];//返回不可变对象</div><div class="line">NSMutableArray *muAr2 = [muArr mutableCopy];//返回可变对象</div><div class="line">NSLog(@&quot;\narr=%p,\narr[0]=%p,\na01=%p,\na02=%p,\na02[0]=%p&quot;,muArr,muArr[0],muAr1,muAr2,muAr2[0]);</div><div class="line"></div><div class="line">打印结果:</div><div class="line">muArr=0x6000017b5740,</div><div class="line">muArr[0]=0x108071158,//</div><div class="line">muAr1=0x600001beca90,//深拷贝</div><div class="line">muAr2=0x6000017b58c0,//深拷贝</div><div class="line">muAr2[0]=0x108071158//和muArr[0]相同</div></pre></td></tr></table></figure>
+<h5 id="NSArray"><a href="#NSArray" class="headerlink" title="NSArray"></a>NSArray</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">NSArray *arr &#x3D; @[@&quot;321&quot;];</span><br><span class="line">NSArray *a01 &#x3D; [arr copy];&#x2F;&#x2F;返回不可变对象</span><br><span class="line">NSMutableArray *a02 &#x3D; [arr mutableCopy];&#x2F;&#x2F;返回可变对象</span><br><span class="line">NSLog(@&quot;\narr&#x3D;%p,\narr[0]&#x3D;%p,\na01&#x3D;%p,\na02&#x3D;%p,\na02[0]&#x3D;%p&quot;,arr,arr[0],a01,a02,a02[0]);</span><br><span class="line"></span><br><span class="line">打印结果:</span><br><span class="line">arr&#x3D;0x600003c9dfb0,&#x2F;&#x2F;原对象</span><br><span class="line">arr[0]&#x3D;0x10fbd9098,</span><br><span class="line">a01&#x3D;0x600003c9dfb0,&#x2F;&#x2F;copy浅拷贝</span><br><span class="line">a02&#x3D;0x6000030d0780,&#x2F;&#x2F;mutableCopy深拷贝</span><br><span class="line">a02[0]&#x3D;0x10fbd9098</span><br></pre></td></tr></table></figure>
+<h5 id="NSMutableArray"><a href="#NSMutableArray" class="headerlink" title="NSMutableArray"></a>NSMutableArray</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">NSMutableArray *muArr &#x3D; [[NSMutableArray alloc]initWithObjects:@&quot;231&quot;, nil];</span><br><span class="line">NSArray *muAr1 &#x3D; [muArr copy];&#x2F;&#x2F;返回不可变对象</span><br><span class="line">NSMutableArray *muAr2 &#x3D; [muArr mutableCopy];&#x2F;&#x2F;返回可变对象</span><br><span class="line">NSLog(@&quot;\narr&#x3D;%p,\narr[0]&#x3D;%p,\na01&#x3D;%p,\na02&#x3D;%p,\na02[0]&#x3D;%p&quot;,muArr,muArr[0],muAr1,muAr2,muAr2[0]);</span><br><span class="line"></span><br><span class="line">打印结果:</span><br><span class="line">muArr&#x3D;0x6000017b5740,</span><br><span class="line">muArr[0]&#x3D;0x108071158,&#x2F;&#x2F;</span><br><span class="line">muAr1&#x3D;0x600001beca90,&#x2F;&#x2F;深拷贝</span><br><span class="line">muAr2&#x3D;0x6000017b58c0,&#x2F;&#x2F;深拷贝</span><br><span class="line">muAr2[0]&#x3D;0x108071158&#x2F;&#x2F;和muArr[0]相同</span><br></pre></td></tr></table></figure>
+
 <p>小结2.1:集合类深拷贝,虽然开辟了新的内存空间,但集合里面的值的内存还是指向相同的内存(指针拷贝),这叫单层深复制;</p>
 <h5 id="容器类实现完全深拷贝"><a href="#容器类实现完全深拷贝" class="headerlink" title="容器类实现完全深拷贝"></a>容器类实现完全深拷贝</h5><p>使用归档:  </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">NSMutableArray *muA = [[NSMutableArray alloc]init];</div><div class="line">NSMutableString *table1 = [[NSMutableString alloc]initWithFormat:@&quot;123&quot;];</div><div class="line">NSMutableString *table2 = [[NSMutableString alloc]initWithFormat:@&quot;321&quot;];</div><div class="line">[muA addObject:table1];</div><div class="line">[muA addObject:table2];</div><div class="line">NSLog(@&quot;归档前:\nmuA   :%p,\nmuA[0]:%p,\nmuA[1]:%p&quot;,muA,muA[0],muA[1]);</div><div class="line">NSData *data = [NSKeyedArchiver archivedDataWithRootObject:muA];</div><div class="line">NSMutableArray *archiverMuA = [NSKeyedUnarchiver unarchiveObjectWithData:data];//注意,解档后的数据类型和解档前的保持一致;</div><div class="line">NSLog(@&quot;归档后:\narchiverMuA   :%p,\narchiverMuA[0]:%p,\narchiverMuA[1]:%p&quot;,archiverMuA,archiverMuA[0],archiverMuA[1]);</div><div class="line"></div><div class="line">打印:</div><div class="line">2019-06-14 11:55:32.870731+0800 Copy[15136:2127544] 归档前:</div><div class="line">muA   :0x600002a32490,</div><div class="line">muA[0]:0x600002a32250,</div><div class="line">muA[1]:0x600002a32550</div><div class="line">2019-06-14 11:55:32.871096+0800 Copy[15136:2127544] 归档后:</div><div class="line">archiverMuA   :0x600002a323d0,</div><div class="line">archiverMuA[0]:0x600002a32310,</div><div class="line">archiverMuA[1]:0x600002a32400</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">NSMutableArray *muA &#x3D; [[NSMutableArray alloc]init];</span><br><span class="line">NSMutableString *table1 &#x3D; [[NSMutableString alloc]initWithFormat:@&quot;123&quot;];</span><br><span class="line">NSMutableString *table2 &#x3D; [[NSMutableString alloc]initWithFormat:@&quot;321&quot;];</span><br><span class="line">[muA addObject:table1];</span><br><span class="line">[muA addObject:table2];</span><br><span class="line">NSLog(@&quot;归档前:\nmuA   :%p,\nmuA[0]:%p,\nmuA[1]:%p&quot;,muA,muA[0],muA[1]);</span><br><span class="line">NSData *data &#x3D; [NSKeyedArchiver archivedDataWithRootObject:muA];</span><br><span class="line">NSMutableArray *archiverMuA &#x3D; [NSKeyedUnarchiver unarchiveObjectWithData:data];&#x2F;&#x2F;注意,解档后的数据类型和解档前的保持一致;</span><br><span class="line">NSLog(@&quot;归档后:\narchiverMuA   :%p,\narchiverMuA[0]:%p,\narchiverMuA[1]:%p&quot;,archiverMuA,archiverMuA[0],archiverMuA[1]);</span><br><span class="line"></span><br><span class="line">打印:</span><br><span class="line">2019-06-14 11:55:32.870731+0800 Copy[15136:2127544] 归档前:</span><br><span class="line">muA   :0x600002a32490,</span><br><span class="line">muA[0]:0x600002a32250,</span><br><span class="line">muA[1]:0x600002a32550</span><br><span class="line">2019-06-14 11:55:32.871096+0800 Copy[15136:2127544] 归档后:</span><br><span class="line">archiverMuA   :0x600002a323d0,</span><br><span class="line">archiverMuA[0]:0x600002a32310,</span><br><span class="line">archiverMuA[1]:0x600002a32400</span><br></pre></td></tr></table></figure>
+
 <p>小结3.1:可以看出经过归档和解档之后,容器类内存地址和里面的值的内存地址和原来的不一样;</p>
 <p>end</p>
 
@@ -473,7 +482,7 @@
           
             <a href="/tags/iOS/" rel="tag"># iOS</a>
           
-            <a href="/tags/拷贝/" rel="tag"># 拷贝</a>
+            <a href="/tags/%E6%8B%B7%E8%B4%9D/" rel="tag"># 拷贝</a>
           
             <a href="/tags/copy/" rel="tag"># copy</a>
           
@@ -490,8 +499,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/07/17/内联函数/" rel="next" title="内联函数">
-                <i class="fa fa-chevron-left"></i> 内联函数
+              <a href="/2018/08/03/%E5%A4%9A%E7%BA%BF%E7%A8%8B-NSOperation/" rel="next" title="多线程之-NSOperation">
+                <i class="fa fa-chevron-left"></i> 多线程之-NSOperation
               </a>
             
           </div>
@@ -500,8 +509,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/08/03/多线程-NSOperation/" rel="prev" title="多线程之-NSOperation">
-                多线程之-NSOperation <i class="fa fa-chevron-right"></i>
+              <a href="/2019/07/17/%E5%86%85%E8%81%94%E5%87%BD%E6%95%B0/" rel="prev" title="内联函数">
+                内联函数 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -665,12 +674,12 @@
 
 
 <div class="powered-by">
-  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+  由 <a class="theme-link" href="https://hexo.io" target="_blank" rel="noopener">Hexo</a> 强力驱动
 </div>
 
 <div class="theme-info">
   主题 -
-  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next" target="_blank" rel="noopener">
     NexT.Pisces
   </a>
 </div>

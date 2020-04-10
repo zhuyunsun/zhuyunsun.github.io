@@ -88,16 +88,17 @@
 
 
 <meta name="description" content="NSOperation 1.和NSThread,GCD一样,NSOperation也是苹果提供的一套多线程并发编程方案;2.它是对GCD在OC层面的一个封装,是完全面向对象的;3.它比GCD多了一些更加实用的功能;4.经常使用;5.自动管理;   NSOperation用法NSOperation是一个抽象类,在使用的时候,需要使用的是它的子类,并且有3种方式:    1.NSInvocationO">
-<meta name="keywords" content="多线程,NSOperation">
 <meta property="og:type" content="article">
 <meta property="og:title" content="多线程之-NSOperation">
-<meta property="og:url" content="http://yoursite.com/2018/08/03/多线程-NSOperation/index.html">
+<meta property="og:url" content="http://yoursite.com/2018/08/03/%E5%A4%9A%E7%BA%BF%E7%A8%8B-NSOperation/index.html">
 <meta property="og:site_name" content="烟飞烟灭">
 <meta property="og:description" content="NSOperation 1.和NSThread,GCD一样,NSOperation也是苹果提供的一套多线程并发编程方案;2.它是对GCD在OC层面的一个封装,是完全面向对象的;3.它比GCD多了一些更加实用的功能;4.经常使用;5.自动管理;   NSOperation用法NSOperation是一个抽象类,在使用的时候,需要使用的是它的子类,并且有3种方式:    1.NSInvocationO">
-<meta property="og:updated_time" content="2018-08-14T09:49:10.000Z">
+<meta property="article:published_time" content="2018-08-03T07:59:21.000Z">
+<meta property="article:modified_time" content="2018-08-14T09:49:10.000Z">
+<meta property="article:author" content="自由不可待">
+<meta property="article:tag" content="多线程">
+<meta property="article:tag" content="NSOperation">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="多线程之-NSOperation">
-<meta name="twitter:description" content="NSOperation 1.和NSThread,GCD一样,NSOperation也是苹果提供的一套多线程并发编程方案;2.它是对GCD在OC层面的一个封装,是完全面向对象的;3.它比GCD多了一些更加实用的功能;4.经常使用;5.自动管理;   NSOperation用法NSOperation是一个抽象类,在使用的时候,需要使用的是它的子类,并且有3种方式:    1.NSInvocationO">
 
 
 
@@ -132,7 +133,7 @@
 
 
   <title> 多线程之-NSOperation | 烟飞烟灭 </title>
-</head>
+<meta name="generator" content="Hexo 4.2.0"></head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
@@ -270,7 +271,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/03/多线程-NSOperation/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/03/%E5%A4%9A%E7%BA%BF%E7%A8%8B-NSOperation/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="自由不可待">
@@ -336,7 +337,7 @@
 
           
           
-             <span id="/2018/08/03/多线程-NSOperation/" class="leancloud_visitors" data-flag-title="多线程之-NSOperation">
+             <span id="/2018/08/03/%E5%A4%9A%E7%BA%BF%E7%A8%8B-NSOperation/" class="leancloud_visitors" data-flag-title="多线程之-NSOperation">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -360,7 +361,7 @@
                   <span class="post-meta-item-text">字数统计</span>
                 
                 <span title="字数统计">
-                  979 字
+                  1.1k 字
                 </span>
               
 
@@ -391,31 +392,56 @@
 <p>1.NSInvocationOperation类;<br>2.NSBlockOperation类;<br>3.继承于NSOperation的子类,重写main方法;  </p>
 </blockquote>
 <a id="more"></a>  
+
 <p>要实现多线程,需要配合<strong>NSOperationQueue</strong>类进行配合;<br>NSOperationQueue表示队列,分为主队列和其他队列:  </p>
 <blockquote>
 <p>主队列是一个特殊的串行队列;<br>其他队列包含了串行队列和并发队列;  </p>
 </blockquote>
 <h5 id="NSOperationQueue"><a href="#NSOperationQueue" class="headerlink" title="NSOperationQueue"></a>NSOperationQueue</h5><p>获取主队列:  </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">NSOperationQueue *mainQueue = [NSOperationQueue mainQueue];</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">NSOperationQueue *mainQueue &#x3D; [NSOperationQueue mainQueue];</span><br></pre></td></tr></table></figure>
+
 <p>其他队列:  </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">NSOperationQueue *q1 = [[NSOperationQueue alloc]init];</div><div class="line">q1.maxConcurrentOperationCount = 1;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">NSOperationQueue *q1 &#x3D; [[NSOperationQueue alloc]init];</span><br><span class="line">q1.maxConcurrentOperationCount &#x3D; 1;</span><br></pre></td></tr></table></figure>
 <blockquote>
 <p>maxConcurrentOperationCount属性:<br>线程的最大个数,该属性不进行设置时,默认为-1即为<strong>并发队列</strong>,不限制线程开启个数,开启新线程;<br>当值为1时,表示为串行队列,虽然开启了线程,但是是一个一个执行;<br>不要无脑的认为设置该值越大,开启的线程数量就越多,线程开启最大数系统会自行调整;  </p>
 </blockquote>
 <p>其他方法:  </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">//队列添加任务,并自动开启</div><div class="line">- (void)addOperation:(NSOperation *)op;  </div><div class="line">//添加任务数组,wait=YES的时候,阻塞线程,表示等待任务完成再往下操作</div><div class="line">- (void)addOperations:(NSArray&lt;NSOperation *&gt; *)ops waitUntilFinished:(BOOL)wait;  </div><div class="line">//直接开始任务操作,会开始新的线程</div><div class="line">- (void)addOperationWithBlock:(void (^)(void))block;</div><div class="line">//YES表示暂停,设置为NO可以恢复</div><div class="line">@property (getter=isSuspended) BOOL suspended;</div><div class="line">//已经加入到队列的任务无法删除,但是可以暂停,下面表示暂停当前队列所有的任务,当然,已经开始的任务是无法暂停的</div><div class="line">- (void)cancelAllOperations;</div><div class="line">//等待队列中所有任务的完成,会阻塞线程</div><div class="line">- (void)waitUntilAllOperationsAreFinished;</div></pre></td></tr></table></figure>
-<h5 id="NSInvocationOperation使用"><a href="#NSInvocationOperation使用" class="headerlink" title="NSInvocationOperation使用"></a>NSInvocationOperation使用</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">//队列,默认并发</div><div class="line">NSOperationQueue *q1 = [[NSOperationQueue alloc]init];</div><div class="line">//创建</div><div class="line"> NSInvocationOperation *invocationOperation1 = [[NSInvocationOperation alloc]initWithTarget:self selector:@selector(invationAction1) object:nil];</div><div class="line">//队列添加任务并开始</div><div class="line">[q1 addOperation:invocationOperation1];</div><div class="line">-(void)invationAction1&#123;</div><div class="line">    for (NSUInteger i = 0; i &lt; 2; i ++) &#123;</div><div class="line">        [NSThread sleepForTimeInterval:2];</div><div class="line">        NSLog(@&quot;Invocation1 = %@&quot;,[NSThread currentThread]);</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">2018-08-06 16:38:39.462458+0800 FDThread[7300:689575] Invocation1 = &lt;NSThread: 0x600003b7a7c0&gt;&#123;number = 4, name = (null)&#125;</div><div class="line">2018-08-06 16:38:41.464461+0800 FDThread[7300:689575] Invocation1 = &lt;NSThread: 0x600003b7a7c0&gt;&#123;number = 4, name = (null)&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F;队列添加任务,并自动开启</span><br><span class="line">- (void)addOperation:(NSOperation *)op;  </span><br><span class="line">&#x2F;&#x2F;添加任务数组,wait&#x3D;YES的时候,阻塞线程,表示等待任务完成再往下操作</span><br><span class="line">- (void)addOperations:(NSArray&lt;NSOperation *&gt; *)ops waitUntilFinished:(BOOL)wait;  </span><br><span class="line">&#x2F;&#x2F;直接开始任务操作,会开始新的线程</span><br><span class="line">- (void)addOperationWithBlock:(void (^)(void))block;</span><br><span class="line">&#x2F;&#x2F;YES表示暂停,设置为NO可以恢复</span><br><span class="line">@property (getter&#x3D;isSuspended) BOOL suspended;</span><br><span class="line">&#x2F;&#x2F;已经加入到队列的任务无法删除,但是可以暂停,下面表示暂停当前队列所有的任务,当然,已经开始的任务是无法暂停的</span><br><span class="line">- (void)cancelAllOperations;</span><br><span class="line">&#x2F;&#x2F;等待队列中所有任务的完成,会阻塞线程</span><br><span class="line">- (void)waitUntilAllOperationsAreFinished;</span><br></pre></td></tr></table></figure>
+
+<h5 id="NSInvocationOperation使用"><a href="#NSInvocationOperation使用" class="headerlink" title="NSInvocationOperation使用"></a>NSInvocationOperation使用</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F;队列,默认并发</span><br><span class="line">NSOperationQueue *q1 &#x3D; [[NSOperationQueue alloc]init];</span><br><span class="line">&#x2F;&#x2F;创建</span><br><span class="line"> NSInvocationOperation *invocationOperation1 &#x3D; [[NSInvocationOperation alloc]initWithTarget:self selector:@selector(invationAction1) object:nil];</span><br><span class="line">&#x2F;&#x2F;队列添加任务并开始</span><br><span class="line">[q1 addOperation:invocationOperation1];</span><br><span class="line">-(void)invationAction1&#123;</span><br><span class="line">    for (NSUInteger i &#x3D; 0; i &lt; 2; i ++) &#123;</span><br><span class="line">        [NSThread sleepForTimeInterval:2];</span><br><span class="line">        NSLog(@&quot;Invocation1 &#x3D; %@&quot;,[NSThread currentThread]);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">2018-08-06 16:38:39.462458+0800 FDThread[7300:689575] Invocation1 &#x3D; &lt;NSThread: 0x600003b7a7c0&gt;&#123;number &#x3D; 4, name &#x3D; (null)&#125;</span><br><span class="line">2018-08-06 16:38:41.464461+0800 FDThread[7300:689575] Invocation1 &#x3D; &lt;NSThread: 0x600003b7a7c0&gt;&#123;number &#x3D; 4, name &#x3D; (null)&#125;</span><br></pre></td></tr></table></figure>
 <blockquote>
 <p>开启的了新的线程;  </p>
 </blockquote>
-<h5 id="NSBlockOperation使用"><a href="#NSBlockOperation使用" class="headerlink" title="NSBlockOperation使用"></a>NSBlockOperation使用</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">NSBlockOperation *block1 = [NSBlockOperation blockOperationWithBlock:^&#123;</div><div class="line">        for (NSUInteger i = 0; i &lt; 2; i ++) &#123;</div><div class="line">            [NSThread sleepForTimeInterval:2];</div><div class="line">            NSLog(@&quot;block1 = %@&quot;,[NSThread currentThread]);</div><div class="line">        &#125;</div><div class="line"></div><div class="line">    &#125;];</div><div class="line">[q1 addOperation:block1];</div><div class="line"></div><div class="line">2018-08-06 16:38:43.467961+0800 FDThread[7300:689574] block1 = &lt;NSThread: 0x600003b6f7c0&gt;&#123;number = 5, name = (null)&#125;</div><div class="line">2018-08-06 16:38:45.469692+0800 FDThread[7300:689574] block1 = &lt;NSThread: 0x600003b6f7c0&gt;&#123;number = 5, name = (null)&#125;</div></pre></td></tr></table></figure>
-<h5 id="自定义NSOperation子类"><a href="#自定义NSOperation子类" class="headerlink" title="自定义NSOperation子类"></a>自定义NSOperation子类</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">.h</div><div class="line">@interface CoustomOperation : NSOperation</div><div class="line"></div><div class="line">@end</div><div class="line">.m</div><div class="line">@implementation CoustomOperation</div><div class="line">//重写main方法,进行相关操作</div><div class="line">-(void)main&#123;</div><div class="line">    for (NSUInteger i = 0; i &lt; 2; i ++) &#123;</div><div class="line">        [NSThread sleepForTimeInterval:2];</div><div class="line">        NSLog(@&quot;CoustomOperation = %@&quot;,[NSThread currentThread]);</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">@end</div><div class="line"></div><div class="line">CoustomOperation *c1 = [[CoustomOperation alloc]init];</div><div class="line">[q1 addOperation:c1];</div><div class="line"></div><div class="line">2018-08-06 16:38:47.473828+0800 FDThread[7300:689574] CoustomOperation = &lt;NSThread: 0x600003b6f7c0&gt;&#123;number = 5, name = (null)&#125;</div><div class="line">2018-08-06 16:38:49.477721+0800 FDThread[7300:689574] CoustomOperation = &lt;NSThread: 0x600003b6f7c0&gt;&#123;number = 5, name = (null)&#125;</div></pre></td></tr></table></figure>
-<h5 id="NSOperationQueue的方法"><a href="#NSOperationQueue的方法" class="headerlink" title="NSOperationQueue的方法"></a>NSOperationQueue的方法</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">NSOperationQueue *q2 = [[NSOperationQueue alloc]init];</div><div class="line">[q2 addOperationWithBlock:^&#123;</div><div class="line">    //直接添加任务,会开启新线程</div><div class="line">    for (NSUInteger i = 0; i &lt; 2; i ++) &#123;</div><div class="line">        [NSThread sleepForTimeInterval:2];</div><div class="line">        NSLog(@&quot;queue = %@&quot;,[NSThread currentThread]);</div><div class="line"></div><div class="line">    &#125;</div><div class="line">&#125;];</div><div class="line"></div><div class="line">2018-08-06 16:38:39.462458+0800 FDThread[7300:689576] queue = &lt;NSThread: 0x600003b8e000&gt;&#123;number = 3, name = (null)&#125;</div><div class="line">2018-08-06 16:38:41.464419+0800 FDThread[7300:689576] queue = &lt;NSThread: 0x600003b8e000&gt;&#123;number = 3, name = (null)&#125;</div></pre></td></tr></table></figure>
+<h5 id="NSBlockOperation使用"><a href="#NSBlockOperation使用" class="headerlink" title="NSBlockOperation使用"></a>NSBlockOperation使用</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">NSBlockOperation *block1 &#x3D; [NSBlockOperation blockOperationWithBlock:^&#123;</span><br><span class="line">        for (NSUInteger i &#x3D; 0; i &lt; 2; i ++) &#123;</span><br><span class="line">            [NSThread sleepForTimeInterval:2];</span><br><span class="line">            NSLog(@&quot;block1 &#x3D; %@&quot;,[NSThread currentThread]);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125;];</span><br><span class="line">[q1 addOperation:block1];</span><br><span class="line"></span><br><span class="line">2018-08-06 16:38:43.467961+0800 FDThread[7300:689574] block1 &#x3D; &lt;NSThread: 0x600003b6f7c0&gt;&#123;number &#x3D; 5, name &#x3D; (null)&#125;</span><br><span class="line">2018-08-06 16:38:45.469692+0800 FDThread[7300:689574] block1 &#x3D; &lt;NSThread: 0x600003b6f7c0&gt;&#123;number &#x3D; 5, name &#x3D; (null)&#125;</span><br></pre></td></tr></table></figure>
+
+<h5 id="自定义NSOperation子类"><a href="#自定义NSOperation子类" class="headerlink" title="自定义NSOperation子类"></a>自定义NSOperation子类</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">.h</span><br><span class="line">@interface CoustomOperation : NSOperation</span><br><span class="line"></span><br><span class="line">@end</span><br><span class="line">.m</span><br><span class="line">@implementation CoustomOperation</span><br><span class="line">&#x2F;&#x2F;重写main方法,进行相关操作</span><br><span class="line">-(void)main&#123;</span><br><span class="line">    for (NSUInteger i &#x3D; 0; i &lt; 2; i ++) &#123;</span><br><span class="line">        [NSThread sleepForTimeInterval:2];</span><br><span class="line">        NSLog(@&quot;CoustomOperation &#x3D; %@&quot;,[NSThread currentThread]);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">@end</span><br><span class="line"></span><br><span class="line">CoustomOperation *c1 &#x3D; [[CoustomOperation alloc]init];</span><br><span class="line">[q1 addOperation:c1];</span><br><span class="line"></span><br><span class="line">2018-08-06 16:38:47.473828+0800 FDThread[7300:689574] CoustomOperation &#x3D; &lt;NSThread: 0x600003b6f7c0&gt;&#123;number &#x3D; 5, name &#x3D; (null)&#125;</span><br><span class="line">2018-08-06 16:38:49.477721+0800 FDThread[7300:689574] CoustomOperation &#x3D; &lt;NSThread: 0x600003b6f7c0&gt;&#123;number &#x3D; 5, name &#x3D; (null)&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="NSOperationQueue的方法"><a href="#NSOperationQueue的方法" class="headerlink" title="NSOperationQueue的方法"></a>NSOperationQueue的方法</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">NSOperationQueue *q2 &#x3D; [[NSOperationQueue alloc]init];</span><br><span class="line">[q2 addOperationWithBlock:^&#123;</span><br><span class="line">    &#x2F;&#x2F;直接添加任务,会开启新线程</span><br><span class="line">    for (NSUInteger i &#x3D; 0; i &lt; 2; i ++) &#123;</span><br><span class="line">        [NSThread sleepForTimeInterval:2];</span><br><span class="line">        NSLog(@&quot;queue &#x3D; %@&quot;,[NSThread currentThread]);</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;];</span><br><span class="line"></span><br><span class="line">2018-08-06 16:38:39.462458+0800 FDThread[7300:689576] queue &#x3D; &lt;NSThread: 0x600003b8e000&gt;&#123;number &#x3D; 3, name &#x3D; (null)&#125;</span><br><span class="line">2018-08-06 16:38:41.464419+0800 FDThread[7300:689576] queue &#x3D; &lt;NSThread: 0x600003b8e000&gt;&#123;number &#x3D; 3, name &#x3D; (null)&#125;</span><br></pre></td></tr></table></figure>
+
 <h5 id="不同操作队列任务之间可以设置依赖"><a href="#不同操作队列任务之间可以设置依赖" class="headerlink" title="不同操作队列任务之间可以设置依赖"></a>不同操作队列任务之间可以设置依赖</h5><blockquote>
 <p>设置依赖的意思就是可以设置某个任务的开始执行依赖于另外一个任务的完成</p>
 </blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">//blcok1 任务会在invocationOperation1所有任务完成之后才开始执行</div><div class="line">[block1 addDependency:invocationOperation1];</div><div class="line">//可以移除依赖</div><div class="line">- (void)removeDependency:(NSOperation *)op;</div></pre></td></tr></table></figure>
-<h5 id="NSOperation其他的一些设置"><a href="#NSOperation其他的一些设置" class="headerlink" title="NSOperation其他的一些设置"></a>NSOperation其他的一些设置</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">//设置任务的优先级,默认NSOperationQueuePriorityNormal,优先级高只表明优先被执行,而不代表被完成,在</div><div class="line">typedef NS_ENUM(NSInteger, NSOperationQueuePriority) &#123;</div><div class="line">	NSOperationQueuePriorityVeryLow = -8L,</div><div class="line">	NSOperationQueuePriorityLow = -4L,</div><div class="line">	NSOperationQueuePriorityNormal = 0,</div><div class="line">	NSOperationQueuePriorityHigh = 4,</div><div class="line">	NSOperationQueuePriorityVeryHigh = 8</div><div class="line">&#125;;</div><div class="line">@property NSOperationQueuePriority queuePriority;</div><div class="line">//获取某个任务的所有依赖,只读属性</div><div class="line">@property (readonly, copy) NSArray&lt;NSOperation *&gt; *dependencies;</div><div class="line">//等待某个任务完成,会阻塞主线程</div><div class="line">- (void)waitUntilFinished</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F;blcok1 任务会在invocationOperation1所有任务完成之后才开始执行</span><br><span class="line">[block1 addDependency:invocationOperation1];</span><br><span class="line">&#x2F;&#x2F;可以移除依赖</span><br><span class="line">- (void)removeDependency:(NSOperation *)op;</span><br></pre></td></tr></table></figure>
+
+<h5 id="NSOperation其他的一些设置"><a href="#NSOperation其他的一些设置" class="headerlink" title="NSOperation其他的一些设置"></a>NSOperation其他的一些设置</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F;设置任务的优先级,默认NSOperationQueuePriorityNormal,优先级高只表明优先被执行,而不代表被完成,在</span><br><span class="line">typedef NS_ENUM(NSInteger, NSOperationQueuePriority) &#123;</span><br><span class="line">	NSOperationQueuePriorityVeryLow &#x3D; -8L,</span><br><span class="line">	NSOperationQueuePriorityLow &#x3D; -4L,</span><br><span class="line">	NSOperationQueuePriorityNormal &#x3D; 0,</span><br><span class="line">	NSOperationQueuePriorityHigh &#x3D; 4,</span><br><span class="line">	NSOperationQueuePriorityVeryHigh &#x3D; 8</span><br><span class="line">&#125;;</span><br><span class="line">@property NSOperationQueuePriority queuePriority;</span><br><span class="line">&#x2F;&#x2F;获取某个任务的所有依赖,只读属性</span><br><span class="line">@property (readonly, copy) NSArray&lt;NSOperation *&gt; *dependencies;</span><br><span class="line">&#x2F;&#x2F;等待某个任务完成,会阻塞主线程</span><br><span class="line">- (void)waitUntilFinished</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
       
     </div>
@@ -445,7 +471,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/多线程/" rel="tag"># 多线程</a>
+            <a href="/tags/%E5%A4%9A%E7%BA%BF%E7%A8%8B/" rel="tag"># 多线程</a>
           
             <a href="/tags/NSOperation/" rel="tag"># NSOperation</a>
           
@@ -460,8 +486,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/06/12/浅拷贝与深拷贝/" rel="next" title="浅拷贝与深拷贝">
-                <i class="fa fa-chevron-left"></i> 浅拷贝与深拷贝
+              <a href="/2018/07/31/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E4%B9%8B-GCD/" rel="next" title="多线程之-GCD">
+                <i class="fa fa-chevron-left"></i> 多线程之-GCD
               </a>
             
           </div>
@@ -470,8 +496,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/07/31/多线程之-GCD/" rel="prev" title="多线程之-GCD">
-                多线程之-GCD <i class="fa fa-chevron-right"></i>
+              <a href="/2019/06/12/%E6%B5%85%E6%8B%B7%E8%B4%9D%E4%B8%8E%E6%B7%B1%E6%8B%B7%E8%B4%9D/" rel="prev" title="浅拷贝与深拷贝">
+                浅拷贝与深拷贝 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -635,12 +661,12 @@
 
 
 <div class="powered-by">
-  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+  由 <a class="theme-link" href="https://hexo.io" target="_blank" rel="noopener">Hexo</a> 强力驱动
 </div>
 
 <div class="theme-info">
   主题 -
-  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next" target="_blank" rel="noopener">
     NexT.Pisces
   </a>
 </div>

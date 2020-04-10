@@ -93,9 +93,8 @@
 <meta property="og:url" content="http://yoursite.com/page/5/index.html">
 <meta property="og:site_name" content="烟飞烟灭">
 <meta property="og:description" content="离文明世界有多远?">
+<meta property="article:author" content="自由不可待">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="烟飞烟灭">
-<meta name="twitter:description" content="离文明世界有多远?">
 
 
 
@@ -130,7 +129,7 @@
 
 
   <title> 烟飞烟灭 </title>
-</head>
+<meta name="generator" content="Hexo 4.2.0"></head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
@@ -270,7 +269,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/01/09/iOS开发截取当前屏幕/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/01/09/iOS%E5%BC%80%E5%8F%91%E6%88%AA%E5%8F%96%E5%BD%93%E5%89%8D%E5%B1%8F%E5%B9%95/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="自由不可待">
@@ -292,7 +291,7 @@
             
               
                 
-                <a class="post-title-link" href="/2018/01/09/iOS开发截取当前屏幕/" itemprop="url">
+                <a class="post-title-link" href="/2018/01/09/iOS%E5%BC%80%E5%8F%91%E6%88%AA%E5%8F%96%E5%BD%93%E5%89%8D%E5%B1%8F%E5%B9%95/" itemprop="url">
                   iOS截取当前屏幕保存到相册
                 </a>
               
@@ -344,7 +343,7 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/iOS开发/" itemprop="url" rel="index">
+                  <a href="/categories/iOS%E5%BC%80%E5%8F%91/" itemprop="url" rel="index">
                     <span itemprop="name">iOS开发</span>
                   </a>
                 </span>
@@ -361,7 +360,7 @@
 
           
           
-             <span id="/2018/01/09/iOS开发截取当前屏幕/" class="leancloud_visitors" data-flag-title="iOS截取当前屏幕保存到相册">
+             <span id="/2018/01/09/iOS%E5%BC%80%E5%8F%91%E6%88%AA%E5%8F%96%E5%BD%93%E5%89%8D%E5%B1%8F%E5%B9%95/" class="leancloud_visitors" data-flag-title="iOS截取当前屏幕保存到相册">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -385,7 +384,7 @@
                   <span class="post-meta-item-text">字数统计</span>
                 
                 <span title="字数统计">
-                  43 字
+                  50 字
                 </span>
               
 
@@ -411,7 +410,8 @@
         
           
             <p><strong>话不多说,直接看代码</strong>  </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">+(UIImage *)captureScreenForView:(UIView *)currentView&#123;</div><div class="line">    //currentView 截取的view</div><div class="line">    UIGraphicsBeginImageContext(currentView.frame.size);</div><div class="line">    [currentView.layer renderInContext:UIGraphicsGetCurrentContext()];</div><div class="line">    UIImage *viewImage = UIGraphicsGetImageFromCurrentImageContext();</div><div class="line">    UIGraphicsEndImageContext();</div><div class="line">    //保存到相册</div><div class="line">    UIImageWriteToSavedPhotosAlbum(viewImage,nil,nil,nil);</div><div class="line">    return  viewImage;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">+(UIImage *)captureScreenForView:(UIView *)currentView&#123;</span><br><span class="line">    &#x2F;&#x2F;currentView 截取的view</span><br><span class="line">    UIGraphicsBeginImageContext(currentView.frame.size);</span><br><span class="line">    [currentView.layer renderInContext:UIGraphicsGetCurrentContext()];</span><br><span class="line">    UIImage *viewImage &#x3D; UIGraphicsGetImageFromCurrentImageContext();</span><br><span class="line">    UIGraphicsEndImageContext();</span><br><span class="line">    &#x2F;&#x2F;保存到相册</span><br><span class="line">    UIImageWriteToSavedPhotosAlbum(viewImage,nil,nil,nil);</span><br><span class="line">    return  viewImage;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 
           
         
@@ -455,7 +455,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/12/13/App内跳转qq群/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/12/13/App%E5%86%85%E8%B7%B3%E8%BD%ACqq%E7%BE%A4/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="自由不可待">
@@ -477,7 +477,7 @@
             
               
                 
-                <a class="post-title-link" href="/2017/12/13/App内跳转qq群/" itemprop="url">
+                <a class="post-title-link" href="/2017/12/13/App%E5%86%85%E8%B7%B3%E8%BD%ACqq%E7%BE%A4/" itemprop="url">
                   App内跳转qq群
                 </a>
               
@@ -529,7 +529,7 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/iOS开发/" itemprop="url" rel="index">
+                  <a href="/categories/iOS%E5%BC%80%E5%8F%91/" itemprop="url" rel="index">
                     <span itemprop="name">iOS开发</span>
                   </a>
                 </span>
@@ -546,7 +546,7 @@
 
           
           
-             <span id="/2017/12/13/App内跳转qq群/" class="leancloud_visitors" data-flag-title="App内跳转qq群">
+             <span id="/2017/12/13/App%E5%86%85%E8%B7%B3%E8%BD%ACqq%E7%BE%A4/" class="leancloud_visitors" data-flag-title="App内跳转qq群">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -570,7 +570,7 @@
                   <span class="post-meta-item-text">字数统计</span>
                 
                 <span title="字数统计">
-                  193 字
+                  218 字
                 </span>
               
 
@@ -597,8 +597,13 @@
           
             <h4 id="序言"><a href="#序言" class="headerlink" title="序言"></a>序言</h4><p>开发的时候,有时候需要在当前app内直接跳转到某个qq群的界面;<br>下面介绍下如何进行接入:  </p>
 <h4 id="在工程内配置允许跳转的白名单"><a href="#在工程内配置允许跳转的白名单" class="headerlink" title="在工程内配置允许跳转的白名单"></a>在工程内配置允许跳转的白名单</h4><p>1,在xcode工程中的info.plist文件中添加LSApplicationQueriesSchemes字段,它是一个数组,<br>然后添加:<br>mqqapi 字段;  </p>
-<h4 id="获取跳转qq群的uin参数和key参数"><a href="#获取跳转qq群的uin参数和key参数" class="headerlink" title="获取跳转qq群的uin参数和key参数"></a>获取跳转qq群的uin参数和key参数</h4><p><a href="https://qun.qq.com/join.html" target="_blank" rel="external">获取地址</a><br>需要登录qq账号,选择要跳转的群,然后网页右边会自动生成对应语言跳转的方法;<br>OC语言开发的格式如下:  </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">- (BOOL)joinGroup:(NSString *)groupUin key:(NSString *)key&#123;</div><div class="line">NSString *urlStr = [NSString stringWithFormat:@&quot;mqqapi://card/show_pslcard?src_type=internal&amp;version=1&amp;uin=%@&amp;key=%@&amp;card_type=group&amp;source=external&quot;, @&quot;对应的uin&quot;,@&quot;对应的key&quot;];</div><div class="line">NSURL *url = [NSURL URLWithString:urlStr];</div><div class="line">if([[UIApplication sharedApplication] canOpenURL:url])&#123;</div><div class="line">[[UIApplication sharedApplication] openURL:url];</div><div class="line">return YES;</div><div class="line">&#125;</div><div class="line">else return NO;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h4 id="获取跳转qq群的uin参数和key参数"><a href="#获取跳转qq群的uin参数和key参数" class="headerlink" title="获取跳转qq群的uin参数和key参数"></a>获取跳转qq群的uin参数和key参数</h4><p><a href="https://qun.qq.com/join.html" target="_blank" rel="noopener">获取地址</a><br>需要登录qq账号,选择要跳转的群,然后网页右边会自动生成对应语言跳转的方法;<br>OC语言开发的格式如下:  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">- (BOOL)joinGroup:(NSString *)groupUin key:(NSString *)key&#123;</span><br><span class="line">NSString *urlStr &#x3D; [NSString stringWithFormat:@&quot;mqqapi:&#x2F;&#x2F;card&#x2F;show_pslcard?src_type&#x3D;internal&amp;version&#x3D;1&amp;uin&#x3D;%@&amp;key&#x3D;%@&amp;card_type&#x3D;group&amp;source&#x3D;external&quot;, @&quot;对应的uin&quot;,@&quot;对应的key&quot;];</span><br><span class="line">NSURL *url &#x3D; [NSURL URLWithString:urlStr];</span><br><span class="line">if([[UIApplication sharedApplication] canOpenURL:url])&#123;</span><br><span class="line">[[UIApplication sharedApplication] openURL:url];</span><br><span class="line">return YES;</span><br><span class="line">&#125;</span><br><span class="line">else return NO;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
 
           
         
@@ -642,7 +647,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/09/27/Swift学习之-基本类型/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/09/27/Swift%E5%AD%A6%E4%B9%A0%E4%B9%8B-%E5%9F%BA%E6%9C%AC%E7%B1%BB%E5%9E%8B/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="自由不可待">
@@ -664,7 +669,7 @@
             
               
                 
-                <a class="post-title-link" href="/2017/09/27/Swift学习之-基本类型/" itemprop="url">
+                <a class="post-title-link" href="/2017/09/27/Swift%E5%AD%A6%E4%B9%A0%E4%B9%8B-%E5%9F%BA%E6%9C%AC%E7%B1%BB%E5%9E%8B/" itemprop="url">
                   Swift学习之-基本类型
                 </a>
               
@@ -733,7 +738,7 @@
 
           
           
-             <span id="/2017/09/27/Swift学习之-基本类型/" class="leancloud_visitors" data-flag-title="Swift学习之-基本类型">
+             <span id="/2017/09/27/Swift%E5%AD%A6%E4%B9%A0%E4%B9%8B-%E5%9F%BA%E6%9C%AC%E7%B1%BB%E5%9E%8B/" class="leancloud_visitors" data-flag-title="Swift学习之-基本类型">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -757,7 +762,7 @@
                   <span class="post-meta-item-text">字数统计</span>
                 
                 <span title="字数统计">
-                  649 字
+                  665 字
                 </span>
               
 
@@ -784,7 +789,7 @@
           <h4 id="序言"><a href="#序言" class="headerlink" title="序言"></a>序言</h4><p>Swift较OC的基本类型关键字有一些明显变化,但基本类型是基本没有变化的.
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2017/09/27/Swift学习之-基本类型/#more" rel="contents">
+            <a class="btn" href="/2017/09/27/Swift%E5%AD%A6%E4%B9%A0%E4%B9%8B-%E5%9F%BA%E6%9C%AC%E7%B1%BB%E5%9E%8B/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -830,7 +835,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/09/26/swift学习之-常量与变量/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/09/26/swift%E5%AD%A6%E4%B9%A0%E4%B9%8B-%E5%B8%B8%E9%87%8F%E4%B8%8E%E5%8F%98%E9%87%8F/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="自由不可待">
@@ -852,7 +857,7 @@
             
               
                 
-                <a class="post-title-link" href="/2017/09/26/swift学习之-常量与变量/" itemprop="url">
+                <a class="post-title-link" href="/2017/09/26/swift%E5%AD%A6%E4%B9%A0%E4%B9%8B-%E5%B8%B8%E9%87%8F%E4%B8%8E%E5%8F%98%E9%87%8F/" itemprop="url">
                   Swift学习之-常量与变量
                 </a>
               
@@ -921,7 +926,7 @@
 
           
           
-             <span id="/2017/09/26/swift学习之-常量与变量/" class="leancloud_visitors" data-flag-title="Swift学习之-常量与变量">
+             <span id="/2017/09/26/swift%E5%AD%A6%E4%B9%A0%E4%B9%8B-%E5%B8%B8%E9%87%8F%E4%B8%8E%E5%8F%98%E9%87%8F/" class="leancloud_visitors" data-flag-title="Swift学习之-常量与变量">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -945,7 +950,7 @@
                   <span class="post-meta-item-text">字数统计</span>
                 
                 <span title="字数统计">
-                  1,387 字
+                  1.4k 字
                 </span>
               
 
@@ -976,7 +981,7 @@
 <h4 id="声明常量和变量"><a href="#声明常量和变量" class="headerlink" title="声明常量和变量"></a>声明常量和变量</h4><p>常量和变量在使用之前<strong>必须被声明</strong>,使用关键字let来声明常量,关键字var来声明变量.
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2017/09/26/swift学习之-常量与变量/#more" rel="contents">
+            <a class="btn" href="/2017/09/26/swift%E5%AD%A6%E4%B9%A0%E4%B9%8B-%E5%B8%B8%E9%87%8F%E4%B8%8E%E5%8F%98%E9%87%8F/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1022,7 +1027,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/09/25/xcode8或者9去掉打印多余的log/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/09/25/xcode8%E6%88%96%E8%80%859%E5%8E%BB%E6%8E%89%E6%89%93%E5%8D%B0%E5%A4%9A%E4%BD%99%E7%9A%84log/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="自由不可待">
@@ -1044,7 +1049,7 @@
             
               
                 
-                <a class="post-title-link" href="/2017/09/25/xcode8或者9去掉打印多余的log/" itemprop="url">
+                <a class="post-title-link" href="/2017/09/25/xcode8%E6%88%96%E8%80%859%E5%8E%BB%E6%8E%89%E6%89%93%E5%8D%B0%E5%A4%9A%E4%BD%99%E7%9A%84log/" itemprop="url">
                   xcode8或者9去掉打印多余的log;
                 </a>
               
@@ -1113,7 +1118,7 @@
 
           
           
-             <span id="/2017/09/25/xcode8或者9去掉打印多余的log/" class="leancloud_visitors" data-flag-title="xcode8或者9去掉打印多余的log;">
+             <span id="/2017/09/25/xcode8%E6%88%96%E8%80%859%E5%8E%BB%E6%8E%89%E6%89%93%E5%8D%B0%E5%A4%9A%E4%BD%99%E7%9A%84log/" class="leancloud_visitors" data-flag-title="xcode8或者9去掉打印多余的log;">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -1206,7 +1211,7 @@
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/4/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/">6</a><span class="space">&hellip;</span><a class="page-number" href="/page/10/">10</a><a class="extend next" rel="next" href="/page/6/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" href="/page/4/">&lt;i class&#x3D;&quot;fa fa-angle-left&quot;&gt;&lt;&#x2F;i&gt;</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/">6</a><span class="space">&hellip;</span><a class="page-number" href="/page/10/">10</a><a class="extend next" rel="next" href="/page/6/">&lt;i class&#x3D;&quot;fa fa-angle-right&quot;&gt;&lt;&#x2F;i&gt;</a>
   </nav>
 
 
@@ -1324,12 +1329,12 @@
 
 
 <div class="powered-by">
-  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+  由 <a class="theme-link" href="https://hexo.io" target="_blank" rel="noopener">Hexo</a> 强力驱动
 </div>
 
 <div class="theme-info">
   主题 -
-  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next" target="_blank" rel="noopener">
     NexT.Pisces
   </a>
 </div>

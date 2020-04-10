@@ -88,17 +88,17 @@
 
 
 <meta name="description" content="UIPickerView官方描述:  A view that uses a spinning-wheel or slot-machine metaphor to show one or more sets of values.A picker view displays one or more wheels that the user manipulates to select items. Ea">
-<meta name="keywords" content="iOS学习">
 <meta property="og:type" content="article">
 <meta property="og:title" content="OC记录1--UIPickerView">
-<meta property="og:url" content="http://yoursite.com/2018/01/17/UIPickerView--OC记录一/index.html">
+<meta property="og:url" content="http://yoursite.com/2018/01/17/UIPickerView--OC%E8%AE%B0%E5%BD%95%E4%B8%80/index.html">
 <meta property="og:site_name" content="烟飞烟灭">
 <meta property="og:description" content="UIPickerView官方描述:  A view that uses a spinning-wheel or slot-machine metaphor to show one or more sets of values.A picker view displays one or more wheels that the user manipulates to select items. Ea">
 <meta property="og:image" content="https://20190422zy.oss-cn-shenzhen.aliyuncs.com/2019-4-24-01/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202018-01-17%20%E4%B8%8B%E5%8D%887.09.02.png">
-<meta property="og:updated_time" content="2019-06-12T06:49:04.000Z">
+<meta property="article:published_time" content="2018-01-17T02:52:23.000Z">
+<meta property="article:modified_time" content="2019-06-12T06:49:04.000Z">
+<meta property="article:author" content="自由不可待">
+<meta property="article:tag" content="iOS学习">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="OC记录1--UIPickerView">
-<meta name="twitter:description" content="UIPickerView官方描述:  A view that uses a spinning-wheel or slot-machine metaphor to show one or more sets of values.A picker view displays one or more wheels that the user manipulates to select items. Ea">
 <meta name="twitter:image" content="https://20190422zy.oss-cn-shenzhen.aliyuncs.com/2019-4-24-01/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202018-01-17%20%E4%B8%8B%E5%8D%887.09.02.png">
 
 
@@ -134,7 +134,7 @@
 
 
   <title> OC记录1--UIPickerView | 烟飞烟灭 </title>
-</head>
+<meta name="generator" content="Hexo 4.2.0"></head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
@@ -272,7 +272,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/01/17/UIPickerView--OC记录一/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/01/17/UIPickerView--OC%E8%AE%B0%E5%BD%95%E4%B8%80/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="自由不可待">
@@ -343,7 +343,7 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/iOS学习/" itemprop="url" rel="index">
+                  <a href="/categories/iOS%E5%AD%A6%E4%B9%A0/" itemprop="url" rel="index">
                     <span itemprop="name">iOS学习</span>
                   </a>
                 </span>
@@ -360,7 +360,7 @@
 
           
           
-             <span id="/2018/01/17/UIPickerView--OC记录一/" class="leancloud_visitors" data-flag-title="OC记录1--UIPickerView">
+             <span id="/2018/01/17/UIPickerView--OC%E8%AE%B0%E5%BD%95%E4%B8%80/" class="leancloud_visitors" data-flag-title="OC记录1--UIPickerView">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -384,7 +384,7 @@
                   <span class="post-meta-item-text">字数统计</span>
                 
                 <span title="字数统计">
-                  838 字
+                  897 字
                 </span>
               
 
@@ -418,35 +418,41 @@
 <a id="more"></a>
 <p><strong>下面开始UIPickerView学习:</strong>  </p>
 <h3 id="查看UIPickerView类中的-h文件"><a href="#查看UIPickerView类中的-h文件" class="headerlink" title="查看UIPickerView类中的.h文件"></a>查看UIPickerView类中的.h文件</h3><p>UIPickerView父类是UIView;  </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">NS_CLASS_AVAILABLE_IOS(2_0) __TVOS_PROHIBITED @interface UIPickerView : UIView &lt;NSCoding&gt;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">NS_CLASS_AVAILABLE_IOS(2_0) __TVOS_PROHIBITED @interface UIPickerView : UIView &lt;NSCoding&gt;</span><br></pre></td></tr></table></figure>
 <h4 id="属性"><a href="#属性" class="headerlink" title="属性"></a>属性</h4><p>1,显示选中指示器,目前设置为NO或者为YES都没有什么影响;</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">@property(nonatomic)BOOL showsSelectionIndicator;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">@property(nonatomic)BOOL showsSelectionIndicator;</span><br></pre></td></tr></table></figure>
 <p>2,当前UIPickerView的component数,为只读属性;</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">@property(nonatomic,readonly) NSInteger numberOfComponents;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">@property(nonatomic,readonly) NSInteger numberOfComponents;</span><br></pre></td></tr></table></figure>
+
 <h4 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h4><p>1,获取某一个component的行数:  </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">- (NSInteger)numberOfRowsInComponent:(NSInteger)component;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">- (NSInteger)numberOfRowsInComponent:(NSInteger)component;</span><br></pre></td></tr></table></figure>
 <p>2,获取某个component行的size大小:  </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">- (CGSize)rowSizeForComponent:(NSInteger)component;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">- (CGSize)rowSizeForComponent:(NSInteger)component;</span><br></pre></td></tr></table></figure>
 <p>3,返回一个view,来自协议方法:pickerView:viewForRow:forComponent:reusingView:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">// returns the view provided by the delegate via pickerView:viewForRow:forComponent:reusingView:</div><div class="line">// or nil if the row/component is not visible or the delegate does not implement </div><div class="line">// pickerView:viewForRow:forComponent:reusingView:</div><div class="line">- (nullable UIView *)viewForRow:(NSInteger)row forComponent:(NSInteger)component;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F; returns the view provided by the delegate via pickerView:viewForRow:forComponent:reusingView:</span><br><span class="line">&#x2F;&#x2F; or nil if the row&#x2F;component is not visible or the delegate does not implement </span><br><span class="line">&#x2F;&#x2F; pickerView:viewForRow:forComponent:reusingView:</span><br><span class="line">- (nullable UIView *)viewForRow:(NSInteger)row forComponent:(NSInteger)component;</span><br></pre></td></tr></table></figure>
 <p>4,刷新所有component和单个component:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">- (void)reloadAllComponents;//刷新所有component</div><div class="line">- (void)reloadComponent:(NSInteger)component;//刷新单个component</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">- (void)reloadAllComponents;&#x2F;&#x2F;刷新所有component</span><br><span class="line">- (void)reloadComponent:(NSInteger)component;&#x2F;&#x2F;刷新单个component</span><br></pre></td></tr></table></figure>
+
 <p>5,滑动到某个component的某行,animated表示是否要动画效果:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">- (void)selectRow:(NSInteger)row inComponent:(NSInteger)component animated:(BOOL)animated;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">- (void)selectRow:(NSInteger)row inComponent:(NSInteger)component animated:(BOOL)animated;</span><br></pre></td></tr></table></figure>
 <p>6,获取当前选中的行, -1 if nothing selected:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">- (NSInteger)selectedRowInComponent:(NSInteger)component;</div><div class="line"> // returns selected row. -1 if nothing selected</div></pre></td></tr></table></figure>
-<h4 id="实现的2个协议-UIPickerViewDataSource-UIPickerViewDelegate"><a href="#实现的2个协议-UIPickerViewDataSource-UIPickerViewDelegate" class="headerlink" title="实现的2个协议: UIPickerViewDataSource,UIPickerViewDelegate"></a>实现的2个协议: UIPickerViewDataSource,UIPickerViewDelegate</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">@property(nullable,nonatomic,weak) id&lt;UIPickerViewDataSource&gt; dataSource;                // default is nil. weak reference</div><div class="line">@property(nullable,nonatomic,weak) id&lt;UIPickerViewDelegate&gt;   delegate;                  // default is nil. weak reference</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">- (NSInteger)selectedRowInComponent:(NSInteger)component;</span><br><span class="line"> &#x2F;&#x2F; returns selected row. -1 if nothing selected</span><br></pre></td></tr></table></figure>
+
+<h4 id="实现的2个协议-UIPickerViewDataSource-UIPickerViewDelegate"><a href="#实现的2个协议-UIPickerViewDataSource-UIPickerViewDelegate" class="headerlink" title="实现的2个协议: UIPickerViewDataSource,UIPickerViewDelegate"></a>实现的2个协议: UIPickerViewDataSource,UIPickerViewDelegate</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">@property(nullable,nonatomic,weak) id&lt;UIPickerViewDataSource&gt; dataSource;                &#x2F;&#x2F; default is nil. weak reference</span><br><span class="line">@property(nullable,nonatomic,weak) id&lt;UIPickerViewDelegate&gt;   delegate;                  &#x2F;&#x2F; default is nil. weak reference</span><br></pre></td></tr></table></figure>
+
 <p>1,UIPickerViewDataSource</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">@required //表示下面协议方法必须实现</div><div class="line">//返回component的个数</div><div class="line">// returns the number of &apos;columns&apos; to display.</div><div class="line">- (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView;</div><div class="line">//返回某个component中行数</div><div class="line">// returns the # of rows in each component..</div><div class="line">- (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component;</div><div class="line">@end</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">@required &#x2F;&#x2F;表示下面协议方法必须实现</span><br><span class="line">&#x2F;&#x2F;返回component的个数</span><br><span class="line">&#x2F;&#x2F; returns the number of &#39;columns&#39; to display.</span><br><span class="line">- (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView;</span><br><span class="line">&#x2F;&#x2F;返回某个component中行数</span><br><span class="line">&#x2F;&#x2F; returns the # of rows in each component..</span><br><span class="line">- (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component;</span><br><span class="line">@end</span><br></pre></td></tr></table></figure>
 <p>2,UIPickerViewDelegate,由@optional进行修饰,表示该协议下的方法可以选择性的实现:</p>
 <p>2.1,设置component的宽和高</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">// returns width of column and height of row for each component. </div><div class="line">- (CGFloat)pickerView:(UIPickerView *)pickerView widthForComponent:(NSInteger)component __TVOS_PROHIBITED;</div><div class="line">- (CGFloat)pickerView:(UIPickerView *)pickerView rowHeightForComponent:(NSInteger)component __TVOS_PROHIBITED;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F; returns width of column and height of row for each component. </span><br><span class="line">- (CGFloat)pickerView:(UIPickerView *)pickerView widthForComponent:(NSInteger)component __TVOS_PROHIBITED;</span><br><span class="line">- (CGFloat)pickerView:(UIPickerView *)pickerView rowHeightForComponent:(NSInteger)component __TVOS_PROHIBITED;</span><br></pre></td></tr></table></figure>
 <p>2.2,返回每一行的展示数据,数据类型是:NSString或者是NSAttributedString</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">- (nullable NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component __TVOS_PROHIBITED;</div><div class="line">- (nullable NSAttributedString *)pickerView:(UIPickerView *)pickerView attributedTitleForRow:(NSInteger)row forComponent:(NSInteger)component NS_AVAILABLE_IOS(6_0) __TVOS_PROHIBITED; // attributed title is favored if both methods are implemented</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">- (nullable NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component __TVOS_PROHIBITED;</span><br><span class="line">- (nullable NSAttributedString *)pickerView:(UIPickerView *)pickerView attributedTitleForRow:(NSInteger)row forComponent:(NSInteger)component NS_AVAILABLE_IOS(6_0) __TVOS_PROHIBITED; &#x2F;&#x2F; attributed title is favored if both methods are implemented</span><br></pre></td></tr></table></figure>
 <p>2.3,每一个component行数中的view,可以进行自定义:但必须是UILabel</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line">- (UIView *)pickerView:(UIPickerView *)pickerView viewForRow:(NSInteger)row forComponent:(NSInteger)component reusingView:(nullable UIView *)view __TVOS_PROHIBITED;</div><div class="line"></div><div class="line">example:</div><div class="line"></div><div class="line">-(UIView *)pickerView:(UIPickerView *)pickerView viewForRow:(NSInteger)row forComponent:(NSInteger)component reusingView:(UIView *)view&#123;</div><div class="line">    //设置字体大小;</div><div class="line">    UILabel *lbl = (UILabel *)view;</div><div class="line">    if (lbl == nil) &#123;</div><div class="line">        lbl = [[UILabel alloc]init];</div><div class="line">        //在这里设置字体相关属性</div><div class="line">        lbl.font = [UIFont systemFontOfSize:13];</div><div class="line">        lbl.textColor = [UIColor grayColor];</div><div class="line">        lbl.textAlignment = NSTextAlignmentCenter;</div><div class="line">        [lbl setBackgroundColor:[UIColor clearColor]];</div><div class="line">        if (component == 0) &#123;</div><div class="line">            lbl.textColor = [UIColor redColor];</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    //重新加载lbl的文字内容</div><div class="line">    lbl.text = [self pickerView:pickerView titleForRow:row forComponent:component];</div><div class="line">    return lbl;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">- (UIView *)pickerView:(UIPickerView *)pickerView viewForRow:(NSInteger)row forComponent:(NSInteger)component reusingView:(nullable UIView *)view __TVOS_PROHIBITED;</span><br><span class="line"></span><br><span class="line">example:</span><br><span class="line"></span><br><span class="line">-(UIView *)pickerView:(UIPickerView *)pickerView viewForRow:(NSInteger)row forComponent:(NSInteger)component reusingView:(UIView *)view&#123;</span><br><span class="line">    &#x2F;&#x2F;设置字体大小;</span><br><span class="line">    UILabel *lbl &#x3D; (UILabel *)view;</span><br><span class="line">    if (lbl &#x3D;&#x3D; nil) &#123;</span><br><span class="line">        lbl &#x3D; [[UILabel alloc]init];</span><br><span class="line">        &#x2F;&#x2F;在这里设置字体相关属性</span><br><span class="line">        lbl.font &#x3D; [UIFont systemFontOfSize:13];</span><br><span class="line">        lbl.textColor &#x3D; [UIColor grayColor];</span><br><span class="line">        lbl.textAlignment &#x3D; NSTextAlignmentCenter;</span><br><span class="line">        [lbl setBackgroundColor:[UIColor clearColor]];</span><br><span class="line">        if (component &#x3D;&#x3D; 0) &#123;</span><br><span class="line">            lbl.textColor &#x3D; [UIColor redColor];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    &#x2F;&#x2F;重新加载lbl的文字内容</span><br><span class="line">    lbl.text &#x3D; [self pickerView:pickerView titleForRow:row forComponent:component];</span><br><span class="line">    return lbl;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>2.4,当前选中的component和row</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">- (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component __TVOS_PROHIBITED;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">- (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component __TVOS_PROHIBITED;</span><br></pre></td></tr></table></figure>
+
+
 <h3 id="代码示例"><a href="#代码示例" class="headerlink" title="代码示例"></a>代码示例</h3><h4 id="默认大小"><a href="#默认大小" class="headerlink" title="默认大小"></a>默认大小</h4><p>1,当UIPickerView没有设置frame值时,默认宽是320,高是216;  </p>
 <p><img src="https://20190422zy.oss-cn-shenzhen.aliyuncs.com/2019-4-24-01/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202018-01-17%20%E4%B8%8B%E5%8D%887.09.02.png" alt="image"></p>
 
@@ -478,7 +484,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/iOS学习/" rel="tag"># iOS学习</a>
+            <a href="/tags/iOS%E5%AD%A6%E4%B9%A0/" rel="tag"># iOS学习</a>
           
         </div>
       
@@ -491,8 +497,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/01/18/UIDatePicker/" rel="next" title="OC记录2--UIDatePicker">
-                <i class="fa fa-chevron-left"></i> OC记录2--UIDatePicker
+              <a href="/2018/01/15/%E4%B8%80%E4%B8%AA%E7%9C%81+%E5%9F%8E%E5%B8%82%E9%80%89%E6%8B%A9%E5%99%A8/" rel="next" title="一个简单省市选择器">
+                <i class="fa fa-chevron-left"></i> 一个简单省市选择器
               </a>
             
           </div>
@@ -501,8 +507,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/01/15/一个省+城市选择器/" rel="prev" title="一个简单省市选择器">
-                一个简单省市选择器 <i class="fa fa-chevron-right"></i>
+              <a href="/2018/01/18/UIDatePicker/" rel="prev" title="OC记录2--UIDatePicker">
+                OC记录2--UIDatePicker <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -666,12 +672,12 @@
 
 
 <div class="powered-by">
-  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+  由 <a class="theme-link" href="https://hexo.io" target="_blank" rel="noopener">Hexo</a> 强力驱动
 </div>
 
 <div class="theme-info">
   主题 -
-  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next" target="_blank" rel="noopener">
     NexT.Pisces
   </a>
 </div>

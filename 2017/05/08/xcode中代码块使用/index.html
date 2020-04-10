@@ -88,20 +88,22 @@
 
 
 <meta name="description" content="一 简单描述 敲代码的时候,我们会经常用到重复类属性或者方法,如UITaleView中必须实现的2个代理方法,而每次都进行敲的话,浪费很多不必要的时间;如果我们能把它们封装成一个代码块,在需要的时候,直接拖进来使用,能省掉不少时间;Xcode开发工具是强大的,他不紧提供了一些常用的代码块(有时间可以自己看看Xcode自带的代码块),还允许我们自定义代码块.">
-<meta name="keywords" content="xcode,iOS技巧,代码块">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Xcode中自定义代码块的使用">
-<meta property="og:url" content="http://yoursite.com/2017/05/08/xcode中代码块使用/index.html">
+<meta property="og:url" content="http://yoursite.com/2017/05/08/xcode%E4%B8%AD%E4%BB%A3%E7%A0%81%E5%9D%97%E4%BD%BF%E7%94%A8/index.html">
 <meta property="og:site_name" content="烟飞烟灭">
 <meta property="og:description" content="一 简单描述 敲代码的时候,我们会经常用到重复类属性或者方法,如UITaleView中必须实现的2个代理方法,而每次都进行敲的话,浪费很多不必要的时间;如果我们能把它们封装成一个代码块,在需要的时候,直接拖进来使用,能省掉不少时间;Xcode开发工具是强大的,他不紧提供了一些常用的代码块(有时间可以自己看看Xcode自带的代码块),还允许我们自定义代码块.">
 <meta property="og:image" content="https://20190422zy.oss-cn-shenzhen.aliyuncs.com/2019-4-24-01/xcode%E4%B8%AD%E4%BB%A3%E7%A0%81%E5%9D%97%E7%9A%84%E4%BD%BF%E7%94%A8/%E4%BB%A3%E7%A0%81%E5%9D%97%E4%BD%8D%E7%BD%AE.png">
 <meta property="og:image" content="https://20190422zy.oss-cn-shenzhen.aliyuncs.com/2019-4-24-01/xcode%E4%B8%AD%E4%BB%A3%E7%A0%81%E5%9D%97%E7%9A%84%E4%BD%BF%E7%94%A8/%E4%BB%A3%E7%A0%81%E5%9D%97%E6%8F%8F%E8%BF%B0.png">
 <meta property="og:image" content="https://20190422zy.oss-cn-shenzhen.aliyuncs.com/2019-4-24-01/xcode%E4%B8%AD%E4%BB%A3%E7%A0%81%E5%9D%97%E7%9A%84%E4%BD%BF%E7%94%A8/%E4%BB%A3%E7%A0%81%E5%9D%97%E4%BD%BF%E7%94%A8.png">
 <meta property="og:image" content="https://20190422zy.oss-cn-shenzhen.aliyuncs.com/2019-4-24-01/xcode%E4%B8%AD%E4%BB%A3%E7%A0%81%E5%9D%97%E7%9A%84%E4%BD%BF%E7%94%A8/%E4%BD%BF%E7%94%A8%E6%95%88%E6%9E%9C.png">
-<meta property="og:updated_time" content="2019-06-12T07:22:46.000Z">
+<meta property="article:published_time" content="2017-05-08T04:25:51.000Z">
+<meta property="article:modified_time" content="2019-06-12T07:22:46.000Z">
+<meta property="article:author" content="自由不可待">
+<meta property="article:tag" content="xcode">
+<meta property="article:tag" content="iOS技巧">
+<meta property="article:tag" content="代码块">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Xcode中自定义代码块的使用">
-<meta name="twitter:description" content="一 简单描述 敲代码的时候,我们会经常用到重复类属性或者方法,如UITaleView中必须实现的2个代理方法,而每次都进行敲的话,浪费很多不必要的时间;如果我们能把它们封装成一个代码块,在需要的时候,直接拖进来使用,能省掉不少时间;Xcode开发工具是强大的,他不紧提供了一些常用的代码块(有时间可以自己看看Xcode自带的代码块),还允许我们自定义代码块.">
 <meta name="twitter:image" content="https://20190422zy.oss-cn-shenzhen.aliyuncs.com/2019-4-24-01/xcode%E4%B8%AD%E4%BB%A3%E7%A0%81%E5%9D%97%E7%9A%84%E4%BD%BF%E7%94%A8/%E4%BB%A3%E7%A0%81%E5%9D%97%E4%BD%8D%E7%BD%AE.png">
 
 
@@ -137,7 +139,7 @@
 
 
   <title> Xcode中自定义代码块的使用 | 烟飞烟灭 </title>
-</head>
+<meta name="generator" content="Hexo 4.2.0"></head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
@@ -275,7 +277,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/05/08/xcode中代码块使用/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/05/08/xcode%E4%B8%AD%E4%BB%A3%E7%A0%81%E5%9D%97%E4%BD%BF%E7%94%A8/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="自由不可待">
@@ -346,7 +348,7 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/iOS开发/" itemprop="url" rel="index">
+                  <a href="/categories/iOS%E5%BC%80%E5%8F%91/" itemprop="url" rel="index">
                     <span itemprop="name">iOS开发</span>
                   </a>
                 </span>
@@ -363,7 +365,7 @@
 
           
           
-             <span id="/2017/05/08/xcode中代码块使用/" class="leancloud_visitors" data-flag-title="Xcode中自定义代码块的使用">
+             <span id="/2017/05/08/xcode%E4%B8%AD%E4%BB%A3%E7%A0%81%E5%9D%97%E4%BD%BF%E7%94%A8/" class="leancloud_visitors" data-flag-title="Xcode中自定义代码块的使用">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -387,7 +389,7 @@
                   <span class="post-meta-item-text">字数统计</span>
                 
                 <span title="字数统计">
-                  522 字
+                  528 字
                 </span>
               
 
@@ -422,13 +424,15 @@
 <h5 id="图片中可以编辑的信息"><a href="#图片中可以编辑的信息" class="headerlink" title="图片中可以编辑的信息:"></a>图片中可以编辑的信息:</h5><blockquote>
 <ul>
 <li>Title:<br>代码块的标题,方便查找;  </li>
+</ul>
+</blockquote>
+<ul>
 <li>Summary:<br>代码块功能的描述,比如说它是快速创建一个属性的代码块;  </li>
 <li>Platform:<br>可以使用代码块的平台,All,iOS,macOS,tvOS,watchOS四个;  </li>
 <li>Completion Shortcut:<br>使用代码块的快捷方式,比如你输入的是@p,那么当你输入@p的时候,它会主动帮你补全这一段代码块;  </li>
 <li>Completion Scopes:<br>代码块可以在哪些文件中使用;  </li>
 <li>最后的是代码块的预览效果.  </li>
 </ul>
-</blockquote>
 <h4 id="代码块的使用"><a href="#代码块的使用" class="headerlink" title="代码块的使用"></a>代码块的使用</h4><p>1,可以直接选中代码块,然后把它拖到需要使用的地方;<br>2,利用上面:Completion Shortcut进行使用;  </p>
 <p><img src="https://20190422zy.oss-cn-shenzhen.aliyuncs.com/2019-4-24-01/xcode%E4%B8%AD%E4%BB%A3%E7%A0%81%E5%9D%97%E7%9A%84%E4%BD%BF%E7%94%A8/%E4%BB%A3%E7%A0%81%E5%9D%97%E4%BD%BF%E7%94%A8.png" alt="image"></p>
 <h4 id="代码块的删除"><a href="#代码块的删除" class="headerlink" title="代码块的删除"></a>代码块的删除</h4><p>直接选中想删除的代码块,按键盘上的delete键进行删除;  </p>
@@ -469,9 +473,9 @@
           
             <a href="/tags/xcode/" rel="tag"># xcode</a>
           
-            <a href="/tags/iOS技巧/" rel="tag"># iOS技巧</a>
+            <a href="/tags/iOS%E6%8A%80%E5%B7%A7/" rel="tag"># iOS技巧</a>
           
-            <a href="/tags/代码块/" rel="tag"># 代码块</a>
+            <a href="/tags/%E4%BB%A3%E7%A0%81%E5%9D%97/" rel="tag"># 代码块</a>
           
         </div>
       
@@ -484,8 +488,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/05/11/iOS开发中的懒加载/" rel="next" title="iOS开发中的懒加载">
-                <i class="fa fa-chevron-left"></i> iOS开发中的懒加载
+              <a href="/2017/05/04/%E6%AD%A3%E7%A1%AE%E5%AF%BC%E5%87%BA%E4%B8%8A%E6%9E%B6ipa%E5%8C%85/" rel="next" title="从xcode工程中导出各种ipa包">
+                <i class="fa fa-chevron-left"></i> 从xcode工程中导出各种ipa包
               </a>
             
           </div>
@@ -494,8 +498,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/05/04/正确导出上架ipa包/" rel="prev" title="从xcode工程中导出各种ipa包">
-                从xcode工程中导出各种ipa包 <i class="fa fa-chevron-right"></i>
+              <a href="/2017/05/11/iOS%E5%BC%80%E5%8F%91%E4%B8%AD%E7%9A%84%E6%87%92%E5%8A%A0%E8%BD%BD/" rel="prev" title="iOS开发中的懒加载">
+                iOS开发中的懒加载 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -659,12 +663,12 @@
 
 
 <div class="powered-by">
-  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+  由 <a class="theme-link" href="https://hexo.io" target="_blank" rel="noopener">Hexo</a> 强力驱动
 </div>
 
 <div class="theme-info">
   主题 -
-  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next" target="_blank" rel="noopener">
     NexT.Pisces
   </a>
 </div>

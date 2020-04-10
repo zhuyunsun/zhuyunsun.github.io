@@ -88,16 +88,17 @@
 
 
 <meta name="description" content="进程和线程概念 1,进程:进程是计算机系统分配的单位,每个进程之间是相互独立的,如同时打开微信,QQ,那么就开启了2个进程;2,线程:线程是进程的基本执行单位,进程中所有的任务都是在线程中执行的,每一个进程都必须存在并且只有一个主线程,允许存在多个子线程;3,多线程:在不阻塞主线程情况下,充分利用CPU资源开启多个线程去执行耗时任务,优化app体验;">
-<meta name="keywords" content="多线程,NSThread">
 <meta property="og:type" content="article">
 <meta property="og:title" content="多线程之-NSThread">
-<meta property="og:url" content="http://yoursite.com/2018/07/20/iOS多线程之-NSThread/index.html">
+<meta property="og:url" content="http://yoursite.com/2018/07/20/iOS%E5%A4%9A%E7%BA%BF%E7%A8%8B%E4%B9%8B-NSThread/index.html">
 <meta property="og:site_name" content="烟飞烟灭">
 <meta property="og:description" content="进程和线程概念 1,进程:进程是计算机系统分配的单位,每个进程之间是相互独立的,如同时打开微信,QQ,那么就开启了2个进程;2,线程:线程是进程的基本执行单位,进程中所有的任务都是在线程中执行的,每一个进程都必须存在并且只有一个主线程,允许存在多个子线程;3,多线程:在不阻塞主线程情况下,充分利用CPU资源开启多个线程去执行耗时任务,优化app体验;">
-<meta property="og:updated_time" content="2018-07-31T07:03:29.000Z">
+<meta property="article:published_time" content="2018-07-20T03:03:28.000Z">
+<meta property="article:modified_time" content="2018-07-31T07:03:29.000Z">
+<meta property="article:author" content="自由不可待">
+<meta property="article:tag" content="多线程">
+<meta property="article:tag" content="NSThread">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="多线程之-NSThread">
-<meta name="twitter:description" content="进程和线程概念 1,进程:进程是计算机系统分配的单位,每个进程之间是相互独立的,如同时打开微信,QQ,那么就开启了2个进程;2,线程:线程是进程的基本执行单位,进程中所有的任务都是在线程中执行的,每一个进程都必须存在并且只有一个主线程,允许存在多个子线程;3,多线程:在不阻塞主线程情况下,充分利用CPU资源开启多个线程去执行耗时任务,优化app体验;">
 
 
 
@@ -132,7 +133,7 @@
 
 
   <title> 多线程之-NSThread | 烟飞烟灭 </title>
-</head>
+<meta name="generator" content="Hexo 4.2.0"></head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
@@ -270,7 +271,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/07/20/iOS多线程之-NSThread/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/07/20/iOS%E5%A4%9A%E7%BA%BF%E7%A8%8B%E4%B9%8B-NSThread/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="自由不可待">
@@ -341,7 +342,7 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/iOS开发/" itemprop="url" rel="index">
+                  <a href="/categories/iOS%E5%BC%80%E5%8F%91/" itemprop="url" rel="index">
                     <span itemprop="name">iOS开发</span>
                   </a>
                 </span>
@@ -358,7 +359,7 @@
 
           
           
-             <span id="/2018/07/20/iOS多线程之-NSThread/" class="leancloud_visitors" data-flag-title="多线程之-NSThread">
+             <span id="/2018/07/20/iOS%E5%A4%9A%E7%BA%BF%E7%A8%8B%E4%B9%8B-NSThread/" class="leancloud_visitors" data-flag-title="多线程之-NSThread">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -382,7 +383,7 @@
                   <span class="post-meta-item-text">字数统计</span>
                 
                 <span title="字数统计">
-                  825 字
+                  891 字
                 </span>
               
 
@@ -409,30 +410,58 @@
 <p><strong>1,进程</strong>:进程是计算机系统分配的单位,每个进程之间是相互独立的,如同时打开微信,QQ,那么就开启了2个进程;<br><strong>2,线程</strong>:线程是进程的基本执行单位,进程中所有的任务都是在线程中执行的,每一个进程都必须存在并且只有一个<strong>主线程</strong>,允许存在多个子线程;<br><strong>3,多线程</strong>:在不阻塞主线程情况下,充分利用CPU资源开启多个线程去执行耗时任务,优化app体验; </p>
 </blockquote>
 <a id="more"></a>
+
 <h4 id="NSThread使用"><a href="#NSThread使用" class="headerlink" title="NSThread使用"></a>NSThread使用</h4><blockquote>
 <p>异步,并发队列<br>需要对线程进行手动管理<br>较少用到  </p>
 </blockquote>
 <h5 id="创建"><a href="#创建" class="headerlink" title="创建"></a>创建</h5><p>第一种是类方法:  </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">[NSThread detachNewThreadSelector:@selector(action4) toTarget:self withObject:@&quot;123&quot;];  </div><div class="line">-(void)action4&#123;  </div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[NSThread detachNewThreadSelector:@selector(action4) toTarget:self withObject:@&quot;123&quot;];  </span><br><span class="line">-(void)action4&#123;  </span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <blockquote>
 <p>该类方法创建的线程会自动启动,@”123”是线程的标识符;  </p>
 </blockquote>
 <p>iOS10之后提供了一种Block方法:  </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">[NSThread detachNewThreadWithBlock:^&#123;  </div><div class="line">       //iOS10之后的block方法</div><div class="line">       NSLog(@&quot;NSThread1=%@&quot;,[NSThread currentThread]);</div><div class="line">   &#125;];</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[NSThread detachNewThreadWithBlock:^&#123;  </span><br><span class="line">       &#x2F;&#x2F;iOS10之后的block方法</span><br><span class="line">       NSLog(@&quot;NSThread1&#x3D;%@&quot;,[NSThread currentThread]);</span><br><span class="line">   &#125;];</span><br></pre></td></tr></table></figure>
+
 <p>第二种是init方法:  </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"> NSThread *t1 = [[NSThread alloc]initWithTarget:self selector:@selector(action1) object:nil];  </div><div class="line"> t1.name = @&quot;1&quot;;  </div><div class="line"> [t1 start];  </div><div class="line">-(void)action1&#123;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"> NSThread *t1 &#x3D; [[NSThread alloc]initWithTarget:self selector:@selector(action1) object:nil];  </span><br><span class="line"> t1.name &#x3D; @&quot;1&quot;;  </span><br><span class="line"> [t1 start];  </span><br><span class="line">-(void)action1&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <blockquote>
 <p>需要手动去开启,name=@“1”是线程的标识符;  </p>
 </blockquote>
-<h5 id="NSThread一些方法和属性"><a href="#NSThread一些方法和属性" class="headerlink" title="NSThread一些方法和属性"></a>NSThread一些方法和属性</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div></pre></td><td class="code"><pre><div class="line">//是否是多线程</div><div class="line">[NSThread isMultiThreaded];</div><div class="line">//是否是主线程</div><div class="line">[NSThread isMainThread];</div><div class="line">//获取当前线程,number=1表示是主线程</div><div class="line">[NSThread currentThread];</div><div class="line">//休眠多久</div><div class="line">[NSThread sleepForTimeInterval:1.2];</div><div class="line">//休眠到什么时间</div><div class="line">[NSThread sleepUntilDate:[NSDate date]];</div><div class="line">//退出线程</div><div class="line">[NSThread exit];</div><div class="line">//当前线程优先级</div><div class="line">[NSThread threadPriority];</div><div class="line">//设置线程的优先级0.0~1.0,默认0.5,数值越大,表示cpu调用的频率高</div><div class="line">[NSThread setThreadPriority:0.2];</div><div class="line">//主线程对象</div><div class="line">NSThread *main = [NSThread mainThread];  </div><div class="line"></div><div class="line">NSThread *t3 = [[NSThread alloc]initWithBlock:^&#123;</div><div class="line">        //iOS10新增加方法</div><div class="line"> &#125;];</div><div class="line">[t3 start];</div><div class="line">//name,线程标识</div><div class="line">t3.name = @&quot;name1&quot;;</div><div class="line">if (t3.isExecuting) &#123;</div><div class="line">    //是否在执行</div><div class="line">&#125;</div><div class="line">if (t3.isCancelled) &#123;</div><div class="line">    //是否停止</div><div class="line">&#125;</div><div class="line">if (t3.isFinished) &#123;</div><div class="line">    //是否完成</div><div class="line">&#125;</div><div class="line">if (t3.isMainThread) &#123;</div><div class="line">    //是否是主线程</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h5 id="NSThread一些方法和属性"><a href="#NSThread一些方法和属性" class="headerlink" title="NSThread一些方法和属性"></a>NSThread一些方法和属性</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F;是否是多线程</span><br><span class="line">[NSThread isMultiThreaded];</span><br><span class="line">&#x2F;&#x2F;是否是主线程</span><br><span class="line">[NSThread isMainThread];</span><br><span class="line">&#x2F;&#x2F;获取当前线程,number&#x3D;1表示是主线程</span><br><span class="line">[NSThread currentThread];</span><br><span class="line">&#x2F;&#x2F;休眠多久</span><br><span class="line">[NSThread sleepForTimeInterval:1.2];</span><br><span class="line">&#x2F;&#x2F;休眠到什么时间</span><br><span class="line">[NSThread sleepUntilDate:[NSDate date]];</span><br><span class="line">&#x2F;&#x2F;退出线程</span><br><span class="line">[NSThread exit];</span><br><span class="line">&#x2F;&#x2F;当前线程优先级</span><br><span class="line">[NSThread threadPriority];</span><br><span class="line">&#x2F;&#x2F;设置线程的优先级0.0~1.0,默认0.5,数值越大,表示cpu调用的频率高</span><br><span class="line">[NSThread setThreadPriority:0.2];</span><br><span class="line">&#x2F;&#x2F;主线程对象</span><br><span class="line">NSThread *main &#x3D; [NSThread mainThread];  </span><br><span class="line"></span><br><span class="line">NSThread *t3 &#x3D; [[NSThread alloc]initWithBlock:^&#123;</span><br><span class="line">        &#x2F;&#x2F;iOS10新增加方法</span><br><span class="line"> &#125;];</span><br><span class="line">[t3 start];</span><br><span class="line">&#x2F;&#x2F;name,线程标识</span><br><span class="line">t3.name &#x3D; @&quot;name1&quot;;</span><br><span class="line">if (t3.isExecuting) &#123;</span><br><span class="line">    &#x2F;&#x2F;是否在执行</span><br><span class="line">&#125;</span><br><span class="line">if (t3.isCancelled) &#123;</span><br><span class="line">    &#x2F;&#x2F;是否停止</span><br><span class="line">&#125;</span><br><span class="line">if (t3.isFinished) &#123;</span><br><span class="line">    &#x2F;&#x2F;是否完成</span><br><span class="line">&#125;</span><br><span class="line">if (t3.isMainThread) &#123;</span><br><span class="line">    &#x2F;&#x2F;是否是主线程</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <h4 id="线程同步"><a href="#线程同步" class="headerlink" title="线程同步"></a>线程同步</h4><blockquote>
 <p>线程同步,指的是不同的线程同时去争夺同一块资源,造成的数据混乱和数据安全的问题;就好比几个人修改同一个表的时候造成的数据混乱;  </p>
 </blockquote>
-<h5 id="解决方案1-synchronized"><a href="#解决方案1-synchronized" class="headerlink" title="解决方案1:@synchronized"></a>解决方案1:@synchronized</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">@synchronized(self) &#123;</div><div class="line">    // 需要锁定的代码</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h5 id="解决方案2-NSLock"><a href="#解决方案2-NSLock" class="headerlink" title="解决方案2:NSLock"></a>解决方案2:NSLock</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">全局变量:NSLock *lock = [[NSLock alloc]init];</div><div class="line">[lock lock];</div><div class="line">//需要锁定的代码</div><div class="line">[lock unlock];</div></pre></td></tr></table></figure>
+<h5 id="解决方案1-synchronized"><a href="#解决方案1-synchronized" class="headerlink" title="解决方案1:@synchronized"></a>解决方案1:@synchronized</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">@synchronized(self) &#123;</span><br><span class="line">    &#x2F;&#x2F; 需要锁定的代码</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="解决方案2-NSLock"><a href="#解决方案2-NSLock" class="headerlink" title="解决方案2:NSLock"></a>解决方案2:NSLock</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">全局变量:NSLock *lock &#x3D; [[NSLock alloc]init];</span><br><span class="line">[lock lock];</span><br><span class="line">&#x2F;&#x2F;需要锁定的代码</span><br><span class="line">[lock unlock];</span><br></pre></td></tr></table></figure>
+
 <h4 id="互斥锁和自旋锁"><a href="#互斥锁和自旋锁" class="headerlink" title="互斥锁和自旋锁"></a>互斥锁和自旋锁</h4><h5 id="互斥锁"><a href="#互斥锁" class="headerlink" title="互斥锁"></a>互斥锁</h5><p>上面的方案1和方案2都属于<strong>互斥锁</strong>:加了互斥锁的代码,当新线程访问时,如果发现其他线程正在执行锁定的代码，新线程就会进入休眠.  </p>
 <h5 id="自旋锁"><a href="#自旋锁" class="headerlink" title="自旋锁"></a>自旋锁</h5><p>另外还有一种叫<strong>自旋锁</strong>:加了自旋锁，当新线程访问代码时，如果发现有其他线程正在锁定代码，新线程会用死循环的方式，一直等待锁定的代码执行完成。相当于不停尝试执行代码，比较消耗性能。<br>属性修饰atomic本身就有一把自旋锁。  </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">nonatomic 非原子属性,同一时间可以有很多线程读和写</div><div class="line">atomic 原子属性(线程安全)，保证同一时间只有一个线程能够写入(但是同一个时间多个线程都可以取值)，atomic 本身就有一把锁(自旋锁)</div><div class="line">atomic：线程安全，需要消耗大量的资源</div><div class="line">nonatomic：非线程安全，不过效率更高，一般使用nonatomic</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">nonatomic 非原子属性,同一时间可以有很多线程读和写</span><br><span class="line">atomic 原子属性(线程安全)，保证同一时间只有一个线程能够写入(但是同一个时间多个线程都可以取值)，atomic 本身就有一把锁(自旋锁)</span><br><span class="line">atomic：线程安全，需要消耗大量的资源</span><br><span class="line">nonatomic：非线程安全，不过效率更高，一般使用nonatomic</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
       
     </div>
@@ -462,7 +491,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/多线程/" rel="tag"># 多线程</a>
+            <a href="/tags/%E5%A4%9A%E7%BA%BF%E7%A8%8B/" rel="tag"># 多线程</a>
           
             <a href="/tags/NSThread/" rel="tag"># NSThread</a>
           
@@ -477,8 +506,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/07/31/多线程之-GCD/" rel="next" title="多线程之-GCD">
-                <i class="fa fa-chevron-left"></i> 多线程之-GCD
+              <a href="/2018/07/11/xcode10_%E4%BD%93%E9%AA%8C1/" rel="next" title="xcode10_beta:block内_出现self替换警告">
+                <i class="fa fa-chevron-left"></i> xcode10_beta:block内_出现self替换警告
               </a>
             
           </div>
@@ -487,8 +516,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/07/11/xcode10_体验1/" rel="prev" title="xcode10_beta:block内_出现self替换警告">
-                xcode10_beta:block内_出现self替换警告 <i class="fa fa-chevron-right"></i>
+              <a href="/2018/07/31/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E4%B9%8B-GCD/" rel="prev" title="多线程之-GCD">
+                多线程之-GCD <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -652,12 +681,12 @@
 
 
 <div class="powered-by">
-  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+  由 <a class="theme-link" href="https://hexo.io" target="_blank" rel="noopener">Hexo</a> 强力驱动
 </div>
 
 <div class="theme-info">
   主题 -
-  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next" target="_blank" rel="noopener">
     NexT.Pisces
   </a>
 </div>

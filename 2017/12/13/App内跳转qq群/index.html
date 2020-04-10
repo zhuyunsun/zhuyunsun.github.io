@@ -71,7 +71,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="iOS开发,App开发," />
+  <meta name="keywords" content="App开发,iOS开发," />
 
 
 
@@ -88,16 +88,17 @@
 
 
 <meta name="description" content="序言开发的时候,有时候需要在当前app内直接跳转到某个qq群的界面;下面介绍下如何进行接入:   在工程内配置允许跳转的白名单1,在xcode工程中的info.plist文件中添加LSApplicationQueriesSchemes字段,它是一个数组,然后添加:mqqapi 字段;   获取跳转qq群的uin参数和key参数获取地址需要登录qq账号,选择要跳转的群,然后网页右边会自动生成对应语言">
-<meta name="keywords" content="iOS开发,App开发">
 <meta property="og:type" content="article">
 <meta property="og:title" content="App内跳转qq群">
-<meta property="og:url" content="http://yoursite.com/2017/12/13/App内跳转qq群/index.html">
+<meta property="og:url" content="http://yoursite.com/2017/12/13/App%E5%86%85%E8%B7%B3%E8%BD%ACqq%E7%BE%A4/index.html">
 <meta property="og:site_name" content="烟飞烟灭">
 <meta property="og:description" content="序言开发的时候,有时候需要在当前app内直接跳转到某个qq群的界面;下面介绍下如何进行接入:   在工程内配置允许跳转的白名单1,在xcode工程中的info.plist文件中添加LSApplicationQueriesSchemes字段,它是一个数组,然后添加:mqqapi 字段;   获取跳转qq群的uin参数和key参数获取地址需要登录qq账号,选择要跳转的群,然后网页右边会自动生成对应语言">
-<meta property="og:updated_time" content="2017-12-13T12:54:15.000Z">
+<meta property="article:published_time" content="2017-12-13T12:20:44.000Z">
+<meta property="article:modified_time" content="2017-12-13T12:54:15.000Z">
+<meta property="article:author" content="自由不可待">
+<meta property="article:tag" content="App开发">
+<meta property="article:tag" content="iOS开发">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="App内跳转qq群">
-<meta name="twitter:description" content="序言开发的时候,有时候需要在当前app内直接跳转到某个qq群的界面;下面介绍下如何进行接入:   在工程内配置允许跳转的白名单1,在xcode工程中的info.plist文件中添加LSApplicationQueriesSchemes字段,它是一个数组,然后添加:mqqapi 字段;   获取跳转qq群的uin参数和key参数获取地址需要登录qq账号,选择要跳转的群,然后网页右边会自动生成对应语言">
 
 
 
@@ -132,7 +133,7 @@
 
 
   <title> App内跳转qq群 | 烟飞烟灭 </title>
-</head>
+<meta name="generator" content="Hexo 4.2.0"></head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
@@ -270,7 +271,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/12/13/App内跳转qq群/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/12/13/App%E5%86%85%E8%B7%B3%E8%BD%ACqq%E7%BE%A4/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="自由不可待">
@@ -341,7 +342,7 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/iOS开发/" itemprop="url" rel="index">
+                  <a href="/categories/iOS%E5%BC%80%E5%8F%91/" itemprop="url" rel="index">
                     <span itemprop="name">iOS开发</span>
                   </a>
                 </span>
@@ -358,7 +359,7 @@
 
           
           
-             <span id="/2017/12/13/App内跳转qq群/" class="leancloud_visitors" data-flag-title="App内跳转qq群">
+             <span id="/2017/12/13/App%E5%86%85%E8%B7%B3%E8%BD%ACqq%E7%BE%A4/" class="leancloud_visitors" data-flag-title="App内跳转qq群">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -382,7 +383,7 @@
                   <span class="post-meta-item-text">字数统计</span>
                 
                 <span title="字数统计">
-                  193 字
+                  218 字
                 </span>
               
 
@@ -407,8 +408,13 @@
       
         <h4 id="序言"><a href="#序言" class="headerlink" title="序言"></a>序言</h4><p>开发的时候,有时候需要在当前app内直接跳转到某个qq群的界面;<br>下面介绍下如何进行接入:  </p>
 <h4 id="在工程内配置允许跳转的白名单"><a href="#在工程内配置允许跳转的白名单" class="headerlink" title="在工程内配置允许跳转的白名单"></a>在工程内配置允许跳转的白名单</h4><p>1,在xcode工程中的info.plist文件中添加LSApplicationQueriesSchemes字段,它是一个数组,<br>然后添加:<br>mqqapi 字段;  </p>
-<h4 id="获取跳转qq群的uin参数和key参数"><a href="#获取跳转qq群的uin参数和key参数" class="headerlink" title="获取跳转qq群的uin参数和key参数"></a>获取跳转qq群的uin参数和key参数</h4><p><a href="https://qun.qq.com/join.html" target="_blank" rel="external">获取地址</a><br>需要登录qq账号,选择要跳转的群,然后网页右边会自动生成对应语言跳转的方法;<br>OC语言开发的格式如下:  </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">- (BOOL)joinGroup:(NSString *)groupUin key:(NSString *)key&#123;</div><div class="line">NSString *urlStr = [NSString stringWithFormat:@&quot;mqqapi://card/show_pslcard?src_type=internal&amp;version=1&amp;uin=%@&amp;key=%@&amp;card_type=group&amp;source=external&quot;, @&quot;对应的uin&quot;,@&quot;对应的key&quot;];</div><div class="line">NSURL *url = [NSURL URLWithString:urlStr];</div><div class="line">if([[UIApplication sharedApplication] canOpenURL:url])&#123;</div><div class="line">[[UIApplication sharedApplication] openURL:url];</div><div class="line">return YES;</div><div class="line">&#125;</div><div class="line">else return NO;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h4 id="获取跳转qq群的uin参数和key参数"><a href="#获取跳转qq群的uin参数和key参数" class="headerlink" title="获取跳转qq群的uin参数和key参数"></a>获取跳转qq群的uin参数和key参数</h4><p><a href="https://qun.qq.com/join.html" target="_blank" rel="noopener">获取地址</a><br>需要登录qq账号,选择要跳转的群,然后网页右边会自动生成对应语言跳转的方法;<br>OC语言开发的格式如下:  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">- (BOOL)joinGroup:(NSString *)groupUin key:(NSString *)key&#123;</span><br><span class="line">NSString *urlStr &#x3D; [NSString stringWithFormat:@&quot;mqqapi:&#x2F;&#x2F;card&#x2F;show_pslcard?src_type&#x3D;internal&amp;version&#x3D;1&amp;uin&#x3D;%@&amp;key&#x3D;%@&amp;card_type&#x3D;group&amp;source&#x3D;external&quot;, @&quot;对应的uin&quot;,@&quot;对应的key&quot;];</span><br><span class="line">NSURL *url &#x3D; [NSURL URLWithString:urlStr];</span><br><span class="line">if([[UIApplication sharedApplication] canOpenURL:url])&#123;</span><br><span class="line">[[UIApplication sharedApplication] openURL:url];</span><br><span class="line">return YES;</span><br><span class="line">&#125;</span><br><span class="line">else return NO;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
 
       
     </div>
@@ -438,9 +444,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/iOS开发/" rel="tag"># iOS开发</a>
+            <a href="/tags/App%E5%BC%80%E5%8F%91/" rel="tag"># App开发</a>
           
-            <a href="/tags/App开发/" rel="tag"># App开发</a>
+            <a href="/tags/iOS%E5%BC%80%E5%8F%91/" rel="tag"># iOS开发</a>
           
         </div>
       
@@ -453,8 +459,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/01/09/iOS开发截取当前屏幕/" rel="next" title="iOS截取当前屏幕保存到相册">
-                <i class="fa fa-chevron-left"></i> iOS截取当前屏幕保存到相册
+              <a href="/2017/09/27/Swift%E5%AD%A6%E4%B9%A0%E4%B9%8B-%E5%9F%BA%E6%9C%AC%E7%B1%BB%E5%9E%8B/" rel="next" title="Swift学习之-基本类型">
+                <i class="fa fa-chevron-left"></i> Swift学习之-基本类型
               </a>
             
           </div>
@@ -463,8 +469,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/09/27/Swift学习之-基本类型/" rel="prev" title="Swift学习之-基本类型">
-                Swift学习之-基本类型 <i class="fa fa-chevron-right"></i>
+              <a href="/2018/01/09/iOS%E5%BC%80%E5%8F%91%E6%88%AA%E5%8F%96%E5%BD%93%E5%89%8D%E5%B1%8F%E5%B9%95/" rel="prev" title="iOS截取当前屏幕保存到相册">
+                iOS截取当前屏幕保存到相册 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -628,12 +634,12 @@
 
 
 <div class="powered-by">
-  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+  由 <a class="theme-link" href="https://hexo.io" target="_blank" rel="noopener">Hexo</a> 强力驱动
 </div>
 
 <div class="theme-info">
   主题 -
-  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next" target="_blank" rel="noopener">
     NexT.Pisces
   </a>
 </div>

@@ -88,16 +88,18 @@
 
 
 <meta name="description" content="什么是协议?简单的理解:两个类之间,一个类委托另外一个类去实现某些方法或者功能;">
-<meta name="keywords" content="iOS开发,协议,委托模式">
 <meta property="og:type" content="article">
 <meta property="og:title" content="iOS中协议的简单使用">
-<meta property="og:url" content="http://yoursite.com/2017/09/13/iOS中的协议/index.html">
+<meta property="og:url" content="http://yoursite.com/2017/09/13/iOS%E4%B8%AD%E7%9A%84%E5%8D%8F%E8%AE%AE/index.html">
 <meta property="og:site_name" content="烟飞烟灭">
 <meta property="og:description" content="什么是协议?简单的理解:两个类之间,一个类委托另外一个类去实现某些方法或者功能;">
-<meta property="og:updated_time" content="2018-08-13T08:40:22.000Z">
+<meta property="article:published_time" content="2017-09-13T06:15:40.000Z">
+<meta property="article:modified_time" content="2018-08-13T08:40:22.000Z">
+<meta property="article:author" content="自由不可待">
+<meta property="article:tag" content="iOS开发">
+<meta property="article:tag" content="协议">
+<meta property="article:tag" content="委托模式">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="iOS中协议的简单使用">
-<meta name="twitter:description" content="什么是协议?简单的理解:两个类之间,一个类委托另外一个类去实现某些方法或者功能;">
 
 
 
@@ -132,7 +134,7 @@
 
 
   <title> iOS中协议的简单使用 | 烟飞烟灭 </title>
-</head>
+<meta name="generator" content="Hexo 4.2.0"></head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
@@ -270,7 +272,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/09/13/iOS中的协议/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/09/13/iOS%E4%B8%AD%E7%9A%84%E5%8D%8F%E8%AE%AE/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="自由不可待">
@@ -358,7 +360,7 @@
 
           
           
-             <span id="/2017/09/13/iOS中的协议/" class="leancloud_visitors" data-flag-title="iOS中协议的简单使用">
+             <span id="/2017/09/13/iOS%E4%B8%AD%E7%9A%84%E5%8D%8F%E8%AE%AE/" class="leancloud_visitors" data-flag-title="iOS中协议的简单使用">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -382,7 +384,7 @@
                   <span class="post-meta-item-text">字数统计</span>
                 
                 <span title="字数统计">
-                  243 字
+                  294 字
                 </span>
               
 
@@ -407,11 +409,14 @@
       
         <h4 id="什么是协议"><a href="#什么是协议" class="headerlink" title="什么是协议?"></a>什么是协议?</h4><p>简单的理解:两个类之间,一个类委托另外一个类去实现某些方法或者功能;<a id="more"></a>  </p>
 <h4 id="实现1-DelegateViewController"><a href="#实现1-DelegateViewController" class="headerlink" title="实现1(DelegateViewController)"></a>实现1(DelegateViewController)</h4><p>协议的关键字是@protocol<br>DelegateViewController.h  </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">#import &lt;UIKit/UIKit.h&gt;</div><div class="line">@protocol CoustomDelegate;//声明一个协议</div><div class="line">@interface DelegateViewController : UIViewController</div><div class="line">@property(nonatomic,weak)id&lt;CoustomDelegate&gt;delegate;//定义一个协议属性</div><div class="line">@end</div><div class="line">//协议方法</div><div class="line">@protocol CoustomDelegate &lt;NSObject&gt;</div><div class="line">//@required  默认方法是必须实现的,修饰词是@required,不实现的话,会报警告;</div><div class="line">//@optional  修饰的方法不强制实现;</div><div class="line">@optional</div><div class="line">-(void)showMessage:(NSDictionary *)dic;</div><div class="line">@end</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">#import &lt;UIKit&#x2F;UIKit.h&gt;</span><br><span class="line">@protocol CoustomDelegate;&#x2F;&#x2F;声明一个协议</span><br><span class="line">@interface DelegateViewController : UIViewController</span><br><span class="line">@property(nonatomic,weak)id&lt;CoustomDelegate&gt;delegate;&#x2F;&#x2F;定义一个协议属性</span><br><span class="line">@end</span><br><span class="line">&#x2F;&#x2F;协议方法</span><br><span class="line">@protocol CoustomDelegate &lt;NSObject&gt;</span><br><span class="line">&#x2F;&#x2F;@required  默认方法是必须实现的,修饰词是@required,不实现的话,会报警告;</span><br><span class="line">&#x2F;&#x2F;@optional  修饰的方法不强制实现;</span><br><span class="line">@optional</span><br><span class="line">-(void)showMessage:(NSDictionary *)dic;</span><br><span class="line">@end</span><br></pre></td></tr></table></figure>
+
 <p>DelegateViewController.m<br>在适当位置实现协议中的方法;</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">-(void)viewDidAppear:(BOOL)animated&#123;</div><div class="line">    [self.delegate showMessage:@&#123;@&quot;key&quot;:@&quot;value&quot;&#125;];</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">-(void)viewDidAppear:(BOOL)animated&#123;</span><br><span class="line">    [self.delegate showMessage:@&#123;@&quot;key&quot;:@&quot;value&quot;&#125;];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <h4 id="实现2-ViewController"><a href="#实现2-ViewController" class="headerlink" title="实现2(ViewController)"></a>实现2(ViewController)</h4><p>在ViewController.m 中  </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">#import &quot;ViewController.h&quot;</div><div class="line">#import &quot;DelegateViewController.h&quot;</div><div class="line">@interface ViewController ()&lt;CoustomDelegate&gt;</div><div class="line"></div><div class="line">@end</div><div class="line">``` </div><div class="line">```  </div><div class="line">-(void)touchesBegan:(NSSet&lt;UITouch *&gt; *)touches withEvent:(UIEvent *)event&#123;</div><div class="line">    DelegateViewController * delegateVC = [[DelegateViewController alloc]init];</div><div class="line">    delegateVC.delegate = self;//实现委托,不要忘记;</div><div class="line">    [self presentViewController:delegateVC animated:YES completion:nil];</div><div class="line">&#125;</div><div class="line">//协议方法</div><div class="line">-(void)showMessage:(NSDictionary *)dic&#123;</div><div class="line">    NSLog(@&quot;delegate = %@&quot;,dic);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">#import &quot;ViewController.h&quot;</span><br><span class="line">#import &quot;DelegateViewController.h&quot;</span><br><span class="line">@interface ViewController ()&lt;CoustomDelegate&gt;</span><br><span class="line"></span><br><span class="line">@end</span><br><span class="line">&#96;&#96;&#96; </span><br><span class="line">&#96;&#96;&#96;  </span><br><span class="line">-(void)touchesBegan:(NSSet&lt;UITouch *&gt; *)touches withEvent:(UIEvent *)event&#123;</span><br><span class="line">    DelegateViewController * delegateVC &#x3D; [[DelegateViewController alloc]init];</span><br><span class="line">    delegateVC.delegate &#x3D; self;&#x2F;&#x2F;实现委托,不要忘记;</span><br><span class="line">    [self presentViewController:delegateVC animated:YES completion:nil];</span><br><span class="line">&#125;</span><br><span class="line">&#x2F;&#x2F;协议方法</span><br><span class="line">-(void)showMessage:(NSDictionary *)dic&#123;</span><br><span class="line">    NSLog(@&quot;delegate &#x3D; %@&quot;,dic);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <h4 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h4><p>协议是委托模式中的一种,协议也可以实现类之间值的传递;</p>
 
       
@@ -442,11 +447,11 @@
       
         <div class="post-tags">
           
-            <a href="/tags/iOS开发/" rel="tag"># iOS开发</a>
+            <a href="/tags/iOS%E5%BC%80%E5%8F%91/" rel="tag"># iOS开发</a>
           
-            <a href="/tags/协议/" rel="tag"># 协议</a>
+            <a href="/tags/%E5%8D%8F%E8%AE%AE/" rel="tag"># 协议</a>
           
-            <a href="/tags/委托模式/" rel="tag"># 委托模式</a>
+            <a href="/tags/%E5%A7%94%E6%89%98%E6%A8%A1%E5%BC%8F/" rel="tag"># 委托模式</a>
           
         </div>
       
@@ -459,8 +464,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/09/25/xcode8或者9去掉打印多余的log/" rel="next" title="xcode8或者9去掉打印多余的log;">
-                <i class="fa fa-chevron-left"></i> xcode8或者9去掉打印多余的log;
+              <a href="/2017/07/31/iOS%E5%BC%80%E5%8F%91%E5%90%AF%E5%8A%A8%E9%A1%B5%E8%AE%BE%E7%BD%AE/" rel="next" title="iOS设置启动页">
+                <i class="fa fa-chevron-left"></i> iOS设置启动页
               </a>
             
           </div>
@@ -469,8 +474,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/07/31/iOS开发启动页设置/" rel="prev" title="iOS设置启动页">
-                iOS设置启动页 <i class="fa fa-chevron-right"></i>
+              <a href="/2017/09/25/xcode8%E6%88%96%E8%80%859%E5%8E%BB%E6%8E%89%E6%89%93%E5%8D%B0%E5%A4%9A%E4%BD%99%E7%9A%84log/" rel="prev" title="xcode8或者9去掉打印多余的log;">
+                xcode8或者9去掉打印多余的log; <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -634,12 +639,12 @@
 
 
 <div class="powered-by">
-  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+  由 <a class="theme-link" href="https://hexo.io" target="_blank" rel="noopener">Hexo</a> 强力驱动
 </div>
 
 <div class="theme-info">
   主题 -
-  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next" target="_blank" rel="noopener">
     NexT.Pisces
   </a>
 </div>

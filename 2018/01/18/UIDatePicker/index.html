@@ -88,7 +88,6 @@
 
 
 <meta name="description" content="官方描述:  A control used for the inputting of date and time values.You can use a date picker to allow a user to enter either a point in time (calendar date, time value or both) or a time interval (for ex">
-<meta name="keywords" content="iOS学习">
 <meta property="og:type" content="article">
 <meta property="og:title" content="OC记录2--UIDatePicker">
 <meta property="og:url" content="http://yoursite.com/2018/01/18/UIDatePicker/index.html">
@@ -98,10 +97,11 @@
 <meta property="og:image" content="https://20190422zy.oss-cn-shenzhen.aliyuncs.com/2019-4-24-01/UIDatePicker/UIDatePickerModeDate.png">
 <meta property="og:image" content="https://20190422zy.oss-cn-shenzhen.aliyuncs.com/2019-4-24-01/UIDatePicker/UIDatePickerModeDateAndTime.png">
 <meta property="og:image" content="https://20190422zy.oss-cn-shenzhen.aliyuncs.com/2019-4-24-01/UIDatePicker/UIDatePickerModeCountDownTimer.png">
-<meta property="og:updated_time" content="2019-06-12T07:46:52.000Z">
+<meta property="article:published_time" content="2018-01-18T06:36:49.000Z">
+<meta property="article:modified_time" content="2019-06-12T07:46:52.000Z">
+<meta property="article:author" content="自由不可待">
+<meta property="article:tag" content="iOS学习">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="OC记录2--UIDatePicker">
-<meta name="twitter:description" content="官方描述:  A control used for the inputting of date and time values.You can use a date picker to allow a user to enter either a point in time (calendar date, time value or both) or a time interval (for ex">
 <meta name="twitter:image" content="https://20190422zy.oss-cn-shenzhen.aliyuncs.com/2019-4-24-01/UIDatePicker/UIDatePickerModeTime.png">
 
 
@@ -137,7 +137,7 @@
 
 
   <title> OC记录2--UIDatePicker | 烟飞烟灭 </title>
-</head>
+<meta name="generator" content="Hexo 4.2.0"></head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
@@ -346,7 +346,7 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/iOS学习/" itemprop="url" rel="index">
+                  <a href="/categories/iOS%E5%AD%A6%E4%B9%A0/" itemprop="url" rel="index">
                     <span itemprop="name">iOS学习</span>
                   </a>
                 </span>
@@ -387,7 +387,7 @@
                   <span class="post-meta-item-text">字数统计</span>
                 
                 <span title="字数统计">
-                  738 字
+                  779 字
                 </span>
               
 
@@ -419,11 +419,13 @@
 <p>用于输入日期和时间值的控件。您可以使用日期选择器来允许用户输入时间点（日历日期，时间值或两者）或时间间隔（例如，计时器）。日期选择器向与其关联的目标对象报告交互。</p>
 </blockquote>
 <a id="more"></a>
+
 <h3 id="UIDatePicker头文件-h查看"><a href="#UIDatePicker头文件-h查看" class="headerlink" title="UIDatePicker头文件.h查看"></a>UIDatePicker头文件.h查看</h3><p><strong>UIDatePicker继承关系:UIDatePicker-&gt;UIControl-&gt;UIView</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">NS_CLASS_AVAILABLE_IOS(2_0) __TVOS_PROHIBITED @interface UIDatePicker : UIControl &lt;NSCoding&gt;</div></pre></td></tr></table></figure>
-<h4 id="属性"><a href="#属性" class="headerlink" title="属性"></a>属性</h4><h5 id="UIDatePicker样式-枚举UIDatePickerMode-该属性默认是UIDatePickerModeDateAndTime"><a href="#UIDatePicker样式-枚举UIDatePickerMode-该属性默认是UIDatePickerModeDateAndTime" class="headerlink" title="UIDatePicker样式:枚举UIDatePickerMode,该属性默认是UIDatePickerModeDateAndTime"></a>UIDatePicker样式:枚举UIDatePickerMode,该属性默认是UIDatePickerModeDateAndTime</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">@property (nonatomic) UIDatePickerMode datePickerMode; // default is UIDatePickerModeDateAndTime</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">NS_CLASS_AVAILABLE_IOS(2_0) __TVOS_PROHIBITED @interface UIDatePicker : UIControl &lt;NSCoding&gt;</span><br></pre></td></tr></table></figure>
+
+<h4 id="属性"><a href="#属性" class="headerlink" title="属性"></a>属性</h4><h5 id="UIDatePicker样式-枚举UIDatePickerMode-该属性默认是UIDatePickerModeDateAndTime"><a href="#UIDatePicker样式-枚举UIDatePickerMode-该属性默认是UIDatePickerModeDateAndTime" class="headerlink" title="UIDatePicker样式:枚举UIDatePickerMode,该属性默认是UIDatePickerModeDateAndTime"></a>UIDatePicker样式:枚举UIDatePickerMode,该属性默认是UIDatePickerModeDateAndTime</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">@property (nonatomic) UIDatePickerMode datePickerMode; &#x2F;&#x2F; default is UIDatePickerModeDateAndTime</span><br></pre></td></tr></table></figure>
 <p>枚举UIDatePickerMode:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">typedef NS_ENUM(NSInteger, UIDatePickerMode) &#123;</div><div class="line">    UIDatePickerModeTime,           // Displays hour, minute, and optionally AM/PM designation depending on the locale setting (e.g. 6 | 53 | PM)</div><div class="line">    UIDatePickerModeDate,           // Displays month, day, and year depending on the locale setting (e.g. November | 15 | 2007)</div><div class="line">    UIDatePickerModeDateAndTime,    // Displays date, hour, minute, and optionally AM/PM designation depending on the locale setting (e.g. Wed Nov 15 | 6 | 53 | PM)</div><div class="line">    UIDatePickerModeCountDownTimer, // Displays hour and minute (e.g. 1 | 53)</div><div class="line">&#125; __TVOS_PROHIBITED</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">typedef NS_ENUM(NSInteger, UIDatePickerMode) &#123;</span><br><span class="line">    UIDatePickerModeTime,           &#x2F;&#x2F; Displays hour, minute, and optionally AM&#x2F;PM designation depending on the locale setting (e.g. 6 | 53 | PM)</span><br><span class="line">    UIDatePickerModeDate,           &#x2F;&#x2F; Displays month, day, and year depending on the locale setting (e.g. November | 15 | 2007)</span><br><span class="line">    UIDatePickerModeDateAndTime,    &#x2F;&#x2F; Displays date, hour, minute, and optionally AM&#x2F;PM designation depending on the locale setting (e.g. Wed Nov 15 | 6 | 53 | PM)</span><br><span class="line">    UIDatePickerModeCountDownTimer, &#x2F;&#x2F; Displays hour and minute (e.g. 1 | 53)</span><br><span class="line">&#125; __TVOS_PROHIBITED</span><br></pre></td></tr></table></figure>
 <p><strong>UIDatePickerModeTime:只展示小时,分钟和AM(早上),PM(下午)</strong> </p>
 <blockquote>
 <p><img src="https://20190422zy.oss-cn-shenzhen.aliyuncs.com/2019-4-24-01/UIDatePicker/UIDatePickerModeTime.png" alt="image">  </p>
@@ -441,21 +443,47 @@
 <p><img src="https://20190422zy.oss-cn-shenzhen.aliyuncs.com/2019-4-24-01/UIDatePicker/UIDatePickerModeCountDownTimer.png" alt="image"></p>
 </blockquote>
 <h5 id="locale-本地化"><a href="#locale-本地化" class="headerlink" title="locale:本地化"></a>locale:本地化</h5><p>该属性表示的是设置日期展示的语言,不进行设置时,默认手机系统当前语言;</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">@property (nullable, nonatomic, strong) NSLocale   *locale;   // default is [NSLocale currentLocale]. setting nil returns to default</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">@property (nullable, nonatomic, strong) NSLocale   *locale;   &#x2F;&#x2F; default is [NSLocale currentLocale]. setting nil returns to default</span><br></pre></td></tr></table></figure>
 <p>创建方式:  </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">[[NSLocale alloc]initWithLocaleIdentifier:@&quot;zh_Hant_TW&quot;];</div><div class="line"></div><div class="line">//简体中文:zh_Hans_CN,zh_Hans_HK,zh_Hans_MO,zh_Hans,zh,zh_Hans_SG,zh_Hans_CN</div><div class="line">//繁体中文:zh_Hant,zh_Hant_HK,zh_Hant_MO,zh_Hant_TW</div><div class="line"></div><div class="line">//获取可以的本地化标识</div><div class="line">[NSLocale availableLocaleIdentifiers];</div></pre></td></tr></table></figure>
-<h5 id="calendar-不进行设置时-默认是当前日期"><a href="#calendar-不进行设置时-默认是当前日期" class="headerlink" title="calendar:不进行设置时,默认是当前日期"></a>calendar:不进行设置时,默认是当前日期</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">@property (null_resettable, nonatomic, copy)   NSCalendar *calendar; // default is [NSCalendar currentCalendar]. setting nil returns to default</div></pre></td></tr></table></figure>
-<h5 id="timeZone-时区-不进行设置时-默认为nil-日期来自属性calendar"><a href="#timeZone-时区-不进行设置时-默认为nil-日期来自属性calendar" class="headerlink" title="timeZone:时区,不进行设置时,默认为nil,日期来自属性calendar"></a>timeZone:时区,不进行设置时,默认为nil,日期来自属性calendar</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">@property (nullable, nonatomic, strong) NSTimeZone *timeZone; // default is nil. use current time zone or time zone from calendar</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">[[NSLocale alloc]initWithLocaleIdentifier:@&quot;zh_Hant_TW&quot;];</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;简体中文:zh_Hans_CN,zh_Hans_HK,zh_Hans_MO,zh_Hans,zh,zh_Hans_SG,zh_Hans_CN</span><br><span class="line">&#x2F;&#x2F;繁体中文:zh_Hant,zh_Hant_HK,zh_Hant_MO,zh_Hant_TW</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;获取可以的本地化标识</span><br><span class="line">[NSLocale availableLocaleIdentifiers];</span><br></pre></td></tr></table></figure>
+
+<h5 id="calendar-不进行设置时-默认是当前日期"><a href="#calendar-不进行设置时-默认是当前日期" class="headerlink" title="calendar:不进行设置时,默认是当前日期"></a>calendar:不进行设置时,默认是当前日期</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">@property (null_resettable, nonatomic, copy)   NSCalendar *calendar; &#x2F;&#x2F; default is [NSCalendar currentCalendar]. setting nil returns to default</span><br></pre></td></tr></table></figure>
+
+<h5 id="timeZone-时区-不进行设置时-默认为nil-日期来自属性calendar"><a href="#timeZone-时区-不进行设置时-默认为nil-日期来自属性calendar" class="headerlink" title="timeZone:时区,不进行设置时,默认为nil,日期来自属性calendar"></a>timeZone:时区,不进行设置时,默认为nil,日期来自属性calendar</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">@property (nullable, nonatomic, strong) NSTimeZone *timeZone; &#x2F;&#x2F; default is nil. use current time zone or time zone from calendar</span><br></pre></td></tr></table></figure>
+
 <h5 id="date-默认选中日期-当不进行设置时-默认当前日期"><a href="#date-默认选中日期-当不进行设置时-默认当前日期" class="headerlink" title="date:默认选中日期,当不进行设置时,默认当前日期;"></a>date:默认选中日期,当不进行设置时,默认当前日期;</h5><p>并且UIDatePickerModeCountDownTimer模式下的设置对其并没有作用;</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">@property (nonatomic, strong) NSDate *date;        // default is current date when picker created. Ignored in countdown timer mode. for that mode, picker starts at 0:00</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">@property (nonatomic, strong) NSDate *date;        &#x2F;&#x2F; default is current date when picker created. Ignored in countdown timer mode. for that mode, picker starts at 0:00</span><br></pre></td></tr></table></figure>
+
 <h5 id="minimumDate-最小能选择的日期-当不设置时-理论上没有最小限制"><a href="#minimumDate-最小能选择的日期-当不设置时-理论上没有最小限制" class="headerlink" title="minimumDate:最小能选择的日期,当不设置时,理论上没有最小限制;"></a>minimumDate:最小能选择的日期,当不设置时,理论上没有最小限制;</h5><p>并且如果min &gt; max 该值会失效;在UIDatePickerModeCountDownTimer无效</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">@property (nullable, nonatomic, strong) NSDate *minimumDate; // specify min/max date range. default is nil. When min &gt; max, the values are ignored. Ignored in countdown timer mode</div></pre></td></tr></table></figure>
-<h5 id="maximumDate-最大能选择的日期-当不设置时-理论上没有最大限制"><a href="#maximumDate-最大能选择的日期-当不设置时-理论上没有最大限制" class="headerlink" title="maximumDate:最大能选择的日期,当不设置时,理论上没有最大限制;"></a>maximumDate:最大能选择的日期,当不设置时,理论上没有最大限制;</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">@property (nullable, nonatomic, strong) NSDate *maximumDate; // default is nil</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">@property (nullable, nonatomic, strong) NSDate *minimumDate; &#x2F;&#x2F; specify min&#x2F;max date range. default is nil. When min &gt; max, the values are ignored. Ignored in countdown timer mode</span><br></pre></td></tr></table></figure>
+
+
+<h5 id="maximumDate-最大能选择的日期-当不设置时-理论上没有最大限制"><a href="#maximumDate-最大能选择的日期-当不设置时-理论上没有最大限制" class="headerlink" title="maximumDate:最大能选择的日期,当不设置时,理论上没有最大限制;"></a>maximumDate:最大能选择的日期,当不设置时,理论上没有最大限制;</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">@property (nullable, nonatomic, strong) NSDate *maximumDate; &#x2F;&#x2F; default is nil</span><br></pre></td></tr></table></figure>
+
 <h5 id="countDownDuration-倒计时剩下秒数-最大23-59-86399秒"><a href="#countDownDuration-倒计时剩下秒数-最大23-59-86399秒" class="headerlink" title="countDownDuration:倒计时剩下秒数,最大23:59(86399秒)"></a>countDownDuration:倒计时剩下秒数,最大23:59(86399秒)</h5><p>只在UIDatePickerModeCountDownTimer有效</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">@property (nonatomic) NSTimeInterval countDownDuration; // for UIDatePickerModeCountDownTimer, ignored otherwise. default is 0.0. limit is 23:59 (86,399 seconds). value being set is div 60 (drops remaining seconds).</div></pre></td></tr></table></figure>
-<h5 id="minuteInterval-分钟间隔-默认是1-最大是30"><a href="#minuteInterval-分钟间隔-默认是1-最大是30" class="headerlink" title="minuteInterval:分钟间隔,默认是1,最大是30"></a>minuteInterval:分钟间隔,默认是1,最大是30</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">@property (nonatomic) NSInteger      minuteInterval;    // display minutes wheel with interval. interval must be evenly divided into 60. default is 1. min is 1, max is 30</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">@property (nonatomic) NSTimeInterval countDownDuration; &#x2F;&#x2F; for UIDatePickerModeCountDownTimer, ignored otherwise. default is 0.0. limit is 23:59 (86,399 seconds). value being set is div 60 (drops remaining seconds).</span><br></pre></td></tr></table></figure>
+<h5 id="minuteInterval-分钟间隔-默认是1-最大是30"><a href="#minuteInterval-分钟间隔-默认是1-最大是30" class="headerlink" title="minuteInterval:分钟间隔,默认是1,最大是30"></a>minuteInterval:分钟间隔,默认是1,最大是30</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">@property (nonatomic) NSInteger      minuteInterval;    &#x2F;&#x2F; display minutes wheel with interval. interval must be evenly divided into 60. default is 1. min is 1, max is 30</span><br></pre></td></tr></table></figure>
+
 <h4 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h4><p>滑动到设置的时间日期,是否需要动画效果;</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">- (void)setDate:(NSDate *)date animated:(BOOL)animated; // if animated is YES, animate the wheels of time to display the new date</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">- (void)setDate:(NSDate *)date animated:(BOOL)animated; &#x2F;&#x2F; if animated is YES, animate the wheels of time to display the new date</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
       
     </div>
@@ -485,7 +513,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/iOS学习/" rel="tag"># iOS学习</a>
+            <a href="/tags/iOS%E5%AD%A6%E4%B9%A0/" rel="tag"># iOS学习</a>
           
         </div>
       
@@ -498,8 +526,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/01/23/OC记录3--UIImagePickerController/" rel="next" title="OC记录3--UIImagePickerController">
-                <i class="fa fa-chevron-left"></i> OC记录3--UIImagePickerController
+              <a href="/2018/01/17/UIPickerView--OC%E8%AE%B0%E5%BD%95%E4%B8%80/" rel="next" title="OC记录1--UIPickerView">
+                <i class="fa fa-chevron-left"></i> OC记录1--UIPickerView
               </a>
             
           </div>
@@ -508,8 +536,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/01/17/UIPickerView--OC记录一/" rel="prev" title="OC记录1--UIPickerView">
-                OC记录1--UIPickerView <i class="fa fa-chevron-right"></i>
+              <a href="/2018/01/23/OC%E8%AE%B0%E5%BD%953--UIImagePickerController/" rel="prev" title="OC记录3--UIImagePickerController">
+                OC记录3--UIImagePickerController <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -673,12 +701,12 @@
 
 
 <div class="powered-by">
-  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+  由 <a class="theme-link" href="https://hexo.io" target="_blank" rel="noopener">Hexo</a> 强力驱动
 </div>
 
 <div class="theme-info">
   主题 -
-  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next" target="_blank" rel="noopener">
     NexT.Pisces
   </a>
 </div>

@@ -88,16 +88,17 @@
 
 
 <meta name="description" content="序言Swift较OC的基本类型关键字有一些明显变化,但基本类型是基本没有变化的.">
-<meta name="keywords" content="Swift,基本类型">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Swift学习之-基本类型">
-<meta property="og:url" content="http://yoursite.com/2017/09/27/Swift学习之-基本类型/index.html">
+<meta property="og:url" content="http://yoursite.com/2017/09/27/Swift%E5%AD%A6%E4%B9%A0%E4%B9%8B-%E5%9F%BA%E6%9C%AC%E7%B1%BB%E5%9E%8B/index.html">
 <meta property="og:site_name" content="烟飞烟灭">
 <meta property="og:description" content="序言Swift较OC的基本类型关键字有一些明显变化,但基本类型是基本没有变化的.">
-<meta property="og:updated_time" content="2017-09-27T09:35:52.000Z">
+<meta property="article:published_time" content="2017-09-27T02:11:00.000Z">
+<meta property="article:modified_time" content="2017-09-27T09:35:52.000Z">
+<meta property="article:author" content="自由不可待">
+<meta property="article:tag" content="Swift">
+<meta property="article:tag" content="基本类型">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Swift学习之-基本类型">
-<meta name="twitter:description" content="序言Swift较OC的基本类型关键字有一些明显变化,但基本类型是基本没有变化的.">
 
 
 
@@ -132,7 +133,7 @@
 
 
   <title> Swift学习之-基本类型 | 烟飞烟灭 </title>
-</head>
+<meta name="generator" content="Hexo 4.2.0"></head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
@@ -270,7 +271,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/09/27/Swift学习之-基本类型/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/09/27/Swift%E5%AD%A6%E4%B9%A0%E4%B9%8B-%E5%9F%BA%E6%9C%AC%E7%B1%BB%E5%9E%8B/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="自由不可待">
@@ -358,7 +359,7 @@
 
           
           
-             <span id="/2017/09/27/Swift学习之-基本类型/" class="leancloud_visitors" data-flag-title="Swift学习之-基本类型">
+             <span id="/2017/09/27/Swift%E5%AD%A6%E4%B9%A0%E4%B9%8B-%E5%9F%BA%E6%9C%AC%E7%B1%BB%E5%9E%8B/" class="leancloud_visitors" data-flag-title="Swift学习之-基本类型">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -382,7 +383,7 @@
                   <span class="post-meta-item-text">字数统计</span>
                 
                 <span title="字数统计">
-                  649 字
+                  665 字
                 </span>
               
 
@@ -409,7 +410,8 @@
 <h4 id="整型"><a href="#整型" class="headerlink" title="整型"></a>整型</h4><p>OC之前用的是int或者NSInteger来表示整数;<br>而Swift使用的是Int;Int它拥有与当前平台的原生字相同的长度;  </p>
 <p>在32位平台上,Int的长度和Int32相同;<br>在64位平台上,Int的长度和Int64相同;  </p>
 <p>Int可以存储-2,147,483,648到2,147,483,647之间的任意值.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">let count:Int = 3</div><div class="line">var amount:Int = 6</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">let count:Int &#x3D; 3</span><br><span class="line">var amount:Int &#x3D; 6</span><br></pre></td></tr></table></figure>
+
 <p>Swift也提供了一种无符号的整型类型:UInt,它与当前平台的原生字长相同.</p>
 <p> 在32位平台上， UInt 长度和 UInt32 长度相同.<br> 在64位平台上， UInt 长度和 UInt64 长度相同.  </p>
 <blockquote>
@@ -422,15 +424,21 @@
 </blockquote>
 <p><strong>CGFloat:对于需要兼容64位的机器而言,则需要使用CGFloat;而不是Float;</strong>  </p>
 <h4 id="布尔类型"><a href="#布尔类型" class="headerlink" title="布尔类型"></a>布尔类型</h4><p>OC之前用YES和NO来表示;<br>而Swift则用更直白的false和true来表示;  </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">let on = true</div><div class="line">var off = false</div><div class="line">off = true</div><div class="line"></div><div class="line">if on &#123;</div><div class="line">    print(1)</div><div class="line">&#125;</div><div class="line">if off &#123;</div><div class="line">    print(0)</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">let on &#x3D; true</span><br><span class="line">var off &#x3D; false</span><br><span class="line">off &#x3D; true</span><br><span class="line"></span><br><span class="line">if on &#123;</span><br><span class="line">    print(1)</span><br><span class="line">&#125;</span><br><span class="line">if off &#123;</span><br><span class="line">    print(0)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <h4 id="字符串类型"><a href="#字符串类型" class="headerlink" title="字符串类型"></a>字符串类型</h4><p>OC中用NSString来表示字符串类集;<br>Swift中则是String来表示字符串;<br>字符串格式””:  </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">let myName:String = &quot;mark&quot;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">let myName:String &#x3D; &quot;mark&quot;</span><br></pre></td></tr></table></figure>
 <h4 id="元组类型"><a href="#元组类型" class="headerlink" title="元组类型"></a>元组类型</h4><p>元组类型是Swift中新添加的类型;<br>元组把多个值合并成单一的复合型的值,元组内的值可以是任意类型的,而且不必是同一类型;  </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">let man = (32,&quot;China&quot;)  </div><div class="line">//可以看出它包含的类型有Int和String</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">let man &#x3D; (32,&quot;China&quot;)  </span><br><span class="line">&#x2F;&#x2F;可以看出它包含的类型有Int和String</span><br></pre></td></tr></table></figure>
 <p>它可以被描述为:一个类型为(Int,String)的元组;  </p>
 <p><strong>任何类型</strong>的排列都可以被用来创建一个元组,它可以包含任意多的类型.例如:(Int,Int,Int)或者(Int,Int,Bool);  </p>
 <h4 id="类型别名"><a href="#类型别名" class="headerlink" title="类型别名"></a>类型别名</h4><p>Swift新添加的类型别名;使用关键字:<strong>typealias</strong>来进行修饰;<br>如下,这个时候,abc就是String的别名,abc类型就是String类型;</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">typealias abc = String</div><div class="line">let a: abc = &quot;adc&quot;</div><div class="line">print(a)</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">typealias abc &#x3D; String</span><br><span class="line">let a: abc &#x3D; &quot;adc&quot;</span><br><span class="line">print(a)</span><br></pre></td></tr></table></figure>
+
+
+
+
+
 
       
     </div>
@@ -462,7 +470,7 @@
           
             <a href="/tags/Swift/" rel="tag"># Swift</a>
           
-            <a href="/tags/基本类型/" rel="tag"># 基本类型</a>
+            <a href="/tags/%E5%9F%BA%E6%9C%AC%E7%B1%BB%E5%9E%8B/" rel="tag"># 基本类型</a>
           
         </div>
       
@@ -475,8 +483,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/12/13/App内跳转qq群/" rel="next" title="App内跳转qq群">
-                <i class="fa fa-chevron-left"></i> App内跳转qq群
+              <a href="/2017/09/26/swift%E5%AD%A6%E4%B9%A0%E4%B9%8B-%E5%B8%B8%E9%87%8F%E4%B8%8E%E5%8F%98%E9%87%8F/" rel="next" title="Swift学习之-常量与变量">
+                <i class="fa fa-chevron-left"></i> Swift学习之-常量与变量
               </a>
             
           </div>
@@ -485,8 +493,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/09/26/swift学习之-常量与变量/" rel="prev" title="Swift学习之-常量与变量">
-                Swift学习之-常量与变量 <i class="fa fa-chevron-right"></i>
+              <a href="/2017/12/13/App%E5%86%85%E8%B7%B3%E8%BD%ACqq%E7%BE%A4/" rel="prev" title="App内跳转qq群">
+                App内跳转qq群 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -650,12 +658,12 @@
 
 
 <div class="powered-by">
-  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+  由 <a class="theme-link" href="https://hexo.io" target="_blank" rel="noopener">Hexo</a> 强力驱动
 </div>
 
 <div class="theme-info">
   主题 -
-  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next" target="_blank" rel="noopener">
     NexT.Pisces
   </a>
 </div>

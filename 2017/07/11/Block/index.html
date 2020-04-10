@@ -88,16 +88,17 @@
 
 
 <meta name="description" content="序言block:简单来说就是一段代码块,block里面存在可执行代码,可以在函数内进行使用;也可以作为函数中形参进行使用;最常用的应该是替换delegate来进行回调或者传值.    注意:block只是声明和保留了一段代码块,必须要调用才会执行里面的代码.  基本结构block结构:返回值类型(^Block名字)(参数列表);">
-<meta name="keywords" content="block,闭包">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Block的简单使用">
 <meta property="og:url" content="http://yoursite.com/2017/07/11/Block/index.html">
 <meta property="og:site_name" content="烟飞烟灭">
 <meta property="og:description" content="序言block:简单来说就是一段代码块,block里面存在可执行代码,可以在函数内进行使用;也可以作为函数中形参进行使用;最常用的应该是替换delegate来进行回调或者传值.    注意:block只是声明和保留了一段代码块,必须要调用才会执行里面的代码.  基本结构block结构:返回值类型(^Block名字)(参数列表);">
-<meta property="og:updated_time" content="2019-06-28T03:22:22.000Z">
+<meta property="article:published_time" content="2017-07-11T03:03:25.000Z">
+<meta property="article:modified_time" content="2019-06-28T03:22:22.000Z">
+<meta property="article:author" content="自由不可待">
+<meta property="article:tag" content="block">
+<meta property="article:tag" content="闭包">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Block的简单使用">
-<meta name="twitter:description" content="序言block:简单来说就是一段代码块,block里面存在可执行代码,可以在函数内进行使用;也可以作为函数中形参进行使用;最常用的应该是替换delegate来进行回调或者传值.    注意:block只是声明和保留了一段代码块,必须要调用才会执行里面的代码.  基本结构block结构:返回值类型(^Block名字)(参数列表);">
 
 
 
@@ -132,7 +133,7 @@
 
 
   <title> Block的简单使用 | 烟飞烟灭 </title>
-</head>
+<meta name="generator" content="Hexo 4.2.0"></head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
@@ -341,7 +342,7 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/iOS开发/" itemprop="url" rel="index">
+                  <a href="/categories/iOS%E5%BC%80%E5%8F%91/" itemprop="url" rel="index">
                     <span itemprop="name">iOS开发</span>
                   </a>
                 </span>
@@ -382,7 +383,7 @@
                   <span class="post-meta-item-text">字数统计</span>
                 
                 <span title="字数统计">
-                  696 字
+                  730 字
                 </span>
               
 
@@ -415,8 +416,7 @@ void(^myBlock)(NSString *) = ^( NSString * n1){
  NSLog(@&quot;block&quot;);  
 }  
 (void)表示的是返回值,^:block的标示符,myBlock:这个block块的名称,(NSString * )表示形参.  
-调用:myBlock(@&quot;124&quot;);  
-</code></pre><h3 id="基本用法"><a href="#基本用法" class="headerlink" title="基本用法"></a>基本用法</h3><pre><code>//无参数无返回值
+调用:myBlock(@&quot;124&quot;);  </code></pre><h3 id="基本用法"><a href="#基本用法" class="headerlink" title="基本用法"></a>基本用法</h3><pre><code>//无参数无返回值
 void(^myBlock2)(void) = ^{
     SPLog(@&quot;come on 2&quot;);
 };
@@ -431,8 +431,7 @@ NSString *(^myBlock3)(NSString *) = ^(NSString *n1){
     return [n1 stringByAppendingString:@&quot;-143&quot;];
 };
 NSString * bn1 = myBlock3(@&quot;341&quot;);
-SPLog(@&quot;%@&quot;,bn1);
-</code></pre><h3 id="修改局部变量"><a href="#修改局部变量" class="headerlink" title="修改局部变量"></a>修改局部变量</h3><p>block内是不能直接修改block外变量的值的.<br>如果需要修改,被修改的变量必须用<code>__block</code>来修饰(注意是2个”_“).  </p>
+SPLog(@&quot;%@&quot;,bn1);</code></pre><h3 id="修改局部变量"><a href="#修改局部变量" class="headerlink" title="修改局部变量"></a>修改局部变量</h3><p>block内是不能直接修改block外变量的值的.<br>如果需要修改,被修改的变量必须用<code>__block</code>来修饰(注意是2个”_“).  </p>
 <pre><code> //修改局部变量
 __block NSUInteger i2 = 10;
 void(^myBlock4)(NSUInteger) = ^(NSUInteger i3){
@@ -440,12 +439,10 @@ void(^myBlock4)(NSUInteger) = ^(NSUInteger i3){
     SPLog(@&quot;block 内i2 = %ld&quot;,i2);
 };
 SPLog(@&quot;block 外i2 = %ld&quot;,i2);
-myBlock4(i2);
-</code></pre><h3 id="避免循环引用"><a href="#避免循环引用" class="headerlink" title="避免循环引用"></a>避免循环引用</h3><p>在类:Block1ViewController中存在2个变量.  </p>
+myBlock4(i2);</code></pre><h3 id="避免循环引用"><a href="#避免循环引用" class="headerlink" title="避免循环引用"></a>避免循环引用</h3><p>在类:Block1ViewController中存在2个变量.  </p>
 <pre><code>//  
 @property(nonatomic,copy)void(^b1)(void);  
-@property(nonatomic,strong)NSString * myName;  
-</code></pre><p>在类:ViewController中viewDidLoad调用:  </p>
+@property(nonatomic,strong)NSString * myName;  </code></pre><p>在类:ViewController中viewDidLoad调用:  </p>
 <pre><code>   //避免循环引用
 Block1ViewController * b1VC = [[Block1ViewController alloc]init];
 b1VC.myName = @&quot;b1-block&quot;;
@@ -454,8 +451,7 @@ b1VC.b1 = ^(){
     NSString * myName = weakObjB.myName;
     SPLog(@&quot;%@&quot;,myName);
 };
-b1VC.b1();
-</code></pre><p>b1VC需要<code>__weak typeof(b1VC) weakObjB = b1VC;</code>使用__weak进行修饰.  </p>
+b1VC.b1();</code></pre><p>b1VC需要<code>__weak typeof(b1VC) weakObjB = b1VC;</code>使用__weak进行修饰.  </p>
 <blockquote>
 <p>简单说明:<br>首先,b1是Block1ViewController拥有的一个属性,因此Block1ViewController对b1是强引用的;其次,b1对代码块中的属性也是强引用的;所以会导致他们之间相互强引用,从而导致循环引用.  </p>
 </blockquote>
@@ -463,14 +459,12 @@ b1VC.b1();
 <pre><code>//
 -(void)common_from:(void (^)(id message))success{
  success(@&quot;come from&quot;);
-}  
-</code></pre><p>在类:ViewController中viewDidLoad调用:  </p>
+}  </code></pre><p>在类:ViewController中viewDidLoad调用:  </p>
 <pre><code> //作为参数使用
 Block1ViewController * b2VC = [[Block1ViewController alloc]init];
 [b2VC common_from:^(id message) {
     SPLog(@&quot; -- %@&quot;,message);
-}];
-</code></pre><p><strong>这一步其实已经实现了值在2个不同类之间传递,但是传递的值有局限性,只能在当前函数里面进行回调,好处是书写较方便.</strong></p>
+}];</code></pre><p><strong>这一步其实已经实现了值在2个不同类之间传递,但是传递的值有局限性,只能在当前函数里面进行回调,好处是书写较方便.</strong></p>
 <h3 id="typedef结合使用"><a href="#typedef结合使用" class="headerlink" title="typedef结合使用"></a>typedef结合使用</h3><p>有时候,我们需要声明多个参数值的时候,需要重复编写,而结合typedef可以简化block使用;好处是可以在类的任何方法里面进行回调,但是书写较麻烦.  </p>
 <pre><code>//.h文件
 #import &lt;UIKit/UIKit.h&gt;
@@ -489,8 +483,7 @@ typedef void(^nameColor)(void);
 -(void)touchesBegan:(NSSet&lt;UITouch * &gt; * )touches withEvent:(UIEvent *)event{
    self.name1();//可以在任何函数内进行调用.
    [self dismissViewControllerAnimated:YES completion:nil];
-}
-</code></pre><p><strong>一样可以实现类之间的值的传递和delegate协议的处理.</strong></p>
+}</code></pre><p><strong>一样可以实现类之间的值的传递和delegate协议的处理.</strong></p>
 
       
     </div>
@@ -522,7 +515,7 @@ typedef void(^nameColor)(void);
           
             <a href="/tags/block/" rel="tag"># block</a>
           
-            <a href="/tags/闭包/" rel="tag"># 闭包</a>
+            <a href="/tags/%E9%97%AD%E5%8C%85/" rel="tag"># 闭包</a>
           
         </div>
       
@@ -535,8 +528,8 @@ typedef void(^nameColor)(void);
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/07/18/xcode7以上给项目添加pch文件/" rel="next" title="Xcode7以上给项目添加pch文件">
-                <i class="fa fa-chevron-left"></i> Xcode7以上给项目添加pch文件
+              <a href="/2017/06/19/iOS%E5%AE%A1%E6%A0%B8%E4%B9%8B-%E5%86%85%E8%B4%AD%E4%BA%A7%E5%93%81%E6%84%9F%E5%8F%B9%E5%8F%B7%20!/" rel="next" title="iOS审核之-“内购买项目被退回,并需要开发人员操作”">
+                <i class="fa fa-chevron-left"></i> iOS审核之-“内购买项目被退回,并需要开发人员操作”
               </a>
             
           </div>
@@ -545,8 +538,8 @@ typedef void(^nameColor)(void);
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/06/19/iOS审核之-内购产品感叹号 !/" rel="prev" title="iOS审核之-“内购买项目被退回,并需要开发人员操作”">
-                iOS审核之-“内购买项目被退回,并需要开发人员操作” <i class="fa fa-chevron-right"></i>
+              <a href="/2017/07/18/xcode7%E4%BB%A5%E4%B8%8A%E7%BB%99%E9%A1%B9%E7%9B%AE%E6%B7%BB%E5%8A%A0pch%E6%96%87%E4%BB%B6/" rel="prev" title="Xcode7以上给项目添加pch文件">
+                Xcode7以上给项目添加pch文件 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -710,12 +703,12 @@ typedef void(^nameColor)(void);
 
 
 <div class="powered-by">
-  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+  由 <a class="theme-link" href="https://hexo.io" target="_blank" rel="noopener">Hexo</a> 强力驱动
 </div>
 
 <div class="theme-info">
   主题 -
-  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next" target="_blank" rel="noopener">
     NexT.Pisces
   </a>
 </div>
