@@ -94,7 +94,7 @@
 <meta property="og:url" content="http://yoursite.com/2020/04/10/线程安全/index.html">
 <meta property="og:site_name" content="烟飞烟灭">
 <meta property="og:description" content="线程安全问题1,单线程情况下,任务依次执行不会出现线程安全的问题;2,单线程情况下,多线程都是访问共享资源,而不是修改资源也可以保证线程安全,如:只读的全局属性;3,线程不安全是由于多线程访问造成的,多线程访问和修改共享资源引起了不可预测的结果;">
-<meta property="og:updated_time" content="2020-04-10T07:30:44.206Z">
+<meta property="og:updated_time" content="2020-04-10T07:35:22.069Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="线程安全">
 <meta name="twitter:description" content="线程安全问题1,单线程情况下,任务依次执行不会出现线程安全的问题;2,单线程情况下,多线程都是访问共享资源,而不是修改资源也可以保证线程安全,如:只读的全局属性;3,线程不安全是由于多线程访问造成的,多线程访问和修改共享资源引起了不可预测的结果;">
@@ -393,7 +393,7 @@
       
 
       
-        <h4 id="线程安全问题"><a href="#线程安全问题" class="headerlink" title="线程安全问题"></a>线程安全问题</h4><p>1,单线程情况下,任务依次执行不会出现线程安全的问题;<br>2,单线程情况下,多线程都是访问共享资源,而不是修改资源也可以保证线程安全,如:只读的全局属性;<br>3,<strong>线程不安全是由于多线程访问造成的,多线程访问和修改共享资源引起了不可预测的结果;</strong><br><a id="more"></a></p>
+        <h4 id="线程安全问题"><a href="#线程安全问题" class="headerlink" title="线程安全问题"></a>线程安全问题</h4><p>1,单线程情况下,任务依次执行不会出现线程安全的问题;<br>2,单线程情况下,多线程都是访问共享资源,而不是修改资源也可以保证线程安全,如:只读的全局属性;<br>3,<strong>线程不安全是由于多线程访问造成的,多线程访问和修改共享资源引起了不可预测的结果;</strong><a id="more"></a>  </p>
 <h4 id="线程锁"><a href="#线程锁" class="headerlink" title="线程锁"></a>线程锁</h4><p><strong>线程锁</strong>可以有效的解决多线程引起的安全问题.<br>iOS多线程开发为保证线程安全而使用了好几种锁:  </p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">NSLock、dispatch_semaphore、NSCondition  </div><div class="line">NSRecursiveLock、NSConditionLock、@synchronized</div></pre></td></tr></table></figure>
 <h5 id="NSLock"><a href="#NSLock" class="headerlink" title="NSLock"></a>NSLock</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">_lock = [[NSLock alloc]init];//创建</div><div class="line">[_lock lock];//锁住</div><div class="line">//执行代码区域  </div><div class="line"></div><div class="line">[_lock unlock];//解锁</div></pre></td></tr></table></figure>
