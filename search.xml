@@ -1683,4 +1683,27 @@ return _myButton;
         <tag>线程锁</tag>
       </tags>
   </entry>
+  <entry>
+    <title>iOS单例</title>
+    <url>/2020/04/13/iOS%E5%8D%95%E4%BE%8B/</url>
+    <content><![CDATA[<h3 id="单例"><a href="#单例" class="headerlink" title="单例"></a>单例</h3><p> 整个程序中某个类只存在一份实例;<br> 一旦创建,程序结束后才会销毁回收内存;<br> 单例对象指针保存在静态区,单例对象存在堆中分配的内存空间;<br> <a id="more"></a><br> 苹果本身API存在的单例:  </p>
+ <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">UIApplication</span><br><span class="line">NSNotificationCenter</span><br><span class="line">NSUserDefaults</span><br><span class="line">NSFileManager</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>优点:<br> 整个程序中只会实例化一次,程序出现问题比较容易定位;<br> 只会实例化一次,节省内存;<br>缺点:<br>不能被继承,没有子类,不能扩展和重写;<br>程序运行过程中一直占着内存,单例创建过多时和闲置时会占用内存资源;</p>
+</blockquote>
+<h3 id="单例的创建方式"><a href="#单例的创建方式" class="headerlink" title="单例的创建方式"></a>单例的创建方式</h3><h4 id="synchronized"><a href="#synchronized" class="headerlink" title="@synchronized"></a>@synchronized</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">.h  </span><br><span class="line">+(Common *)sharedInstance;</span><br><span class="line"></span><br><span class="line">.m  </span><br><span class="line">+(Common *)sharedInstance&#123;</span><br><span class="line">    static Common *common &#x3D; nil;&#x2F;&#x2F;static修饰,只初始化一次,修改实例生命周期,程序结束后才会回收;</span><br><span class="line">    @synchronized (common) &#123;&#x2F;&#x2F;线程安全</span><br><span class="line">        if (common &#x3D;&#x3D; nil) &#123;</span><br><span class="line">            common &#x3D; [[Common alloc]init];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    return common;</span><br><span class="line">&#125;</span><br><span class="line">打印的内存地址:</span><br><span class="line">NSLog(@&quot;\n1:%p\n2:%p\n3:%p\n&quot;,[Common sharedInstance],[Common sharedInstance],[Common sharedInstance]);  </span><br><span class="line">2020-04-13 10:24:20.471536+0800 Dispatch(线程安全)[32199:1460720] </span><br><span class="line">1:0x600000d5b640</span><br><span class="line">2:0x600000d5b640</span><br><span class="line">3:0x600000d5b640</span><br></pre></td></tr></table></figure>
+
+<h4 id="dispatch-once"><a href="#dispatch-once" class="headerlink" title="dispatch_once"></a>dispatch_once</h4><p>为了数据和线程安全,苹果官方推荐使用这种方式进行创建单例;  </p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">.h</span><br><span class="line">+(Common *)sharedInstanceOnce;</span><br><span class="line"></span><br><span class="line">.m</span><br><span class="line">#import &quot;Common.h&quot;</span><br><span class="line">static Common *common1 &#x3D; nil;</span><br><span class="line">@implementation Common</span><br><span class="line">+(Common *)sharedInstanceOnce&#123;</span><br><span class="line">    static dispatch_once_t onceToken;</span><br><span class="line">    dispatch_once(&amp;onceToken, ^&#123;&#x2F;&#x2F;只会被执行一次并且线程安全</span><br><span class="line">        common1 &#x3D; [[Common alloc]init];</span><br><span class="line">    &#125;);</span><br><span class="line">    return common1;</span><br><span class="line">&#125;</span><br><span class="line">NSLog(@&quot;\n1:%p\n2:%p\n3:%p\n&quot;,[Common sharedInstanceOnce],[Common sharedInstanceOnce],[Common sharedInstanceOnce]);</span><br><span class="line">1:0x600001c63870</span><br><span class="line">2:0x600001c63870</span><br><span class="line">3:0x600001c63870</span><br></pre></td></tr></table></figure>
+<p>end</p>
+]]></content>
+      <categories>
+        <category>iOS开发</category>
+      </categories>
+      <tags>
+        <tag>iOS开发</tag>
+        <tag>单例</tag>
+      </tags>
+  </entry>
 </search>
