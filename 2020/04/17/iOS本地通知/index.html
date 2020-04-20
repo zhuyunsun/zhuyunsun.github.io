@@ -1,0 +1,933 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="本地推送,UNUserNotificationCenter," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="本地推送:    1, 使用本地推送来引起用户的注意,可以是一个alter弹窗、声音、图片、视频等.例如后台应用程序可以要求系统完成特定任务时显示提醒信息.始终使用本地推送来传达用户需要的重要信息.2,本地推送弹窗根据你设定的时间和位置进行弹窗推送,第一,如果你的App在后台或者未运行时发送推送,系统会发送弹窗在手机上方,第二,如果你的App在前台运行,系统会发送推送让你在程序中进行需要的处理(代">
+<meta property="og:type" content="article">
+<meta property="og:title" content="iOS本地推送">
+<meta property="og:url" content="http://yoursite.com/2020/04/17/iOS%E6%9C%AC%E5%9C%B0%E9%80%9A%E7%9F%A5/index.html">
+<meta property="og:site_name" content="烟飞烟灭">
+<meta property="og:description" content="本地推送:    1, 使用本地推送来引起用户的注意,可以是一个alter弹窗、声音、图片、视频等.例如后台应用程序可以要求系统完成特定任务时显示提醒信息.始终使用本地推送来传达用户需要的重要信息.2,本地推送弹窗根据你设定的时间和位置进行弹窗推送,第一,如果你的App在后台或者未运行时发送推送,系统会发送弹窗在手机上方,第二,如果你的App在前台运行,系统会发送推送让你在程序中进行需要的处理(代">
+<meta property="article:published_time" content="2020-04-17T07:30:01.923Z">
+<meta property="article:modified_time" content="2020-04-20T06:43:57.986Z">
+<meta property="article:author" content="自由不可待">
+<meta property="article:tag" content="本地推送">
+<meta property="article:tag" content="UNUserNotificationCenter">
+<meta name="twitter:card" content="summary">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2020/04/17/iOS本地通知/"/>
+
+
+
+
+
+  <title> iOS本地推送 | 烟飞烟灭 </title>
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">烟飞烟灭</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">好的文章,就是原来不懂得;看了之后有一种原来是这样的感觉!</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-guestbook">
+          <a href="/guestbook" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            留言
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/04/17/iOS%E6%9C%AC%E5%9C%B0%E9%80%9A%E7%9F%A5/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="自由不可待">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="烟飞烟灭">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                iOS本地推送
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-04-17T15:30:01+08:00">
+                2020-04-17 15:30
+              </time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2020-04-20T14:43:57+08:00">
+                2020-04-20 14:43
+              </time>
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/iOS%E5%BC%80%E5%8F%91/" itemprop="url" rel="index">
+                    <span itemprop="name">iOS开发</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2020/04/17/iOS%E6%9C%AC%E5%9C%B0%E9%80%9A%E7%9F%A5/" class="leancloud_visitors" data-flag-title="iOS本地推送">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计</span>
+                
+                <span title="字数统计">
+                  897 字
+                </span>
+              
+
+              
+
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>本地推送:  </p>
+<blockquote>
+<p>1, 使用本地推送来引起用户的注意,可以是一个alter弹窗、声音、图片、视频等.例如后台应用程序可以要求系统完成特定任务时显示提醒信息.始终使用本地推送来传达用户需要的重要信息.<br>2,本地推送弹窗根据你设定的时间和位置进行弹窗推送,第一,如果你的App在后台或者未运行时发送推送,系统会发送弹窗在手机上方,第二,如果你的App在前台运行,系统会发送推送让你在程序中进行需要的处理(代码层). </p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">#import &lt;UserNotifications&#x2F;UserNotifications.h&gt;&#x2F;&#x2F;导入的库,iOS10之后才有</span><br><span class="line">&#x2F;&#x2F;类</span><br><span class="line">UNUserNotificationCenter</span><br><span class="line">&#x2F;&#x2F;协议</span><br><span class="line">UNUserNotificationCenterDelegate</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
+<h4 id="推送权限"><a href="#推送权限" class="headerlink" title="推送权限"></a>推送权限</h4><p>确定App是否开启了推送允许权限: UNUserNotificationCenter</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F;1,判断用户是否开启了推送功能</span><br><span class="line">[[UNUserNotificationCenter currentNotificationCenter] requestAuthorizationWithOptions:UNAuthorizationOptionAlert | UNAuthorizationOptionSound | UNAuthorizationOptionBadge completionHandler:^(BOOL granted, NSError * _Nullable error) &#123;</span><br><span class="line">    if (granted &#x3D;&#x3D; YES) &#123;</span><br><span class="line">        &#x2F;&#x2F;获取到本地推送的权限</span><br><span class="line">        NSLog(@&quot;已经获得权限&quot;);</span><br><span class="line">    &#125;else&#123;</span><br><span class="line">        NSLog(@&quot;权限失败&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;];</span><br></pre></td></tr></table></figure>
+
+<h4 id="推送内容"><a href="#推送内容" class="headerlink" title="推送内容"></a>推送内容</h4><p>配置推送内容: UNMutableNotificationContent</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F;2,推送内容</span><br><span class="line">UNMutableNotificationContent *content &#x3D; [[UNMutableNotificationContent alloc]init];</span><br><span class="line">content.title &#x3D; @&quot;推送标题&quot;;</span><br><span class="line">content.subtitle &#x3D; @&quot;推送副标题&quot;;</span><br><span class="line">content.body &#x3D; @&quot;推送文字内容&quot;;</span><br><span class="line">content.badge &#x3D; @222;&#x2F;&#x2F;app角标显示的数量</span><br><span class="line">content.sound &#x3D; [UNNotificationSound defaultSound];&#x2F;&#x2F;默认声音</span><br><span class="line">content.userInfo &#x3D; @&#123;@&quot;A1&quot;:@&quot;自己定义的特定内容&quot;&#125;;</span><br><span class="line">&#x2F;&#x2F;    NSURL *url &#x3D; [[NSBundle mainBundle] URLForResource:@&quot;1.png&quot; withExtension:nil];</span><br><span class="line">&#x2F;&#x2F;    UNNotificationAttachment *attachment &#x3D; [UNNotificationAttachment attachmentWithIdentifier:@&quot;i1&quot; URL:url options:nil error:nil];</span><br><span class="line">&#x2F;&#x2F;    content.attachments &#x3D; @[attachment];&#x2F;&#x2F;推送附件,可以是图片,视频,音频,这里是一张图片,附件需要存在本地</span><br><span class="line">content.categoryIdentifier &#x3D; @&quot;currentNoti&quot;;&#x2F;&#x2F;标识符</span><br></pre></td></tr></table></figure>
+
+<h4 id="推送的时刻"><a href="#推送的时刻" class="headerlink" title="推送的时刻"></a>推送的时刻</h4><p>配置推送的触发条件:  </p>
+<blockquote>
+<p>1,UNTimeIntervalNotificationTrigger //延迟多少秒,当repeats = YES 配置的时间需要大于60s.<br>2,UNCalendarNotificationTrigger //推送日期, 年,月,日,小时,分钟,秒.<br>3,UNLocationNotificationTrigger //地点,到达设定好的地点之后推送</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">UNTimeIntervalNotificationTrigger *timerTrigger &#x3D; [UNTimeIntervalNotificationTrigger triggerWithTimeInterval:65 repeats:NO];</span><br></pre></td></tr></table></figure>
+
+<h4 id="创建推送的请求"><a href="#创建推送的请求" class="headerlink" title="创建推送的请求"></a>创建推送的请求</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F;4,创建推送的请求, @&quot;currentNoti&quot;是标识符.可以在移除的时候根据标识符找到该推送请求.</span><br><span class="line">UNNotificationRequest *notiRequest &#x3D; [UNNotificationRequest requestWithIdentifier:@&quot;currentNoti&quot; content:content trigger:timerTrigger];</span><br></pre></td></tr></table></figure>
+<h4 id="开启推送"><a href="#开启推送" class="headerlink" title="开启推送"></a>开启推送</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F;5,加入推送中心,开启推送</span><br><span class="line">[[UNUserNotificationCenter currentNotificationCenter] addNotificationRequest:notiRequest withCompletionHandler:^(NSError * _Nullable error) &#123;</span><br><span class="line">    if (!error) &#123;</span><br><span class="line">        NSLog(@&quot;成功推送了一条本地推送&quot;);</span><br><span class="line">    &#125;else&#123;</span><br><span class="line">        NSLog(@&quot;报错&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;];</span><br></pre></td></tr></table></figure>
+
+<h4 id="移除本地推送"><a href="#移除本地推送" class="headerlink" title="移除本地推送"></a>移除本地推送</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F;6,移除local本地推送</span><br><span class="line">&#x2F;&#x2F;移除所有推送</span><br><span class="line"> [[UNUserNotificationCenter currentNotificationCenter] removeAllPendingNotificationRequests]; </span><br><span class="line">&#x2F;&#x2F;移除一个推送,或者多个,根据标识符来移除</span><br><span class="line"> [[UNUserNotificationCenter currentNotificationCenter] removePendingNotificationRequestsWithIdentifiers:@[@&quot;currentNoti&quot;]];</span><br></pre></td></tr></table></figure>
+
+<h4 id="获取当前存在的推送标识"><a href="#获取当前存在的推送标识" class="headerlink" title="获取当前存在的推送标识"></a>获取当前存在的推送标识</h4><p>UNNotificationRequest</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F;获取当前存在的推送UNNotificationRequest</span><br><span class="line">[[UNUserNotificationCenter currentNotificationCenter]getPendingNotificationRequestsWithCompletionHandler:^(NSArray&lt;UNNotificationRequest *&gt; * _Nonnull requests) &#123;</span><br><span class="line">    for (UNNotificationRequest *req in requests) &#123;</span><br><span class="line">        NSLog(@&quot;存在的本地推送标识:%@&quot;,req.identifier);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;];</span><br></pre></td></tr></table></figure>
+
+<h4 id="推送的协议-UNUserNotificationCenterDelegate"><a href="#推送的协议-UNUserNotificationCenterDelegate" class="headerlink" title="推送的协议:UNUserNotificationCenterDelegate"></a>推送的协议:UNUserNotificationCenterDelegate</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F;实现协议</span><br><span class="line">[UNUserNotificationCenter currentNotificationCenter].delegate &#x3D; self;</span><br><span class="line">&#x2F;&#x2F;协议中的方法</span><br><span class="line">-(void)userNotificationCenter:(UNUserNotificationCenter *)center openSettingsForNotification:(UNNotification *)notification&#123;</span><br><span class="line">    &#x2F;&#x2F;是在app内展示推送的设置情况，需要在请求权限的options中添加 providesAppNotificationSettings，iOS12才支持</span><br><span class="line">&#125;</span><br><span class="line">-(void)userNotificationCenter:(UNUserNotificationCenter *)center willPresentNotification:(UNNotification *)notification withCompletionHandler:(void (^)(UNNotificationPresentationOptions))completionHandler&#123;</span><br><span class="line">    &#x2F;&#x2F;应用在前台时,接收到消息触发的方法,无论是否点击都会触发</span><br><span class="line">&#125;</span><br><span class="line">-(void)userNotificationCenter:(UNUserNotificationCenter *)center didReceiveNotificationResponse:(UNNotificationResponse *)response withCompletionHandler:(void (^)(void))completionHandler&#123;</span><br><span class="line">    &#x2F;&#x2F;点击了推送的消息,进入app时会触发此方法</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/%E6%9C%AC%E5%9C%B0%E6%8E%A8%E9%80%81/" rel="tag"># 本地推送</a>
+          
+            <a href="/tags/UNUserNotificationCenter/" rel="tag"># UNUserNotificationCenter</a>
+          
+        </div>
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2020/04/14/iOS%E5%BC%80%E5%8F%91%E8%AF%81%E4%B9%A6%E7%9A%84%E5%88%B6%E4%BD%9C/" rel="next" title="iOS开发证书的制作">
+                <i class="fa fa-chevron-left"></i> iOS开发证书的制作
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="lv-container" data-id="city" data-uid="MTAyMC8yODI3Ny80ODQ5"></div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.png"
+               alt="自由不可待" />
+          <p class="site-author-name" itemprop="name">自由不可待</p>
+           
+              <p class="site-description motion-element" itemprop="description">离文明世界有多远?</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">53</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">15</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">75</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/zhuyunsun" target="_blank" title="Github">
+                  
+                  Github
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#推送权限"><span class="nav-number">1.</span> <span class="nav-text">推送权限</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#推送内容"><span class="nav-number">2.</span> <span class="nav-text">推送内容</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#推送的时刻"><span class="nav-number">3.</span> <span class="nav-text">推送的时刻</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#创建推送的请求"><span class="nav-number">4.</span> <span class="nav-text">创建推送的请求</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#开启推送"><span class="nav-number">5.</span> <span class="nav-text">开启推送</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#移除本地推送"><span class="nav-number">6.</span> <span class="nav-text">移除本地推送</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#获取当前存在的推送标识"><span class="nav-number">7.</span> <span class="nav-text">获取当前存在的推送标识</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#推送的协议-UNUserNotificationCenterDelegate"><span class="nav-number">8.</span> <span class="nav-text">推送的协议:UNUserNotificationCenterDelegate</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2017 - 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">自由不可待</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io" target="_blank" rel="noopener">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next" target="_blank" rel="noopener">
+    NexT.Pisces
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.0"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+  <script>AV.initialize("nob4HaXatIvkItI9S6ArKRIA-gzGzoHsz", "CbrpkFAYhQGiymDDgg5DRnXD");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
+<!-- 背景动画 -->
+<script type="text/javascript" src="/js/src/particle.js"></script>
+<!-- 页面点击小红心 -->
+<script type="text/javascript" src="/js/src/love.js"></script>
