@@ -1,0 +1,929 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="crash,程序崩溃,异常," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="NSException异常类:NSException  使用NSException实现异常处理。 异常是一种特殊情况，会中断程序的正常执行流程。 每个应用程序都有不同的原因可以中断程序。 例如，一个应用程序可能会将文件保存在受写保护的目录中作为例外。 从这个意义上讲，异常等同于错误。 另一个应用程序可能会将用户的按键解释（例如Control-C）解释为例外情况：表明长时间运行的进程应中止。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="NSException">
+<meta property="og:url" content="http://yoursite.com/2020/04/15/%E7%A8%8B%E5%BA%8Fcrash%E7%9A%84NSException/index.html">
+<meta property="og:site_name" content="烟飞烟灭">
+<meta property="og:description" content="NSException异常类:NSException  使用NSException实现异常处理。 异常是一种特殊情况，会中断程序的正常执行流程。 每个应用程序都有不同的原因可以中断程序。 例如，一个应用程序可能会将文件保存在受写保护的目录中作为例外。 从这个意义上讲，异常等同于错误。 另一个应用程序可能会将用户的按键解释（例如Control-C）解释为例外情况：表明长时间运行的进程应中止。">
+<meta property="article:published_time" content="2020-04-15T03:12:32.581Z">
+<meta property="article:modified_time" content="2020-04-28T08:15:55.473Z">
+<meta property="article:author" content="自由不可待">
+<meta property="article:tag" content="crash">
+<meta property="article:tag" content="程序崩溃">
+<meta property="article:tag" content="异常">
+<meta name="twitter:card" content="summary">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2020/04/15/程序crash的NSException/"/>
+
+
+
+
+
+  <title> NSException | 烟飞烟灭 </title>
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">烟飞烟灭</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">好的文章,就是原来不懂得;看了之后有一种原来是这样的感觉!</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-guestbook">
+          <a href="/guestbook" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            留言
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/04/15/%E7%A8%8B%E5%BA%8Fcrash%E7%9A%84NSException/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="自由不可待">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="烟飞烟灭">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                NSException
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-04-15T11:12:32+08:00">
+                2020-04-15 11:12
+              </time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2020-04-28T16:15:55+08:00">
+                2020-04-28 16:15
+              </time>
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/iOS%E5%BC%80%E5%8F%91/" itemprop="url" rel="index">
+                    <span itemprop="name">iOS开发</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2020/04/15/%E7%A8%8B%E5%BA%8Fcrash%E7%9A%84NSException/" class="leancloud_visitors" data-flag-title="NSException">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计</span>
+                
+                <span title="字数统计">
+                  764 字
+                </span>
+              
+
+              
+
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h4 id="NSException"><a href="#NSException" class="headerlink" title="NSException"></a>NSException</h4><p>异常类:NSException</p>
+<blockquote>
+<p>使用NSException实现异常处理。 异常是一种特殊情况，会中断程序的正常执行流程。 每个应用程序都有不同的原因可以中断程序。 例如，一个应用程序可能会将文件保存在受写保护的目录中作为例外。 从这个意义上讲，异常等同于错误。 另一个应用程序可能会将用户的按键解释（例如Control-C）解释为例外情况：表明长时间运行的进程应中止。</p>
+</blockquote>
+<a id="more"></a>
+
+<p>NSException有三个属性来解释当前异常的原因:<br>第一个:@property (readonly, copy) NSExceptionName name;//异常名称</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">NSExceptionName</span><br><span class="line">NSGenericException;&#x2F;&#x2F;一般异常.</span><br><span class="line">NSRangeException;&#x2F;&#x2F;尝试访问某些数据范围之外（例如,字符串末尾,访问数组越界值）时发生的异常的名称.</span><br><span class="line">NSInvalidArgumentException;&#x2F;&#x2F;将无效的参数传递给方法时发生的异常的名称，例如需要非nil对象的nil指针.</span><br><span class="line">NSInternalInconsistencyException;&#x2F;&#x2F;当内部声明失败并在被调用代码中隐含意外情况时发生的异常的名称,不一致造成的错误,如NSMutableDictionary有很多方法NSDictionary不能调用,但是却进行了调用.</span><br><span class="line"></span><br><span class="line">NSMallocException;&#x2F;&#x2F;内存不足异常,过时,目前没有使用</span><br><span class="line"></span><br><span class="line">NSObjectInaccessibleException;&#x2F;&#x2F;对象不可访问造成的异常</span><br><span class="line">NSObjectNotAvailableException;&#x2F;&#x2F;对象不可用,如使用UIAlterView废弃API,SceneDelegate删除同时需要删除info.plist等.</span><br><span class="line">NSDestinationInvalidException;&#x2F;&#x2F;目标无效异常,如子线程执行任务,但是执行任务之前子线程已经被释放. </span><br><span class="line"></span><br><span class="line">NSPortTimeoutException;&#x2F;&#x2F;端口接收或者发送超时异常</span><br><span class="line">NSInvalidSendPortException;&#x2F;&#x2F;无效发送端口造异常</span><br><span class="line">NSInvalidReceivePortException;&#x2F;&#x2F;无效接收端口异常</span><br><span class="line">NSPortSendException;&#x2F;&#x2F;端口发送异常</span><br><span class="line">NSPortReceiveException;&#x2F;&#x2F;端口接收异常</span><br><span class="line"></span><br><span class="line">NSOldStyleException;&#x2F;&#x2F;老样式异常</span><br><span class="line"></span><br><span class="line">NSInconsistentArchiveException;&#x2F;&#x2F;初始化或者编码有异常;</span><br></pre></td></tr></table></figure>
+
+<p>第二个:@property (nullable, readonly, copy) NSString * reason;//异常的原因<br>第三个:@property (nullable, readonly, copy) NSDictionary * userInfo;//异常的信息</p>
+<h4 id="判断可能会出现崩溃的代码-try…-catch…-finally"><a href="#判断可能会出现崩溃的代码-try…-catch…-finally" class="headerlink" title="判断可能会出现崩溃的代码@try…@catch… @finally"></a>判断可能会出现崩溃的代码@try…@catch… @finally</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F;自主判断可能会出现崩溃的代码.</span><br><span class="line">@try &#123;</span><br><span class="line">    NSArray *arr &#x3D; @[@&quot;2&quot;,@&quot;1&quot;];</span><br><span class="line">    for (NSUInteger i &#x3D; 0; i &lt; 3; i ++) &#123;</span><br><span class="line">        NSString *str &#x3D; arr[i];</span><br><span class="line">        NSLog(@&quot;str &#x3D; %@&quot;,str);</span><br><span class="line">    &#125;</span><br><span class="line">&#125; @catch (NSException *exception) &#123;</span><br><span class="line">    NSLog(@&quot;\n%@,\n%@,\n%@,&quot;,exception.reason,exception.name,exception.userInfo);</span><br><span class="line">    &#x2F;&#x2F;@try如果崩溃则会来到这里</span><br><span class="line">    &#x2F;&#x2F;本地保存上传服务器或者直接上传服务器   </span><br><span class="line">&#125; @finally &#123;</span><br><span class="line">    NSLog(@&quot;finally无论崩溃都会执行&quot;);</span><br><span class="line">&#125;</span><br><span class="line">&#x2F;&#x2F;直接抛出一个异常,程序会直接崩溃</span><br><span class="line">@throw [NSException exceptionWithName:NSRangeException reason:@&quot;数组越界&quot; userInfo:@&#123;@&quot;1&quot;:@&quot;2&quot;&#125;];</span><br></pre></td></tr></table></figure>
+
+<h4 id="收集NSException崩溃信息"><a href="#收集NSException崩溃信息" class="headerlink" title="收集NSException崩溃信息"></a>收集NSException崩溃信息</h4><blockquote>
+<p>崩溃时,先本地保存下次打开时候再把崩溃信息上传到服务器;</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F;崩溃监听方法,需要写在self.window.root... 之前</span><br><span class="line">NSSetUncaughtExceptionHandler(&amp;UncaughtExceptionHandler);</span><br><span class="line">&#x2F;&#x2F;UncaughtExceptionHandler C方法</span><br><span class="line">void UncaughtExceptionHandler(NSException *exception)&#123;</span><br><span class="line">    NSLog(@&quot;异常的监听:exception &#x3D; %@&quot;,exception.name);</span><br><span class="line">    NSString *name &#x3D; exception.name;</span><br><span class="line">    NSString *reason &#x3D; exception.reason;</span><br><span class="line">    NSDictionary *info &#x3D; exception.userInfo;</span><br><span class="line">    NSArray *arr1 &#x3D; exception.callStackSymbols;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/crash/" rel="tag"># crash</a>
+          
+            <a href="/tags/%E7%A8%8B%E5%BA%8F%E5%B4%A9%E6%BA%83/" rel="tag"># 程序崩溃</a>
+          
+            <a href="/tags/%E5%BC%82%E5%B8%B8/" rel="tag"># 异常</a>
+          
+        </div>
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2020/04/14/iOS%E5%BC%80%E5%8F%91%E8%AF%81%E4%B9%A6%E7%9A%84%E5%88%B6%E4%BD%9C/" rel="next" title="iOS开发证书的制作">
+                <i class="fa fa-chevron-left"></i> iOS开发证书的制作
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2020/04/17/iOS%E6%9C%AC%E5%9C%B0%E9%80%9A%E7%9F%A5/" rel="prev" title="iOS本地推送">
+                iOS本地推送 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="lv-container" data-id="city" data-uid="MTAyMC8yODI3Ny80ODQ5"></div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.png"
+               alt="自由不可待" />
+          <p class="site-author-name" itemprop="name">自由不可待</p>
+           
+              <p class="site-description motion-element" itemprop="description">离文明世界有多远?</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">55</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">15</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">80</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/zhuyunsun" target="_blank" title="Github">
+                  
+                  Github
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#NSException"><span class="nav-number">1.</span> <span class="nav-text">NSException</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#判断可能会出现崩溃的代码-try…-catch…-finally"><span class="nav-number">2.</span> <span class="nav-text">判断可能会出现崩溃的代码@try…@catch… @finally</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#收集NSException崩溃信息"><span class="nav-number">3.</span> <span class="nav-text">收集NSException崩溃信息</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2017 - 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">自由不可待</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io" target="_blank" rel="noopener">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next" target="_blank" rel="noopener">
+    NexT.Pisces
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.0"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+  <script>AV.initialize("nob4HaXatIvkItI9S6ArKRIA-gzGzoHsz", "CbrpkFAYhQGiymDDgg5DRnXD");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
+<!-- 背景动画 -->
+<script type="text/javascript" src="/js/src/particle.js"></script>
+<!-- 页面点击小红心 -->
+<script type="text/javascript" src="/js/src/love.js"></script>
