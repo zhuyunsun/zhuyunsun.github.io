@@ -1893,15 +1893,7 @@ return _myButton;
   <entry>
     <title>iOS13暗黑模式的适配</title>
     <url>/2020/05/27/iOS13%E6%9A%97%E9%BB%91%E6%A8%A1%E5%BC%8F%E7%9A%84%E9%80%82%E9%85%8D/</url>
-    <content><![CDATA[<!--[WWDC暗黑模式讲解](https://developer.apple.com/videos/play/wwdc2019/214/)-->
-<hr>
-<p>titles: iOS13暗黑模式的适配<br>categories: iOS开发<br>tags:  </p>
-<ul>
-<li>暗黑模式  </li>
-<li>iOS13  </li>
-</ul>
-<hr>
-<p><strong>苹果在iOS13推出了一种暗黑模式:可以在系统设置中,把iPhone手机展示模式变成暗黑风格;<br>暗黑模式是相对正常模式来说的,iOS13之前的iPhone手机模式都是正常模式.</strong>  </p>
+    <content><![CDATA[<p><strong>苹果在iOS13推出了一种暗黑模式:可以在系统设置中,把iPhone手机展示模式变成暗黑风格;<br>暗黑模式是相对正常模式来说的,iOS13之前的iPhone手机模式都是正常模式.</strong>  </p>
 <blockquote>
 <p>暗黑模式的适配主要是在2个方面:<br>颜色和图片;<br>在暗黑模式和正常模式下,可以动态展示不同颜色和风格的照片;  </p>
 </blockquote>
@@ -1918,6 +1910,16 @@ return _myButton;
 <h5 id="把图片放进xcode工程适配"><a href="#把图片放进xcode工程适配" class="headerlink" title="把图片放进xcode工程适配"></a>把图片放进xcode工程适配</h5><p>正常模式和暗黑模式的图片命名分开,然后判断当前app的是否是暗黑模式,来读取不同的图片资源.  </p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">UITraitCollection *traitCollection &#x3D; [[UITraitCollection alloc]init];</span><br><span class="line">if (traitCollection.userInterfaceStyle &#x3D;&#x3D; UIUserInterfaceStyleLight) &#123;</span><br><span class="line">&#x2F;&#x2F;判断当前模式</span><br><span class="line">     UIImage *im &#x3D; [UIImage imageNamed:@&quot;xxx.png&quot;]; </span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
 
-<h4 id="苹果API自定义的动态颜色"><a href="#苹果API自定义的动态颜色" class="headerlink" title="苹果API自定义的动态颜色"></a>苹果API自定义的动态颜色</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F;设置这种动态颜色,不会造成有正常模式转成暗黑模式时,会出现看不见的情况</span><br><span class="line">UIColor *labelColor;&#x2F;&#x2F;字体颜色(正常模式如果是黑色,那么暗黑模式下会自动转换成白色)</span><br><span class="line">UIColor *placeholderTextColor;</span><br><span class="line">UIColor *separatorColor;</span><br><span class="line">UIColor *systemBackgroundColor;&#x2F;&#x2F;背景在正常模式下默认是白色,暗黑则变成黑色.</span><br><span class="line">、、、、</span><br><span class="line">、、、、</span><br></pre></td></tr></table></figure>]]></content>
+<h4 id="苹果API自定义的动态颜色"><a href="#苹果API自定义的动态颜色" class="headerlink" title="苹果API自定义的动态颜色"></a>苹果API自定义的动态颜色</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F;设置这种动态颜色,不会造成有正常模式转成暗黑模式时,会出现看不见的情况</span><br><span class="line">UIColor *labelColor;&#x2F;&#x2F;字体颜色(正常模式如果是黑色,那么暗黑模式下会自动转换成白色)</span><br><span class="line">UIColor *placeholderTextColor;</span><br><span class="line">UIColor *separatorColor;</span><br><span class="line">UIColor *systemBackgroundColor;&#x2F;&#x2F;背景在正常模式下默认是白色,暗黑则变成黑色.</span><br><span class="line">、、、、</span><br><span class="line">、、、、</span><br></pre></td></tr></table></figure>
+
+<!--[WWDC暗黑模式讲解](https://developer.apple.com/videos/play/wwdc2019/214/)-->
+]]></content>
+      <categories>
+        <category>iOS开发</category>
+      </categories>
+      <tags>
+        <tag>暗黑模式</tag>
+        <tag>iOS13</tag>
+      </tags>
   </entry>
 </search>
