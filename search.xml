@@ -1381,7 +1381,7 @@ return _myButton;
     <title>常用1</title>
     <url>/2019/07/31/%E5%B8%B8%E7%94%A81/</url>
     <content><![CDATA[<h4 id="Github"><a href="#Github" class="headerlink" title="Github"></a>Github</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">GitHub Desktop 使用</span><br><span class="line">1,创建repository:选择本地某个文件夹作为一个repository,称为r1,然后push到自己GitHub账号上面;</span><br><span class="line">2,修改:本地r1的文件,修改完之后,在GitHub Desktop把最新版本推送到GitHub;</span><br><span class="line">3,回滚版本,在GitHub Desktop History选择某个版本,回滚的时候修改的是r1里面的文件</span><br><span class="line">  GitHub没有修改,需要commit-&gt;Fetch origin;</span><br><span class="line">4,注意,不要去修改GitHub上面repository工程文件;</span><br></pre></td></tr></table></figure>
-
+<a id="more"></a>  
 <h4 id="向工程中添加第三方字体"><a href="#向工程中添加第三方字体" class="headerlink" title="向工程中添加第三方字体"></a>向工程中添加第三方字体</h4><p>1,把字体添加到Xcode中形如:A-OTF-FOLKPRO-MEDIUM.OTF 的文件<br>2,在Info.plist配置:</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F;一个数组,Fonts provided by application</span><br><span class="line">&lt;key&gt;UIAppFonts&lt;&#x2F;key&gt;</span><br><span class="line">&lt;array&gt;</span><br><span class="line">	&lt;string&gt;A-OTF-FOLKPRO-MEDIUM.OTF&lt;&#x2F;string&gt;</span><br><span class="line">&lt;&#x2F;array&gt;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;使用, [UIFont familyNames]获取当前工程中存在的字体字段</span><br><span class="line">if ([[UIFont familyNames] containsObject:@&quot;A-OTF Folk Pro&quot;]) &#123;</span><br><span class="line">    NSLog(@&quot;导入字体成功&quot;);</span><br><span class="line">&#125;else&#123;</span><br><span class="line">    NSLog(@&quot;导入字体失败&quot;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
@@ -1407,7 +1407,7 @@ return _myButton;
 
 <h4 id="比较稳定判断iPhoneX全面屏系列"><a href="#比较稳定判断iPhoneX全面屏系列" class="headerlink" title="比较稳定判断iPhoneX全面屏系列"></a>比较稳定判断iPhoneX全面屏系列</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F;&#x2F; 是否是iPhoneX全面屏系列</span><br><span class="line">FOUNDATION_STATIC_INLINE BOOL MYPhoneX()&#123;</span><br><span class="line">    BOOL IS_iPhone &#x3D; ([[UIDevice currentDevice] userInterfaceIdiom] &#x3D;&#x3D; UIUserInterfaceIdiomPhone);&#x2F;&#x2F;是iPhone不是iPad</span><br><span class="line">    BOOL IS_iOS11 &#x3D; ([[[UIDevice currentDevice] systemVersion] floatValue] &gt;&#x3D; 11.f);&#x2F;&#x2F;全面屏iOS11以上才有</span><br><span class="line">    BOOL iPhoneX &#x3D; (IS_iOS11 &amp;&amp; IS_iPhone &amp;&amp; (MIN([UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height) &gt;&#x3D; 375 &amp;&amp; MAX([UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height) &gt;&#x3D; 812));&#x2F;&#x2F;后面min和max是判断横竖屏宽和高</span><br><span class="line">    return iPhoneX;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h4 id="设置CGSize常量值"><a href="#设置CGSize常量值" class="headerlink" title="设置CGSize常量值"></a>设置CGSize常量值</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">.h</span><br><span class="line">CG_EXTERN  CGSize const MySize;</span><br><span class="line">.m</span><br><span class="line">CGSize const MySize &#x3D; &#123;3.0,2.0&#125;;</span><br></pre></td></tr></table></figure>
-<a id="more"></a>  
+
 
 <h4 id="pod用法示例"><a href="#pod用法示例" class="headerlink" title="pod用法示例"></a>pod用法示例</h4><blockquote>
 <p>cd 工程目录<br>vim Podfile<br>按esc退出编辑<br>:wq 保存<br>pod install  </p>
@@ -1951,6 +1951,32 @@ return _myButton;
       <tags>
         <tag>暗黑模式</tag>
         <tag>iOS13</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>iOS中bundle文件</title>
+    <url>/2020/12/03/iOS%E4%B8%ADbundle%E6%96%87%E4%BB%B6/</url>
+    <content><![CDATA[<h3 id="创建bundle工程"><a href="#创建bundle工程" class="headerlink" title="创建bundle工程"></a>创建bundle工程</h3><p>bundle文件在macOS下</p>
+<p><img src="https://20190422zy.oss-cn-shenzhen.aliyuncs.com/2020%E5%B9%B4/%E5%88%9B%E5%BB%BAbundle%E6%96%87%E4%BB%B6/macOS%E4%B8%8Bbundle.png" alt="image">  </p>
+<p>命名<br><img src="https://20190422zy.oss-cn-shenzhen.aliyuncs.com/2020%E5%B9%B4/%E5%88%9B%E5%BB%BAbundle%E6%96%87%E4%BB%B6/%E5%91%BD%E5%90%8D.png" alt=""></p>
+<a id="more"></a>
+<h3 id="删除工程多余的文件"><a href="#删除工程多余的文件" class="headerlink" title="删除工程多余的文件"></a>删除工程多余的文件</h3><p><img src="https://20190422zy.oss-cn-shenzhen.aliyuncs.com/2020%E5%B9%B4/%E5%88%9B%E5%BB%BAbundle%E6%96%87%E4%BB%B6/%E5%88%A0%E9%99%A4Info%E6%96%87%E4%BB%B6.png" alt="">  </p>
+<p>记得Info.plist路径也要删除<br><img src="https://20190422zy.oss-cn-shenzhen.aliyuncs.com/2020%E5%B9%B4/%E5%88%9B%E5%BB%BAbundle%E6%96%87%E4%BB%B6/%E5%88%A0%E9%99%A4Info%E8%B7%AF%E5%BE%84.png" alt="">  </p>
+<h3 id="设置为iOS而不是默认的macOS"><a href="#设置为iOS而不是默认的macOS" class="headerlink" title="设置为iOS而不是默认的macOS"></a>设置为iOS而不是默认的macOS</h3><p><img src="https://20190422zy.oss-cn-shenzhen.aliyuncs.com/2020%E5%B9%B4/%E5%88%9B%E5%BB%BAbundle%E6%96%87%E4%BB%B6/%E6%94%B9%E4%B8%BAiOS.png" alt=""></p>
+<h3 id="版本和iOS"><a href="#版本和iOS" class="headerlink" title="版本和iOS"></a>版本和iOS</h3><p><img src="https://20190422zy.oss-cn-shenzhen.aliyuncs.com/2020%E5%B9%B4/%E5%88%9B%E5%BB%BAbundle%E6%96%87%E4%BB%B6/%E7%89%88%E6%9C%AC%E5%92%8CiOS.png" alt=""></p>
+<h3 id="显示原文件"><a href="#显示原文件" class="headerlink" title="显示原文件"></a>显示原文件</h3><p>就是放进去了什么资源 显示的时候就是什么资源,@2x,@3x会合并为tiff文件如果为YES</p>
+<p><img src="https://20190422zy.oss-cn-shenzhen.aliyuncs.com/2020%E5%B9%B4/%E5%88%9B%E5%BB%BAbundle%E6%96%87%E4%BB%B6/%E8%AE%BE%E7%BD%AE%E4%B8%BANO.png" alt=""></p>
+<h3 id="在工程进行Build之后"><a href="#在工程进行Build之后" class="headerlink" title="在工程进行Build之后"></a>在工程进行Build之后</h3><p>显示包内内容</p>
+<p><img src="https://20190422zy.oss-cn-shenzhen.aliyuncs.com/2020%E5%B9%B4/%E5%88%9B%E5%BB%BAbundle%E6%96%87%E4%BB%B6/%E6%98%BE%E7%A4%BA%E5%8C%85%E5%86%85%E5%AE%B9.png" alt=""></p>
+<p>end</p>
+]]></content>
+      <categories>
+        <category>iOS开发</category>
+      </categories>
+      <tags>
+        <tag>iOS开发</tag>
+        <tag>bundle</tag>
+        <tag>SDK</tag>
       </tags>
   </entry>
 </search>
