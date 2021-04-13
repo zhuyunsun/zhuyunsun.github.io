@@ -324,8 +324,8 @@
               
                 <span class="post-meta-item-text">更新于</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2020-12-17T14:52:31+08:00">
-                2020-12-17 14:52
+              <time title="更新于" itemprop="dateModified" datetime="2021-02-26T14:58:06+08:00">
+                2021-02-26 14:58
               </time>
             
           </span>
@@ -384,7 +384,7 @@
                   <span class="post-meta-item-text">字数统计</span>
                 
                 <span title="字数统计">
-                  2.3k 字
+                  2.5k 字
                 </span>
               
 
@@ -408,10 +408,205 @@
 
       
         
-          <h4 id="真机测试包Payload"><a href="#真机测试包Payload" class="headerlink" title="真机测试包Payload"></a>真机测试包Payload</h4><p>出一个支持真机安装的xxx.ipa包<br>1,在xcode工程中,安装支持准备安装设备的证书和描述文件;<br>2,xcode中选择真机,Build工程,在Products文件中找到后缀为xxx.app文件<br>3,show in finder,copy一下xxx.app格式的文件;<br>4,在桌面创建名为Payload的文件夹,把xxx.app复制进去;<br>5,压缩Payload文件夹为Payload.zip<br>6,把Payload.zip修改为Payload.ipa,这个时候就是可以进行安装的ipa包了.<br>最后,可以使用xcode工具或者iTools进行安装ipa包;</p>
+          <h4 id="Mac电脑显示隐藏文件"><a href="#Mac电脑显示隐藏文件" class="headerlink" title="Mac电脑显示隐藏文件"></a>Mac电脑显示隐藏文件</h4><p>(commond + shift + . ) 按一次则是显示,再按一次则是隐藏</p>
+<h4 id="Xcode12后出现静态库-linked-library-‘libPods-xxx-a‘-is-missing-one-or-more-architectures-required-by-this-target-armv7"><a href="#Xcode12后出现静态库-linked-library-‘libPods-xxx-a‘-is-missing-one-or-more-architectures-required-by-this-target-armv7" class="headerlink" title="Xcode12后出现静态库 linked library ‘libPods-xxx.a‘ is missing one or more architectures required by this target: armv7"></a>Xcode12后出现静态库 linked library ‘libPods-xxx.a‘ is missing one or more architectures required by this target: armv7</h4><p>能正常真机测试，但build的时候会失败（红色警告）<br>升级xcode12后，项目在run debug时候是正常运行的，但是在build或者run release的时候就会出现如标题的红色错误。<br>在Target-Build Settings-Excluded Architectures中添加以下代码  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">EXCLUDED_ARCHS__EFFECTIVE_PLATFORM_SUFFIX_simulator__NATIVE_ARCH_64_BIT_x86_64&#x3D;arm64 arm64e armv7 armv7s armv6 armv8 EXCLUDED_ARCHS&#x3D;$(inherited) $(EXCLUDED_ARCHS__EFFECTIVE_PLATFORM_SUFFIX_$(EFFECTIVE_PLATFORM_SUFFIX)__NATIVE_ARCH_64_BIT_$(NATIVE_ARCH_64_BIT))</span><br></pre></td></tr></table></figure>
+
+<h4 id="真机测试包Payload"><a href="#真机测试包Payload" class="headerlink" title="真机测试包Payload"></a>真机测试包Payload</h4><p>出一个支持真机安装的xxx.ipa包<br>1,在xcode工程中,安装支持准备安装设备的证书和描述文件;<br>2,xcode中选择真机,Build工程,在Products文件中找到后缀为xxx.app文件<br>3,show in finder,copy一下xxx.app格式的文件;<br>4,在桌面创建名为Payload的文件夹,把xxx.app复制进去;<br>5,压缩Payload文件夹为Payload.zip<br>6,把Payload.zip修改为Payload.ipa,这个时候就是可以进行安装的ipa包了.<br>最后,可以使用xcode工具或者iTools进行安装ipa包;</p>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2019/07/31/%E5%B8%B8%E7%94%A81/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2021/04/13/Swift%E7%B3%BB%E5%88%97P1-%E5%9F%BA%E7%A1%80%E5%86%85%E5%AE%B9/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="自由不可待">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="烟飞烟灭">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2021/04/13/Swift%E7%B3%BB%E5%88%97P1-%E5%9F%BA%E7%A1%80%E5%86%85%E5%AE%B9/" itemprop="url">
+                  Swift系列P1-基础内容
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2021-04-13T16:25:05+08:00">
+                2021-04-13 16:25
+              </time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2021-04-13T17:15:31+08:00">
+                2021-04-13 17:15
+              </time>
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Swift%E8%AF%AD%E8%A8%80/" itemprop="url" rel="index">
+                    <span itemprop="name">Swift语言</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2021/04/13/Swift%E7%B3%BB%E5%88%97P1-%E5%9F%BA%E7%A1%80%E5%86%85%E5%AE%B9/" class="leancloud_visitors" data-flag-title="Swift系列P1-基础内容">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计</span>
+                
+                <span title="字数统计">
+                  1.8k 字
+                </span>
+              
+
+              
+
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h4 id="常量和变量"><a href="#常量和变量" class="headerlink" title="常量和变量"></a>常量和变量</h4><p> 常量,let关键字;变量,var关键字<br> 常量和变量:把名字和特定类型的值关联起来;<br> 常量:定义的时候赋值,一经设置不可被修改;<br> 变量:可以先定义后赋值,或者定义的时候赋值,设置了之后可以再次修改,赋予新值;  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F;例子示范</span><br><span class="line">let a:Int &#x3D; 100;print(a)&#x2F;&#x2F;定义了一个类型为整型的常量a,如果你尝试去修改a,Xcode会报错;</span><br><span class="line">var b:CGFloat &#x3D; 1.1;print(b)&#x2F;&#x2F;定义了一个类型为浮点型的变量b;</span><br><span class="line">b &#x3D; 2.2;print(b)&#x2F;&#x2F;可以对变量重新进行赋值</span><br></pre></td></tr></table></figure>
+<p>定义多个相同类型的常量或者变量,使用(,)隔开</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">let a1:Int &#x3D; 2,a2 &#x3D; 3,a3 &#x3D; 33;print(a1,a2,a3)</span><br><span class="line">var b1:CGFloat &#x3D; 2.1,b2 &#x3D; 3.1,b3 &#x3D; 3.22;print(b1,b2,b3); b1 &#x3D; 2.2;b2 &#x3D; 3.2;b3 &#x3D; 3.32</span><br></pre></td></tr></table></figure>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2021/04/13/Swift%E7%B3%BB%E5%88%97P1-%E5%9F%BA%E7%A1%80%E5%86%85%E5%AE%B9/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1027,172 +1222,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/04/21/iOS%E6%B2%99%E7%9B%92%E6%9C%BA%E5%88%B6/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="自由不可待">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="烟飞烟灭">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2020/04/21/iOS%E6%B2%99%E7%9B%92%E6%9C%BA%E5%88%B6/" itemprop="url">
-                  iOS沙盒机制
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-04-21T15:18:12+08:00">
-                2020-04-21 15:18
-              </time>
-            
-
-            
-              <span class="post-meta-divider">|</span>
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-check-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">更新于</span>
-              
-              <time title="更新于" itemprop="dateModified" datetime="2020-04-28T09:33:24+08:00">
-                2020-04-28 09:33
-              </time>
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-             <span id="/2020/04/21/iOS%E6%B2%99%E7%9B%92%E6%9C%BA%E5%88%B6/" class="leancloud_visitors" data-flag-title="iOS沙盒机制">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数 </span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计</span>
-                
-                <span title="字数统计">
-                  777 字
-                </span>
-              
-
-              
-
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h4 id="沙盒"><a href="#沙盒" class="headerlink" title="沙盒"></a>沙盒</h4><p><strong>1,每个app下都有一个独立的沙盒目录,就是该app的文件目录,跟其他的app沙盒是相互隔离的,他们之间不能进行数据间的访问.<br>2,app所有非代码文件都保存在沙盒中,比如plist,文本,文件夹,图片,图标,音视频等等.</strong>  </p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2020/04/21/iOS%E6%B2%99%E7%9B%92%E6%9C%BA%E5%88%B6/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -1242,7 +1271,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">58</span>
+                <span class="site-state-item-count">59</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -1253,7 +1282,7 @@
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">16</span>
+                <span class="site-state-item-count">17</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -1264,7 +1293,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">85</span>
+                <span class="site-state-item-count">86</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -1315,7 +1344,7 @@
         <div class="copyright" >
   
   &copy;  2017 - 
-  <span itemprop="copyrightYear">2020</span>
+  <span itemprop="copyrightYear">2021</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
