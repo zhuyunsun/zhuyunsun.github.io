@@ -2277,4 +2277,40 @@ return _myButton;
         <tag>Swift函数</tag>
       </tags>
   </entry>
+  <entry>
+    <title>Swift系列7-闭包</title>
+    <url>/2021/04/19/Swift%E7%B3%BB%E5%88%97P7-%E9%97%AD%E5%8C%85/</url>
+    <content><![CDATA[<h2 id="闭包"><a href="#闭包" class="headerlink" title="闭包"></a>闭包</h2><p>闭包是可以在你的代码中被传递和引用的功能性独立代码块.<br>闭包又被称为待执行的代码块.<br>有返回值,有形参,使用in关键字,还有@escaping关键字.<br>样式:  </p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#123;(形参1,形参2,形参3) -&gt;返回值 in  </span><br><span class="line">	待执行代码  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>例子:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">let b1 &#x3D; &#123;(s1:String) -&gt;Void in</span><br><span class="line">    print(s1)</span><br><span class="line">&#125;</span><br><span class="line">&#x2F;&#x2F;调用</span><br><span class="line">b1(&quot;s1&quot;)</span><br></pre></td></tr></table></figure>
+
+<a id="more"></a>
+
+<h2 id="闭包的使用"><a href="#闭包的使用" class="headerlink" title="闭包的使用"></a>闭包的使用</h2><h3 id="尾随闭包"><a href="#尾随闭包" class="headerlink" title="尾随闭包"></a>尾随闭包</h3><p>作为函数参数,在当前函数进行返回,这时闭包的形参会被作为返回值,书写形参时只要书写对应的类型即可;  </p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F;书写类</span><br><span class="line">class Message: NSObject &#123;</span><br><span class="line">	func interfaceLogin(_ s1:String,_ pa:Dictionary&lt;String,String&gt;,_ cl:(Dictionary&lt;String,Any&gt;,Int) -&gt;Void) &#123;</span><br><span class="line">	    &#x2F;&#x2F;cl表示闭包形参,类型是字典和整型</span><br><span class="line">	     cl([&quot;c1&quot;:100],200)</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line">&#x2F;&#x2F;调用类</span><br><span class="line">class ClosureView: BaseViewController &#123;</span><br><span class="line">		override func viewDidLoad() &#123;</span><br><span class="line">		  super.viewDidLoad()</span><br><span class="line">		  let msg &#x3D; Message.init()</span><br><span class="line">		 &#x2F;&#x2F;作为函数的形参</span><br><span class="line">		  msg.interfaceLogin(&quot;s1&quot;, [&quot;1&quot;:&quot;2&quot;]) &#123; (result, code) in</span><br><span class="line">		  	&#x2F;&#x2F;赋值形参去接收对应的数据</span><br><span class="line">		 	 print(result,code) &#x2F;&#x2F;结果 [&quot;c1&quot;:100],200</span><br><span class="line">		 &#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>如果闭包cl是在函数返回之后调用的,我们就说这个闭包逃逸了,比如异步函数,那么需要补充@escaping关键字修饰,表示这闭包是允许逃逸的;<br>函数在启动任务之后返回,但是闭包要直到任务完成 – 闭包需要逃逸,以便稍后调用.  </p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">class Message: NSObject &#123;</span><br><span class="line">    func interfaceLogin(_ s1:String,_ pa:Dictionary&lt;String,String&gt;,_ cl: @escaping (Dictionary&lt;String,Any&gt;,Int) -&gt;Void) &#123;</span><br><span class="line">            DispatchQueue.global().asyncAfter(deadline: DispatchTime.now() + 2.0) &#123;</span><br><span class="line">                print(&quot;2秒之后执行&quot;)</span><br><span class="line">                cl([&quot;c1&quot;:100],200)</span><br><span class="line">            &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="结合typealias使用"><a href="#结合typealias使用" class="headerlink" title="结合typealias使用"></a>结合typealias使用</h3><p>结合typealias来使用的好处是,你不必在函数后面就返回该闭包,而是可以在类的任何地方返回.  </p>
+<h4 id="第一步-定义闭包别名"><a href="#第一步-定义闭包别名" class="headerlink" title="第一步:定义闭包别名"></a>第一步:定义闭包别名</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">typealias mineClosure &#x3D; (URL,Dictionary&lt;String, Any&gt;) -&gt;Void</span><br><span class="line">&#x2F;&#x2F;写形参和返回值时:只需要写对应的类型即可</span><br></pre></td></tr></table></figure>
+
+<h4 id="第二步-定义闭包变量属性"><a href="#第二步-定义闭包变量属性" class="headerlink" title="第二步:定义闭包变量属性"></a>第二步:定义闭包变量属性</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var c1:mineClosure?</span><br></pre></td></tr></table></figure>
+<h4 id="第三步-定义触发闭包回调方法"><a href="#第三步-定义触发闭包回调方法" class="headerlink" title="第三步:定义触发闭包回调方法"></a>第三步:定义触发闭包回调方法</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">func getTheMessage(temp:@escaping mineClosure) &#123;</span><br><span class="line">&#x2F;&#x2F;单独作为形参时,需要用@escaping来修饰,表示这个是逃逸闭包:因为他是在函数返回之后调用的;</span><br><span class="line">    self.c1 &#x3D; temp</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="第四步-返回闭包"><a href="#第四步-返回闭包" class="headerlink" title="第四步:返回闭包"></a>第四步:返回闭包</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">func begin()&#123;</span><br><span class="line">    if self.c1 !&#x3D; nil &#123;&#x2F;&#x2F;判断是否实现了闭包</span><br><span class="line">        self.c1!(URL.init(string: &quot;gameURL&quot;)!,[&quot;message&quot;:&quot;NO&quot;])</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="最后-调用"><a href="#最后-调用" class="headerlink" title="最后,调用"></a>最后,调用</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">class ClosureView: BaseViewController &#123;</span><br><span class="line">    override func viewDidLoad() &#123;</span><br><span class="line">       	super.viewDidLoad()</span><br><span class="line">		let msg &#x3D; Message.init()</span><br><span class="line">		msg.getTheMessage &#123; (url, dic) in</span><br><span class="line">		    print(url,dic)&#x2F;&#x2F;赋值形参去接收对应的数据</span><br><span class="line">		&#125;</span><br><span class="line">		msg.begin()</span><br><span class="line"> 	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="防止闭包循环引用"><a href="#防止闭包循环引用" class="headerlink" title="防止闭包循环引用"></a>防止闭包循环引用</h2><p>在闭包里面的对象会被闭包强引用,所以使用的时候要注意是否会引起循环引用.<br>下面是防止循环引用的解决方案;  </p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F;方案1,使用weak</span><br><span class="line">weak var weakSelf &#x3D; self</span><br><span class="line">msg.interfaceLogin(&quot;d&quot;, [&quot;d&quot;:&quot;c&quot;]) &#123; (r1, c1) in</span><br><span class="line">    weakSelf?.result &#x3D; r1</span><br><span class="line">&#125;</span><br><span class="line">    </span><br><span class="line">&#x2F;&#x2F;方案2 [weak self]</span><br><span class="line">msg.interfaceLogin(&quot;come&quot;, [&quot;i&quot;:&quot;j&quot;]) &#123; [weak self](r2, c2) in</span><br><span class="line">    self?.result &#x3D; r2</span><br><span class="line">&#125;</span><br><span class="line">    </span><br><span class="line">&#x2F;&#x2F;方案3 [unowned self]</span><br><span class="line">msg.interfaceLogin(&quot;come&quot;, [&quot;i&quot;:&quot;j&quot;]) &#123; [unowned self](r2, c2) in</span><br><span class="line">    self.result &#x3D; r2</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>The end</p>
+]]></content>
+      <categories>
+        <category>Swift语言</category>
+      </categories>
+      <tags>
+        <tag>Swift</tag>
+        <tag>Swift闭包</tag>
+      </tags>
+  </entry>
 </search>
