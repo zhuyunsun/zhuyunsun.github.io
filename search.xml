@@ -2343,4 +2343,32 @@ return _myButton;
         <tag>Swift枚举</tag>
       </tags>
   </entry>
+  <entry>
+    <title>Swift系列9-结构体和类</title>
+    <url>/2021/04/20/Swift%E7%B3%BB%E5%88%97P9-%E7%BB%93%E6%9E%84%E4%BD%93%E5%92%8C%E7%B1%BB/</url>
+    <content><![CDATA[<p>类和结构体是一种多功能且灵活的构造体,是代码构建的基础.  </p>
+<h2 id="结构体"><a href="#结构体" class="headerlink" title="结构体"></a>结构体</h2><p>结构体:使用struct关键字<br>值类型:<br>值类型是一种当他被指定到(常量或变量,或被传递给函数)时会被拷贝的类型;<br>结构体是值类型.<br>枚举,整型,浮点型,字符串,字符,布尔值,字典,数组都是值类型,他们都是以结构体的形式在后台实现的;</p>
+<a id="more"></a>
+<h3 id="结构体一些功能"><a href="#结构体一些功能" class="headerlink" title="结构体一些功能"></a>结构体一些功能</h3><p> 定义属性存储值<br> 定义方法提供功能<br> 允许使用下标语法来访问值<br> 定义初始化器用于初始化状态<br> 可以使用扩展来添加默认没有的功能<br> 遵循协议来针对特定类型提供标准的功能  </p>
+<h3 id="结构体实例"><a href="#结构体实例" class="headerlink" title="结构体实例"></a>结构体实例</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F;定义一般的结构体</span><br><span class="line">struct myStruct &#123;</span><br><span class="line">    var height:CGFloat</span><br><span class="line">    var width:CGFloat</span><br><span class="line">&#125;</span><br><span class="line">&#x2F;&#x2F;默认值结构体</span><br><span class="line">struct man &#123;</span><br><span class="line">    let gender &#x3D; &quot;man&quot;</span><br><span class="line">    let other:Int &#x3D; 100</span><br><span class="line">    </span><br><span class="line">    func name() &#123;</span><br><span class="line">        print(&quot;name&quot;)</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br><span class="line">&#x2F;&#x2F;调用</span><br><span class="line">let s1:myStruct &#x3D; myStruct.init(height: 100.0, width: 100.0)</span><br><span class="line">print(s1.width,s1.height)</span><br><span class="line"> </span><br><span class="line">let m &#x3D; man() &#x2F;&#x2F;实例1</span><br><span class="line">let m1:man &#x3D; man.init() &#x2F;&#x2F;实例2</span><br><span class="line">print(m1.gender,m1.other) &#x2F;&#x2F;通过点语法来访问结构体的属性</span><br><span class="line">m1.name()</span><br></pre></td></tr></table></figure>
+
+<h2 id="类"><a href="#类" class="headerlink" title="类"></a>类</h2><p>使用class关键字<br>引用类型:<br>当他被指定到常量或变量,或被传递给函数时不会被拷贝,而是引用他的现存实例;<br>类是引用类型  </p>
+<h3 id="类的一般功能"><a href="#类的一般功能" class="headerlink" title="类的一般功能"></a>类的一般功能</h3><p>定义属性存储值<br>定义方法提供功能<br>允许使用下标语法来访问值<br>定义初始化器用于初始化状态<br>可以使用扩展来添加默认没有的功能<br>遵循协议来针对特定类型提供标准的功能  </p>
+<p>可以继承另外一个类的特征<br>类型转换允许你在运行检查和解释一个类实例的类型<br>反初始化器允许一个类实例释放任何被其所分配的资源<br>引用计数允许不止一个对类实例的引用  </p>
+<h3 id="类的实例"><a href="#类的实例" class="headerlink" title="类的实例"></a>类的实例</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F;类</span><br><span class="line">class BaseViewController:UIViewController&#123;</span><br><span class="line">    override func viewDidLoad() &#123;</span><br><span class="line">        super.viewDidLoad()</span><br><span class="line">        </span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line">&#x2F;&#x2F;实例化类</span><br><span class="line">let ba &#x3D; BaseViewController()</span><br><span class="line">print(ba.arrSource.count)</span><br><span class="line">    </span><br><span class="line">let ba1 &#x3D; BaseViewController()</span><br><span class="line">print(ba1.arrSource.count)</span><br></pre></td></tr></table></figure>
+
+<h2 id="特征运算符"><a href="#特征运算符" class="headerlink" title="特征运算符"></a>特征运算符</h2><p>因为类是引用类型，在后台有可能有很多常量和变量都是引用到了同一个类的实例.(相同这词对结构体和枚举来说并不是真的相同，因为它们在赋予给常量，变量或者被传递给一个函数时总是被拷贝过去的.)<br>有时候找出两个常量或者变量是否引用自同一个类实例非常有用<br>相同于 ( ===)<br>不相同于( !==)<br>利用这两个恒等运算符来检查两个常量或者变量是否引用相同的实例  </p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">let ba &#x3D; BaseViewController()</span><br><span class="line">print(ba.arrSource.count)</span><br><span class="line">    </span><br><span class="line">let ba1 &#x3D; BaseViewController()</span><br><span class="line">print(ba1.arrSource.count)</span><br><span class="line"></span><br><span class="line">if ba &#x3D;&#x3D;&#x3D; ba1 &#123;</span><br><span class="line">    print(&quot;他们是相同对象的实例&quot;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="类和结构体的选择"><a href="#类和结构体的选择" class="headerlink" title="类和结构体的选择"></a>类和结构体的选择</h2><p>当是单纯的需要保存数据,并且属性不超过五个时,应该选择结构体而非类.<br>其他时候,如有属性和方法时,需要使用到继承,选择类.  </p>
+<p>The End  </p>
+]]></content>
+      <categories>
+        <category>Swift语言</category>
+      </categories>
+      <tags>
+        <tag>Swift</tag>
+        <tag>Swift结构体和类</tag>
+      </tags>
+  </entry>
 </search>
