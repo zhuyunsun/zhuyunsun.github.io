@@ -2371,4 +2371,34 @@ return _myButton;
         <tag>Swift结构体和类</tag>
       </tags>
   </entry>
+  <entry>
+    <title>Swift系列10-属性</title>
+    <url>/2021/04/21/Swift%E7%B3%BB%E5%88%97P10-%E5%B1%9E%E6%80%A7/</url>
+    <content><![CDATA[<h2 id="属性"><a href="#属性" class="headerlink" title="属性"></a>属性</h2><p>属性可以将特定的值和类,结构体,枚举联系起来.<br>存储属性会存储常量或变量作为实例的一部分,反之计算属性会计算值(而不是存储值).<br>计算属性可以由类,结构体,枚举进行定义.<br>存储属性只能由结构体和类进行定义.  </p>
+<p>属性可以和类型本身相关联,这种属性就是所谓的类型属性.  </p>
+<p>你可以定义属性观察器来检查属性中值的变化,这样你就可以自定义行为来响应.<br>属性观测器可以添加到你自定义的存储属性中,也可以添加到子类从他父类继承而来的属性中.  </p>
+<a id="more"></a>
+
+<h3 id="存储属性"><a href="#存储属性" class="headerlink" title="存储属性"></a>存储属性</h3><p>存储属性是一个特定类和结构体实例的一部分常量或变量;  </p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F;结构体属性</span><br><span class="line">struct NewDay &#123;</span><br><span class="line">    var day:Int</span><br><span class="line">    let time:Int</span><br><span class="line">&#125;</span><br><span class="line">&#x2F;&#x2F;</span><br><span class="line">var d1 &#x3D; NewDay.init(day: 10, time: 11)</span><br><span class="line">d1.day &#x3D; 20 &#x2F;&#x2F;变量,定义了之后还可以进行修改</span><br><span class="line">&#x2F;&#x2F; d1.time &#x3D; 30   他是一个常量,一经定义不可对其再次进行修改;</span><br></pre></td></tr></table></figure>
+
+<p>延迟属性(懒加载),使用lazy关键字,在属性使用的时候再进行创建实例,否则不会创建.  </p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">lazy var l1:UILabel &#x3D; &#123;</span><br><span class="line">    let l1 &#x3D; UILabel.init()</span><br><span class="line">    l1.frame &#x3D; CGRect(x: 0, y: 0, width: 100, height: 100)</span><br><span class="line">    l1.backgroundColor &#x3D; .black</span><br><span class="line">    self.view.addSubview(l1)</span><br><span class="line">    return l1</span><br><span class="line">&#125;()</span><br></pre></td></tr></table></figure>
+
+<h3 id="计算属性"><a href="#计算属性" class="headerlink" title="计算属性"></a>计算属性</h3><p>除了存储属性,类,结构体和枚举也能够定义计算属性,而它实际并不存储值.相反,他们提供一个读取器和一个可选的设置器来间接得到和设置其他的属性和值(set和get方法).  </p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F;计算属性,set和get</span><br><span class="line">var number:Int &#x3D; 0</span><br><span class="line">var allPoint: Int&#123;</span><br><span class="line">    get&#123;</span><br><span class="line">        return number</span><br><span class="line">    &#125;</span><br><span class="line">    set(newOne)&#123;</span><br><span class="line">        number &#x3D; newOne</span><br><span class="line">        print(&quot;赋值 \(number)&quot;)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="只读属性"><a href="#只读属性" class="headerlink" title="只读属性"></a>只读属性</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F;案例1,省略get</span><br><span class="line">var space:Int&#123;</span><br><span class="line">    return 100</span><br><span class="line">&#125;</span><br><span class="line">print(space)</span><br><span class="line">&#x2F;&#x2F;space &#x3D; 200  重新赋值时,会报错</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;案例2</span><br><span class="line">struct Numbers &#123;</span><br><span class="line">    var n1 &#x3D; 10,n2 &#x3D; 20</span><br><span class="line">    var n3:Int&#123;</span><br><span class="line">        return n1 * n2&#x2F;&#x2F;添加常量或者变量去接收</span><br><span class="line">    &#125;    </span><br><span class="line">&#125;</span><br><span class="line">var num &#x3D; Numbers.init()</span><br><span class="line">num.n1 &#x3D; 20</span><br><span class="line">num.n2 &#x3D; 20</span><br><span class="line">print(num.n3)</span><br></pre></td></tr></table></figure>
+
+<h3 id="全局和局部变量"><a href="#全局和局部变量" class="headerlink" title="全局和局部变量"></a>全局和局部变量</h3><p>全局函数是定义在任何函数,方法,闭包或者类型环境之外的变量.<br>局部变量是定义在函数,方法,或者闭包环境之中的变量.  </p>
+<p>The End</p>
+]]></content>
+      <categories>
+        <category>Swift语言</category>
+      </categories>
+      <tags>
+        <tag>Swift</tag>
+        <tag>Swift属性</tag>
+      </tags>
+  </entry>
 </search>
