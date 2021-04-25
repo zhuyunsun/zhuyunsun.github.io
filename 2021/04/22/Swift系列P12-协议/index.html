@@ -94,7 +94,7 @@
 <meta property="og:site_name" content="烟飞烟灭">
 <meta property="og:description" content="协议使用protocol关键字形如:   123456protocol 协议名 &amp;#123;    func 方法1()&#x2F;&#x2F;没有方法主体    func 方法2()    var age:Int&amp;#123;get set&amp;#125;&#x2F;&#x2F;可读可写属性    var gander:Int&amp;#123;get&amp;#125;&#x2F;&#x2F;只读属性&amp;#125;">
 <meta property="article:published_time" content="2021-04-22T08:41:22.732Z">
-<meta property="article:modified_time" content="2021-04-25T08:36:05.724Z">
+<meta property="article:modified_time" content="2021-04-25T08:42:59.446Z">
 <meta property="article:author" content="自由不可待">
 <meta property="article:tag" content="Swift">
 <meta property="article:tag" content="Swift协议">
@@ -323,8 +323,8 @@
               
                 <span class="post-meta-item-text">更新于</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2021-04-25T16:36:05+08:00">
-                2021-04-25 16:36
+              <time title="更新于" itemprop="dateModified" datetime="2021-04-25T16:42:59+08:00">
+                2021-04-25 16:42
               </time>
             
           </span>
@@ -383,7 +383,7 @@
                   <span class="post-meta-item-text">字数统计</span>
                 
                 <span title="字数统计">
-                  963 字
+                  982 字
                 </span>
               
 
@@ -422,8 +422,8 @@
 <h4 id="异变方法"><a href="#异变方法" class="headerlink" title="异变方法"></a>异变方法</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F;有时一个方法需要改变（或异变）其所属的实例.</span><br><span class="line">protocol Togglable &#123;</span><br><span class="line">    mutating func toggle()</span><br><span class="line">&#125;</span><br><span class="line">enum OnOffSwitch: Togglable &#123;</span><br><span class="line">    case off, on</span><br><span class="line">    mutating func toggle() &#123;</span><br><span class="line">        switch self &#123;</span><br><span class="line">        case .off:</span><br><span class="line">            self &#x3D; .on</span><br><span class="line">        case .on:</span><br><span class="line">            self &#x3D; .off</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">var lightSwitch &#x3D; OnOffSwitch.off &#x2F;&#x2F;先设置了off</span><br><span class="line">lightSwitch.toggle() &#x2F;&#x2F;调用异变方法 现在是on</span><br></pre></td></tr></table></figure>
 
 <h3 id="协议是否继承AnyObject"><a href="#协议是否继承AnyObject" class="headerlink" title="协议是否继承AnyObject"></a>协议是否继承AnyObject</h3><p>协议可用于结构体,枚举,类<br> 在类中使用,书写的协议时,协议需要继承AnyObject;这样协议可以用weak进行修饰,防止出现实例的循环引用;<br> 不使用NSObjectProtocol,是因为NSObjectProtocol是OC语言的,swift不推荐使用;  </p>
-<h4 id="用于类之间的协议-AnyObject-需要添加weak来修饰防止循环引用"><a href="#用于类之间的协议-AnyObject-需要添加weak来修饰防止循环引用" class="headerlink" title="用于类之间的协议:AnyObject,需要添加weak来修饰防止循环引用"></a>用于类之间的协议:AnyObject,需要添加weak来修饰防止循环引用</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">protocol 协议名 : AnyObject&#123;</span><br><span class="line">    func 方法1()&#x2F;&#x2F;没有方法主体</span><br><span class="line">    func 方法2()</span><br><span class="line">    var age:Int&#123;get set&#125;&#x2F;&#x2F;可读可写属性</span><br><span class="line">    var gander:Int&#123;get&#125;&#x2F;&#x2F;只读属性</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h4 id="用于结构体或枚举-不需要使用weak来修饰协议"><a href="#用于结构体或枚举-不需要使用weak来修饰协议" class="headerlink" title="用于结构体或枚举,不需要使用weak来修饰协议"></a>用于结构体或枚举,不需要使用weak来修饰协议</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F;&#x2F;用于结构体或枚举,不需要使用weak来修饰协议</span><br><span class="line">protocol Another &#123;</span><br><span class="line">    func 方法()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="用于类之间的协议-AnyObject-需要添加weak来修饰防止循环引用"><a href="#用于类之间的协议-AnyObject-需要添加weak来修饰防止循环引用" class="headerlink" title="用于类之间的协议:AnyObject,需要添加weak来修饰防止循环引用"></a>用于类之间的协议:AnyObject,需要添加weak来修饰防止循环引用</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">protocol 协议名 : AnyObject&#123;</span><br><span class="line">    func 方法1()&#x2F;&#x2F;没有方法主体</span><br><span class="line">    func 方法2()</span><br><span class="line">    var age:Int&#123;get set&#125;&#x2F;&#x2F;可读可写属性</span><br><span class="line">    var gander:Int&#123;get&#125;&#x2F;&#x2F;只读属性</span><br><span class="line">&#125;</span><br><span class="line">class PC: NSObject &#123;</span><br><span class="line">    weak var dele:协议名?</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="用于结构体或枚举-不需要使用weak来修饰协议"><a href="#用于结构体或枚举-不需要使用weak来修饰协议" class="headerlink" title="用于结构体或枚举,不需要使用weak来修饰协议"></a>用于结构体或枚举,不需要使用weak来修饰协议</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F;&#x2F;用于结构体或枚举,不需要使用weak来修饰协议</span><br><span class="line">protocol Another &#123;</span><br><span class="line">    func 方法()</span><br><span class="line">&#125;</span><br><span class="line">class PC: NSObject &#123;</span><br><span class="line">    var le:Another?</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>The End</p>
 
