@@ -324,8 +324,8 @@
               
                 <span class="post-meta-item-text">更新于</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2021-04-26T14:31:50+08:00">
-                2021-04-26 14:31
+              <time title="更新于" itemprop="dateModified" datetime="2021-04-26T17:16:36+08:00">
+                2021-04-26 17:16
               </time>
             
           </span>
@@ -413,14 +413,199 @@
 <p>“XXXX is automatically signed,but provisioning profile 45551591-2d82-4cc3-a2b7-99838c6700b3 has been manually specified. Set the provisioning profile value to “Automatic” in the build settings editor,or switch to manual signing in the project editor.”</p>
 </blockquote>
 <p>解决方法:打开project.pbxproj文件,查找45551591-2d82-4cc3-a2b7-99838c6700b3并删除即可</p>
-<h3 id="Mac电脑显示隐藏文件"><a href="#Mac电脑显示隐藏文件" class="headerlink" title="Mac电脑显示隐藏文件"></a>Mac电脑显示隐藏文件</h3><p>(commond + shift + . ) 按一次则是显示,再按一次则是隐藏</p>
-<h3 id="Xcode12后出现静态库-linked-library-‘libPods-xxx-a‘-is-missing-one-or-more-architectures-required-by-this-target-armv7"><a href="#Xcode12后出现静态库-linked-library-‘libPods-xxx-a‘-is-missing-one-or-more-architectures-required-by-this-target-armv7" class="headerlink" title="Xcode12后出现静态库 linked library ‘libPods-xxx.a‘ is missing one or more architectures required by this target: armv7"></a>Xcode12后出现静态库 linked library ‘libPods-xxx.a‘ is missing one or more architectures required by this target: armv7</h3><p>能正常真机测试，但build的时候会失败（红色警告）<br>升级xcode12后，项目在run debug时候是正常运行的，但是在build或者run release的时候就会出现如标题的红色错误。<br>在Target-Build Settings-Excluded Architectures中添加以下代码  </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">EXCLUDED_ARCHS__EFFECTIVE_PLATFORM_SUFFIX_simulator__NATIVE_ARCH_64_BIT_x86_64&#x3D;arm64 arm64e armv7 armv7s armv6 armv8 EXCLUDED_ARCHS&#x3D;$(inherited) $(EXCLUDED_ARCHS__EFFECTIVE_PLATFORM_SUFFIX_$(EFFECTIVE_PLATFORM_SUFFIX)__NATIVE_ARCH_64_BIT_$(NATIVE_ARCH_64_BIT))</span><br></pre></td></tr></table></figure>
-
-<h3 id="真机测试包Payload"><a href="#真机测试包Payload" class="headerlink" title="真机测试包Payload"></a>真机测试包Payload</h3><p>出一个支持真机安装的xxx.ipa包<br>1,在xcode工程中,安装支持准备安装设备的证书和描述文件;<br>2,xcode中选择真机,Build工程,在Products文件中找到后缀为xxx.app文件<br>3,show in finder,copy一下xxx.app格式的文件;<br>4,在桌面创建名为Payload的文件夹,把xxx.app复制进去;<br>5,压缩Payload文件夹为Payload.zip<br>6,把Payload.zip修改为Payload.ipa,这个时候就是可以进行安装的ipa包了.<br>最后,可以使用xcode工具或者iTools进行安装ipa包;</p>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2019/07/31/%20OC%E5%B8%B8%E7%94%A8/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2021/04/26/Swift%E7%B3%BB%E5%88%97P14-%E5%88%9D%E5%A7%8B%E5%8C%96/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="自由不可待">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="烟飞烟灭">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2021/04/26/Swift%E7%B3%BB%E5%88%97P14-%E5%88%9D%E5%A7%8B%E5%8C%96/" itemprop="url">
+                  Swift系列14-初始化
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2021-04-26T14:39:08+08:00">
+                2021-04-26 14:39
+              </time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2021-04-26T15:56:33+08:00">
+                2021-04-26 15:56
+              </time>
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Swift%E8%AF%AD%E8%A8%80/" itemprop="url" rel="index">
+                    <span itemprop="name">Swift语言</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2021/04/26/Swift%E7%B3%BB%E5%88%97P14-%E5%88%9D%E5%A7%8B%E5%8C%96/" class="leancloud_visitors" data-flag-title="Swift系列14-初始化">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计</span>
+                
+                <span title="字数统计">
+                  598 字
+                </span>
+              
+
+              
+
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h2 id="序言"><a href="#序言" class="headerlink" title="序言"></a>序言</h2><p>初始化是为类,结构体,枚举准备实例的过程.<br>这个过程需要给实例里的每一个存储属性设置一个初始值,并且在新实例可以使用之前执行任何其他所必须的配置或者初始化.  </p>
+<p>通过初始化器来实现这个初始化过程,它更像是一个用来创建特定新实例特殊的方法.<br>不同于OC的初始化,Swift初始化不需要返回值.这些初始化器主要的角色是保证第一次使用之前某类型的新实例能够正确的初始化.  </p>
+<p>类实例的初始化有一个反初始化器,它会在这个类的实例被释放之前执行任意的自定义清理.  </p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2021/04/26/Swift%E7%B3%BB%E5%88%97P14-%E5%88%9D%E5%A7%8B%E5%8C%96/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1023,196 +1208,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2021/04/21/Swift%E7%B3%BB%E5%88%97P10-%E5%B1%9E%E6%80%A7/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="自由不可待">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="烟飞烟灭">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2021/04/21/Swift%E7%B3%BB%E5%88%97P10-%E5%B1%9E%E6%80%A7/" itemprop="url">
-                  Swift系列10-属性
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2021-04-21T14:58:27+08:00">
-                2021-04-21 14:58
-              </time>
-            
-
-            
-              <span class="post-meta-divider">|</span>
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-check-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">更新于</span>
-              
-              <time title="更新于" itemprop="dateModified" datetime="2021-04-22T09:47:59+08:00">
-                2021-04-22 09:47
-              </time>
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Swift%E8%AF%AD%E8%A8%80/" itemprop="url" rel="index">
-                    <span itemprop="name">Swift语言</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-             <span id="/2021/04/21/Swift%E7%B3%BB%E5%88%97P10-%E5%B1%9E%E6%80%A7/" class="leancloud_visitors" data-flag-title="Swift系列10-属性">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数 </span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计</span>
-                
-                <span title="字数统计">
-                  614 字
-                </span>
-              
-
-              
-
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h2 id="属性"><a href="#属性" class="headerlink" title="属性"></a>属性</h2><p>属性可以将特定的值和类,结构体,枚举联系起来.<br>存储属性会存储常量或变量作为实例的一部分,反之计算属性会计算值(而不是存储值).<br>计算属性可以由类,结构体,枚举进行定义.<br>存储属性只能由结构体和类进行定义.  </p>
-<p>属性可以和类型本身相关联,这种属性就是所谓的类型属性.  </p>
-<p>你可以定义属性观察器来检查属性中值的变化,这样你就可以自定义行为来响应.<br>属性观测器可以添加到你自定义的存储属性中,也可以添加到子类从他父类继承而来的属性中.  </p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2021/04/21/Swift%E7%B3%BB%E5%88%97P10-%E5%B1%9E%E6%80%A7/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -1262,7 +1257,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">71</span>
+                <span class="site-state-item-count">72</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -1284,7 +1279,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">98</span>
+                <span class="site-state-item-count">99</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
