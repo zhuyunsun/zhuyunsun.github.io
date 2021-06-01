@@ -94,7 +94,7 @@
 <meta property="og:site_name" content="烟飞烟灭">
 <meta property="og:description" content="常量和变量 常量,let关键字;变量,var关键字 常量和变量:把名字和特定类型的值关联起来; 常量:定义的时候赋值,一经设置不可被修改; 变量:可以先定义后赋值,或者定义的时候赋值,设置了之后可以再次修改,赋予新值;   1234&#x2F;&#x2F;例子示范let a:Int &#x3D; 100;print(a)&#x2F;&#x2F;定义了一个类型为整型的常量a,如果你尝试去修改a,Xc">
 <meta property="article:published_time" content="2021-04-13T08:25:05.973Z">
-<meta property="article:modified_time" content="2021-05-06T01:07:51.817Z">
+<meta property="article:modified_time" content="2021-06-01T03:10:37.333Z">
 <meta property="article:author" content="自由不可待">
 <meta property="article:tag" content="Swift">
 <meta property="article:tag" content="Swift基础">
@@ -323,8 +323,8 @@
               
                 <span class="post-meta-item-text">更新于</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2021-05-06T09:07:51+08:00">
-                2021-05-06 09:07
+              <time title="更新于" itemprop="dateModified" datetime="2021-06-01T11:10:37+08:00">
+                2021-06-01 11:10
               </time>
             
           </span>
@@ -413,8 +413,8 @@
 <a id="more"></a>
 
 <h2 id="类型标注-类型安全和类型推断"><a href="#类型标注-类型安全和类型推断" class="headerlink" title="类型标注,类型安全和类型推断"></a>类型标注,类型安全和类型推断</h2><h3 id="类型标注"><a href="#类型标注" class="headerlink" title="类型标注"></a>类型标注</h3><p>类型标注:初始化的时候定义该常量或变量是什么类型的就赋值什么类型;</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">let name:String &#x3D; &quot;mark&quot;;print(name) &#x2F;&#x2F;定义了一个常量name,类型为String</span><br><span class="line">var time:Int;time &#x3D; 1;print(time) &#x2F;&#x2F;先定义类型,后赋值</span><br><span class="line">var arr &#x3D; [Any]();arr &#x3D; [&quot;1&quot;,&quot;2&quot;];print(arr)&#x2F;&#x2F;定义一个类型为Any的数组,里面可以放着任意类型,或者实例对象</span><br></pre></td></tr></table></figure>
-<h3 id="类型安全"><a href="#类型安全" class="headerlink" title="类型安全"></a>类型安全</h3><p> Swift是一门类型安全的语言,类型安全的语言可以让你知道代码可以处理值的类型,如一段代码你期望获得Sting类型,就不能赋值Int类型.<br> 类型安全在编译期就会报错,指出哪里的类型不符合对应的要求,可以帮助你在开发阶段更早的发现并修复错误;</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">let name:String &#x3D; &quot;mark&quot;;print(name) &#x2F;&#x2F;定义了一个常量name,类型为String</span><br><span class="line">var time:Int;time &#x3D; 1;print(time) &#x2F;&#x2F;先定义类型,后赋值</span><br><span class="line">var arr &#x3D; [Any]();arr &#x3D; [&quot;1&quot;,&quot;2&quot;];print(arr)&#x2F;&#x2F;定义一个类型为Any的数组,里面可以放着任意类型,包括对象类型</span><br></pre></td></tr></table></figure>
+<h3 id="类型安全"><a href="#类型安全" class="headerlink" title="类型安全"></a>类型安全</h3><p> Swift是一门类型安全的语言,类型安全的语言让你知道代码可以处理值的类型,如一段代码你期望获得String类型,就不能赋值Int类型.<br> 类型安全在编译期就会报错,指出哪里的类型不符合对应的要求,可以帮助你在开发阶段更早的发现并修复错误;</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var age:Int &#x3D; 12;</span><br><span class="line">&#x2F;&#x2F;age &#x3D; 11.2;如果这样赋值Double类型就会报错</span><br><span class="line">age &#x3D; 16;print(age)&#x2F;&#x2F;正确的赋值</span><br></pre></td></tr></table></figure>
 <h3 id="类型推断"><a href="#类型推断" class="headerlink" title="类型推断"></a>类型推断</h3><p>当你在初始化变量或者常量时,如果没有标注当前值的类型,Swift会帮你推断出当前变量或者常量的类型;</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">let gender &#x3D; 1;print(gender)&#x2F;&#x2F;整型Int</span><br><span class="line">let p1 &#x3D; 1.1;print(p1)&#x2F;&#x2F;会推断Double而非Float或CGFloat</span><br><span class="line">let p2 &#x3D; 2 + 2.22;print(p2)&#x2F;&#x2F;整型和浮点型相加,会推断出Double类型</span><br><span class="line">let firstName &#x3D; &quot;zu&quot;;print(firstName)&#x2F;&#x2F;字符串String</span><br><span class="line">var lable &#x3D; UILabel();lable &#x3D; UILabel.init();print(lable.text as Any)&#x2F;&#x2F;UILabel类</span><br></pre></td></tr></table></figure>
